@@ -1,0 +1,7 @@
+The folde contains python custom libaries.
+If no existing library can be found from sources such as : 
+https://robotframework.org/ 
+https://pypi.org/
+
+you can build your own following user guide : 
+http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#extending-robot-framework
