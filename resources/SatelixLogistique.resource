@@ -64,11 +64,7 @@ Ajouter Un Dossier Si Besoin
 Ajouter Un Dossier 
     [Documentation]    Ajoute un dossier à l'application en scannant le QR code correpsondant
     AppiumLibrary.Click Element    ${BOUTON_AJOUTER_DOSSIER}
-    Sleep    4s
-    # utils.Press ENTER
-    # utils.Press ENTER
-    # Valider 10 fois si beosin L Ajout Du Dossier Tant Que La Question Est Posee
-    Wait Until Keyword Succeeds    20    1s    Valider L Ajout D Un Dossier
+    Wait Until Keyword Succeeds    60    1s    Valider L Ajout D Un Dossier
 
 Valider L Ajout D Un Dossier
     AppiumLibrary.Text Should Be Visible    ${FENETRE_VALIDATION_AJOUT}
