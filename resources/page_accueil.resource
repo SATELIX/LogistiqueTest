@@ -2,7 +2,7 @@
 Documentation    contient les mots clés gérant les actions sur la page d'accueil/home
 ...              où se touve la liste des modules disponibles.
 
-Resource    technical_keywords/action_appium.resource
+Library    AppiumLibrary
 
 *** Variables ***
 ${module_preparation}    //

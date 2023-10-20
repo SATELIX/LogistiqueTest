@@ -8,7 +8,11 @@ Documentation    Ce fichier de ressources contient les mots clé robot
 ...    <BR> La correspondances de KEYCODE peut se retrouver à la page :
 ...    https://developer.android.com/reference/android/view/KeyEvent
 
+
+Library    OperatingSystem
 Library    String
+Library    AppiumLibrary
+Library    squash_tf.TFParamService
 Resource   SatelixLogistique.resource
 
 *** Variables ***
@@ -62,3 +66,40 @@ Lire La Quantite Restante A Preparer
     [Arguments]  ${Quantite}
     ${QtyRestante}=    Split String    ${Quantite}    /
     RETURN    ${QtyRestante}[0]
+
+
+Lire Les Variables Du Tests Et Demarrer L Application
+    Lire Les Variables De Tests
+    Demarrer L Application Et Se Connecter Au Dossier    ${DOSSIER}
+
+Lire Les Variables De Tests
+    [Documentation]    Lit et met en place les variables
+    Lire Les Variables D Environnement
+  	Lire Les Jeux De Donnees
+
+Lire Les Jeux De Donnees
+    [Documentation]    TODO 
+	${module}=           Get Param           DS_module             Preparation
+	${document}=         Get Param           DS_document           PL000002
+    ${poids}=            Get Param           DS_poids              34.5
+    ${modeExpedition}=   Get Param           DS_modeExpedition     TNT
+	Set Test Variable    ${document}         ${document}
+	Set Test Variable    ${poids}            ${poids}
+	Set Test Variable    ${modeExpedition}   ${modeExpedition}
+
+Lire Les Variables D Environnement
+    [Documentation]    Lecture des variables d'environnement et écrasmeent des 
+    ...    variables pa défaut.   
+ 	${platformVersion}=    Get Environment Variable    ANDROIDVERSION	10.0    # 9.0    # 12.0    # 
+	${app}=                Get Environment Variable    APP              D:${/}SATELIX${/}app${/}Logistique-demo-release-1.0.34 141.apk
+	${appPackage}=         Get Environment Variable    APPPACKAGE	    fr.satelix.logistique.demo
+	${appActivity}=        Get Environment Variable    APPACTIVTY	    fr.satelix.logistique.activities.MainActivity
+	${deviceUdid}=         Get Environment Variable    UDID	    emulator-5558    # 42005819e4569431   # emulator-5556    # 
+	Set Test Variable    ${platformVersion}    ${platformVersion}
+	Set Test Variable    ${app}                ${app}	
+	Set Test Variable    ${appPackage}         ${appPackage}
+	Set Test Variable    ${appActivity}        ${appActivity}
+	Set Test Variable    ${deviceUdid}         ${deviceUdid} 
+
+	${dossier}=          Get Environment Variable    DOSSIER	    DemoSatelix   # emulator-5556    # 
+	Set Test Variable    ${dossier}         ${dossier} 
