@@ -1,9 +1,9 @@
 *** Settings ***
 Documentation
 ...
-...    <BR>  remarque sur les ID existants qui comporte le nom du package
-...    <BR> quand on est en démo, package fr.satelix.logistique.demo
-...    <BR> ce qui complique la réutilisation des scripts pour de nouvelles
+...    \n  remarque sur les ID existants qui comporte le nom du package
+...    \n quand on est en démo, package fr.satelix.logistique.demo
+...    \n ce qui complique la réutilisation des scripts pour de nouvelles
 ...    versions (prod, démo...)
 ...    
 
@@ -14,21 +14,22 @@ Resource   ${CURDIR}/../resources/module_preparation.resource
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 
 Suite Setup    Set Log Level    TRACE
-Test Setup     Lire Les Variables De Tests Et Demarrer L Application
+Test Setup     Lire Les Variables Du Tests Et Demarrer L Application
 
 Suite Teardown    AppiumLibrary.Close All Applications
 
 *** Variables ***
 
 ${module_preparation}    xpath=//androidx.cardview.widget.CardView[@content-desc="Select the module Prépa."]
+# ${module_preparation}    xpath=//androidx.cardview.widget.CardView[@content-desc="Select the module Expédition."]
 ${document}              PL000002
 ${poids}                 34
 ${modeExpedition}        
 
 *** Test Cases ***
 Ajout d une quantité supérieure à celle nécessaire pour un article dans une préparation
-	Choisir le module dans la liste des modules    ${module_preparation}
-	Choisir La Commande A Preparer Dans La Liste Des Commandes     ${document}
+	Choisir le module Peparation
+	Choisir Le Document A Preparer Dans La Liste Des Documents     ${document}
 	${quantite}=    Lire La Quantite Demandee Pour Le Premier Article
 	Choisir Le Premier Article De La Liste A Preparer
 	Afficher Les Lots Disponibles

@@ -3,7 +3,7 @@ Documentation    Ce fichier regroupe les mots clés "généraux" de l'applicatio
 ...              Par défaut le test lance la version démo de Logistique.
 ...    
 
-Library    AppiumLibrary
+Library     AppiumLibrary
 # Resource    utils.resource
 
 *** Variables ***
@@ -26,6 +26,7 @@ ${appPackage}        fr.satelix.logistique.demo
 ${appActivity}       fr.satelix.logistique.activities.MainActivity
 
 # ${app}               D:${/}SATELIX${/}app${/}Logistique-release-1.0.41 197.apk
+# ${app}               D:\SATELIX$\app\Logistique-release-1.0.41 197.apk
 # ${appPackage}        fr.satelix.logistique
 # ${appActivity}       fr.satelix.logistique.activities.MainActivity
 
@@ -76,7 +77,8 @@ Ajouter Un Dossier
 Valider L Ajout D Un Dossier
     AppiumLibrary.Text Should Be Visible    ${FENETRE_VALIDATION_AJOUT}
     FOR    ${i}    IN RANGE    10
-        AppiumLibrary.Click Element    ${BOUTON_VALIDATION_AJOUT}    
+        # AppiumLibrary.Click Element    ${BOUTON_VALIDATION_AJOUT}
+        utils.    
     END
     AppiumLibrary.Page Should Not Contain Element    ${FENETRE_VALIDATION_AJOUT}
     

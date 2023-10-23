@@ -38,6 +38,9 @@ Resource   SatelixLogistique.resource
 *** Keywords ***
 Press ENTER
     AppiumLibrary.Press Keycode    ${KEYCODES}[enter]
+
+Press RIGHT ARROW
+    AppiumLibrary.Press Keycode    ${KEYCODES}[enter]
     
 Taper Un Nombre Au Clavier   
     [Documentation]    Mot clé qui efface ce que contient la zone de texte
@@ -81,20 +84,24 @@ Lire Les Jeux De Donnees
     [Documentation]    TODO 
 	${module}=           Get Param           DS_module             Preparation
 	${document}=         Get Param           DS_document           PL000002
+    ${articles}=         Get Param           DS_articles           0012;0013;0015
+    ${lot}=              Get Param           DS_lots               L947652;231;L741852
     ${poids}=            Get Param           DS_poids              34.5
     ${modeExpedition}=   Get Param           DS_modeExpedition     TNT
 	Set Test Variable    ${document}         ${document}
+	Set Test Variable    ${lot}              ${lot}
+	Set Test Variable    ${articles}         ${articles}
 	Set Test Variable    ${poids}            ${poids}
 	Set Test Variable    ${modeExpedition}   ${modeExpedition}
 
 Lire Les Variables D Environnement
     [Documentation]    Lecture des variables d'environnement et écrasmeent des 
     ...    variables pa défaut.   
- 	${platformVersion}=    Get Environment Variable    ANDROIDVERSION	10.0    # 9.0    # 12.0    # 
+ 	${platformVersion}=    Get Environment Variable    ANDROIDVERSION	9.0     # 10.0    # 9.0    # 12.0    # 
 	${app}=                Get Environment Variable    APP              D:${/}SATELIX${/}app${/}Logistique-demo-release-1.0.34 141.apk
 	${appPackage}=         Get Environment Variable    APPPACKAGE	    fr.satelix.logistique.demo
 	${appActivity}=        Get Environment Variable    APPACTIVTY	    fr.satelix.logistique.activities.MainActivity
-	${deviceUdid}=         Get Environment Variable    UDID	    emulator-5558    # 42005819e4569431   # emulator-5556    # 
+	${deviceUdid}=         Get Environment Variable    UDID	    42005819e4569431     #    emulator-5558    #    # emulator-5556    # 
 	Set Test Variable    ${platformVersion}    ${platformVersion}
 	Set Test Variable    ${app}                ${app}	
 	Set Test Variable    ${appPackage}         ${appPackage}
@@ -103,3 +110,9 @@ Lire Les Variables D Environnement
 
 	${dossier}=          Get Environment Variable    DOSSIER	    DemoSatelix   # emulator-5556    # 
 	Set Test Variable    ${dossier}         ${dossier} 
+
+Scanner Un Code
+    [Documentation]    Ce mot clé simule un scanner en appelant l'intent fr.satelix.logistique.scan
+    ...    prévu à cet effet.
+    [Arguments]    ${text}
+    Run    adb shell am broadcast -a fr.satelix.logistique.scan --es com.motorolasolutions.emdk.datawedge.data_string ${text}

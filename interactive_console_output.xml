@@ -1,41 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.11.5 on win32)" generated="20231018 09:22:23.731" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.11.5 on win32)" generated="20231020 14:47:13.611" rpa="false" schemaversion="3">
 <suite id="s1" name="Robot Interactive Console" source="c:\Users\vdt\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<kw name="Choisir le module dans la liste des modules">
-<arg>${module_preparation}</arg>
-<msg timestamp="20231018 09:22:24.276" level="FAIL">No keyword with name 'Choisir le module dans la liste des modules' found.</msg>
-<status status="FAIL" starttime="20231018 09:22:24.275" endtime="20231018 09:22:24.276"/>
+<status status="PASS" starttime="20231020 14:47:13.637" endtime="20231020 14:47:53.918"/>
 </kw>
-<kw name="Choisir La Commande A Preparer Dans La Liste Des Commandes">
-<arg>${document}</arg>
-<status status="NOT RUN" starttime="20231018 09:22:24.278" endtime="20231018 09:22:24.278"/>
-</kw>
-<kw name="Lire La Quantite Demandee Pour Le Premier Article">
-<var>${quantite}</var>
-<status status="NOT RUN" starttime="20231018 09:22:24.279" endtime="20231018 09:22:24.279"/>
-</kw>
-<kw name="Choisir Le Premier Article De La Liste A Preparer">
-<status status="NOT RUN" starttime="20231018 09:22:24.281" endtime="20231018 09:22:24.281"/>
-</kw>
-<kw name="Afficher Les Lots Disponibles">
-<status status="NOT RUN" starttime="20231018 09:22:24.283" endtime="20231018 09:22:24.283"/>
-</kw>
-<kw name="Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité">
-<arg>${quantite}</arg>
-<status status="NOT RUN" starttime="20231018 09:22:24.283" endtime="20231018 09:22:24.283"/>
-</kw>
-<kw name="Entrer Une Quantité Supérieure A Celle Demandee Et Valider">
-<arg>${quantite}</arg>
-<arg>1</arg>
-<status status="NOT RUN" starttime="20231018 09:22:24.285" endtime="20231018 09:22:24.285"/>
-</kw>
-<status status="PASS" starttime="20231018 09:22:23.751" endtime="20231018 09:22:34.739"/>
-</kw>
-<status status="PASS" starttime="20231018 09:22:23.751" endtime="20231018 09:22:34.739"/>
+<status status="PASS" starttime="20231020 14:47:13.636" endtime="20231020 14:47:53.918"/>
 </test>
-<status status="PASS" starttime="20231018 09:22:23.731" endtime="20231018 09:22:34.741"/>
+<status status="PASS" starttime="20231020 14:47:13.612" endtime="20231020 14:47:53.919"/>
 </suite>
 <statistics>
 <total>

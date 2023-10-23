@@ -21,13 +21,26 @@ Test Setup     Lire Les Variables Du Tests Et Demarrer L Application
 
 *** Variables ***
 
-${module_preparation}    xpath=//androidx.cardview.widget.CardView[@content-desc="Select the module Prépa."]
-
 *** Test Cases ***
 Cas Nominal De Preparation De Commande
-	Choisir le module dans la liste des modules    ${module_preparation}
-	Choisir La Commande A Preparer Dans La Liste Des Commandes     ${document}
-	Preparer Les Articles De La Commande
+    [Tags]    sans_codebarre
+	Choisir le module Peparation
+	Choisir Le Document A Preparer Dans La Liste Des Documents     ${document}
+	Preparer Les Articles Du document
+	Cliquer sur le bouton de finalisation
+	Entrer Le Poids Du Colis     ${poids}  
+	Prendre Une Photo Du Colis
+	Cliquer Sur Le Bouton De Cloture
+	Laisser Le Mode D Envoi Par Defaut et Transférer
+	# Choisir le mode d'expédition ${modeExpedition}
+	# Cliquer Sur Le Bouton De Transfert
+	Valider La Préparation
+
+Cas Nominal De Preparation De Commande Avec Lecteur Code-Barres
+    [Tags]    avec_codebarre
+	Choisir le module Peparation
+	Choisir Le Document A Preparer Dans La Liste Des Documents    ${document}
+	Preparer Les Articles Du Document Avec Le Lecteur CodeBarre
 	Cliquer sur le bouton de finalisation
 	Entrer Le Poids Du Colis     ${poids}  
 	Prendre Une Photo Du Colis

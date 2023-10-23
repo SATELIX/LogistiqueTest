@@ -9,10 +9,14 @@ Library    String
 
 *** Variables ***
 # ${LISTE_CARDVIEW_LOTS}        //*[@id="fr.satelix.logistique.demo:id/rv_liste"]/androidx.cardview.widget.CardView
-${LISTE_VIEW_LOTS}      id=fr.satelix.logistique.demo:id/const_layout_lot_serie
-${LOT_EN_STOCK}         id=fr.satelix.logistique.demo:id/tv_intitule_lot_serie
-${TEXT_QUANTITE_STOCK}  id=fr.satelix.logistique.demo:id/tv_qte_restante
-${DATE_LOT_EN_STOCK}    id=fr.satelix.logistique.demo:id/item_dates
+${LISTE_VIEW_LOTS}      id=const_layout_lot_serie
+${LOT_EN_STOCK}         id=tv_intitule_lot_serie
+${TEXT_QUANTITE_STOCK}  id=tv_qte_restante
+${DATE_LOT_EN_STOCK}    id=item_dates
+# ${LISTE_VIEW_LOTS}      id=fr.satelix.logistique.demo:id/const_layout_lot_serie
+# ${LOT_EN_STOCK}         id=fr.satelix.logistique.demo:id/tv_intitule_lot_serie
+# ${TEXT_QUANTITE_STOCK}  id=fr.satelix.logistique.demo:id/tv_qte_restante
+# ${DATE_LOT_EN_STOCK}    id=fr.satelix.logistique.demo:id/item_dates
 
 *** Keywords ***
 Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité

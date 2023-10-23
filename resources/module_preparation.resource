@@ -3,10 +3,12 @@ Documentation    ce fichier contient les mots clé nécessaires pour accéder au
 ...   de préparation et de finalisation
 ...   Les écrans avec le détails des articles et des lots sont décits dans des dichiers séparés  
 
-Library    AppiumLibrary
+Library     AppiumLibrary
 Resource    utils.resource
 
 *** Variables ***
+
+${DOCUMENTS_AFFCIHES}    id=tv_item_doc_html
 
 #
 # Ecran de finalisation
@@ -18,7 +20,7 @@ ${TEXTE_POIDS}                   id=textinput_placeholder
 ${BOUTON_PHOTO}                  id=bt_input_button
 ${BOUTON_CLOTURE}                id=fab_cloturer
 
-${BUTTON_LISTE_MODE_EXPEDITION}  id=fr.satelix.logistique.demo:id/text_input_end_icon
+${BUTTON_LISTE_MODE_EXPEDITION}  id=text_input_end_icon
 ${BOUTON_TRANSFERT}              id=fab_quitter
 
 ${POPUP_VALIDATION_PREPA}        id=bt_quitter_module_valider_transfert
@@ -30,7 +32,7 @@ ${POPUP_RETOUR_PREPA}            id=bt_quitter_module_annuler
 
 
 *** Keywords ***
-Choisir La Commande A Preparer Dans La Liste Des Commandes
+Choisir Le Document A Preparer Dans La Liste Des Documents
     [Documentation]    Ce mot clé parcour la liste des documents du module
     ...    Préparation et Click sur le document correspondant à celui passé
     ...    en Argument <BR>
@@ -38,7 +40,7 @@ Choisir La Commande A Preparer Dans La Liste Des Commandes
     ...    TO DO :       
     [Arguments]    ${document}
     Wait Until Page Contains    ${document}   5 
-    ...    La commande ${document} n'apparait pas dans la liste des documents à peparer
+    ...    Le document ${document} n'apparait pas dans la liste des documents à peparer
     AppiumLibrary.Click Text    ${document}
 
 Cliquer sur le bouton de finalisation Et Verifier Que La Commande Est Complète

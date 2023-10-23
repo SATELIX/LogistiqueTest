@@ -11,13 +11,13 @@ Resource    module_preparation_listelots.resource
 ${LAYOUT_HAUT}                      //androidx.appcompat.widget.LinearLayoutCompat/android.webkit.WebView/android.webkit.WebView/
 ${TEXTE_LOT}                        ${LAYOUT_HAUT}android.widget.TextView[1]
 ${TEXTE_NOM_ARTICLE}                ${LAYOUT_HAUT}android.widget.TextView[2]
-${BUTON_LISTE_DES_LOTS_EN_STOCK}    id=fr.satelix.logistique.demo:id/text_input_end_icon
+${BUTON_LISTE_DES_LOTS_EN_STOCK}    id=text_input_end_icon
 
-${TEXT_STOCK_GLOBAL}                 id=fr.satelix.logistique.demo:id/tv_qte_stock
-${TEXT_QUANTITE_PREPAREE}           id=fr.satelix.logistique.demo:id/tv_qte_preparee
-${TEXT_QUANTITE_VALIDEE}            id=fr.satelix.logistique.demo:id/tv_qte_validee
+${TEXT_STOCK_GLOBAL}                 id=tv_qte_stock
+${TEXT_QUANTITE_PREPAREE}           id=tv_qte_preparee
+${TEXT_QUANTITE_VALIDEE}            id=tv_qte_validee
 
-${BOUTON_AJOUTER}                    id=fr.satelix.logistique.demo:id/fab_ajouter
+${BOUTON_AJOUTER}                    id=fab_ajouter
 
 ${MESSAGE_ERREUR_QUANTITE}           id=android:id/message
 ${BOUTON_OK_MESSAGE_ERREUR}          id=android:id/button1

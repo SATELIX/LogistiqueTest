@@ -5,14 +5,18 @@ Library    String
 
 Resource    module_preparation_detailArticle.resource
 Resource    utils.resource
+# Resource    module_preparation.resource
 
 *** Variables ***
-${CHAMP_RECHERCHE}        //*[@id='fr.satelix.logistique.demo:id/input_recherche_module']/android.widget.EditText
+${CHAMP_RECHERCHE}        //*[@id='input_recherche_module']/android.widget.EditText
+# ${CHAMP_RECHERCHE}        //*[@id='fr.satelix.logistique.demo:id/input_recherche_module']/android.widget.EditText
 ${ONGLET_TOBEPICKED}
 ${ONGLET_PICKED}
 ${NOMBREARTILE_AFFICHE}             id=tv_nb_articles
 # ${ARTICLES_VISIBLES_DE_LA LISTE}    id=fr.satelix.logistique.demo:id/card_item_article
 ${ARTICLES_VISIBLES_DE_LA LISTE}    id=card_item_article
+${ARTICLES_VISIBLES_DE_LA LISTE}    id=tv_item_article_html
+
 
 ${TAB_ITEMS_PICKED}                 //android.widget.LinearLayout[@content-desc="Items picked"]
 
@@ -26,8 +30,8 @@ La Liste Des Articles De La Commande S Affichent
     ${ListeArticles}=    Lister Les Articles
     Should Be True    ${ListeArticles}    Aucun article n'est affiché à l'écran.
 
-Preparer Les Articles De La Commande
-    [Documentation]    TO DO
+Preparer Les Articles Du Document
+    [Documentation]    TODO : 
     ...                \n pour le moment le mot clé fonctionne avec les acrticles affichés à l'écrans.
     ...                \n voir dicumentation de "Lister Les Articles" 
     AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTILE_AFFICHE}    6s    Le texte avec le nombre d'article n'est pas afiché.
@@ -39,12 +43,34 @@ Preparer Les Articles De La Commande
         AppiumLibrary.Wait Until Page Contains Element    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
         AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
         ${article}=     AppiumLibrary.Get Webelement   ${ARTICLES_VISIBLES_DE_LA LISTE}
-        ${Lot}    ${nomArticle}    ${emplacement}    ${colis}    ${quantite}    
+        ${reference}    ${nomArticle}    ${emplacement}    ${colis}    ${quantite}    
         ...    Lire Les Informations De L Article    ${article}
         Choisir L Article A Preparer   ${article}
         ${Qte_restante}=    Lire La Quantite Restante A Preparer    ${Quantite}
-        Preparer Les Quantités De L Article  ${Lot}    ${nomArticle}    ${Qte_restante}
+        Preparer Les Quantités De L Article  ${reference}    ${nomArticle}    ${Qte_restante}
     END
+
+Preparer Les Articles Du Document Avec Le Lecteur CodeBarre
+    [Documentation]    Ce mot clé reprend le fonctionnement de la Préparation des articles 
+    ...                avec l'utilisation d'un lecteur de code-barres.
+
+    AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTILE_AFFICHE}    6s    Le texte avec le nombre d'article n'est pas afiché.
+    ${NombreArticle_Affiche}=    Lire Le Nombre D Articles Affiché
+    ${ListeArticles}=    Lister Les Articles
+    Length Should Be    ${ListeArticles}    ${NombreArticle_Affiche}
+
+    FOR    ${index}    IN RANGE    ${NombreArticle_Affiche}
+        AppiumLibrary.Wait Until Page Contains Element    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
+        AppiumLibrary.Wait Until Element Is Visible       ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
+        Get Text    ${ARTICLES_VISIBLES_DE_LA LISTE}
+        ${article}=     AppiumLibrary.Get Webelement      ${ARTICLES_VISIBLES_DE_LA LISTE}
+        ${reference}    ${nomArticle}    ${emplacement}    ${colis}    ${quantite}    
+        ...    Lire Les Informations De L Article    ${article}
+        Choisir L Article A Preparer Avec Le Lecteur CodeBarre   ${reference}
+        ${Qte_restante}=    Lire La Quantite Restante A Preparer    ${Quantite}
+        Preparer Les Quantités De L Article  ${reference}    ${nomArticle}    ${Qte_restante}
+    END
+
 
 Lire La Quantite Demandee Pour Le Premier Article
     [Documentation]     Ce mot clé prend le Premier Article de la liste 
@@ -54,7 +80,9 @@ Lire La Quantite Demandee Pour Le Premier Article
    AppiumLibrary.Wait Until Page Contains Element    ${article}
     ${content-desc}=    AppiumLibrary.Get Element Attribute    ${article}    content-desc
     ${quantite}=    AppiumLibrary.Get Text
-    ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_nb_pieces"]
+    ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="${appPackage}:id/tv_item_article_nb_pieces"]
+    # ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@id="tv_item_article_nb_pieces"]
+    # ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_nb_pieces"]
     ${quantiteRestante}=    Lire La Quantite Restante A Preparer        ${quantite}
     Return From Keyword    ${quantiteRestante}    
 
@@ -75,21 +103,25 @@ Lire Les Informations De L Article
     ${content-desc}=    AppiumLibrary.Get Element Attribute    ${article}    content-desc
     # nom et lot de l'article
     ${nomArticleEtLot}=    AppiumLibrary.Get Text
-    ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_html"]
+    ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/*[@resource-id="${appPackage}:id/tv_item_article_html"]
+    # ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_html"]
     ${nomArticleEtLot}=    Split To Lines    ${nomArticleEtLot}
-    ${Lot}=                Set Variable      ${nomArticleEtLot}[0]
+    ${reference}=                Set Variable      ${nomArticleEtLot}[0]
     ${nomArticle}=         Set Variable      ${nomArticleEtLot}[1]
     # emplacement
     ${emplacement}=    AppiumLibrary.Get Text
-    ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_emplacement"]
+    ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="${appPackage}:id/tv_item_article_emplacement"]
+    # ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_emplacement"]
     # colis
     ${colis}=    AppiumLibrary.Get Text
-    ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_colis"]
+    ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="${appPackage}:id/tv_item_article_colis"]
+    # ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_colis"]
     # quantité
     ${quantite}=    AppiumLibrary.Get Text
-    ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_nb_pieces"]
+    ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="${appPackage}:id/tv_item_article_nb_pieces"]
+    # ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_nb_pieces"]
     
-    Return From Keyword    ${Lot}    ${nomArticle}    ${emplacement}    ${colis}    ${quantite}    
+    Return From Keyword    ${reference}    ${nomArticle}    ${emplacement}    ${colis}    ${quantite}    
 
 Choisir L Article A Preparer Par Son Nom
     [Documentation]    Clique sur le nom de l'article donné en Argument
@@ -133,6 +165,13 @@ Choisir L Article A Preparer
     [Arguments]    ${article}
     AppiumLibrary.Wait Until Element Is Visible    ${article}    6s    Il n'y a pas d'aticle à préparer dans pour cette péparation.
     AppiumLibrary.Click Element    ${article} 
+
+Choisir L Article A Preparer Avec Le Lecteur CodeBarre
+    [Documentation]    Ce mot clé attend la référence de l'article en entrée 
+    ...                au format texte.
+    [Arguments]    ${reference}
+    AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s    Il n'y a pas d'aticle à préparer dans pour cette péparation.
+    utils.Scanner Un Code    ${reference} 
     
 Chercher Un Article Par La Recheche
     [Documentation]    Utilisation de la recherche en haut de la page <BR>
