@@ -49,6 +49,8 @@ Demarrer L Application Et Se Connecter Au Dossier
     [Documentation]    Ce mot clé démarre l'application et vérifie si le bouton pour ajouter un dossier est présent.
     ...    \n si le bouton pou ajoute un dossier est présent, il est utilisé. 
     ...    \n l'ajout du dossier est géré par le mot clé Ajouter Un  Dossier
+    ...    \n\n Note : l'url par défaut est le local host. Dans le ca où les terminaux seraient connecté à un serveur dédié
+    ...    il faudra changer l'url avec l'ip ou le nom de ce serveur  (http://serveurAppium:4723/wd/hub)
     [Arguments]    ${Dossier}
     Demarrer L Application
     ${dossier_present}=    Run Keyword And Return Status    Choisir Le Dossier    ${Dossier}
@@ -66,6 +68,7 @@ Demarrer L Application
     ...    appPackage=${appPackage}      
     ...    appActivity=${appActivity}
     ...    autoGrantPermissions=true
+    ...    noReset=true
     ...    fullReset=false
         
 Ajouter Un Dossier 
