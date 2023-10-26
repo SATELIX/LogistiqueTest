@@ -61,15 +61,15 @@ Demarrer L Application Et Se Connecter Au Dossier
 Demarrer L Application
     AppiumLibrary.Open Application   ${remoteURL} 
     ...    automationName=${automationName}
-    ...    udid=${deviceUdid}
     ...    platformName=${platformName}
-    ...    platformVersion=${platformVersion}
-    ...    app=${app}
     ...    appPackage=${appPackage}      
     ...    appActivity=${appActivity}
     ...    autoGrantPermissions=true
     ...    noReset=true
     ...    fullReset=false
+    # ...    platformVersion=${platformVersion}
+    # ...    udid=${deviceUdid}
+    # ...    app=${app}
         
 Ajouter Un Dossier 
     [Documentation]    Ce mot clé tente d'ajouter un dossier à l'application
