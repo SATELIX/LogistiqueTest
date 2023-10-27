@@ -81,7 +81,7 @@ Valider L Ajout D Un Dossier
     AppiumLibrary.Text Should Be Visible    ${FENETRE_VALIDATION_AJOUT}
     FOR    ${i}    IN RANGE    10
         # AppiumLibrary.Click Element    ${BOUTON_VALIDATION_AJOUT}
-        utils.    
+        Ajouter Un Dossier
     END
     AppiumLibrary.Page Should Not Contain Element    ${FENETRE_VALIDATION_AJOUT}
     
