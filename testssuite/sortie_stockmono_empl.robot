@@ -47,7 +47,7 @@ Affiche sélection dépot d origine la date et la reference    # vérifie que la
     Wait Until Page Contains    Saisi référence doc
 
 Sélectionner le dépôt origine Bijou SA
-    Click Element    class=android.widget.Spinner     #impossible d'ouvir le drop down pour le moment (tests faits : xpath, id, inputlist)
+    Click Element    resource-id=fr.satelix.logistique:id/dropdown_list    #impossible d'ouvir le drop down pour le moment (tests faits : xpath, id, inputlist)
  
     #//android.widget.Spinner[@resource-id="fr.satelix.logistique:id/dropdown_list" and @text="Sélection dépôt origine"]
 
