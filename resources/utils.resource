@@ -99,7 +99,7 @@ Lire Les Variables D Environnement
     ...    variables pa défaut.   
  	${platformVersion}=    Get Environment Variable    ANDROIDVERSION	9.0     # 10.0    # 9.0    # 12.0    # 
 	${app}=                Get Environment Variable    APP              D:${/}SATELIX${/}app${/}Logistique-demo-release-1.0.34 141.apk
-	${appPackage}=         Get Environment Variable    APPPACKAGE	    fr.satelix.logistique.demo
+	${appPackage}=         Get Environment Variable    APPPACKAGE	    fr.satelix.logistique
 	${appActivity}=        Get Environment Variable    APPACTIVTY	    fr.satelix.logistique.activities.MainActivity
 	${deviceUdid}=         Get Environment Variable    UDID	    42005819e4569431     #    emulator-5558    #    # emulator-5556    # 
 	Set Test Variable    ${platformVersion}    ${platformVersion}
