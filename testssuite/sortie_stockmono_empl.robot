@@ -19,17 +19,14 @@ ${liste_articles}       //android.widget.ImageButton[@content-desc="Liste des ar
 *** Test Cases ***
 Test De L Application
     Demarrer Une Application    fr.satelix.logistique
-    Swipe Down test
-    #Swipe down    id=fr.satelix.logistique:id/rv_liste_modules
-    #Scroll Down Until Element Is Visible    xpath=//android.widget.TextView[@resource-id="fr.satelix.logistique:id/item_nom_module" and @text="Sortie Stock Mono"] 
-    #Scroll To Sortie Stock Mono
-    #Faire Defiler Les Modules Pour Trouver Le Bon    ${module_sortie_mono}
+    Swipe Down    Sortie Stock Mono
     Sélectionner le module Sortie mono empl
     Affiche sélection dépot d origine la date et la reference
     Sélectionner le dépôt origine Bijou SA 
     Sélectionner référence doc
     Valider les informations pour le nouveau traitement
-    Sélectionner un articles 
+    Afficher Liste des articles
+    Choisir Article    CHAOR42 
 
 *** Keywords ***
 Demarrer Une Application
@@ -70,9 +67,10 @@ Sélectionner référence doc
     Click Element    xpath=//android.widget.EditText[@text="Saisi référence doc"]
     Input Text Into Current Element    test
 
-Swipe Down test
+Swipe Down
+    [Arguments]    ${element}
     FOR    ${counter}    IN RANGE    0    5
-        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    Sortie Stock Mono    timeout=1s
+        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}    timeout=1s
         Swipe    0    495    0    100    500
         IF    ${status}    BREAK
     END
@@ -82,9 +80,15 @@ Valider les informations pour le nouveau traitement
     Wait Until Page Contains    VALIDER
     Click Element    ${button_valider}
 
-Sélectionner un articles
+Afficher Liste des articles
     Wait Until Page Contains    fr.satelix.logistique:id/input_text_recherche  
-    Click Element    ${liste_articles}  
+    Click Element    ${liste_articles} 
+
+Choisir Article    
+    [Arguments]    ${article}
+    Swipe Down    ${article}
+    Wait Until Page Contains    ${article}
+    Click Text    ${article} 
 
 
 
