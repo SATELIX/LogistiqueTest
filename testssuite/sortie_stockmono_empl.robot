@@ -19,14 +19,14 @@ ${liste_articles}       //android.widget.ImageButton[@content-desc="Liste des ar
 *** Test Cases ***
 Test De L Application
     Demarrer Une Application    fr.satelix.logistique
-    Swipe Down    Sortie Stock Mono
+    Swipe Down    //android.widget.TextView[@resource-id="fr.satelix.logistique:id/item_nom_module" and @text="Sortie Stock mono empl"]
     Sélectionner le module Sortie mono empl
     Affiche sélection dépot d origine la date et la reference
     Sélectionner le dépôt origine Bijou SA 
     Sélectionner référence doc
     Valider les informations pour le nouveau traitement
     Afficher Liste des articles
-    Choisir Article    CHAOR42 
+    Choisir Article    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Chaînes mailles fines"]/android.view.ViewGroup 
 
 *** Keywords ***
 Demarrer Une Application
@@ -50,10 +50,10 @@ Scroll To Sortie Stock Mono
     Scroll Down    xpath=//android.widget.TextView[@resource-id="fr.satelix.logistique:id/item_nom_module" and @text="Sortie Stock Mono"]
  
 Sélectionner le module Sortie mono empl      
-    Click Text    Sortie Stock Mono
+    Click Text    Sortie Stock mono empl
  
 Affiche sélection dépot d origine la date et la reference    # vérifie que la page s'affiche: Sortie de stock - Sélection dépot d'origine, la date et la référence
-    Wait Until Page Contains    text=Sortie Stock Mono
+    Wait Until Page Contains    text=Sortie Stock mono empl
     Wait Until Element Is Visible    accessibility_id=Sélectionner une date
     Wait Until Page Contains    Saisi référence doc
 
@@ -69,10 +69,10 @@ Sélectionner référence doc
 
 Swipe Down
     [Arguments]    ${element}
-    FOR    ${counter}    IN RANGE    0    5
+    FOR    ${counter}    IN RANGE    0    10
         ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}    timeout=1s
-        Swipe    0    495    0    100    500
         IF    ${status}    BREAK
+        Swipe    0    495    0    100    500
     END
 
 Valider les informations pour le nouveau traitement
@@ -86,9 +86,9 @@ Afficher Liste des articles
 
 Choisir Article    
     [Arguments]    ${article}
-    Swipe Down    ${article}
-    Wait Until Page Contains    ${article}
-    Click Text    ${article} 
+    Swipe Down     ${article}
+    Wait Until Element Is Visible    ${article}
+    Click Element    ${article} 
 
 
 
