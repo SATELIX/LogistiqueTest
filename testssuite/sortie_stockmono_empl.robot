@@ -17,6 +17,7 @@ ${button_valider}       fr.satelix.logistique:id/fab_valider
 ${liste_articles}       //android.widget.ImageButton[@content-desc="Liste des articles"]
 ${button_finaliser}     fr.satelix.logistique:id/fab_quitter
 ${module_sortie_mono_empl}    //android.widget.TextView[@resource-id="fr.satelix.logistique:id/item_nom_module" and @text="Sortie Stock mono empl"]
+${CHAOR42}               //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Chaînes mailles fines"]/android.view.ViewGroup
  
 *** Test Cases ***
 Test De L Application
@@ -28,7 +29,7 @@ Test De L Application
     Sélectionner référence doc    test
     Valider les informations pour le nouveau traitement
     Afficher Liste des articles
-    Choisir Article    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Chaînes mailles fines"]/android.view.ViewGroup
+    Choisir Article    ${CHAOR42}
     Valider Quantite    2
     Sélectionner l Article a la Main    LINGOR18
     Saisir le Numéro de logistique    Lot-10
