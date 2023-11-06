@@ -15,17 +15,17 @@ ${appPackage}           fr.satelix.logistique
 ${appActivity}          fr.satelix.logistique.activities.MainActivity
 ${button_valider}       fr.satelix.logistique:id/fab_valider
 ${liste_articles}       //android.widget.ImageButton[@content-desc="Liste des articles"]
-@{cardview_elements}    //androidx.recyclerview.widget.RecyclerView[@resource-id="fr.satelix.logistique:id/rv_liste"]
 ${button_finaliser}     fr.satelix.logistique:id/fab_quitter
+${module_sortie_mono_empl}    //android.widget.TextView[@resource-id="fr.satelix.logistique:id/item_nom_module" and @text="Sortie Stock mono empl"]
  
 *** Test Cases ***
 Test De L Application
     Demarrer Une Application    fr.satelix.logistique
-    Swipe Down    //android.widget.TextView[@resource-id="fr.satelix.logistique:id/item_nom_module" and @text="Sortie Stock mono empl"]
+    Swipe Down    ${module_sortie_mono_empl}
     Sélectionner le module Sortie mono empl
     Affiche sélection dépot d origine la date et la reference
     Sélectionner le dépôt origine Bijou SA 
-    Sélectionner référence doc
+    Sélectionner référence doc    test
     Valider les informations pour le nouveau traitement
     Afficher Liste des articles
     Choisir Article    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Chaînes mailles fines"]/android.view.ViewGroup
@@ -50,7 +50,7 @@ Test De L Application
     Valider Quantite    2
     Finaliser
     Valider
-    
+
 *** Keywords ***
 Demarrer Une Application
     [Documentation]    ce que fait le mot clé
@@ -89,9 +89,10 @@ Sélectionner le dépôt origine Bijou SA
     Click Text    Bijou SA  True
 
 Sélectionner référence doc
+    [Arguments]    ${reference}
     Wait Until Element Is Visible    xpath=//android.widget.EditText[@text="Saisi référence doc"]
     Click Element    xpath=//android.widget.EditText[@text="Saisi référence doc"]
-    Input Text Into Current Element    test
+    Input Text Into Current Element    ${reference}
 
 Swipe Down
     [Arguments]    ${element}
@@ -140,7 +141,6 @@ Saisir le Numéro de logistique
 
 Sélectionner le Lot avec DLC et FAB
     Wait Until Element Is Visible    //androidx.recyclerview.widget.RecyclerView[@resource-id="fr.satelix.logistique:id/rv_liste"]
-    #Wait Until Element Is Visible    (//android.view.ViewGroup[@content-desc="Sélectionner le numéro de lot LOT-10"])[2]
     Click Text    DLC : 24/03/2023
 
 Scanner code barre
