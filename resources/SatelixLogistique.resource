@@ -66,7 +66,7 @@ Demarrer L Application
     ...    appActivity=${appActivity}
     ...    autoGrantPermissions=true
     ...    noReset=true
-    ...    fullReset=false
+    # ...    fullReset=false
     # ...    platformVersion=${platformVersion}
     # ...    udid=${deviceUdid}
     # ...    app=${app}
@@ -84,7 +84,7 @@ Valider L Ajout D Un Dossier
         Ajouter Un Dossier
     END
     AppiumLibrary.Page Should Not Contain Element    ${FENETRE_VALIDATION_AJOUT}
-    
+
 Choisir Le Dossier    
     [Documentation]    Au démarage de l'application, l'utilisateur doit choisir le dossier 
     ...                sur le quel il veut travailler.
@@ -97,8 +97,23 @@ Choisir Le Dossier
     ...    Ajouter Un Dossier
     AppiumLibrary.Click Text    ${Dossier}
 
+Revenir Au Choix Des Dossiers
+    [Documentation]    Ce mot clé permet de reveni sur l'écran de choix du dossier. 
+    ...   cela suppose qu'en fin de test, l'application se trouve sur l'écran desd'accueil ou news
+    AppiumLibrary.Click Element    //*[@content-desc="Menu"]/android.widget.ImageView
+    AppiumLibrary.Click Element    id=icon_deconnexion 
+    AppiumLibrary.Go Back 
+    AppiumLibrary.Click Element    id=bt_liste_dossiers 
+
 Se Connecter Au Dossier
     AppiumLibrary.Wait Until Page Contains Element   ${INPUT_LOGIN}    6s    
     ...    La page de Login ne s'est pas affichée dans les 6 secondes.
     AppiumLibrary.Input Text       ${INPUT_LOGIN}    ${LOGIN}
     AppiumLibrary.Click Element    ${BUTTON_LOGIN}    
+
+Fermer L Application
+    AppiumLibrary.Close All Applications
+
+Revenir Au Choix Des Dossiers Et Fermer Les Applications
+    Revenir Au Choix Des Dossiers
+    Fermer L Application
