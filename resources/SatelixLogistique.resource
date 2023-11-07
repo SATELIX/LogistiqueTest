@@ -66,11 +66,12 @@ Demarrer L Application
     ...    appActivity=${appActivity}
     ...    autoGrantPermissions=true
     ...    noReset=true
+
     # ...    fullReset=false
     # ...    platformVersion=${platformVersion}
     # ...    udid=${deviceUdid}
     # ...    app=${app}
-    AppiumLibrary.Activate Application    ${appPackage}
+    # AppiumLibrary.Activate Application    ${appPackage}
 
 Ajouter Un Dossier 
     [Documentation]    Ce mot clé tente d'ajouter un dossier à l'application
