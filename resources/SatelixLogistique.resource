@@ -34,7 +34,7 @@ ${BOUTON_AJOUTER_DOSSIER}     id=fab_ajout_config
 ${FENETRE_VALIDATION_AJOUT}   content
 ${BOUTON_VALIDATION_AJOUT}    button1
 
-${LOGIN}                      AURELIEN
+${LOGIN}                      QUENTIN    # AURELIEN
 ${PASSWORD}
 
 ${listederoulante_logins}     //android.widget.ImageButton[@content-desc="Show drop-down menu"]
