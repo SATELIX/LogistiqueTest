@@ -71,7 +71,6 @@ Preparer Les Articles Du Document Avec Le Lecteur CodeBarre
         Preparer Les Quantités De L Article  ${reference}    ${nomArticle}    ${Qte_restante}
     END
 
-
 Lire La Quantite Demandee Pour Le Premier Article
     [Documentation]     Ce mot clé prend le Premier Article de la liste 
     ...                 récupère la quantité Affichée et renvoie la quantité 
