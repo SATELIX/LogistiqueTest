@@ -8,6 +8,7 @@ Resource    utils.resource
 
 *** Variables ***
 
+${TITRE_MODULE}          id=tv_intitule_modules
 ${DOCUMENTS_AFFCIHES}    id=tv_item_doc_html
 
 #

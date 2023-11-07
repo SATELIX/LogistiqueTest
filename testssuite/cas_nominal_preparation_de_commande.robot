@@ -25,7 +25,7 @@ Test Teardown   Revenir Au Choix Des Dossiers Et Fermer Les Applications
 *** Test Cases ***
 Cas Nominal De Preparation De Commande
     [Tags]    sans_codebarre
-	Choisir le module Peparation
+	Choisir Le Module Dans La Liste Des Modules    ${module}
 	Choisir Le Document A Preparer Dans La Liste Des Documents     ${document}
 	Preparer Les Articles Du document
 	Cliquer sur le bouton de finalisation
@@ -39,7 +39,7 @@ Cas Nominal De Preparation De Commande
 
 Cas Nominal De Preparation De Commande Avec Lecteur Code-Barres
     [Tags]    avec_codebarre
-	Choisir le module Peparation
+	Choisir Le Module Dans La Liste Des Modules    ${module}
 	Choisir Le Document A Preparer Dans La Liste Des Documents    ${document}
 	Preparer Les Articles Du Document Avec Le Lecteur CodeBarre
 	Cliquer sur le bouton de finalisation

@@ -8,7 +8,6 @@ Documentation    Ce fichier de ressources contient les mots clé robot
 ...    <BR> La correspondances de KEYCODE peut se retrouver à la page :
 ...    https://developer.android.com/reference/android/view/KeyEvent
 
-
 Library    OperatingSystem
 Library    String
 Library    AppiumLibrary
@@ -34,12 +33,13 @@ Resource   SatelixLogistique.resource
 ...    select=109 
 ...    ctrl=4096
 ...    enter=66
+...    app_switch=187
 
 *** Keywords ***
-Press ENTER
-    AppiumLibrary.Press Keycode    ${KEYCODES}[enter]
+Switch App
+    AppiumLibrary.Press Keycode    keycode${KEYCODES}[app_switch]
 
-Press RIGHT ARROW
+Press ENTER
     AppiumLibrary.Press Keycode    ${KEYCODES}[enter]
     
 Taper Un Nombre Au Clavier   
@@ -60,8 +60,6 @@ Supprimer Un Nombre Au Clavier
     ...    et qui envoie le KeyCode pour chaque chiffre correpsondant.
     AppiumLibrary.Press Keycode     ${KEYCODES}[del]    ${KEYCODES}[ctrl]
 
-
-
 Lire La Quantite Restante A Preparer
     [Documentation]     Ce mot clé prend la quantié à préparer 
     ...                 qui est un texte au format QtyRestante/QtyTotale
@@ -69,7 +67,6 @@ Lire La Quantite Restante A Preparer
     [Arguments]  ${Quantite}
     ${QtyRestante}=    Split String    ${Quantite}    /
     RETURN    ${QtyRestante}[0]
-
 
 Lire Les Variables Du Tests Et Demarrer L Application
     Lire Les Variables De Tests
@@ -82,12 +79,13 @@ Lire Les Variables De Tests
 
 Lire Les Jeux De Donnees
     [Documentation]    TODO 
-	${module}=           Get Param           DS_module             Preparation
+	${module}=           Get Param           DS_module             Preparation   # Picking Multi Empl
 	${document}=         Get Param           DS_document           PL000002
     ${articles}=         Get Param           DS_articles           0012;0013;0015
     ${lot}=              Get Param           DS_lots               L947652;231;L741852
     ${poids}=            Get Param           DS_poids              34.5
     ${modeExpedition}=   Get Param           DS_modeExpedition     TNT
+	Set Test Variable    ${module}           ${module}
 	Set Test Variable    ${document}         ${document}
 	Set Test Variable    ${lot}              ${lot}
 	Set Test Variable    ${articles}         ${articles}
@@ -99,17 +97,18 @@ Lire Les Variables D Environnement
     ...    variables pa défaut.   
  	${platformVersion}=    Get Environment Variable    ANDROIDVERSION	9.0     # 10.0    # 9.0    # 12.0    # 
 	${app}=                Get Environment Variable    APP              D:${/}SATELIX${/}app${/}Logistique-demo-release-1.0.34 141.apk
-	${appPackage}=         Get Environment Variable    APPPACKAGE	    fr.satelix.logistique.demo    #fr.satelix.logistique
+	${appPackage}=         Get Environment Variable    APPPACKAGE	    fr.satelix.logistique   #.demo    #fr.satelix.logistique
 	${appActivity}=        Get Environment Variable    APPACTIVTY	    fr.satelix.logistique.activities.MainActivity
-	${deviceUdid}=         Get Environment Variable    UDID	    42005819e4569431     #    emulator-5558    #    # emulator-5556    # 
-	Set Test Variable    ${platformVersion}    ${platformVersion}
-	Set Test Variable    ${app}                ${app}	
-	Set Test Variable    ${appPackage}         ${appPackage}
-	Set Test Variable    ${appActivity}        ${appActivity}
-	Set Test Variable    ${deviceUdid}         ${deviceUdid} 
-
-	${dossier}=          Get Environment Variable    DOSSIER	    DemoSatelix   # LogistiqueV2Test
-	Set Test Variable    ${dossier}         ${dossier} 
+	# ${appActivity}=        Get Environment Variable    APPACTIVTY	    fr.satelix.logistique.activities.dossiers.DossierActivity
+	# ${appActivity}=        Get Environment Variable    APPACTIVTY	    fr.satelix.logistique.activities.identification.IdentificationActivity
+	${deviceUdid}=         Get Environment Variable    UDID	            42005819e4569431     #    emulator-5558    #    # emulator-5556    # 
+	${dossier}=            Get Environment Variable    DOSSIER	        LogistiqueV2Test   #DemoSatelix   # LogistiqueV2Test
+	Set Test Variable      ${platformVersion}    ${platformVersion}
+	Set Test Variable      ${app}                ${app}	
+	Set Test Variable      ${appPackage}         ${appPackage}
+	Set Test Variable      ${appActivity}        ${appActivity}
+	Set Test Variable      ${deviceUdid}         ${deviceUdid} 
+	Set Test Variable      ${dossier}            ${dossier} 
 
 Scanner Un Code
     [Documentation]    Ce mot clé simule un scanner en appelant l'intent fr.satelix.logistique.scan
