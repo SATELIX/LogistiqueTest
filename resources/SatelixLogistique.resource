@@ -119,24 +119,24 @@ Se Connecter Au Dossier
     AppiumLibrary.Input Text       ${INPUT_LOGIN}    ${LOGIN}
     AppiumLibrary.Click Element    ${BUTTON_LOGIN}    
 
-Revenir Au Choix Des Dossiers
-    [Documentation]    Ce mot clé permet de reveni sur l'écran de choix du dossier. 
-    ...   cela suppose qu'en fin de test, l'application se trouve sur l'écran desd'accueil ou news
-    AppiumLibrary.Click Element    //*[@content-desc="Menu"]/android.widget.ImageView
-    AppiumLibrary.Click Element    id=icon_deconnexion 
-    AppiumLibrary.Go Back 
-    AppiumLibrary.Click Element    id=bt_liste_dossiers 
+# Revenir Au Choix Des Dossiers
+#     [Documentation]    Ce mot clé permet de reveni sur l'écran de choix du dossier. 
+#     ...   cela suppose qu'en fin de test, l'application se trouve sur l'écran desd'accueil ou news
+#     AppiumLibrary.Click Element    //*[@content-desc="Menu"]/android.widget.ImageView
+#     AppiumLibrary.Click Element    id=icon_deconnexion 
+#     AppiumLibrary.Go Back 
+#     AppiumLibrary.Click Element    id=bt_liste_dossiers 
     # Switch App
-    AppiumLibrary.Close Application
+    # AppiumLibrary.Close Application
 
-Fermer L Application
-    ${id}=    AppiumLibrary.Get Appium SessionId
-    AppiumLibrary.Stop Application    ${id}
+# Fermer L Application
+#     ${id}=    AppiumLibrary.Get Appium SessionId
+#     AppiumLibrary.Stop Application    ${id}
     # Switch App
     # AppiumLibrary.Close All Applications
 
-Revenir Au Choix Des Dossiers Et Fermer Les Applications
-    AppiumLibrary.Start Activity    ${appPackage}    fr.satelix.logistique.activities.dossiers.DossierActivity
-    # fr.satelix.logistique.activities.identification.IdentificationActivity
-    Revenir Au Choix Des Dossiers
-    Fermer L Application
+# Revenir Au Choix Des Dossiers Et Fermer Les Applications
+#     AppiumLibrary.Start Activity    ${appPackage}    fr.satelix.logistique.activities.dossiers.DossierActivity
+#     # fr.satelix.logistique.activities.identification.IdentificationActivity
+#     Revenir Au Choix Des Dossiers
+#     Fermer L Application
