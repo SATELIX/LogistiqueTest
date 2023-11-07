@@ -12,7 +12,7 @@ Documentation
 
 Library    AppiumLibrary
 # Resource   ${CURDIR}/../resources/utils.resource
-Resource   ${CURDIR}/../resources/page_accueil.resource
+# Resource   ${CURDIR}/../resources/page_accueil.resource
 Resource   ${CURDIR}/../resources/module_preparation.resource
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 
