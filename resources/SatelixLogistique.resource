@@ -70,7 +70,8 @@ Demarrer L Application
     # ...    platformVersion=${platformVersion}
     # ...    udid=${deviceUdid}
     # ...    app=${app}
-        
+    AppiumLibrary.Activate Application    ${appPackage}
+
 Ajouter Un Dossier 
     [Documentation]    Ce mot clé tente d'ajouter un dossier à l'application
     ...    en scannant le QR code correpsondant
