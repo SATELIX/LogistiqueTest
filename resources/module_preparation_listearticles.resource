@@ -157,7 +157,6 @@ Choisir Le Premier Article De La Liste A Preparer
     AppiumLibrary.Wait Until Element Is Visible       ${ARTICLES_VISIBLES_DE_LA LISTE}
     AppiumLibrary.Click Element    ${ARTICLES_VISIBLES_DE_LA LISTE}
     
-
 Choisir L Article A Preparer
     [Documentation]    Ce mot clé clique sur l'element CardView de l'article donné en 
     ...               argument

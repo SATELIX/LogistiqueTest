@@ -27,16 +27,17 @@ ${BOUTON_OK_MESSAGE_ERREUR}          id=android:id/button1
 Preparer Les Quantités De L Article
     [Documentation]    Vérifie que les données affichées sont identiques
     ...    à celles passées en argument.
-    ...    <BR> vérifie que le stock est supérieur à la quantité demandée
-    ...    <BR> choisit les lot avec la bonne quantité
-    ...    <BR> 
+    ...    \n vérifie que le stock est supérieur à la quantité demandée
+    ...    \n choisit les lot avec la bonne quantité
+    ...    \n si il n'y a pas de notion de lot sur l'article donné, le mot clé entre la quantité directement.
     [Arguments]    ${Lot}    ${nomArticle}    ${quantite}
     Le Lot Choisi Est Bien Celui Demandé    ${Lot}
     L Article Choisi Est Bien Celui Demandé    ${nomArticle}
-    Afficher Les Lots Disponibles
-    Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité   ${quantite}
+    # Si il n'y a pas de gestion de lot, on entre directmeent la quantité
+    ${status}=    Run Keyword And Return Status    Afficher Les Lots Disponibles
+    Run Keyword If    ${status}    
+    ...    Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité   ${quantite}
     Entrer la quantité complète à préparer et valider    ${quantite}
-
 
 L Article Choisi Est Bien Celui Demandé
     [Documentation]    Compare le nom de l'article affiché qui doit être
