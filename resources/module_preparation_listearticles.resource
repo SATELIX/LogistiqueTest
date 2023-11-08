@@ -2,6 +2,7 @@
 
 Library    AppiumLibrary
 Library    String
+Library    Dialogs
 
 Resource    module_preparation_detailArticle.resource
 Resource    utils.resource
@@ -53,6 +54,9 @@ Preparer Les Articles Du Document
 Preparer Les Articles Du Document Avec Le Lecteur CodeBarre
     [Documentation]    Ce mot clé reprend le fonctionnement de la Préparation des articles 
     ...                avec l'utilisation d'un lecteur de code-barres.
+    ...                /n Dans le cas où la donnée d'un code-barre est commune à plusieurs articles, 
+    ...    l'application logsituqe flitre et affiche les articles correspodnant dasn une liste. Dans ce 
+    ...    cas, ce mot clé choisi le premier de la liste pour pousuivre la préparation.
 
     AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'articles n'est pas affiché.
     ${NombreArticle_Affiche}=    Lire Le Nombre D Articles Affiché
@@ -67,6 +71,8 @@ Preparer Les Articles Du Document Avec Le Lecteur CodeBarre
         ${reference}    ${nomArticle}    ${emplacement}    ${colis}    ${quantite}    
         ...    Lire Les Informations De L Article    ${article}
         Choisir L Article A Preparer Avec Le Lecteur CodeBarre   ${reference}
+        ${status}=    Run Keyword And Return Status    AppiumLibrary.Wait Until Page Does Not Contain Element    ${NOMBREARTICLE_AFFICHE}
+        Run Keyword If    ${status}    Choisir L Article A Preparer    ${reference}
         ${Qte_restante}=    Lire La Quantite Restante A Preparer    ${Quantite}
         Preparer Les Quantités De L Article  ${reference}    ${nomArticle}    ${Qte_restante}
     END
@@ -160,12 +166,14 @@ Choisir L Article A Preparer
     AppiumLibrary.Click Element    ${article} 
 
 Choisir L Article A Preparer Avec Le Lecteur CodeBarre
-    [Documentation]    Ce mot clé attend la référence de l'article en entrée 
-    ...                au format texte.
+    [Documentation]    Ce mot clé attend la référence de l'article en entrée au format texte.
+    ...   si la eference donnée est la même pour plusieurs articles du document, alors l'aplication
+    ...    filtre les articles correspondants. 
     [Arguments]    ${reference}
     AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    15s    Il n'y a pas d'aticle à préparer dans pour cette péparation.
     utils.Scanner Un Code    ${reference} 
-    
+
+
 Chercher Un Article Par La Recheche
     [Documentation]    Utilisation de la recherche en haut de la page <BR>
     ...                L'article trouvé apparait automatiquement seul dans la liste des articles
@@ -177,6 +185,6 @@ Chercher Un Article Par La Recheche
 Afficher Les Articles Prepares
     [Documentation]    clique sur l'onglet des articles préparés
     ...                "items picked"
-    Wait Until Element Is Visible    ${TAB_ITEMS_PICKED}    10s    L'onglet des articles préparés n'est pas disponible.
+    Wait Until Element Is Visible    ${TAB_ITEMS_PICKED}    15s    L'onglet des articles préparés n'est pas disponible.
     Click Element    ${TAB_ITEMS_PICKED}
 

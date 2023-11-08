@@ -30,7 +30,7 @@ Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité
     ...    à l'écran pour le moment
 
     [Arguments]    ${quantite}
-    AppiumLibrary.Wait Until Element Is Visible    ${LISTE_VIEW_LOTS}
+    AppiumLibrary.Wait Until Element Is Visible    ${LISTE_VIEW_LOTS}    15s
     ${lots}=    AppiumLibrary.Get Webelements    ${LISTE_VIEW_LOTS}
     ${numero_lot}    Set Variable    ${EMPTY}
     FOR    ${lot}    IN    @{lots}

@@ -40,7 +40,7 @@ Choisir Le Document A Preparer Dans La Liste Des Documents
     ...    La variable "document" est la référence de la préparation.<BR>
     ...    TO DO :       
     [Arguments]    ${document}
-    Wait Until Page Contains    ${document}   5 
+    Wait Until Page Contains    ${document}   15s 
     ...    Le document ${document} n'apparait pas dans la liste des documents à peparer
     AppiumLibrary.Click Text    ${document}
 

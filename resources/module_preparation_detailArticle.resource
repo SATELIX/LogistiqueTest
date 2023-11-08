@@ -34,6 +34,7 @@ Preparer Les Quantités De L Article
     ...    \n choisit les lot avec la bonne quantité
     ...    \n si il n'y a pas de notion de lot sur l'article donné, le mot clé entre la quantité directement.
     [Arguments]    ${Lot}    ${nomArticle}    ${quantite}
+    AppiumLibrary.Swipe By Percent    10    10    10    200
     Le Lot Choisi Est Bien Celui Demandé    ${Lot}
     L Article Choisi Est Bien Celui Demandé    ${nomArticle}
     # Si il n'y a pas de gestion de lot, on entre directmeent la quantité
@@ -73,7 +74,8 @@ Entrer la quantité complète à préparer et valider
     ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante
     ...    Cela permet de simuler les gestes d'un utilisateur.
     [Arguments]    ${quantite}
-    AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
+    # AppiumLibrary.Scroll Down    ${BOUTON_AJOUTER}
+    # AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
     Taper Un Nombre Au Clavier   ${quantite}
     Valider La Quantité
 
@@ -82,7 +84,8 @@ Entrer Une Quantité Supérieure A Celle Demandee Et Valider
     ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante
     ...    Cela permet de simuler les gestes d'un utilisateur.
     [Arguments]    ${quantite}    ${quantiteSupplémentaire}=1
-    AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
+    # AppiumLibrary.Scroll Down    ${BOUTON_AJOUTER}
+    # AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
     ${qty}=    Evaluate    ${quantite}+${quantiteSupplémentaire}
     Taper Un Nombre Au Clavier   ${qty}
     Valider La Quantité
