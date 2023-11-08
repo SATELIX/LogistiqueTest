@@ -18,7 +18,7 @@ Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 
 Suite Setup     Set Log Level    TRACE
 Test Setup      Lire Les Variables Du Tests Et Demarrer L Application
-Test Teardown   AppiumLibrary.Close Application
+Test Teardown   AppiumLibrary.Terminate Application    ${appPackage}
 
 *** Variables ***
 

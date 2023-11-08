@@ -8,14 +8,17 @@ Resource    utils.resource
 Resource    module_preparation_listelots.resource
 
 *** Variables ***
-${LAYOUT_HAUT}                      //androidx.appcompat.widget.LinearLayoutCompat/android.webkit.WebView/android.webkit.WebView/
-${TEXTE_LOT}                        ${LAYOUT_HAUT}android.widget.TextView[1]
-${TEXTE_NOM_ARTICLE}                ${LAYOUT_HAUT}android.widget.TextView[2]
-${BUTON_LISTE_DES_LOTS_EN_STOCK}    id=text_input_end_icon
+${LAYOUT_HAUT}                       //androidx.appcompat.widget.LinearLayoutCompat/android.webkit.WebView/android.webkit.WebView/
+${TEXTE_LOT}                         ${LAYOUT_HAUT}android.widget.TextView[1]
+${TEXTE_NOM_ARTICLE}                 ${LAYOUT_HAUT}android.widget.TextView[2]
+${BUTON_CHOIX_DES_LOTS}              id=ctn_saisie_num_lot_serie
+${BUTON_LISTE_DES_LOTS_EN_STOCK}     id=text_input_end_icon
 
 ${TEXT_STOCK_GLOBAL}                 id=tv_qte_stock
-${TEXT_QUANTITE_PREPAREE}           id=tv_qte_preparee
-${TEXT_QUANTITE_VALIDEE}            id=tv_qte_validee
+
+${ZONE_GESTION_QUANTITE}             id=layout_quantite
+${TEXT_QUANTITE_PREPAREE}            id=tv_qte_preparee
+${TEXT_QUANTITE_VALIDEE}             id=tv_qte_validee
 
 ${BOUTON_AJOUTER}                    id=fab_ajouter
 
@@ -34,9 +37,11 @@ Preparer Les Quantités De L Article
     Le Lot Choisi Est Bien Celui Demandé    ${Lot}
     L Article Choisi Est Bien Celui Demandé    ${nomArticle}
     # Si il n'y a pas de gestion de lot, on entre directmeent la quantité
-    ${status}=    Run Keyword And Return Status    Afficher Les Lots Disponibles
-    Run Keyword If    ${status}    
-    ...    Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité   ${quantite}
+    ${status}=    Run Keyword And Return Status    Element Should Be Visible  ${BUTON_CHOIX_DES_LOTS}
+    IF    ${status}
+        Afficher Les Lots Disponibles
+        Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité   ${quantite}    
+    END
     Entrer la quantité complète à préparer et valider    ${quantite}
 
 L Article Choisi Est Bien Celui Demandé
