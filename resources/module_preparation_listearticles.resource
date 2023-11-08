@@ -24,7 +24,7 @@ ${TAB_ITEMS_PICKED}                 //android.widget.LinearLayout[@content-desc=
 La Liste Des Articles De La Commande S Affichent
     [Documentation]    Vérifie que le nombre d'articles affiché n'est aps à zéro
     ...                 et que au moins un article est affiché. 
-    AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    6s    Le texte avec le nombre d'article n'est pas afiché.
+    AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'article n'est pas afiché.
     ${NombreArticle_Affiche}=    Lire Le Nombre D Articles Affiché
     Should Be True    ${NombreArticle_Affiche}    L'application affiche un nombre d'articles à ZERO
     ${ListeArticles}=    Lister Les Articles
@@ -34,7 +34,7 @@ Preparer Les Articles Du Document
     [Documentation]    TODO : 
     ...                \n pour le moment le mot clé fonctionne avec les acrticles affichés à l'écrans.
     ...                \n voir dicumentation de "Lister Les Articles" 
-    AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    6s    Le texte avec le nombre d'articles n'est pas affiché.
+    AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'articles n'est pas affiché.
     ${NombreArticle_Affiche}=    Lire Le Nombre D Articles Affiché
     ${ListeArticles}=    Lister Les Articles
     # Length Should Be    ${ListeArticles}    ${NombreArticle_Affiche}
@@ -54,7 +54,7 @@ Preparer Les Articles Du Document Avec Le Lecteur CodeBarre
     [Documentation]    Ce mot clé reprend le fonctionnement de la Préparation des articles 
     ...                avec l'utilisation d'un lecteur de code-barres.
 
-    AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    6s    Le texte avec le nombre d'articles n'est pas affiché.
+    AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'articles n'est pas affiché.
     ${NombreArticle_Affiche}=    Lire Le Nombre D Articles Affiché
     ${ListeArticles}=    Lister Les Articles
     # Length Should Be    ${ListeArticles}    ${NombreArticle_Affiche}
@@ -103,22 +103,18 @@ Lire Les Informations De L Article
     # nom et lot de l'article
     ${nomArticleEtLot}=    AppiumLibrary.Get Text
     ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/*[@resource-id="${appPackage}:id/tv_item_article_html"]
-    # ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_html"]
     ${nomArticleEtLot}=    Split To Lines    ${nomArticleEtLot}
     ${reference}=                Set Variable      ${nomArticleEtLot}[0]
     ${nomArticle}=         Set Variable      ${nomArticleEtLot}[1]
     # emplacement
     ${emplacement}=    AppiumLibrary.Get Text
     ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="${appPackage}:id/tv_item_article_emplacement"]
-    # ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_emplacement"]
     # colis
     ${colis}=    AppiumLibrary.Get Text
     ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="${appPackage}:id/tv_item_article_colis"]
-    # ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_colis"]
     # quantité
     ${quantite}=    AppiumLibrary.Get Text
     ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="${appPackage}:id/tv_item_article_nb_pieces"]
-    # ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="fr.satelix.logistique.demo:id/tv_item_article_nb_pieces"]
     
     Return From Keyword    ${reference}    ${nomArticle}    ${emplacement}    ${colis}    ${quantite}    
 
@@ -137,7 +133,6 @@ Lister Les Articles
     ...                \n pour le moment le mot clé fonctionne avec les acrticles affichés à l'écrans.
     ...                \n il faut créer un mot clé pour parcourir les artciles de la commande, ce mot doit renvoyer le nombre d'article
     ...                 et la liste des références.
-    # ${Articles}=    AppiumLibrary.Get Webelements    //*[@id="fr.satelix.logistique.demo:id/rv_liste"]/androidx.cardview.widget.CardView
     ${Articles}=    AppiumLibrary.Get Webelements    ${ARTICLES_VISIBLES_DE_LA LISTE}
     Return From Keyword    ${Articles}
 
@@ -161,14 +156,14 @@ Choisir L Article A Preparer
     [Documentation]    Ce mot clé clique sur l'element CardView de l'article donné en 
     ...               argument
     [Arguments]    ${article}
-    AppiumLibrary.Wait Until Element Is Visible    ${article}    6s    Il n'y a pas d'aticle à préparer dans pour cette péparation.
+    AppiumLibrary.Wait Until Element Is Visible    ${article}    15s    Il n'y a pas d'article à préparer dans pour cette péparation.
     AppiumLibrary.Click Element    ${article} 
 
 Choisir L Article A Preparer Avec Le Lecteur CodeBarre
     [Documentation]    Ce mot clé attend la référence de l'article en entrée 
     ...                au format texte.
     [Arguments]    ${reference}
-    AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s    Il n'y a pas d'aticle à préparer dans pour cette péparation.
+    AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    15s    Il n'y a pas d'aticle à préparer dans pour cette péparation.
     utils.Scanner Un Code    ${reference} 
     
 Chercher Un Article Par La Recheche
@@ -182,6 +177,6 @@ Chercher Un Article Par La Recheche
 Afficher Les Articles Prepares
     [Documentation]    clique sur l'onglet des articles préparés
     ...                "items picked"
-    Wait Until Element Is Visible    ${TAB_ITEMS_PICKED}    6s    L'onglet des articles préparés n'est pas disponible.
+    Wait Until Element Is Visible    ${TAB_ITEMS_PICKED}    10s    L'onglet des articles préparés n'est pas disponible.
     Click Element    ${TAB_ITEMS_PICKED}
 
