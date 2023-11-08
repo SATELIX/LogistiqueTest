@@ -72,7 +72,7 @@ Preparer Les Articles Du Document Avec Le Lecteur CodeBarre
         ...    Lire Les Informations De L Article    ${article}
         Choisir L Article A Preparer Avec Le Lecteur CodeBarre   ${reference}
         ${status}=    Run Keyword And Return Status    AppiumLibrary.Wait Until Page Does Not Contain Element    ${NOMBREARTICLE_AFFICHE}
-        Run Keyword If    ${status}    Choisir L Article A Preparer    ${reference}
+        Run Keyword If    ${status} == ${False}    Choisir L Article A Preparer    ${reference}
         ${Qte_restante}=    Lire La Quantite Restante A Preparer    ${Quantite}
         Preparer Les Quantités De L Article  ${reference}    ${nomArticle}    ${Qte_restante}
     END
