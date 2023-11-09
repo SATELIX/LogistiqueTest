@@ -34,7 +34,7 @@ Preparer Les Quantités De L Article
     ...    \n choisit les lot avec la bonne quantité
     ...    \n si il n'y a pas de notion de lot sur l'article donné, le mot clé entre la quantité directement.
     [Arguments]    ${Lot}    ${nomArticle}    ${quantite}
-    AppiumLibrary.Swipe By Percent    10    10    10    200
+    AppiumLibrary.Swipe By Percent    10    10    10    80
     Le Lot Choisi Est Bien Celui Demandé    ${Lot}
     L Article Choisi Est Bien Celui Demandé    ${nomArticle}
     # Si il n'y a pas de gestion de lot, on entre directmeent la quantité

@@ -26,8 +26,8 @@ La Liste Des Articles De La Commande S Affichent
     [Documentation]    Vérifie que le nombre d'articles affiché n'est aps à zéro
     ...                 et que au moins un article est affiché. 
     AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'article n'est pas afiché.
-    ${NombreArticle_Affiche}=    Lire Le Nombre D Articles Affiché
-    Should Be True    ${NombreArticle_Affiche}    L'application affiche un nombre d'articles à ZERO
+    ${NombreArticle_lu}=    Lire Le Nombre D Articles Affiché
+    Should Be True    ${NombreArticle_lu}    L'application affiche un nombre d'articles à ZERO
     ${ListeArticles}=    Lister Les Articles
     Should Be True    ${ListeArticles}    Aucun article n'est affiché à l'écran.
 
@@ -36,11 +36,11 @@ Preparer Les Articles Du Document
     ...                \n pour le moment le mot clé fonctionne avec les acrticles affichés à l'écrans.
     ...                \n voir dicumentation de "Lister Les Articles" 
     AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'articles n'est pas affiché.
-    ${NombreArticle_Affiche}=    Lire Le Nombre D Articles Affiché
+    ${NombreArticle_lu}=    Lire Le Nombre D Articles Affiché
     ${ListeArticles}=    Lister Les Articles
-    # Length Should Be    ${ListeArticles}    ${NombreArticle_Affiche}
+    # Length Should Be    ${ListeArticles}    ${NombreArticle_lu}
 
-    FOR    ${index}    IN RANGE    ${NombreArticle_Affiche}
+    FOR    ${index}    IN RANGE    ${NombreArticle_lu}
         AppiumLibrary.Wait Until Page Contains Element    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
         AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
         ${article}=     AppiumLibrary.Get Webelement   ${ARTICLES_VISIBLES_DE_LA LISTE}
@@ -59,11 +59,11 @@ Preparer Les Articles Du Document Avec Le Lecteur CodeBarre
     ...    cas, ce mot clé choisi le premier de la liste pour pousuivre la préparation.
 
     AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'articles n'est pas affiché.
-    ${NombreArticle_Affiche}=    Lire Le Nombre D Articles Affiché
+    ${NombreArticle_lu}=    Lire Le Nombre D Articles Affiché
     ${ListeArticles}=    Lister Les Articles
-    # Length Should Be    ${ListeArticles}    ${NombreArticle_Affiche}
+    # Length Should Be    ${ListeArticles}    ${NombreArticle_lu}
 
-    FOR    ${index}    IN RANGE    ${NombreArticle_Affiche}
+    FOR    ${index}    IN RANGE    ${NombreArticle_lu}
         AppiumLibrary.Wait Until Page Contains Element    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
         AppiumLibrary.Wait Until Element Is Visible       ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
         Get Text    ${ARTICLES_VISIBLES_DE_LA LISTE}
@@ -72,7 +72,7 @@ Preparer Les Articles Du Document Avec Le Lecteur CodeBarre
         ...    Lire Les Informations De L Article    ${article}
         Choisir L Article A Preparer Avec Le Lecteur CodeBarre   ${reference}
         ${status}=    Run Keyword And Return Status    AppiumLibrary.Wait Until Page Does Not Contain Element    ${NOMBREARTICLE_AFFICHE}
-        Run Keyword If    ${status} == ${False}    Choisir L Article A Preparer    ${reference}
+        Run Keyword If    ${status}    Choisir L Article A Preparer    ${reference}
         ${Qte_restante}=    Lire La Quantite Restante A Preparer    ${Quantite}
         Preparer Les Quantités De L Article  ${reference}    ${nomArticle}    ${Qte_restante}
     END
