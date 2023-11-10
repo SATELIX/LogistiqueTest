@@ -19,6 +19,11 @@ ${DATE_LOT_EN_STOCK}    id=item_dates
 # ${DATE_LOT_EN_STOCK}    id=fr.satelix.logistique.demo:id/item_dates
 
 *** Keywords ***
+Choisir Le Lot    
+    [Arguments]    ${lot}
+    AppiumLibrary.Wait Until Page Contains Element    ${LOT_EN_STOCK}
+    AppiumLibrary.Click Text    ${lot}
+
 Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité
     [Documentation]    Ce mot clé parcours la liste des lots affichée 
     ...            lit les quantités de chaque lot et vérifie qu'elle 

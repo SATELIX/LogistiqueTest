@@ -21,6 +21,9 @@ ${ARTICLES_VISIBLES_DE_LA LISTE}    id=tv_item_article_html
 
 ${TAB_ITEMS_PICKED}                 //android.widget.LinearLayout[@content-desc="Items picked"]
 
+# La pastille colis avec le petit carton}    id=tv_item_article_nb_pieces
+${PASTILLE_COLIS}                   id=tv_item_article_nb_pieces
+
 *** Keywords ***
 La Liste Des Articles De La Commande S Affichent
     [Documentation]    Vérifie que le nombre d'articles affiché n'est aps à zéro
@@ -188,3 +191,7 @@ Afficher Les Articles Prepares
     Wait Until Element Is Visible    ${TAB_ITEMS_PICKED}    15s    L'onglet des articles préparés n'est pas disponible.
     Click Element    ${TAB_ITEMS_PICKED}
 
+Appuyer Sur La Pastille Colis Avec Le Petit Carton
+    AppiumLibrary.Wait Until Page Contains Element    ${PASTILLE_COLIS}
+    AppiumLibrary.Click Element                       ${PASTILLE_COLIS}
+    

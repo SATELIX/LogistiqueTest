@@ -69,6 +69,11 @@ Afficher Les Lots Disponibles
     AppiumLibrary.Wait Until Page Contains Element    ${BUTON_LISTE_DES_LOTS_EN_STOCK}
     Click Element    ${BUTON_LISTE_DES_LOTS_EN_STOCK}
 
+Entrer une quantité et valider
+    [Arguments]    ${quantite}
+    Taper Un Nombre Au Clavier   ${quantite}
+    Valider La Quantité
+
 Entrer la quantité complète à préparer et valider
     [Documentation]    Ce mot clé prend un nombre en entrée 
     ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante
@@ -79,6 +84,11 @@ Entrer la quantité complète à préparer et valider
     Taper Un Nombre Au Clavier   ${quantite}
     Valider La Quantité
 
+Saisir une valeur et valider
+    [Arguments]    ${valeur}
+    AppiumLibrary.Input Text Into Current Element    ${valeur}
+    utils.Press ENTER
+    
 Entrer Une Quantité Supérieure A Celle Demandee Et Valider
     [Documentation]    Ce mot clé prend un nombre en entrée 
     ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante
@@ -129,3 +139,21 @@ Lire La Quantite Restante A Preparer Dans Le Detail De L Article
     ${remaning}     AppiumLibrary.Get Text    ${TEXT_QUANTITE_PREPAREE}
     ${remaning}     utils.Lire La Quantite Restante A Preparer    ${remaning}
     RETURN    ${remaning}
+
+Sélectionner le conditionnement
+    [Arguments]    ${conditionnement}
+    AppiumLibrary.Click Element    //*[@id=bt_connexion and contains(text(, "${conditionnement}"))]
+
+Scanner le code barre correspondant au numéro de série
+    [Arguments]    ${numSerie}
+    utils.Scanner Un Code    ${numSerie}
+
+Effacer le numéro de série, ne rien mettre et valider
+    utils.Press ENTER
+    utils.Supprimer Un Nombre Au Clavier
+    utils.Press ENTER
+
+
+Appuyer sur "ok" et la "flèche retour"
+    utils.Press ENTER
+    AppiumLibrary.Go Back

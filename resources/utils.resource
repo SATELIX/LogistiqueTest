@@ -115,3 +115,6 @@ Scanner Un Code
     ...    prévu à cet effet.
     [Arguments]    ${text}
     Run    adb shell am broadcast -a fr.satelix.logistique.scan --es com.motorolasolutions.emdk.datawedge.data_string ${text}
+
+Appuyer sur la flèche retour
+    AppiumLibrary.Go Back
