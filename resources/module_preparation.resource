@@ -5,6 +5,7 @@ Documentation    ce fichier contient les mots clé nécessaires pour accéder au
 
 Library     AppiumLibrary
 Resource    utils.resource
+Resource    module_preparation_handlingUnit.resource
 
 *** Variables ***
 
@@ -26,6 +27,8 @@ ${BOUTON_TRANSFERT}              id=fab_quitter
 
 ${POPUP_VALIDATION_PREPA}        id=bt_quitter_module_valider_transfert
 ${POPUP_RETOUR_PREPA}            id=bt_quitter_module_annuler
+
+${BOUTON_TERMINER_SAISIE_INCOMLETE}     id=button1
 
 
 # content-desc=Validate and complete this entry
@@ -83,9 +86,27 @@ Cliquer Sur Le Bouton De Cloture
     AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_CLOTURE}
     AppiumLibrary.Click Element    ${BOUTON_CLOTURE}
 
+Entrer Le Poids Et Appuyer Sur Cloturer
+    [Arguments]     ${poids}
+    Entrer Le Poids Du Colis    ${poids}
+    Cliquer Sur Le Bouton De Cloture
+
 Laisser Le Mode D Envoi Par Defaut et Transférer
     AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_TRANSFERT}
     AppiumLibrary.Click Element    ${BOUTON_TRANSFERT}
+
+Valider Le Mode Expedition Sur     
+    [Arguments]    ${modeExpedition}
+    Choisir le mode d'expédition    ${modeExpedition}
+
+Appuyer sur Transferer
+    Cliquer Sur Le Bouton De Transfert
+
+
+Appuyer sur la flèche retour et "Finaliser"
+    Appuyer sur la flèche retour
+    Cliquer sur le bouton de finalisation
+
 
 Choisir le mode d'expédition et Transférer
     [Documentation]    choisi le mode d'expédition donné en argument dans la liste de l'écran 
@@ -101,32 +122,18 @@ Cliquer Sur Le Bouton De Transfert
 
 Choisir le mode d'expédition
     [Arguments]    ${modeExpedition}
-     AppiumLibrary.Click Element    ${BUTTON_LISTE_MODE_EXPEDITION}
-    Sleep    0.5s
-    AppiumLibrary.Press Keycode    62
-    AppiumLibrary.Press Keycode    20
-    Sleep    0.5s
-    AppiumLibrary.Log Source
-    AppiumLibrary.Press Keycode    20
-    Sleep    0.5s
-    AppiumLibrary.Press Keycode    20
-    Sleep    0.5s
-    AppiumLibrary.Press Keycode    278
-    ${value}=    AppiumLibrary.Press Keycode    279
-    Sleep    1s
-    AppiumLibrary.Press Keycode    66
-
-    # KEYCODE_ENTER   66
-    # KEYCODE_TAB    61
-    #KEYCODE_SPACE  62
-    # KEYCODE_ALT_RIGHT    58
-
-    # KEYCODE_COPY 278
-    # KEYCODE_PASTE 279
-    # KEYCODE_NAVIGATE_NEXT 261
-    # KEYCODE_NAVIGATE_IN	262
-    # KEYCODE_DPAD_DOWN    20    
+    #  AppiumLibrary.Click Element    ${BUTTON_LISTE_MODE_EXPEDITION}
+     AppiumLibrary.Wait Until Element Is Visible    id=dropdown_list
+     Choisir LA Valeur Dans La Liste    id=dropdown_list    ${modeExpedition}
 
 Valider La Préparation
     AppiumLibrary.Wait Until Element Is Visible    ${POPUP_VALIDATION_PREPA}
     AppiumLibrary.Click Element    ${POPUP_VALIDATION_PREPA}
+
+Appuyer sur Terminer La Saisie
+    [Documentation]    Lorsque la saise d'une préparation est incomplète,
+    ...                un message apparait pour le signaler et il faut appuye sur 
+    ...    le bouton qui porte la mention "Termine la saisie" pour finir la préparation
+    AppiumLibrary.Wait Until Element Is Visible    ${POPUP_VALIDATION_PREPA}
+    AppiumLibrary.Click Element    ${POPUP_VALIDATION_PREPA}
+

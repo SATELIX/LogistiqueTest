@@ -34,6 +34,33 @@ Resource   SatelixLogistique.resource
 ...    ctrl=4096
 ...    enter=66
 ...    app_switch=187
+...    A=29
+...    B=30
+...    C=31
+...    D=32
+...    E=33
+...    F=34
+...    G=35
+...    H=36
+...    I=37
+...    J=38
+...    K=39
+...    L=40
+...    M=41
+...    N=42
+...    O=43
+...    P=44
+...    Q=45
+...    R=46
+...    S=47
+...    T=48
+...    U=49
+...    V=50
+...    W=51
+...    X=52
+...    Y=53
+...    Z=54
+
 
 *** Keywords ***
 Switch App
@@ -52,6 +79,18 @@ Taper Un Nombre Au Clavier
     ${chiffres_a_taper}=    Split String To Characters    ${nombre}
     FOR    ${chiffre}    IN    @{chiffres_a_taper}
         AppiumLibrary.Press Keycode    ${KEYCODES}[${chiffre}]
+    END
+
+Taper Un Mot Au Clavier   
+    [Documentation]    Mot clé qui efface ce que contient la zone de texte
+    ...    qui boucle sur chaque chiffre (et point) du nombre passé en argument
+    ...    et qui envoie le KeyCode pour chaque chiffre correpsondant.
+    [Arguments]     ${mot}
+    Supprimer Un Nombre Au Clavier
+    ${mot}=    Convert To Upper Case    ${mot}
+    ${Lettres_a_taper}=    Split String To Characters    ${mot}
+    FOR    ${lettre}    IN    @{Lettres_a_taper}
+        AppiumLibrary.Press Keycode    ${KEYCODES}[${lettre}]
     END
 
 Supprimer Un Nombre Au Clavier
@@ -115,6 +154,20 @@ Scanner Un Code
     ...    prévu à cet effet.
     [Arguments]    ${text}
     Run    adb shell am broadcast -a fr.satelix.logistique.scan --es com.motorolasolutions.emdk.datawedge.data_string ${text}
+
+Choisir LA Valeur Dans La Liste
+    [Arguments]    ${identifiantListe}    ${valeurAchoisir}
+    FOR    ${counter}    IN RANGE    1    10
+        Log    ${counter}
+        ${valeurLue}    AppiumLibrary.Get Text    ${identifiantListe}
+        Exit For Loop If    "${valeurLue}" == "${valeurAchoisir}"
+        AppiumLibrary.Click Element    ${identifiantListe}
+        AppiumLibrary.Press Keycode    20    50   #KEYCODE_DPAD_DOWN    META_ALT_MASK
+        Repeat Keyword    ${counter}        AppiumLibrary.Press Keycode    20    #KEYCODE_DPAD_DOWN
+        Press ENTER
+    END
+    Fail    La valeur cherchée n'a pas été trouvée dans la liste
+
 
 Appuyer sur la flèche retour
     AppiumLibrary.Go Back

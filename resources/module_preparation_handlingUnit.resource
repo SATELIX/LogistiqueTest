@@ -6,19 +6,24 @@ Library    AppiumLibrary
 ${PASTILLE_PLUS}                   id=fab_ajout_colis
 
 *** Keywords ***
-Ajoute Un Colis
+Appuyer sur "+"
+    Ajouter Un Colis
+
+Ajouter Un Colis
     AppiumLibrary.Wait Until Page Contains Element    ${PASTILLE_PLUS}
     AppiumLibrary.Click Element                       ${PASTILLE_PLUS}
     
 Rester appuyé sur l unite logistique
     [Arguments]    ${nomHandlingUnit}
-    AppiumLibrary.Wait Until Page Contains Element    //*[contains(text(),${nomHandlingUnit})]
-    AppiumLibrary.Long Press                          //*[contains(text(),${nomHandlingUnit})]    3000
+    ${myUL}=    Set Variable    //android.widget.TextView[@text="${nomHandlingUnit}"]
+    AppiumLibrary.Text Should Be Visible    ${nomHandlingUnit}
+    AppiumLibrary.Wait Until Page Contains Element        ${myUL}
+    ${position}=    AppiumLibrary.Get Element Location    ${myUL}
+    ${position}=    Create List    ${position}[x]    ${position}[y]
+    AppiumLibrary.Tap With Positions                      2000        ${position}
 
 Sélectionner Un type d Unite Logistique Et valider
     [Arguments]    ${typeUL}
-    AppiumLibrary.Wait Until Page Contains Element    //*[@id=android:id/text1 and contains(text(),${typeUL})]
-    AppiumLibrary.Click Element                       //*[@id=android:id/text1 and contains(text(),${typeUL})]
-    AppiumLibrary.Click Element                       id=android:id/button1
-
-    
+    AppiumLibrary.Wait Until Page Contains    ${typeUL}
+    AppiumLibrary.Click Text                  ${typeUL}
+    AppiumLibrary.Click Element               id=android:id/button1

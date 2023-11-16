@@ -20,6 +20,8 @@ ${ZONE_GESTION_QUANTITE}             id=layout_quantite
 ${TEXT_QUANTITE_PREPAREE}            id=tv_qte_preparee
 ${TEXT_QUANTITE_VALIDEE}             id=tv_qte_validee
 
+${CHAMP_QUANTITE}                    id=textinput_placeholder
+
 ${BOUTON_AJOUTER}                    id=fab_ajouter
 
 ${MESSAGE_ERREUR_QUANTITE}           id=android:id/message
@@ -71,6 +73,7 @@ Afficher Les Lots Disponibles
 
 Entrer une quantité et valider
     [Arguments]    ${quantite}
+    AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}
     Taper Un Nombre Au Clavier   ${quantite}
     Valider La Quantité
 
@@ -102,6 +105,7 @@ Entrer Une Quantité Supérieure A Celle Demandee Et Valider
 
 Valider La Quantité
     AppiumLibrary.Click Element    ${BOUTON_AJOUTER}
+    AppiumLibrary.Wait Until Page Does Not Contain Element    ${BOUTON_AJOUTER}
 
 Entrer une quantité automatiquement
     Click Element    Show dropdown menu
@@ -148,6 +152,14 @@ Scanner le code barre correspondant au numéro de série
     [Arguments]    ${numSerie}
     utils.Scanner Un Code    ${numSerie}
 
+Scanner le code barre correspondant au numéro de série qui n'existe pas
+    [Arguments]    ${numSerie}
+    utils.Scanner Un Code    ${numSerie}
+    # AppiumLibrary.Element Should Be Visible    id=alertTitle    Le message d erreur n'est pas affcihé suite à la lectue d'un codebarre inconnu.
+    AppiumLibrary.Wait Until Element Is Visible    id=android:id/message    2s    Le message d erreur n'est pas affcihé suite à la lectue d'un codebarre inconnu.
+    # AppiumLibrary.Element Should Be Visible    id=message    Le message d erreur n'est pas affcihé suite à la lectue d'un codebarre inconnu.
+    AppiumLibrary.Click Text    OK
+
 Effacer le numéro de série, ne rien mettre et valider
     utils.Press ENTER
     utils.Supprimer Un Nombre Au Clavier
@@ -155,5 +167,7 @@ Effacer le numéro de série, ne rien mettre et valider
 
 
 Appuyer sur "ok" et la "flèche retour"
-    utils.Press ENTER
+    AppiumLibrary.Wait Until Page Contains    OK
+    AppiumLibrary.Click Text    OK
+    AppiumLibrary.Wait Until Page Does Not Contain    OK
     AppiumLibrary.Go Back

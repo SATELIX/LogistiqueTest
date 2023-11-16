@@ -22,7 +22,8 @@ ${ARTICLES_VISIBLES_DE_LA LISTE}    id=tv_item_article_html
 ${TAB_ITEMS_PICKED}                 //android.widget.LinearLayout[@content-desc="Items picked"]
 
 # La pastille colis avec le petit carton}    id=tv_item_article_nb_pieces
-${PASTILLE_COLIS}                   id=tv_item_article_nb_pieces
+${PASTILLE_COLIS}                   id=fab_colisage
+
 
 *** Keywords ***
 La Liste Des Articles De La Commande S Affichent
@@ -194,4 +195,39 @@ Afficher Les Articles Prepares
 Appuyer Sur La Pastille Colis Avec Le Petit Carton
     AppiumLibrary.Wait Until Page Contains Element    ${PASTILLE_COLIS}
     AppiumLibrary.Click Element                       ${PASTILLE_COLIS}
-    
+
+Sélectionner le document
+    [Arguments]    ${document}
+    Choisir Le Document A Preparer Dans La Liste Des Documents    ${document}
+
+Sélectionner à la main l'article dans la liste
+    [Arguments]    ${article}
+    module_preparation_listearticles.Choisir L Article A Preparer Par Son Nom    ${article}
+
+Scanner le code barre correspondant à l'article 
+    [Arguments]    ${article}
+    Choisir L Article A Preparer Avec Le Lecteur CodeBarre    ${article}
+
+
+Selectionner Un Article Avec 2 Criteres
+    [Documentation]    Ce mot clé prend en entrée la réféence d'un aricle et sa gamme 
+    ...                parcours la liste des articles à preparer visibles et choisi celui qui correspond 
+    ...                TODO : les articles non visibles à l'écran ne sont pas pris en compte
+    [Arguments]    ${reference}    ${gamme}
+    AppiumLibrary.Wait Until Element Is Visible    id=card_item_article
+    ${myitems}    AppiumLibrary.Get Webelements    id=card_item_article
+    FOR    ${element}    IN    @{myitems}
+        ${ref_aticle}    AppiumLibrary.Get Webelement In Webelement    ${element}    id=tv_item_article_html
+        ${ref_article_correcte}    Run Keyword And Return Status    
+        ...    AppiumLibrary.Element Should Contain Text    ${ref_aticle}    ${reference}
+        Continue For Loop If    ${ref_article_correcte} == ${False}
+        ${presence_ref_gamme}    Run Keyword And Return Status     
+        ...    AppiumLibrary.Get Webelement In Webelement     ${element}    id=tv_item_article_gamme_1
+        Continue For Loop If    ${presence_ref_gamme} == ${False}
+        ${ref_gamme}    AppiumLibrary.Get Webelement In Webelement     ${element}    id=tv_item_article_gamme_1
+        ${ref_article_correcte}    Run Keyword And Return Status    
+        ...    AppiumLibrary.Element Should Contain Text    ${ref_gamme}    ${gamme}
+        Continue For Loop If    ${ref_article_correcte} == ${False}
+        AppiumLibrary.Click Element    ${element}
+        Exit For Loop
+    END

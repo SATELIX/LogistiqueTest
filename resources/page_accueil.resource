@@ -11,6 +11,10 @@ ${module}    ${EMPTY}
 ${LISTE_MODULES_A_L_ECRAN}    rv_liste_modules
 
 *** Keywords ***
+Sur le terminal, sélectionner le module
+    [Arguments]    ${monModule}
+    Choisir Le Module Dans La Liste Des Modules    ${monModule}
+
 Choisir le module Peparation
 	Choisir le module dans la liste des modules    ${module}
 
