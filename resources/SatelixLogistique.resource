@@ -24,7 +24,7 @@ ${BOUTON_VALIDATION_AJOUT}    button1
 
 ${BOUTON_AUTHENT}    id=bt_authentification
 
-${LOGIN}                      AURELIEN    #QUENTIN 
+${LOGIN}                      QUENTIN 
 ${PASSWORD}
 
 ${listederoulante_logins}     //android.widget.ImageButton[@content-desc="Show drop-down menu"]
@@ -140,3 +140,7 @@ Se Connecter Au Dossier
 #     # fr.satelix.logistique.activities.identification.IdentificationActivity
 #     Revenir Au Choix Des Dossiers
 #     Fermer L Application
+
+Fermer L Application 
+    Sleep    3s
+    AppiumLibrary.Close Application    #    ${appPackage}    

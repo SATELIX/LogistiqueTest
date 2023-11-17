@@ -26,14 +26,6 @@ Resource   SatelixLogistique.resource
 ...    7=14
 ...    8=15
 ...    9=16
-...    .=158
-...    ,=55
-...    clear=28
-...    del=67
-...    select=109 
-...    ctrl=4096
-...    enter=66
-...    app_switch=187
 ...    A=29
 ...    B=30
 ...    C=31
@@ -60,6 +52,17 @@ Resource   SatelixLogistique.resource
 ...    X=52
 ...    Y=53
 ...    Z=54
+...    .=158
+...    ,=55
+...    clear=28
+...    del=67
+...    foward_del=112
+...    select=109 
+...    ctrl=4096
+...    alt=50
+...    enter=66
+...    app_switch=187
+...    down=20
 
 
 *** Keywords ***
@@ -98,6 +101,8 @@ Supprimer Un Nombre Au Clavier
     ...    qui boucle sur chaque chiffre (et point) du nombre passé en argument
     ...    et qui envoie le KeyCode pour chaque chiffre correpsondant.
     AppiumLibrary.Press Keycode     ${KEYCODES}[del]    ${KEYCODES}[ctrl]
+    AppiumLibrary.Press Keycode     ${KEYCODES}[foward_del]    ${KEYCODES}[ctrl]
+
 
 Lire La Quantite Restante A Preparer
     [Documentation]     Ce mot clé prend la quantié à préparer 
@@ -160,10 +165,10 @@ Choisir LA Valeur Dans La Liste
     FOR    ${counter}    IN RANGE    1    10
         Log    ${counter}
         ${valeurLue}    AppiumLibrary.Get Text    ${identifiantListe}
-        Exit For Loop If    "${valeurLue}" == "${valeurAchoisir}"
+        Return From Keyword If    "${valeurLue}" == "${valeurAchoisir}"    ${True}
         AppiumLibrary.Click Element    ${identifiantListe}
-        AppiumLibrary.Press Keycode    20    50   #KEYCODE_DPAD_DOWN    META_ALT_MASK
-        Repeat Keyword    ${counter}        AppiumLibrary.Press Keycode    20    #KEYCODE_DPAD_DOWN
+        AppiumLibrary.Press Keycode    ${KEYCODES}[down]    ${KEYCODES}[alt]   #KEYCODE_DPAD_DOWN    META_ALT_MASK
+        Repeat Keyword    ${counter}        AppiumLibrary.Press Keycode    ${KEYCODES}[down]    #KEYCODE_DPAD_DOWN
         Press ENTER
     END
     Fail    La valeur cherchée n'a pas été trouvée dans la liste

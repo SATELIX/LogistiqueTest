@@ -1,6 +1,7 @@
 *** Settings ***
 
 Library    AppiumLibrary
+Library    String
 
 *** Variables ***
 ${PASTILLE_PLUS}                   id=fab_ajout_colis
@@ -27,3 +28,5 @@ Sélectionner Un type d Unite Logistique Et valider
     AppiumLibrary.Wait Until Page Contains    ${typeUL}
     AppiumLibrary.Click Text                  ${typeUL}
     AppiumLibrary.Click Element               id=android:id/button1
+    ${UL_affichee}    Convert To Upper Case    ${typeUL}
+    AppiumLibrary.Page Should Contain Text    ${UL_affichee}

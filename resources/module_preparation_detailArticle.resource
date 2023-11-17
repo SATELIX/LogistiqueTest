@@ -145,8 +145,42 @@ Lire La Quantite Restante A Preparer Dans Le Detail De L Article
     RETURN    ${remaning}
 
 Sélectionner le conditionnement
+    [Documentation]    Mot clé ensible à la casse du paramète en entrée
+    ...               \n ce mot clé cherche sur l'écran le conditionnement donné en paramètre
     [Arguments]    ${conditionnement}
-    AppiumLibrary.Click Element    //*[@id=bt_connexion and contains(text(, "${conditionnement}"))]
+    # ${choix_conditionnement}    Set Variable    //*[@id=bt_connexion and contains(text(), "${conditionnement}")]
+    # ${choix_conditionnement}    Set Variable    //*[@text="${conditionnement}"]
+    # AppiumLibrary.Wait Until Page Contains Element    ${choix_conditionnement}    6s
+    # AppiumLibrary.Click Element                       ${choix_conditionnement}
+    AppiumLibrary.Wait Until Page Contains Element    id=bt_connexion
+    AppiumLibrary.Hide Keyboard
+    Sleep    0.2s
+    ${choix_conditionnements}        AppiumLibrary.Get Webelements    id=bt_connexion
+    ${loc_premieconitionnement}    AppiumLibrary.Get Element Rect    ${choix_conditionnements}[0]
+    ${x}    Evaluate    ${loc_premieconitionnement}[x]+${loc_premieconitionnement}[width]
+    ${y}    Evaluate    ${loc_premieconitionnement}[y]+20
+    ${offset_x}    Evaluate    -${loc_premieconitionnement}[width]/2
+    Swipe    ${x}    ${y}    ${loc_premieconitionnement}[x]    ${y}
+    # ous les choix devraient affichés après avoir bouger swiper/scroller les boutons.
+    ${choix_conditionnements}        AppiumLibrary.Get Webelements    id=bt_connexion
+    FOR    ${element}    IN    @{choix_conditionnements}
+        ${choix_lu}    AppiumLibrary.Get Text    ${element}
+        Log To Console    ${choix_lu}
+        IF    "${choix_lu}" == "${conditionnement}"
+            AppiumLibrary.Click Element           ${element}
+            RETURN    ${True}
+        END
+    END
+    Fail    Le conditionnement n a pas été trouvé
+
+Saisir un Numero De Serie et valider
+    [Arguments]    ${numSerie}
+    ${champ_numero_serie}    Set Variable    id=textinput_placeholder
+    AppiumLibrary.Wait Until Element Is Visible    ${champ_numero_serie}
+    AppiumLibrary.Click Element   ${champ_numero_serie}
+    utils.Taper Un Mot Au Clavier    ${numSerie}
+    # AppiumLibrary.Input Text      ${champ_numero_serie}    ${numSerie}
+    Press ENTER
 
 Scanner le code barre correspondant au numéro de série
     [Arguments]    ${numSerie}
@@ -161,7 +195,6 @@ Scanner le code barre correspondant au numéro de série qui n'existe pas
     AppiumLibrary.Click Text    OK
 
 Effacer le numéro de série, ne rien mettre et valider
-    utils.Press ENTER
     utils.Supprimer Un Nombre Au Clavier
     utils.Press ENTER
 

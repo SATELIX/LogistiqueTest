@@ -18,7 +18,7 @@ ${DOCUMENTS_AFFCIHES}    id=tv_item_doc_html
 ${BOUTON_FINALISER}              id=fab_quitter
 # id=Validate and complete this entry
 
-${TEXTE_POIDS}                   id=textinput_placeholder
+${TEXTE_POIDS}                   id=input_cloture_colis_poids    #textinput_placeholder
 ${BOUTON_PHOTO}                  id=bt_input_button
 ${BOUTON_CLOTURE}                id=fab_cloturer
 
@@ -47,6 +47,10 @@ Choisir Le Document A Preparer Dans La Liste Des Documents
     ...    Le document ${document} n'apparait pas dans la liste des documents à peparer
     AppiumLibrary.Click Text    ${document}
 
+Sélectionner le document
+    [Arguments]    ${document}
+    Choisir Le Document A Preparer Dans La Liste Des Documents    ${document}
+
 Cliquer sur le bouton de finalisation Et Verifier Que La Commande Est Complète
     [Documentation]    
     Cliquer sur le bouton de finalisation
@@ -56,17 +60,21 @@ Cliquer sur le bouton de finalisation
     AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_FINALISER}        
     AppiumLibrary.Click Element    ${BOUTON_FINALISER}
 
-Verifier Que La Commande Est Complète
-    [Documentation]      TO DO :   
-    ...    Depuis l'écran de finalisation de la Commande
-    ...    la liste des articles doit être affichée avec les quantités 
-    ...    égales à celles enregistrées 
-    AppiumLibrary.Wait Until Element Is Visible    ${TEXTE_POIDS}
-    No Operation
+Confirmer la preparation incomplete
+    AppiumLibrary.Wait Until Element Is Visible    id=android:id/button1        
+    AppiumLibrary.Click Element                    id=android:id/button1
+    
+# Verifier Que La Commande Est Complète
+#     [Documentation]      TO DO :   
+#     ...    Depuis l'écran de finalisation de la Commande
+#     ...    la liste des articles doit être affichée avec les quantités 
+#     ...    égales à celles enregistrées 
+#     AppiumLibrary.Wait Until Element Is Visible    ${TEXTE_POIDS}
+#     No Operation
 
 Entrer Le Poids Du Colis
     [Arguments]     ${poids}
-    AppiumLibrary.Wait Until Element Is Visible    ${TEXTE_POIDS}
+    AppiumLibrary.Wait Until Element Is Visible    ${TEXTE_POIDS}    6s
     Taper Un Nombre Au Clavier    ${poids}
 
 Prendre Une Photo Du Colis
