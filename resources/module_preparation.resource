@@ -74,8 +74,14 @@ Confirmer la preparation incomplete
 
 Entrer Le Poids Du Colis
     [Arguments]     ${poids}
-    AppiumLibrary.Wait Until Element Is Visible    ${TEXTE_POIDS}    6s
+    AppiumLibrary.Wait Until Element Is Visible    ${TEXTE_POIDS}    8s
+    AppiumLibrary.Click Element    ${TEXTE_POIDS}
     Taper Un Nombre Au Clavier    ${poids}
+
+Une Erreur Doit Etre Indiquee Avec Le Message Correspondant
+    AppiumLibrary.Page Should Contain Element    id=text_input_error_icon
+    AppiumLibrary.Page Should Contain Element    id=textinput_error
+
 
 Prendre Une Photo Du Colis
     [Documentation]    Démarre l'appareil photo attend 1seconde 

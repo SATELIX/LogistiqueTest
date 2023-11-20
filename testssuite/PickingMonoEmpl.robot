@@ -21,7 +21,7 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 *** Test Cases ***
 PickingMonoEmpl
     Sur le terminal, sélectionner le module               Picking Mono Empl
-    Sélectionner le document                              PL00013
+    Sélectionner le document                              ${document}
     Sélectionner à la main l'article dans la liste        BAAR01
     Entrer une quantité et valider                        2
     Scanner le code barre correspondant à l'article       BAAR01
@@ -71,6 +71,7 @@ PickingMonoEmpl
     Entrer Le Poids Et Appuyer Sur Cloturer    12          # Mettre 12 et appuyer sur "Clôturer"
     Entrer Le Poids Et Appuyer Sur Cloturer    0           # Mettre 0 et appuyer sur "Clôturer"
     Press ENTER
+    Une Erreur Doit Etre Indiquee Avec Le Message Correspondant
     Entrer Le Poids Et Appuyer Sur Cloturer    15          # Mettre 15 et appuyer sur "Clôturer"
     Valider Le Mode Expedition Sur             Colissimo
     # Appuyer sur Transferer

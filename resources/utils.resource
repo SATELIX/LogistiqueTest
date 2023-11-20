@@ -122,9 +122,11 @@ Lire Les Variables De Tests
   	Lire Les Jeux De Donnees
 
 Lire Les Jeux De Donnees
-    [Documentation]    TODO 
+    [Documentation]    Ce mot clé lit les valeurs des jeux de données si la demnade 
+    ...                d'exécution vient de Squash sinon ce sont les valeurs par défaut 
+    ...                qui sont paramétées. 
 	${module}=           Get Param           DS_module             Picking Mono Empl   # Preparation   # Picking Multi Empl# 
-	${document}=         Get Param           DS_document           PL00014  # PL000002
+	${document}=         Get Param           DS_document           PL00013  # PL000002
     ${articles}=         Get Param           DS_articles           BAOR01    #0012;0013;0015
     ${lot}=              Get Param           DS_lots               L947652;231;L741852
     ${poids}=            Get Param           DS_poids              34.5
