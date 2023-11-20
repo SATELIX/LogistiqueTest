@@ -74,7 +74,8 @@ Confirmer la preparation incomplete
 
 Entrer Le Poids Du Colis
     [Arguments]     ${poids}
-    AppiumLibrary.Wait Until Element Is Visible    ${TEXTE_POIDS}    8s
+    # AppiumLibrary.Wait Until Element Is Visible    ${TEXTE_POIDS}    8s
+    AppiumLibrary.Wait Until Page Contains Element    ${TEXTE_POIDS}    8s
     AppiumLibrary.Click Element    ${TEXTE_POIDS}
     Taper Un Nombre Au Clavier    ${poids}
 
