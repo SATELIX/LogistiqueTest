@@ -31,7 +31,8 @@ Choisir Le Module Dans La Liste Des Modules
     ...    AppiumLibrary.Click Text    ${module_name}
     ...  ELSE
     ...    Wait Until Keyword Succeeds    4x    0.5s    Faire Defiler Les Modules Pour Trouver Le Bon     ${module_name}
-    
+
+
 Faire Defiler Les Modules Pour Trouver Le Bon 
     [Documentation]    ce mot clé scroll module pa module pour trouver celui recercher
     ...  il récupèe les coordonnées du premier et du dernier modules affichés à l'écran

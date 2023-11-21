@@ -2,7 +2,7 @@
 
 Library    AppiumLibrary
 Library    String
-Library    Dialogs
+
 
 Resource    module_preparation_detailArticle.resource
 Resource    utils.resource
@@ -174,6 +174,7 @@ Choisir L Article A Preparer Avec Le Lecteur CodeBarre
     ...   si la eference donnée est la même pour plusieurs articles du document, alors l'aplication
     ...    filtre les articles correspondants. 
     [Arguments]    ${reference}
+    Sleep    0.5s
     AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    15s    Il n'y a pas d'aticle à préparer dans pour cette péparation.
     utils.Scanner Un Code    ${reference} 
 

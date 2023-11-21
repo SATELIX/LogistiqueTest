@@ -4,7 +4,9 @@ Documentation    Reprise du Cas de Test
 ...    
 
 Library    String
-Library    AppiumLibrary
+Library    
+Library    OperatingSystem
+
 # Resource   ${CURDIR}/../resources/utils.resource
 # Resource   ${CURDIR}/../resources/page_accueil.resource
 Resource   ${CURDIR}/../resources/module_preparation.resource
@@ -80,3 +82,5 @@ PickingMonoEmpl
     # Cliquer sur "Traitement" puis "Documents des Ventes"
     # Dans Le Module Préparation De Livraison Le Statut de La péparation doit changer    PL00013    A livrer
     # Sur le terminal, sélectionner le module     Préparation de livraison
+
+
