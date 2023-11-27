@@ -73,7 +73,7 @@ Afficher Les Lots Disponibles
 
 Entrer une quantité et valider
     [Arguments]    ${quantite}
-    AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}
+    AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}  30s
     Taper Un Nombre Au Clavier   ${quantite}
     Valider La Quantité
 

@@ -4,7 +4,7 @@ Documentation    Reprise du Cas de Test
 ...    
 
 Library    String
-Library    
+Library    AppiumLibrary
 Library    OperatingSystem
 
 # Resource   ${CURDIR}/../resources/utils.resource
