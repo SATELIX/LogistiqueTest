@@ -56,7 +56,7 @@ Test De L Application
 Demarrer Une Application
     [Documentation]    ce que fait le mot clé
     [Arguments]    ${appPackage}
-    AppiumLibrary.Open Application
+    Open Application
     ...    http://127.0.0.1:4723/wd/hub
     ...    automationName=${automationName}
     ...    platformName=${platformName}
@@ -142,7 +142,7 @@ Saisir le Numéro de logistique
 
 Sélectionner le Lot avec DLC et FAB
     Wait Until Element Is Visible    //androidx.recyclerview.widget.RecyclerView[@resource-id="fr.satelix.logistique:id/rv_liste"]
-    Click Text    DLC : 24/03/2023
+    Click Text    DLC :
 
 Scanner code barre
     [Arguments]    ${codeBarre}
