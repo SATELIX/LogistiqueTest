@@ -9,26 +9,25 @@ Documentation
 
 Library    Dialogs
 Library    AppiumLibrary
-Resource   ${CURDIR}/../resources/page_accueil.resource
+# Resource   ${CURDIR}/../resources/page_accueil.resource
 Resource   ${CURDIR}/../resources/module_preparation.resource
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 
 Suite Setup    Set Log Level    TRACE
 Test Setup     Lire Les Variables Du Tests Et Demarrer L Application
 
-Suite Teardown    AppiumLibrary.Close All Applications
+Suite Teardown    AppiumLibrary.Close Application
 
 *** Variables ***
 
-${module_preparation}    xpath=//androidx.cardview.widget.CardView[@content-desc="Select the module Prépa."]
-# ${module_preparation}    xpath=//androidx.cardview.widget.CardView[@content-desc="Select the module Expédition."]
+${module}
 ${document}              PL000002
 ${poids}                 34
 ${modeExpedition}        
 
 *** Test Cases ***
 Ajout d une quantité supérieure à celle nécessaire pour un article dans une préparation
-	Choisir le module Peparation
+	Choisir Le Module Dans La Liste Des Modules    ${module}
 	Choisir Le Document A Preparer Dans La Liste Des Documents     ${document}
 	${quantite}=    Lire La Quantite Demandee Pour Le Premier Article
 	Choisir Le Premier Article De La Liste A Preparer

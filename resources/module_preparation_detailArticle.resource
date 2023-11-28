@@ -8,14 +8,19 @@ Resource    utils.resource
 Resource    module_preparation_listelots.resource
 
 *** Variables ***
-${LAYOUT_HAUT}                      //androidx.appcompat.widget.LinearLayoutCompat/android.webkit.WebView/android.webkit.WebView/
-${TEXTE_LOT}                        ${LAYOUT_HAUT}android.widget.TextView[1]
-${TEXTE_NOM_ARTICLE}                ${LAYOUT_HAUT}android.widget.TextView[2]
-${BUTON_LISTE_DES_LOTS_EN_STOCK}    id=text_input_end_icon
+${LAYOUT_HAUT}                       //androidx.appcompat.widget.LinearLayoutCompat/android.webkit.WebView/android.webkit.WebView/
+${TEXTE_LOT}                         ${LAYOUT_HAUT}android.widget.TextView[1]
+${TEXTE_NOM_ARTICLE}                 ${LAYOUT_HAUT}android.widget.TextView[2]
+${BUTON_CHOIX_DES_LOTS}              id=ctn_saisie_num_lot_serie
+${BUTON_LISTE_DES_LOTS_EN_STOCK}     id=text_input_end_icon
 
 ${TEXT_STOCK_GLOBAL}                 id=tv_qte_stock
-${TEXT_QUANTITE_PREPAREE}           id=tv_qte_preparee
-${TEXT_QUANTITE_VALIDEE}            id=tv_qte_validee
+
+${ZONE_GESTION_QUANTITE}             id=layout_quantite
+${TEXT_QUANTITE_PREPAREE}            id=tv_qte_preparee
+${TEXT_QUANTITE_VALIDEE}             id=tv_qte_validee
+
+${CHAMP_QUANTITE}                    id=textinput_placeholder
 
 ${BOUTON_AJOUTER}                    id=fab_ajouter
 
@@ -27,16 +32,20 @@ ${BOUTON_OK_MESSAGE_ERREUR}          id=android:id/button1
 Preparer Les Quantités De L Article
     [Documentation]    Vérifie que les données affichées sont identiques
     ...    à celles passées en argument.
-    ...    <BR> vérifie que le stock est supérieur à la quantité demandée
-    ...    <BR> choisit les lot avec la bonne quantité
-    ...    <BR> 
+    ...    \n vérifie que le stock est supérieur à la quantité demandée
+    ...    \n choisit les lot avec la bonne quantité
+    ...    \n si il n'y a pas de notion de lot sur l'article donné, le mot clé entre la quantité directement.
     [Arguments]    ${Lot}    ${nomArticle}    ${quantite}
+    AppiumLibrary.Swipe By Percent    10    10    10    80
     Le Lot Choisi Est Bien Celui Demandé    ${Lot}
     L Article Choisi Est Bien Celui Demandé    ${nomArticle}
-    Afficher Les Lots Disponibles
-    Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité   ${quantite}
+    # Si il n'y a pas de gestion de lot, on entre directmeent la quantité
+    ${status}=    Run Keyword And Return Status    Element Should Be Visible  ${BUTON_CHOIX_DES_LOTS}
+    IF    ${status}
+        Afficher Les Lots Disponibles
+        Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité   ${quantite}    
+    END
     Entrer la quantité complète à préparer et valider    ${quantite}
-
 
 L Article Choisi Est Bien Celui Demandé
     [Documentation]    Compare le nom de l'article affiché qui doit être
@@ -62,27 +71,41 @@ Afficher Les Lots Disponibles
     AppiumLibrary.Wait Until Page Contains Element    ${BUTON_LISTE_DES_LOTS_EN_STOCK}
     Click Element    ${BUTON_LISTE_DES_LOTS_EN_STOCK}
 
+Entrer une quantité et valider
+    [Arguments]    ${quantite}
+    AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}  30s
+    Taper Un Nombre Au Clavier   ${quantite}
+    Valider La Quantité
+
 Entrer la quantité complète à préparer et valider
     [Documentation]    Ce mot clé prend un nombre en entrée 
     ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante
     ...    Cela permet de simuler les gestes d'un utilisateur.
     [Arguments]    ${quantite}
-    AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
+    # AppiumLibrary.Scroll Down    ${BOUTON_AJOUTER}
+    # AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
     Taper Un Nombre Au Clavier   ${quantite}
     Valider La Quantité
 
+Saisir une valeur et valider
+    [Arguments]    ${valeur}
+    AppiumLibrary.Input Text Into Current Element    ${valeur}
+    utils.Press ENTER
+    
 Entrer Une Quantité Supérieure A Celle Demandee Et Valider
     [Documentation]    Ce mot clé prend un nombre en entrée 
     ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante
     ...    Cela permet de simuler les gestes d'un utilisateur.
     [Arguments]    ${quantite}    ${quantiteSupplémentaire}=1
-    AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
+    # AppiumLibrary.Scroll Down    ${BOUTON_AJOUTER}
+    # AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
     ${qty}=    Evaluate    ${quantite}+${quantiteSupplémentaire}
     Taper Un Nombre Au Clavier   ${qty}
     Valider La Quantité
 
 Valider La Quantité
     AppiumLibrary.Click Element    ${BOUTON_AJOUTER}
+    AppiumLibrary.Wait Until Page Does Not Contain Element    ${BOUTON_AJOUTER}
 
 Entrer une quantité automatiquement
     Click Element    Show dropdown menu
@@ -120,3 +143,64 @@ Lire La Quantite Restante A Preparer Dans Le Detail De L Article
     ${remaning}     AppiumLibrary.Get Text    ${TEXT_QUANTITE_PREPAREE}
     ${remaning}     utils.Lire La Quantite Restante A Preparer    ${remaning}
     RETURN    ${remaning}
+
+Sélectionner le conditionnement
+    [Documentation]    Mot clé ensible à la casse du paramète en entrée
+    ...               \n ce mot clé cherche sur l'écran le conditionnement donné en paramètre
+    [Arguments]    ${conditionnement}
+    # ${choix_conditionnement}    Set Variable    //*[@id=bt_connexion and contains(text(), "${conditionnement}")]
+    # ${choix_conditionnement}    Set Variable    //*[@text="${conditionnement}"]
+    # AppiumLibrary.Wait Until Page Contains Element    ${choix_conditionnement}    6s
+    # AppiumLibrary.Click Element                       ${choix_conditionnement}
+    AppiumLibrary.Wait Until Page Contains Element    id=bt_connexion
+    AppiumLibrary.Hide Keyboard
+    Sleep    0.2s
+    ${choix_conditionnements}        AppiumLibrary.Get Webelements    id=bt_connexion
+    ${loc_premieconitionnement}    AppiumLibrary.Get Element Rect    ${choix_conditionnements}[0]
+    ${x}    Evaluate    ${loc_premieconitionnement}[x]+${loc_premieconitionnement}[width]
+    ${y}    Evaluate    ${loc_premieconitionnement}[y]+20
+    ${offset_x}    Evaluate    -${loc_premieconitionnement}[width]/2
+    Swipe    ${x}    ${y}    ${loc_premieconitionnement}[x]    ${y}
+    # ous les choix devraient affichés après avoir bouger swiper/scroller les boutons.
+    ${choix_conditionnements}        AppiumLibrary.Get Webelements    id=bt_connexion
+    FOR    ${element}    IN    @{choix_conditionnements}
+        ${choix_lu}    AppiumLibrary.Get Text    ${element}
+        Log To Console    ${choix_lu}
+        IF    "${choix_lu}" == "${conditionnement}"
+            AppiumLibrary.Click Element           ${element}
+            RETURN    ${True}
+        END
+    END
+    Fail    Le conditionnement n a pas été trouvé
+
+Saisir un Numero De Serie et valider
+    [Arguments]    ${numSerie}
+    ${champ_numero_serie}    Set Variable    id=textinput_placeholder
+    AppiumLibrary.Wait Until Element Is Visible    ${champ_numero_serie}
+    AppiumLibrary.Click Element   ${champ_numero_serie}
+    utils.Taper Un Mot Au Clavier    ${numSerie}
+    # AppiumLibrary.Input Text      ${champ_numero_serie}    ${numSerie}
+    Press ENTER
+
+Scanner le code barre correspondant au numéro de série
+    [Arguments]    ${numSerie}
+    utils.Scanner Un Code    ${numSerie}
+
+Scanner le code barre correspondant au numéro de série qui n'existe pas
+    [Arguments]    ${numSerie}
+    utils.Scanner Un Code    ${numSerie}
+    # AppiumLibrary.Element Should Be Visible    id=alertTitle    Le message d erreur n'est pas affcihé suite à la lectue d'un codebarre inconnu.
+    AppiumLibrary.Wait Until Element Is Visible    id=android:id/message    2s    Le message d erreur n'est pas affcihé suite à la lectue d'un codebarre inconnu.
+    # AppiumLibrary.Element Should Be Visible    id=message    Le message d erreur n'est pas affcihé suite à la lectue d'un codebarre inconnu.
+    AppiumLibrary.Click Text    OK
+
+Effacer le numéro de série, ne rien mettre et valider
+    utils.Supprimer Un Nombre Au Clavier
+    utils.Press ENTER
+
+
+Appuyer sur "ok" et la "flèche retour"
+    AppiumLibrary.Wait Until Page Contains    OK
+    AppiumLibrary.Click Text    OK
+    AppiumLibrary.Wait Until Page Does Not Contain    OK
+    AppiumLibrary.Go Back
