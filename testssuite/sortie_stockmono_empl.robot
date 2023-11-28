@@ -57,7 +57,7 @@ Demarrer Une Application
     [Documentation]    ce que fait le mot clé
     [Arguments]    ${appPackage}
     AppiumLibrary.Open Application
-    ...    http://127.0.0.1:4723
+    ...    http://127.0.0.1:4723/wd/hub
     ...    automationName=${automationName}
     ...    platformName=${platformName}
     ...    appPackage=${appPackage}
@@ -125,7 +125,7 @@ Valider Quantite
     Sleep    2
     Click Element    fr.satelix.logistique:id/fab_ajouter
     Attendre
-
+.
 Sélectionner l Article a la Main
     [Arguments]    ${article}
     Wait Until Element Is Visible    fr.satelix.logistique:id/input_text_recherche
