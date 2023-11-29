@@ -125,7 +125,7 @@ Valider Quantite
     Sleep    2
     Click Element    fr.satelix.logistique:id/fab_ajouter
     Attendre
-.
+
 Sélectionner l Article a la Main
     [Arguments]    ${article}
     Wait Until Element Is Visible    fr.satelix.logistique:id/input_text_recherche

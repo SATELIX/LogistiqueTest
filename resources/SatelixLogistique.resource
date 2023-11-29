@@ -8,7 +8,7 @@ Library             AppiumLibrary
  
  
 *** Variables ***
-${remoteURL}                    http://localhost:4723
+${remoteURL}                    http://localhost:4723/wd/hub
 ${automationName}               UIAutomator2
 ${platformName}                 Android
  
