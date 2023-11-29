@@ -36,7 +36,7 @@ Test De L Application
     Valider Quantite    1
     Scanner code barre    21731003
     Valider Quantite    1
-    Saisir l Article a la Main    CHAAR/VAR
+    Saisir l Article a la Main    CHAAR/VAR    #BUG sur l'apk de manière aléatoire la quantité en stock n'est pas récupérée (APK 1.0.44)
     Sélectionner la Gamme    34 cm
     Sélectionner la Gamme    Forçat
     Valider Quantite    1
