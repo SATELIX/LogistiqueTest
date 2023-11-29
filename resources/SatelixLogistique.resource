@@ -14,7 +14,7 @@ ${automationName}    UIAutomator2
 ${platformName}      Android
 
 ${app}               D:${/}SATELIX${/}app${/}Logistique-demo-release-1.0.34 141.apk
-${appPackage}        fr.satelix.logistique.demo
+${appPackage}        fr.satelix.logistique
 ${appActivity}       fr.satelix.logistique.activities.MainActivity
 # ${appActivity}       fr.satelix.logistique.activities.dossiers.DossierActivity
 # ${appActivity}       fr.satelix.logistique.activities.identification.IdentificationActivity
@@ -69,7 +69,7 @@ Verifier La Fenete D Ouverture
     Return From Keyword If    ${status}    accueil
 
 Demarrer L Application
-    AppiumLibrary.Open Application    ${remoteURL}
+    Open Application    ${remoteURL}
     ...    automationName=${automationName}
     ...    platformName=${platformName}
     ...    appPackage=${appPackage}
@@ -80,21 +80,21 @@ Demarrer L Application
     # ...    platformVersion=${platformVersion}
     # ...    udid=${deviceUdid}
     # ...    app=${app}
-    AppiumLibrary.Activate Application    ${appPackage}
+    Activate Application    ${appPackage}
 
 Ajouter Un Dossier 
     [Documentation]    Ce mot clé tente d'ajouter un dossier à l'application
     ...    en scannant le QR code correpsondant
-    AppiumLibrary.Click Element    ${BOUTON_AJOUTER_DOSSIER}
+    Click Element    ${BOUTON_AJOUTER_DOSSIER}
     Wait Until Keyword Succeeds    60    4s    Valider L Ajout D Un Dossier
  
 Valider L Ajout D Un Dossier
-    AppiumLibrary.Text Should Be Visible    ${FENETRE_VALIDATION_AJOUT}
+    Text Should Be Visible    ${FENETRE_VALIDATION_AJOUT}
     FOR    ${i}    IN RANGE    10
         # AppiumLibrary.Click Element    ${BOUTON_VALIDATION_AJOUT}
         Ajouter Un Dossier
     END
-    AppiumLibrary.Page Should Not Contain Element    ${FENETRE_VALIDATION_AJOUT}
+    Page Should Not Contain Element    ${FENETRE_VALIDATION_AJOUT}
 
 Choisir Le Dossier Et Se Connecter
     [Arguments]    ${Dossier}
@@ -110,17 +110,17 @@ Choisir Le Dossier
     ${dossier_trouve}=    AppiumLibrary.Wait Until Page Contains    ${Dossier}    6s
     ...    La page ne contient pas le dossier demandé : ajout du dossieravec QR code.
     IF    ${dossier_trouve} == ${False}    Ajouter Un Dossier
-    AppiumLibrary.Click Text    ${Dossier}
+    Click Text    ${Dossier}
 
 Aller Sur LA page De Login Et Se Connecter
-    AppiumLibrary.Click Element    ${BOUTON_AUTHENT}
+    Click Element    ${BOUTON_AUTHENT}
     Se Connecter Au Dossier
 
 Se Connecter Au Dossier
-    AppiumLibrary.Wait Until Page Contains Element    ${INPUT_LOGIN}    6s
+    Wait Until Page Contains Element    ${INPUT_LOGIN}    6s
     ...    La page de Login ne s'est pas affichée dans les 6 secondes.
-    AppiumLibrary.Input Text       ${INPUT_LOGIN}    ${LOGIN}
-    AppiumLibrary.Click Element    ${BUTTON_LOGIN}    
+    Input Text       ${INPUT_LOGIN}    ${LOGIN}
+    Click Element    ${BUTTON_LOGIN}    
 
 # Revenir Au Choix Des Dossiers
 #     [Documentation]    Ce mot clé permet de reveni sur l'écran de choix du dossier. 
@@ -195,7 +195,7 @@ Back
 
 Fermer L Application 
     Sleep    3s
-    AppiumLibrary.Close Application    #    ${appPackage}
+    Close Application    #    ${appPackage}
 
 Finaliser
     Wait Until Page Contains    ${button_finaliser}

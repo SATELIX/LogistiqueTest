@@ -34,12 +34,12 @@ Preparer Les Quantités De L Article
     ...    à celles passées en argument.
     ...    \n vérifie que le stock est supérieur à la quantité demandée
     ...    \n choisit les lot avec la bonne quantité
-    ...    \n si il n'y a pas de notion de lot sur l'article donné, le mot clé entre la quantité directement.
+    ...    \n si il n'y a pas de notion de lot sur l'article donné, la quantité est directement saisie.
     [Arguments]    ${Lot}    ${nomArticle}    ${quantite}
     AppiumLibrary.Swipe By Percent    10    10    10    80
     Le Lot Choisi Est Bien Celui Demandé    ${Lot}
     L Article Choisi Est Bien Celui Demandé    ${nomArticle}
-    # Si il n'y a pas de gestion de lot, on entre directmeent la quantité
+    # Si il n'y a pas de gestion de lot la quantité est entrée directement
     ${status}=    Run Keyword And Return Status    Element Should Be Visible  ${BUTON_CHOIX_DES_LOTS}
     IF    ${status}
         Afficher Les Lots Disponibles
@@ -83,8 +83,8 @@ Entrer une quantité et valider
     Valider La Quantité
 
 Entrer la quantité complète à préparer et valider
-    [Documentation]    Ce mot clé prend un nombre en entrée 
-    ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante
+    [Documentation]    Pprend un nombre en entrée, 
+    ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante.
     ...    Cela permet de simuler les gestes d'un utilisateur.
     [Arguments]    ${quantite}
     # AppiumLibrary.Scroll Down    ${BOUTON_AJOUTER}
@@ -108,8 +108,8 @@ Saisir une valeur et valider
     utils.Press ENTER
     
 Entrer Une Quantité Supérieure A Celle Demandee Et Valider
-    [Documentation]    Ce mot clé prend un nombre en entrée 
-    ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante
+    [Documentation]    Prend un nombre en entrée,
+    ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante.
     ...    Cela permet de simuler les gestes d'un utilisateur.
     [Arguments]    ${quantite}    ${quantiteSupplémentaire}=1
     # AppiumLibrary.Scroll Down    ${BOUTON_AJOUTER}
@@ -160,8 +160,8 @@ Lire La Quantite Restante A Preparer Dans Le Detail De L Article
     RETURN    ${remaning}
 
 Sélectionner le conditionnement
-    [Documentation]    Mot clé ensible à la casse du paramète en entrée
-    ...               \n ce mot clé cherche sur l'écran le conditionnement donné en paramètre
+    [Documentation]    Le conditionnement passé en paramètre est recherché sur l'écran.
+    ...               \n Seinsible à la casse.
     [Arguments]    ${conditionnement}
     # ${choix_conditionnement}    Set Variable    //*[@id=bt_connexion and contains(text(), "${conditionnement}")]
     # ${choix_conditionnement}    Set Variable    //*[@text="${conditionnement}"]
@@ -205,6 +205,7 @@ Saisir le Numéro de lot
     Run Keyword    pressKeyCode    66
 
 Sélectionner le Lot avec DLC et FAB
+    [Documentation]    Cas très spécifique où l'on recherche un lot avec DLC
     Wait Until Element Is Visible    //androidx.recyclerview.widget.RecyclerView[@resource-id="fr.satelix.logistique:id/rv_liste"]
     Click Text    DLC :
 

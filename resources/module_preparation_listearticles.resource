@@ -17,10 +17,7 @@ ${NOMBREARTICLE_AFFICHE}             id=tv_nb_articles
 # ${ARTICLES_VISIBLES_DE_LA LISTE}    id=fr.satelix.logistique.demo:id/card_item_article
 ${ARTICLES_VISIBLES_DE_LA LISTE}    id=card_item_article
 ${ARTICLES_VISIBLES_DE_LA LISTE}    id=tv_item_article_html
-
-
 ${TAB_ITEMS_PICKED}                 //android.widget.LinearLayout[@content-desc="Items picked"]
-
 # La pastille colis avec le petit carton}    id=tv_item_article_nb_pieces
 ${PASTILLE_COLIS}                   id=fab_colisage
 
@@ -31,10 +28,10 @@ Afficher Liste des articles
     [Arguments]    ${liste_articles}
     Wait Until Page Contains    fr.satelix.logistique:id/input_text_recherche  
     Click Element    ${liste_articles}
-    
+
 La Liste Des Articles De La Commande S Affichent
     [Documentation]    Vérifie que le nombre d'articles affiché n'est aps à zéro
-    ...                 et que au moins un article est affiché. 
+    ...                 et qu'au moins un article est affiché. 
     AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'article n'est pas afiché.
     ${NombreArticle_lu}=    Lire Le Nombre D Articles Affiché
     Should Be True    ${NombreArticle_lu}    L'application affiche un nombre d'articles à ZERO
@@ -43,7 +40,7 @@ La Liste Des Articles De La Commande S Affichent
 
 Preparer Les Articles Du Document
     [Documentation]    TODO : 
-    ...                \n pour le moment le mot clé fonctionne avec les acrticles affichés à l'écrans.
+    ...                \n pour le moment le mot clé fonctionne avec les articles affichés à l'écran.
     ...                \n voir dicumentation de "Lister Les Articles" 
     AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'articles n'est pas affiché.
     ${NombreArticle_lu}=    Lire Le Nombre D Articles Affiché
@@ -88,7 +85,7 @@ Preparer Les Articles Du Document Avec Le Lecteur CodeBarre
     END
 
 Lire La Quantite Demandee Pour Le Premier Article
-    [Documentation]     Ce mot clé prend le Premier Article de la liste 
+    [Documentation]     Prend le Premier Article de la liste, 
     ...                 récupère la quantité Affichée et renvoie la quantité 
     ...                 avant le caractère "/"   
     [Arguments]    ${article}=${ARTICLES_VISIBLES_DE_LA LISTE}
@@ -103,7 +100,7 @@ Lire La Quantite Demandee Pour Le Premier Article
 
 Lire Les Informations De L Article
     [Documentation]    
-    ...    Ce mot clé prend la CardView d'un article en argument et lit les textView qui le composent:
+    ...    Prend la CardView d'un article en argument et lit les textView qui le composent:
     ...    \n par défaut c'est le premier Cardview qui est pris en compte.
     ...  Les composants vérifiés sont les textview qui possèdent les resource-id suivants :
     ...  \n resource-id="fr.satelix.logistique.demo:id/tv_item_article_html"
@@ -143,7 +140,7 @@ Choisir L Article A Preparer Par Son Nom
     ...    L'article ${nomArticle} n'apparait pas dans la liste des article à peparer au bout de ${timeout}
     AppiumLibrary.Click Text    ${nomArticle}
 
-Choisir Article    
+Choisir l Article dans une Liste    
     [Arguments]    ${article}
     Swipe Down     ${article}
     Wait Until Element Is Visible    ${article}
@@ -194,7 +191,7 @@ Choisir L Article A Preparer Avec Le Lecteur CodeBarre
 Chercher Un Article Par La Recheche
     [Documentation]    Utilisation de la recherche en haut de la page <BR>
     ...                L'article trouvé apparait automatiquement seul dans la liste des articles
-    ...                S'il y a plusieurs articles, la liste est à géée ou non, pa défaut on 
+    ...                S'il y a plusieurs articles, la liste est à gérée ou non, par défaut on 
     ...                considère que le 1er de la liste est pris en compte.
     [Arguments]    ${texteDeLaRecherche}
     AppiumLibrary.Input Text    ${CHAMP_RECHERCHE}    ${texteDeLaRecherche}
@@ -218,8 +215,8 @@ Scanner le code barre correspondant à l'article
     Choisir L Article A Preparer Avec Le Lecteur CodeBarre    ${article}
 
 Saisir l Article a la Main
-    [Documentation]    Recherche un article en cliqaunt sur l'input de recherche et en tapant le nom de l'article
-    ...                puis clique sur le bouton de validation
+    [Documentation]    Recherche un article en cliquant sur l'input de recherche et en tapant le nom de l'article.
+    ...                Puis clique sur le bouton de validation
     [Arguments]    ${article}
     Wait Until Element Is Visible    fr.satelix.logistique:id/input_text_recherche
     Click Element    fr.satelix.logistique:id/input_text_recherche
@@ -227,8 +224,8 @@ Saisir l Article a la Main
     Click Element    //android.widget.ImageButton[@content-desc="Valider cet article"]
 
 Sélectionner à la main Un Article Avec 2 Criteres
-    [Documentation]    Ce mot clé prend en entrée la réféence d'un aricle et sa gamme 
-    ...                parcours la liste des articles à preparer visibles et choisi celui qui correspond 
+    [Documentation]    Prend en entrée la référence d'un article et sa gamme, 
+    ...                parcours la liste des articles visibles à preparer et choisit celui qui correspond 
     ...                TODO : les articles non visibles à l'écran ne sont pas pris en compte
     [Arguments]    ${reference}    ${gamme}
     AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}

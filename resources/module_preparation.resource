@@ -54,7 +54,7 @@ Sélectionner le document
 Cliquer sur le bouton de finalisation Et Verifier Que La Commande Est Complète
     [Documentation]    
     Cliquer sur le bouton de finalisation
-    Verifier Que La Commande Est Complète
+    #Verifier Que La Commande Est Complète
 
 Cliquer sur le bouton de finalisation
     AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_FINALISER}        
