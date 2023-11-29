@@ -137,6 +137,12 @@ Choisir L Article A Preparer Par Son Nom
     ...    L'article ${nomArticle} n'apparait pas dans la liste des article à peparer au bout de ${timeout}
     AppiumLibrary.Click Text    ${nomArticle}
 
+Choisir Article    
+    [Arguments]    ${article}
+    Swipe Down     ${article}
+    Wait Until Element Is Visible    ${article}
+    Click Element    ${article}    
+
 Lister Les Articles
     [Documentation]    Lit la liste des composants de la page qui montre les articles
     ...          TO DO
@@ -205,6 +211,12 @@ Scanner le code barre correspondant à l'article
     [Arguments]    ${article}
     Choisir L Article A Preparer Avec Le Lecteur CodeBarre    ${article}
 
+Sélectionner l Article a la Main
+    [Arguments]    ${article}
+    Wait Until Element Is Visible    fr.satelix.logistique:id/input_text_recherche
+    Click Element    fr.satelix.logistique:id/input_text_recherche
+    Input Text Into Current Element    ${article}
+    Click Element    //android.widget.ImageButton[@content-desc="Valider cet article"]
 
 Sélectionner à la main Un Article Avec 2 Criteres
     [Documentation]    Ce mot clé prend en entrée la réféence d'un aricle et sa gamme 

@@ -3,6 +3,7 @@ Documentation    Ce fichier regroupe les mots clés "généraux" de l'applicatio
 ...              Par défaut le test lance la version démo de Logistique.
 ...    
 
+Library     Process
 Library     AppiumLibrary
 Resource    page_accueil.resource
 Resource    utils.resource
@@ -33,6 +34,7 @@ ${INPUT_LOGIN}                class=android.widget.EditText
 # ...    fr.satelix.logistique.demo:id/dropdown_identifiant//android.widget.AutoCompleteTextView
 ${INPUT_PASSWORD}               class=android.widget.EditText
 ${BUTTON_LOGIN}                 bt_connexion
+${button_valider}       fr.satelix.logistique:id/fab_valider
  
  
 *** Keywords ***
@@ -140,6 +142,55 @@ Se Connecter Au Dossier
 #     # fr.satelix.logistique.activities.identification.IdentificationActivity
 #     Revenir Au Choix Des Dossiers
 #     Fermer L Application
+
+Sélectionner le dépôt origine Bijou SA
+    Click Element    xpath=//android.widget.ImageButton[@content-desc="Afficher la liste"]
+    Wait Until Page Contains    text=Bijou SA
+    Click Text    Bijou SA  True
+
+Sélectionner référence doc
+    [Arguments]    ${reference}
+    Wait Until Element Is Visible    xpath=//android.widget.EditText[@text="Saisi référence doc"]
+    Click Element    xpath=//android.widget.EditText[@text="Saisi référence doc"]
+    Input Text Into Current Element    ${reference}
+
+Valider les informations
+    Hide Keyboard
+    Wait Until Page Contains    VALIDER
+    Click Element    ${button_valider}
+
+Swipe Down
+    [Arguments]    ${element}
+    FOR    ${counter}    IN RANGE    0    10
+        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}    timeout=1s
+        IF    ${status}    BREAK
+        Swipe    0    495    0    100    150
+    END
+
+Scanner code barre
+    [Arguments]    ${codeBarre}
+    ${result}=    Run Process
+    ...    adb
+    ...    shell
+    ...    am
+    ...    broadcast
+    ...    -a
+    ...    fr.satelix.logistique.scan
+    ...    --es
+    ...    com.motorolasolutions.emdk.datawedge.data_string
+    ...    "${codeBarre}"
+    ...    
+
+Dialog Cliquer Ok
+    Wait Until Element Is Visible    android:id/button1
+    Click Element    android:id/button1
+
+Attendre
+    Sleep    5s
+
+Back
+    Go Back
+
 
 Fermer L Application 
     Sleep    3s

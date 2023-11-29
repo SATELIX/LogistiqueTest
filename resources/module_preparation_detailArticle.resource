@@ -87,6 +87,15 @@ Entrer la quantité complète à préparer et valider
     Taper Un Nombre Au Clavier   ${quantite}
     Valider La Quantité
 
+Valider Quantite
+    [Documentation]    Ce mot clé valide la quantité saisie sur un input déjà sélectionné
+    [Arguments]    ${quantite}
+    Input Text Into Current Element    ${EMPTY}
+    Input Text Into Current Element    ${quantite}
+    Sleep    2
+    Click Element    fr.satelix.logistique:id/fab_ajouter
+    Attendre
+
 Saisir une valeur et valider
     [Arguments]    ${valeur}
     AppiumLibrary.Input Text Into Current Element    ${valeur}
@@ -181,6 +190,17 @@ Saisir un Numero De Serie et valider
     utils.Taper Un Mot Au Clavier    ${numSerie}
     # AppiumLibrary.Input Text      ${champ_numero_serie}    ${numSerie}
     Press ENTER
+
+Saisir le Numéro de lot
+    [Arguments]    ${numero}
+    Wait Until Element Is Visible    //android.widget.TextView[@resource-id="fr.satelix.logistique:id/textinput_placeholder"]
+    Click Element    //android.widget.TextView[@resource-id="fr.satelix.logistique:id/textinput_placeholder"]
+    Input Text Into Current Element    ${numero}
+    Run Keyword    pressKeyCode    66
+
+Sélectionner le Lot avec DLC et FAB
+    Wait Until Element Is Visible    //androidx.recyclerview.widget.RecyclerView[@resource-id="fr.satelix.logistique:id/rv_liste"]
+    Click Text    DLC :
 
 Scanner le code barre correspondant au numéro de série
     [Arguments]    ${numSerie}
