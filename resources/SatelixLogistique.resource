@@ -35,6 +35,7 @@ ${INPUT_LOGIN}                class=android.widget.EditText
 ${INPUT_PASSWORD}               class=android.widget.EditText
 ${BUTTON_LOGIN}                 bt_connexion
 ${button_valider}       fr.satelix.logistique:id/fab_valider
+${button_finaliser}     fr.satelix.logistique:id/fab_quitter
  
  
 *** Keywords ***
@@ -194,4 +195,12 @@ Back
 
 Fermer L Application 
     Sleep    3s
-    AppiumLibrary.Close Application    #    ${appPackage}    
+    AppiumLibrary.Close Application    #    ${appPackage}
+
+Finaliser
+    Wait Until Page Contains    ${button_finaliser}
+    Click Element    ${button_finaliser}
+
+Valider
+    Wait Until Page Contains    fr.satelix.logistique:id/bt_quitter_module_valider_transfert
+    Click Element    fr.satelix.logistique:id/bt_quitter_module_valider_transfert    

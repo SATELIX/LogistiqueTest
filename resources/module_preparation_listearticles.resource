@@ -26,6 +26,12 @@ ${PASTILLE_COLIS}                   id=fab_colisage
 
 
 *** Keywords ***
+
+Afficher Liste des articles
+    [Arguments]    ${liste_articles}
+    Wait Until Page Contains    fr.satelix.logistique:id/input_text_recherche  
+    Click Element    ${liste_articles}
+    
 La Liste Des Articles De La Commande S Affichent
     [Documentation]    Vérifie que le nombre d'articles affiché n'est aps à zéro
     ...                 et que au moins un article est affiché. 
@@ -211,7 +217,9 @@ Scanner le code barre correspondant à l'article
     [Arguments]    ${article}
     Choisir L Article A Preparer Avec Le Lecteur CodeBarre    ${article}
 
-Sélectionner l Article a la Main
+Saisir l Article a la Main
+    [Documentation]    Recherche un article en cliqaunt sur l'input de recherche et en tapant le nom de l'article
+    ...                puis clique sur le bouton de validation
     [Arguments]    ${article}
     Wait Until Element Is Visible    fr.satelix.logistique:id/input_text_recherche
     Click Element    fr.satelix.logistique:id/input_text_recherche

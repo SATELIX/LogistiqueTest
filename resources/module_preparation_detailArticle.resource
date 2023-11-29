@@ -57,6 +57,11 @@ L Article Choisi Est Bien Celui Demandé
     Should Be Equal As Strings    ${nomArticle}    ${nomAffiche}
     ...    Le nom d'article affiché n'est pas celui qui a été sectionné dans la liste de la prépration
 
+Sélectionner la Gamme
+    [Arguments]    ${gamme}
+    Wait Until Page Contains    ${gamme}
+    Click Text    ${gamme}
+
 Le Lot Choisi Est Bien Celui Demandé
     [Documentation]    Compare le nom de le lot affiché qui doit être
     ...                le même que celui selectionné dans le menu 
@@ -88,7 +93,8 @@ Entrer la quantité complète à préparer et valider
     Valider La Quantité
 
 Valider Quantite
-    [Documentation]    Ce mot clé valide la quantité saisie sur un input déjà sélectionné
+    [Documentation]    Saisit la quantité et la valide sur un input déjà sélectionné.
+    ...                L'input est vidé avant d'être rempli.
     [Arguments]    ${quantite}
     Input Text Into Current Element    ${EMPTY}
     Input Text Into Current Element    ${quantite}
