@@ -30,7 +30,7 @@ PickingMonoEmpl
     Entrer une quantité et valider                        13
     Scanner le code barre correspondant à l'article       BAAR01
     Entrer une quantité et valider                        8
-    Appuyer sur "ok" et la "flèche retour"
+    Appuyer sur ok et back
     Scanner le code barre correspondant à l'article       LINGOR18
     Aller dans la liste et sélectionner le numéro de lot  LOT-10
     Entrer une quantité et valider                        2
@@ -57,7 +57,7 @@ PickingMonoEmpl
     Sleep    1s
     Scanner le code barre correspondant au numéro de série qui n'existe pas     MF88     
     Effacer le numéro de série, ne rien mettre et valider
-    Appuyer sur "ok" et la "flèche retour"
+    Appuyer sur ok et back
     Appuyer sur la pastille colis avec le petit carton      # et un "2"
     Appuyer sur "+"
     Rester appuyé sur l unite logistique                 PALETTE EUROPE 3
