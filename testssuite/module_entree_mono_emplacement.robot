@@ -1,9 +1,10 @@
 *** Settings ***
-Documentation       ce test pour executer l'application
-...                 ldkjdldjldkjd
+Documentation       Test du module Entrée Mono Emplacement
 ...
 
 Library             AppiumLibrary
+Library             Process
+Resource            ${CURDIR}/../resources/shared.resource
 
 
 *** Variables ***
@@ -15,38 +16,57 @@ ${appActivity}          fr.satelix.logistique.activities.MainActivity
 
 
 *** Test Cases ***
-Test De L Applicaiton
+Test De L Application
     Demarrer Une Application    fr.satelix.logistique
-    Sélectionner le module Entrée mono empl
-    Affiche sélection dépot destination
-    Sélection dépot destination
-
-
-*** Keywords ***
-Demarrer Une Application
-    [Documentation]    ce que fait le mot clé
-    [Arguments]    ${appPackage}
-    AppiumLibrary.Open Application
-    ...    http://127.0.0.1:4723
-    ...    automationName=${automationName}
-    ...    platformName=${platformName}
-    ...    appPackage=${appPackage}
-    ...    appActivity=${appActivity}
-    ...    autoGrantPermissions=true
-    ...    noReset=true
-    ...    fullReset=false
-    ...    forceAppLaunch=true    # force l'application à se lancer à chaque fois
-    # ...    app=${app}
-    # ...    udid=${deviceUdid}
-
-Sélectionner le module Entrée mono empl
-    Click Text    Entrée de stock
-
-Affiche sélection dépot destination
-    Wait Until Page Contains    Sélection dépôt destination
-
-Sélection dépot destination
-    Click Element
-    ...    //android.widget.Spinner[@resource-id="fr.satelix.logistique:id/dropdown_list" and @text="Sélection dépôt destination"]
-    Wait Until Page Contains Element    //*[@text="Bijou SA"]
-    Click Element    //*[@text="Bijou SA"]
+    Sélectionner le module    Entrée de stock
+    Sélection dépot destination    Bijou SA
+    Recherche article
+    Sélection article texte    BAAR01
+    Fermer le clavier
+    Retour arrière
+    Saisir code article manuellement    BA
+    Pas d'association code barre
+    Sélection article texte    BAAR01
+    Saisir quantité article    2
+    Valider quantité article
+    Vider recherche article
+    Recherche article
+    Scroll Vers Element 
+    ...    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Lingot Or 18 cts"]/android.view.ViewGroup
+    ...    bas
+    Sélection article element
+    ...    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Lingot Or 18 cts"]/android.view.ViewGroup
+    Affiche Element
+    ...    //android.widget.EditText[@resource-id="fr.satelix.logistique:id/dropdown_list" and @text="Numéro de lot"]
+    Scanner code barre    LINGOR18\;LOT-TEST2
+    Saisir quantité article    2
+    Valider quantité article
+    Recherche article
+    Scroll Vers Element
+    ...    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Bague Or et pierres"]/android.view.ViewGroup
+    ...    haut
+    Sélection article element
+    ...    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Bague Or et pierres"]/android.view.ViewGroup
+    Sélection gamme    Emeraude
+    Saisir quantité article    2
+    Valider quantité article
+    Attendre
+    Scanner code barre    EM040
+    Fermer le clavier
+    Affiche Element    //android.widget.TextView[@text="EM040"]
+    Retour arrière
+    Recherche article
+    Scroll Vers Element
+    ...    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Chaîne Argent maille et longueur variables"]/android.view.ViewGroup
+    ...    haut
+    Sélection article element
+    ...    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Chaîne Argent maille et longueur variables"]/android.view.ViewGroup
+    Sélection gamme    34
+    Sélection sous gamme    Classique
+    Fermer le clavier
+    Retour arrière
+    Attendre
+    Scanner code barre    38141025
+    Saisir quantité article    2
+    Valider quantité article
+    Valider module
