@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation       ce test pour executer l'application
-...                 ldkjdldjldkjd
+...                 
 ...
  
 Library    AppiumLibrary
