@@ -104,6 +104,7 @@ Test De L Application
     Scanner code barre    EM055
     Sélectionner Element    ${ok}
     Vider barre de recherche    EM055
+    Sleep    1s
     Sélectionner barre de recherche écrire à la main    BAOR01
     Sélectionner Element    ${BAOR01}
     Sélectionner Element    ${A1T1N1P1}
