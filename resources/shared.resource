@@ -130,21 +130,6 @@ Affiche Element
     Log To Console    Attente de l'affichage de l'élément ${element}
     Wait Until Page Contains Element    ${element}    30
 
-Scanner code barre
-    [Arguments]    ${codeBarre}
-    Log To Console    Scan du code barre ${codeBarre}
-    ${result}=    Run Process
-    ...    adb
-    ...    shell
-    ...    am
-    ...    broadcast
-    ...    -a
-    ...    fr.satelix.logistique.scan
-    ...    --es
-    ...    com.motorolasolutions.emdk.datawedge.data_string
-    ...    "${codeBarre}"
-    ...
-
 Sélection gamme
     [Arguments]    ${gamme}
     Log To Console    Sélection de la gamme ${gamme}

@@ -18,7 +18,7 @@ ${appActivity}          fr.satelix.logistique.activities.MainActivity
 *** Test Cases ***
 Test De L Application
     Demarrer Une Application    fr.satelix.logistique
-    Sélectionner le module    Entrée de stock
+    Sélectionner le module    Entrée mono empl
     Sélection dépot destination    Bijou SA
     Recherche article
     Sélection article texte    BAAR01

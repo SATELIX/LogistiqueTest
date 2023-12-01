@@ -5,9 +5,11 @@ Documentation    ce fichier contient les mots clé nécessaires pour accéder au
 
 Library     AppiumLibrary
 Resource    utils.resource
+Resource    module_preparation_handlingUnit.resource
 
 *** Variables ***
 
+${TITRE_MODULE}          id=tv_intitule_modules
 ${DOCUMENTS_AFFCIHES}    id=tv_item_doc_html
 
 #
@@ -16,7 +18,7 @@ ${DOCUMENTS_AFFCIHES}    id=tv_item_doc_html
 ${BOUTON_FINALISER}              id=fab_quitter
 # id=Validate and complete this entry
 
-${TEXTE_POIDS}                   id=textinput_placeholder
+${TEXTE_POIDS}                   id=input_cloture_colis_poids    #textinput_placeholder
 ${BOUTON_PHOTO}                  id=bt_input_button
 ${BOUTON_CLOTURE}                id=fab_cloturer
 
@@ -25,6 +27,8 @@ ${BOUTON_TRANSFERT}              id=fab_quitter
 
 ${POPUP_VALIDATION_PREPA}        id=bt_quitter_module_valider_transfert
 ${POPUP_RETOUR_PREPA}            id=bt_quitter_module_annuler
+
+${BOUTON_TERMINER_SAISIE_INCOMLETE}     id=button1
 
 
 # content-desc=Validate and complete this entry
@@ -39,31 +43,46 @@ Choisir Le Document A Preparer Dans La Liste Des Documents
     ...    La variable "document" est la référence de la préparation.<BR>
     ...    TO DO :       
     [Arguments]    ${document}
-    Wait Until Page Contains    ${document}   5 
+    Wait Until Page Contains    ${document}   15s 
     ...    Le document ${document} n'apparait pas dans la liste des documents à peparer
     AppiumLibrary.Click Text    ${document}
+
+Sélectionner le document
+    [Arguments]    ${document}
+    Choisir Le Document A Preparer Dans La Liste Des Documents    ${document}
 
 Cliquer sur le bouton de finalisation Et Verifier Que La Commande Est Complète
     [Documentation]    
     Cliquer sur le bouton de finalisation
-    Verifier Que La Commande Est Complète
+    #Verifier Que La Commande Est Complète
 
 Cliquer sur le bouton de finalisation
     AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_FINALISER}        
     AppiumLibrary.Click Element    ${BOUTON_FINALISER}
 
-Verifier Que La Commande Est Complète
-    [Documentation]      TO DO :   
-    ...    Depuis l'écran de finalisation de la Commande
-    ...    la liste des articles doit être affichée avec les quantités 
-    ...    égales à celles enregistrées 
-    AppiumLibrary.Wait Until Element Is Visible    ${TEXTE_POIDS}
-    No Operation
+Confirmer la preparation incomplete
+    AppiumLibrary.Wait Until Element Is Visible    id=android:id/button1        
+    AppiumLibrary.Click Element                    id=android:id/button1
+    
+# Verifier Que La Commande Est Complète
+#     [Documentation]      TO DO :   
+#     ...    Depuis l'écran de finalisation de la Commande
+#     ...    la liste des articles doit être affichée avec les quantités 
+#     ...    égales à celles enregistrées 
+#     AppiumLibrary.Wait Until Element Is Visible    ${TEXTE_POIDS}
+#     No Operation
 
 Entrer Le Poids Du Colis
     [Arguments]     ${poids}
-    AppiumLibrary.Wait Until Element Is Visible    ${TEXTE_POIDS}
+    Sleep    0.2s
+    AppiumLibrary.Wait Until Element Is Visible    ${TEXTE_POIDS}    8s
+    AppiumLibrary.Click Element    ${TEXTE_POIDS}
     Taper Un Nombre Au Clavier    ${poids}
+
+Une Erreur Doit Etre Indiquee Avec Le Message Correspondant
+    AppiumLibrary.Page Should Contain Element    id=text_input_error_icon
+    AppiumLibrary.Page Should Contain Element    id=textinput_error
+
 
 Prendre Une Photo Du Colis
     [Documentation]    Démarre l'appareil photo attend 1seconde 
@@ -82,9 +101,27 @@ Cliquer Sur Le Bouton De Cloture
     AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_CLOTURE}
     AppiumLibrary.Click Element    ${BOUTON_CLOTURE}
 
+Entrer Le Poids Et Appuyer Sur Cloturer
+    [Arguments]     ${poids}
+    Entrer Le Poids Du Colis    ${poids}
+    Cliquer Sur Le Bouton De Cloture
+
 Laisser Le Mode D Envoi Par Defaut et Transférer
     AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_TRANSFERT}
     AppiumLibrary.Click Element    ${BOUTON_TRANSFERT}
+
+Valider Le Mode Expedition Sur     
+    [Arguments]    ${modeExpedition}
+    Choisir le mode d'expédition    ${modeExpedition}
+
+Appuyer sur Transferer
+    Cliquer Sur Le Bouton De Transfert
+
+
+Appuyer sur la flèche retour et "Finaliser"
+    Appuyer sur la flèche retour
+    Cliquer sur le bouton de finalisation
+
 
 Choisir le mode d'expédition et Transférer
     [Documentation]    choisi le mode d'expédition donné en argument dans la liste de l'écran 
@@ -100,32 +137,18 @@ Cliquer Sur Le Bouton De Transfert
 
 Choisir le mode d'expédition
     [Arguments]    ${modeExpedition}
-     AppiumLibrary.Click Element    ${BUTTON_LISTE_MODE_EXPEDITION}
-    Sleep    0.5s
-    AppiumLibrary.Press Keycode    62
-    AppiumLibrary.Press Keycode    20
-    Sleep    0.5s
-    AppiumLibrary.Log Source
-    AppiumLibrary.Press Keycode    20
-    Sleep    0.5s
-    AppiumLibrary.Press Keycode    20
-    Sleep    0.5s
-    AppiumLibrary.Press Keycode    278
-    ${value}=    AppiumLibrary.Press Keycode    279
-    Sleep    1s
-    AppiumLibrary.Press Keycode    66
-
-    # KEYCODE_ENTER   66
-    # KEYCODE_TAB    61
-    #KEYCODE_SPACE  62
-    # KEYCODE_ALT_RIGHT    58
-
-    # KEYCODE_COPY 278
-    # KEYCODE_PASTE 279
-    # KEYCODE_NAVIGATE_NEXT 261
-    # KEYCODE_NAVIGATE_IN	262
-    # KEYCODE_DPAD_DOWN    20    
+    #  AppiumLibrary.Click Element    ${BUTTON_LISTE_MODE_EXPEDITION}
+     AppiumLibrary.Wait Until Element Is Visible    id=dropdown_list
+     Choisir LA Valeur Dans La Liste    id=dropdown_list    ${modeExpedition}
 
 Valider La Préparation
     AppiumLibrary.Wait Until Element Is Visible    ${POPUP_VALIDATION_PREPA}
     AppiumLibrary.Click Element    ${POPUP_VALIDATION_PREPA}
+
+Appuyer sur Terminer La Saisie
+    [Documentation]    Lorsque la saise d'une préparation est incomplète,
+    ...                un message apparait pour le signaler et il faut appuye sur 
+    ...    le bouton qui porte la mention "Termine la saisie" pour finir la préparation
+    AppiumLibrary.Wait Until Element Is Visible    ${POPUP_VALIDATION_PREPA}
+    AppiumLibrary.Click Element    ${POPUP_VALIDATION_PREPA}
+
