@@ -50,6 +50,7 @@ ${ValiderRetourFournisseurMultiEmpl}         //android.widget.Button[@resource-i
 Test De L Application
     Demarrer L Application
     Swipe Down    ${module_retour_fournisseur_multi_empl}
+    Sur le terminal, sélectionner le module    $monModule
     Sélectionner Element    ${module_retour_fournisseur_multi_empl}
     Sélectionner Element    ${depot}
     Sélectionner Element    ${Bijou SA}
@@ -188,22 +189,6 @@ Valider Quantite
     Input Text Into Current Element    ${quantite}
     Sleep  2s
     Click Element    fr.satelix.logistique:id/fab_ajouter
-
-
-Scanner code barre
-    [Arguments]    ${codeBarre}
-    Sleep    5s
-    ${result}=    Run Process
-    ...    adb
-    ...    shell
-    ...    am
-    ...    broadcast
-    ...    -a
-    ...    fr.satelix.logistique.scan
-    ...    --es
-    ...    com.motorolasolutions.emdk.datawedge.data_string
-    ...    "${codeBarre}"
-    ...    
 
 Vider barre de recherche
     [Arguments]    ${texte}

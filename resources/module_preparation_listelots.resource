@@ -6,6 +6,8 @@ Documentation    Mot clé correspondant à l'écran de la liste des Lots
 
 Library    AppiumLibrary
 Library    String
+Resource    module_preparation_detailArticle.resource
+
 
 *** Variables ***
 # ${LISTE_CARDVIEW_LOTS}        //*[@id="fr.satelix.logistique.demo:id/rv_liste"]/androidx.cardview.widget.CardView
@@ -19,6 +21,16 @@ ${DATE_LOT_EN_STOCK}    id=item_dates
 # ${DATE_LOT_EN_STOCK}    id=fr.satelix.logistique.demo:id/item_dates
 
 *** Keywords ***
+Choisir Le Lot    
+    [Arguments]    ${lot}
+    AppiumLibrary.Wait Until Page Contains Element    ${LOT_EN_STOCK}
+    AppiumLibrary.Click Text    ${lot}
+
+Aller dans la liste et sélectionner le numéro de lot
+    [Arguments]    ${lot}
+    module_preparation_detailArticle.Afficher Les Lots Disponibles
+    Choisir Le Lot    ${lot}
+
 Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité
     [Documentation]    Ce mot clé parcours la liste des lots affichée 
     ...            lit les quantités de chaque lot et vérifie qu'elle 
@@ -30,7 +42,7 @@ Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité
     ...    à l'écran pour le moment
 
     [Arguments]    ${quantite}
-    AppiumLibrary.Wait Until Element Is Visible    ${LISTE_VIEW_LOTS}
+    AppiumLibrary.Wait Until Element Is Visible    ${LISTE_VIEW_LOTS}    15s
     ${lots}=    AppiumLibrary.Get Webelements    ${LISTE_VIEW_LOTS}
     ${numero_lot}    Set Variable    ${EMPTY}
     FOR    ${lot}    IN    @{lots}

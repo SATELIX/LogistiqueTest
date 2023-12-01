@@ -136,21 +136,7 @@ Valider Quantite
     Input Text Into Current Element    ${quantite}
     Sleep    5s
     Click Element    fr.satelix.logistique:id/fab_ajouter
-    Attendre
-
-Scanner code barre
-    [Arguments]    ${codeBarre}
-    ${result}=    Run Process
-    ...    adb
-    ...    shell
-    ...    am
-    ...    broadcast
-    ...    -a
-    ...    fr.satelix.logistique.scan
-    ...    --es
-    ...    com.motorolasolutions.emdk.datawedge.data_string
-    ...    "${codeBarre}"
-    ...    
+    Attendre   
 
 Sélectionner lot lingor18
     Click Element    xpath = //android.widget.ImageButton[@content-desc="Afficher le menu déroulant"]

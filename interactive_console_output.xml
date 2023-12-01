@@ -3,7 +3,176 @@
 <suite id="s1" name="Robot Interactive Console" source="c:\Users\user\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<status status="PASS" starttime="20231201 14:41:50.108" endtime="20231201 14:41:53.231"/>
+<kw name="Cas Nominal De Preparation De Commande">
+<msg timestamp="20231109 21:11:03.160" level="FAIL">No keyword with name 'Cas Nominal De Preparation De Commande' found.</msg>
+<status status="FAIL" starttime="20231109 21:11:03.159" endtime="20231109 21:11:03.160"/>
+</kw>
+<kw name="Sur le terminal, sélectionner le module &quot;Picking Mono Empl&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.162" endtime="20231109 21:11:03.162"/>
+</kw>
+<kw name="Sélectionner le document &quot;PL00013&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.164" endtime="20231109 21:11:03.164"/>
+</kw>
+<kw name="Sélectionner à la main l'article BAAR01">
+<status status="NOT RUN" starttime="20231109 21:11:03.165" endtime="20231109 21:11:03.166"/>
+</kw>
+<kw name="Entrer 2 en quantité et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.167" endtime="20231109 21:11:03.167"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article BAAR01">
+<status status="NOT RUN" starttime="20231109 21:11:03.168" endtime="20231109 21:11:03.168"/>
+</kw>
+<kw name="Entrer 13 en quantité et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.170" endtime="20231109 21:11:03.170"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article BAAR01">
+<status status="NOT RUN" starttime="20231109 21:11:03.171" endtime="20231109 21:11:03.171"/>
+</kw>
+<kw name="Entrer 8 en quantité et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.173" endtime="20231109 21:11:03.173"/>
+</kw>
+<kw name="Faire ok et faire un retour &lt;- pour retourner sur la liste des documents">
+<status status="NOT RUN" starttime="20231109 21:11:03.173" endtime="20231109 21:11:03.173"/>
+</kw>
+<kw name="Scanner le code barre de l'article LINGOR18">
+<status status="NOT RUN" starttime="20231109 21:11:03.175" endtime="20231109 21:11:03.175"/>
+</kw>
+<kw name="Aller dans la liste et sélectionner le numéro de lot &quot;LOT-10&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.176" endtime="20231109 21:11:03.176"/>
+</kw>
+<kw name="Entrer 2 et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.178" endtime="20231109 21:11:03.178"/>
+</kw>
+<kw name="Scanner le code barre de l'article LINGOR18 avec un lot associé">
+<status status="NOT RUN" starttime="20231109 21:11:03.179" endtime="20231109 21:11:03.179"/>
+</kw>
+<kw name="Entrer 3 et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.182" endtime="20231109 21:11:03.182"/>
+</kw>
+<kw name="Appuyer sur la pastille colis avec le petit carton et un &quot;1&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.184" endtime="20231109 21:11:03.184"/>
+</kw>
+<kw name="Appuyer sur &quot;+&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.187" endtime="20231109 21:11:03.187"/>
+</kw>
+<kw name="Rester appuyé sur COLIS 2">
+<status status="NOT RUN" starttime="20231109 21:11:03.189" endtime="20231109 21:11:03.189"/>
+</kw>
+<kw name="Sélectionner &quot;Palette Europe&quot; et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.190" endtime="20231109 21:11:03.190"/>
+</kw>
+<kw name="Appuyer sur la flèche retour">
+<status status="NOT RUN" starttime="20231109 21:11:03.191" endtime="20231109 21:11:03.191"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article BAOR01 avec la gamme Emeraude">
+<status status="NOT RUN" starttime="20231109 21:11:03.192" endtime="20231109 21:11:03.192"/>
+</kw>
+<kw name="Entrer 18 et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.194" endtime="20231109 21:11:03.194"/>
+</kw>
+<kw name="Aller dans la liste et sélectionner la préparation BAOR01 Rubis">
+<status status="NOT RUN" starttime="20231109 21:11:03.195" endtime="20231109 21:11:03.195"/>
+</kw>
+<kw name="Entrer 1 et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.196" endtime="20231109 21:11:03.196"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article EM040">
+<status status="NOT RUN" starttime="20231109 21:11:03.198" endtime="20231109 21:11:03.198"/>
+</kw>
+<kw name="Sélectionner le conditionnement &quot;Pièce&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.199" endtime="20231109 21:11:03.199"/>
+</kw>
+<kw name="Entrer 3 en quantité et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.200" endtime="20231109 21:11:03.200"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article EM050">
+<status status="NOT RUN" starttime="20231109 21:11:03.202" endtime="20231109 21:11:03.202"/>
+</kw>
+<kw name="Entrer 26 en quantité et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.203" endtime="20231109 21:11:03.203"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article MODIV01">
+<status status="NOT RUN" starttime="20231109 21:11:03.204" endtime="20231109 21:11:03.204"/>
+</kw>
+<kw name="Saisir SERIE1 et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.206" endtime="20231109 21:11:03.206"/>
+</kw>
+<kw name="Scanner le code barre correspondant au numéro de série MF81">
+<status status="NOT RUN" starttime="20231109 21:11:03.207" endtime="20231109 21:11:03.207"/>
+</kw>
+<kw name="Scanner le code barre d'un numéro de série MF88 qui n'existe pas">
+<status status="NOT RUN" starttime="20231109 21:11:03.208" endtime="20231109 21:11:03.208"/>
+</kw>
+<kw name="Effacer le numéro de série, ne rien mettre et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.209" endtime="20231109 21:11:03.209"/>
+</kw>
+<kw name="Appuyer sur &quot;ok&quot; et la &quot;flèche retour&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.209" endtime="20231109 21:11:03.209"/>
+</kw>
+<kw name="Appuyer sur la pastille colis avec le petit carton et un &quot;2&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.210" endtime="20231109 21:11:03.210"/>
+</kw>
+<kw name="Appuyer sur &quot;+&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.212" endtime="20231109 21:11:03.212"/>
+</kw>
+<kw name="Rester appuyé sur PALETTE EUROPE 3">
+<status status="NOT RUN" starttime="20231109 21:11:03.213" endtime="20231109 21:11:03.213"/>
+</kw>
+<kw name="Sélectionner &quot;Palette Perdue&quot; et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.214" endtime="20231109 21:11:03.214"/>
+</kw>
+<kw name="Appuyer sur la flèche retour">
+<status status="NOT RUN" starttime="20231109 21:11:03.216" endtime="20231109 21:11:03.216"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article CHAAR/VAR avec les gammes 42 et Forcat">
+<status status="NOT RUN" starttime="20231109 21:11:03.219" endtime="20231109 21:11:03.220"/>
+</kw>
+<kw name="Entrer 12 et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.222" endtime="20231109 21:11:03.222"/>
+</kw>
+<kw name="Dans la liste sélectionner la préparation CHAAR/VAR 34cm Classique">
+<status status="NOT RUN" starttime="20231109 21:11:03.223" endtime="20231109 21:11:03.223"/>
+</kw>
+<kw name="Entrer 1 et valider">
+<status status="NOT RUN" starttime="20231109 21:11:03.225" endtime="20231109 21:11:03.225"/>
+</kw>
+<kw name="Appuyer sur la flèche retour et &quot;Finaliser&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.226" endtime="20231109 21:11:03.226"/>
+</kw>
+<kw name="Appuyer sur &quot;Terminer la saisie&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.227" endtime="20231109 21:11:03.227"/>
+</kw>
+<kw name="Mettre 1 et appuyer sur &quot;Clôturer&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.229" endtime="20231109 21:11:03.229"/>
+</kw>
+<kw name="Mettre 12 et appuyer sur &quot;Clôturer&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.230" endtime="20231109 21:11:03.230"/>
+</kw>
+<kw name="Mettre 0 et appuyer sur &quot;Clôturer&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.231" endtime="20231109 21:11:03.231"/>
+</kw>
+<kw name="Mettre 15 et appuyer sur &quot;Clôturer&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.233" endtime="20231109 21:11:03.233"/>
+</kw>
+<kw name="Valider le mode expédition sur Colissimo">
+<status status="NOT RUN" starttime="20231109 21:11:03.235" endtime="20231109 21:11:03.235"/>
+</kw>
+<kw name="Appuyer sur &quot;Transférer&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.238" endtime="20231109 21:11:03.238"/>
+</kw>
+<kw name="Sélectionner &quot;Valider picking&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.238" endtime="20231109 21:11:03.238"/>
+</kw>
+<kw name="Ouvrir le fichier Sage &quot;Bijou_TEST&quot; fichier commercial dans C:\Satelix">
+<status status="NOT RUN" starttime="20231109 21:11:03.240" endtime="20231109 21:11:03.240"/>
+</kw>
+<kw name="Cliquer sur &quot;Traitement&quot; puis &quot;Documents des Ventes&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.241" endtime="20231109 21:11:03.241"/>
+</kw>
+<kw name="Sélectionner &quot;Préparation de livraison&quot;">
+<status status="NOT RUN" starttime="20231109 21:11:03.242" endtime="20231109 21:11:03.242"/>
+</kw>
+<status status="PASS" starttime="20231109 21:11:02.283" endtime="20231109 21:11:09.486"/>
 </kw>
 <status status="PASS" starttime="20231201 14:41:50.107" endtime="20231201 14:41:53.231"/>
 </test>
