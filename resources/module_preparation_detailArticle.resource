@@ -26,7 +26,7 @@ ${BOUTON_AJOUTER}                    id=fab_ajouter
 
 ${MESSAGE_ERREUR_QUANTITE}           id=android:id/message
 ${BOUTON_OK_MESSAGE_ERREUR}          id=android:id/button1
-
+${CHAMP_QUANTITE_INSUFFISANTE}       id=fr.satelix.logistique:id/text_input_error_icon
 
 *** Keywords ***
 Preparer Les Quantités De L Article
@@ -76,21 +76,22 @@ Afficher Les Lots Disponibles
     Wait Until Page Contains Element    ${BUTON_LISTE_DES_LOTS_EN_STOCK}
     Click Element    ${BUTON_LISTE_DES_LOTS_EN_STOCK}
 
+Afficher Les Preparations Disponibles
+    Afficher Les Lots Disponibles
+
 Entrer une quantité et valider
     [Arguments]    ${quantite}
-    AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}  30s
+    AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}  5s
     Taper Un Nombre Au Clavier   ${quantite}
     Valider La Quantité
 
-Entrer la quantité complète à préparer et valider
-    [Documentation]    Pprend un nombre en entrée, 
-    ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante.
-    ...    Cela permet de simuler les gestes d'un utilisateur.
+
+Entrer une quantité supérieure au stock puis valider
     [Arguments]    ${quantite}
-    # AppiumLibrary.Scroll Down    ${BOUTON_AJOUTER}
-    # AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
+    AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}  5s
     Taper Un Nombre Au Clavier   ${quantite}
-    Valider La Quantité
+    Valider La Quantité Supp  ${quantite}
+
 
 Valider Quantite
     [Documentation]    Saisit la quantité et la valide sur un input déjà sélectionné.
@@ -120,7 +121,12 @@ Entrer Une Quantité Supérieure A Celle Demandee Et Valider
 
 Valider La Quantité
     Click Element    ${BOUTON_AJOUTER}
-    Wait Until Page Does Not Contain Element    ${BOUTON_AJOUTER}
+
+Valider La Quantité Supp
+    [Arguments]    ${quantite}
+    Click Element    ${BOUTON_AJOUTER}
+    Click Element    //android.widget.EditText[@text="${quantite}"]
+    Clear Text       //android.widget.EditText[@text="${quantite}"]
 
 Entrer une quantité automatiquement
     Click Element    Show dropdown menu
@@ -225,9 +231,12 @@ Effacer le numéro de série, ne rien mettre et valider
     Supprimer Un Nombre Au Clavier
     Press ENTER
 
+Effacer le numéro de série, ne rien mettre et valider bis
+    Supprimer Un Nombre Au Clavier
 
 Appuyer sur ok et back
     Wait Until Page Contains    OK
     Click Text    OK
     Wait Until Page Does Not Contain    OK    timeout=30s
+    Sleep    2s
     Go Back

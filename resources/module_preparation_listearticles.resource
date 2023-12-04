@@ -210,6 +210,17 @@ Sélectionner à la main l'article dans la liste
     [Arguments]    ${article}
     module_preparation_listearticles.Choisir L Article A Preparer Par Son Nom    ${article}
 
+Choisir l'article dans la liste
+    [Documentation]  Clique sur le module passé en paramètre
+    [Arguments]      ${article_name}
+    ${article_present}    Run Keyword And Return Status    AppiumLibrary.Wait Until Page Contains    ${article_name}
+    ...    3s
+    ...    La liste des modules ne contient pas le module demandé ${article_name}  
+    Run Keyword If    ${article_present}
+    ...    AppiumLibrary.Click Text    ${article_name}
+    ...  ELSE
+    ...    Wait Until Keyword Succeeds    4x    0.5s    Faire Defiler Les Modules Pour Trouver Le Bon     ${article_name}
+
 Scanner le code barre correspondant à l'article 
     [Arguments]    ${article}
     Choisir L Article A Preparer Avec Le Lecteur CodeBarre    ${article}

@@ -4,6 +4,7 @@ Documentation    ce fichier contient les mots clé nécessaires pour accéder au
 ...   Les écrans avec le détails des articles et des lots sont décits dans des dichiers séparés  
 
 Library     AppiumLibrary
+Library    DateTime
 Resource    utils.resource
 Resource    module_preparation_handlingUnit.resource
 
@@ -18,6 +19,7 @@ ${DOCUMENTS_AFFCIHES}    id=tv_item_doc_html
 ${BOUTON_FINALISER}              id=fab_quitter
 # id=Validate and complete this entry
 
+${pastille_colis}                id=fr.satelix.logistique:id/fab_colisage
 ${TEXTE_POIDS}                   id=input_cloture_colis_poids    #textinput_placeholder
 ${BOUTON_PHOTO}                  id=bt_input_button
 ${BOUTON_CLOTURE}                id=fab_cloturer
@@ -29,7 +31,7 @@ ${POPUP_VALIDATION_PREPA}        id=bt_quitter_module_valider_transfert
 ${POPUP_RETOUR_PREPA}            id=bt_quitter_module_annuler
 
 ${BOUTON_TERMINER_SAISIE_INCOMLETE}     id=button1
-
+${text_recherche}                id =input_text_recherche
 
 # content-desc=Validate and complete this entry
 # id=fr.satelix.logistique.demo:id/fab_quitter
@@ -47,14 +49,50 @@ Choisir Le Document A Preparer Dans La Liste Des Documents
     ...    Le document ${document} n'apparait pas dans la liste des documents à peparer
     AppiumLibrary.Click Text    ${document}
 
+Choisir Le Document A Preparer Dans La Liste Des Documents Element
+    [Documentation]    Ce mot clé parcour la liste des documents du module
+    ...    Préparation et Click sur le document correspondant à celui passé
+    ...    en Argument <BR>
+    ...    La variable "document" est la référence de la préparation.<BR>
+    ...    TO DO :       
+    [Arguments]    ${document}
+    Wait Until Element Is Visible    ${document}   15s 
+    ...    Le document ${document} n'apparait pas dans la liste des documents à peparer
+    AppiumLibrary.Click Element    ${document}
+
 Sélectionner le document
     [Arguments]    ${document}
     Choisir Le Document A Preparer Dans La Liste Des Documents    ${document}
 
+Sélectionner l article
+    [Arguments]    ${article}
+    Choisir Le Document A Preparer Dans La Liste Des Documents    ${article}
+
+Sélectionner l emplacement
+    [Arguments]    ${emplacement}
+    Choisir Le Document A Preparer Dans La Liste Des Documents    ${emplacement}
+
+Sélectionner date du lendemain
+    ${today}=    Get Current Date
+    Choisir Le Document A Preparer Dans La Liste Des Documents    ${today}
+    Choisir Le Document A Preparer Dans La Liste Des Documents    5
+
+Transferer
+    Choisir Le Document A Preparer Dans La Liste Des Documents    TRANSFÉRER
+
+Supprimer Recherche Article
+    [Arguments]    ${article}
+    Choisir Le Document A Preparer Dans La Liste Des Documents Element    //android.widget.ImageButton[@content-desc="Valider cet article"]
+    Wait Until Element Is Visible    //android.widget.EditText[@text="${article}"]
+    Clear Text    //android.widget.EditText[@text="${article}"]
+
+Appuyer sur la pastille du colis
+    Choisir Le Document A Preparer Dans La Liste Des Documents Element   ${pastille_colis}
+
 Cliquer sur le bouton de finalisation Et Verifier Que La Commande Est Complète
     [Documentation]    
     Cliquer sur le bouton de finalisation
-    #Verifier Que La Commande Est Complète
+
 
 Cliquer sur le bouton de finalisation
     AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_FINALISER}        

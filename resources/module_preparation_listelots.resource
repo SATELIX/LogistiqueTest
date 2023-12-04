@@ -13,6 +13,7 @@ Resource    module_preparation_detailArticle.resource
 # ${LISTE_CARDVIEW_LOTS}        //*[@id="fr.satelix.logistique.demo:id/rv_liste"]/androidx.cardview.widget.CardView
 ${LISTE_VIEW_LOTS}      id=const_layout_lot_serie
 ${LOT_EN_STOCK}         id=tv_intitule_lot_serie
+${PREPARATION_EN_STOCK}  id=tv_item_article_html
 ${TEXT_QUANTITE_STOCK}  id=tv_qte_restante
 ${DATE_LOT_EN_STOCK}    id=item_dates
 # ${LISTE_VIEW_LOTS}      id=fr.satelix.logistique.demo:id/const_layout_lot_serie
@@ -26,10 +27,26 @@ Choisir Le Lot
     AppiumLibrary.Wait Until Page Contains Element    ${LOT_EN_STOCK}
     AppiumLibrary.Click Text    ${lot}
 
+Choisir La Préparation    
+    [Arguments]    ${preparation}
+    AppiumLibrary.Wait Until Page Contains    ${preparation}
+    AppiumLibrary.Click Text    ${preparation}
+
 Aller dans la liste et sélectionner le numéro de lot
     [Arguments]    ${lot}
     module_preparation_detailArticle.Afficher Les Lots Disponibles
     Choisir Le Lot    ${lot}
+
+Aller dans la liste et sélectionner le numéro de lot valider
+    [Arguments]    ${lot}
+    module_preparation_detailArticle.Afficher Les Lots Disponibles
+    Choisir Le Lot    ${lot}
+    AppiumLibrary.Click Text    VALIDER
+
+Aller dans la liste et sélectionner la préparation
+    [Arguments]    ${preparation}
+    module_preparation_detailArticle.Afficher Les Preparations Disponibles
+    Choisir La Préparation    ${preparation}
 
 Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité
     [Documentation]    Ce mot clé parcours la liste des lots affichée 
