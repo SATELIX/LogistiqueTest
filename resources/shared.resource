@@ -141,10 +141,6 @@ Sélection sous gamme
     Log To Console    Sélection de la sous gamme ${sousGamme}
     Sélection gamme    ${sousGamme}
 
-Attendre
-    Log To Console    Attente de 5 secondes
-    Sleep    5s
-
 Valider module
     Log To Console    Validation du module
     Wait Until Page Contains    fr.satelix.logistique:id/fab_quitter    30

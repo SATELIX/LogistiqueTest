@@ -5,6 +5,7 @@ Documentation       Test du module Entrée Mono Emplacement
 Library             AppiumLibrary
 Library             Process
 Resource            ${CURDIR}/../resources/shared.resource
+Resource    ../resources/SatelixLogistique.resource
 
 
 *** Variables ***
