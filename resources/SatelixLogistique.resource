@@ -161,6 +161,12 @@ Valider les informations
     Wait Until Page Contains    VALIDER
     Click Element    ${button_valider}
 
+Valider association
+    Wait Until Page Contains    VALIDER
+    Click Text     VALIDER
+    Wait Until Page Contains    REMPLACER
+    Click Text     REMPLACER
+
 Swipe Down
     [Arguments]    ${element}
     FOR    ${counter}    IN RANGE    0    10

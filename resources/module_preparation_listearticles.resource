@@ -225,6 +225,10 @@ Scanner le code barre correspondant à l'article
     [Arguments]    ${article}
     Choisir L Article A Preparer Avec Le Lecteur CodeBarre    ${article}
 
+Scanner le code barre correspondant au lot 
+    [Arguments]    ${lot}
+    Choisir L Article A Preparer Avec Le Lecteur CodeBarre    ${lot}
+
 Saisir l Article a la Main
     [Documentation]    Recherche un article en cliquant sur l'input de recherche et en tapant le nom de l'article.
     ...                Puis clique sur le bouton de validation

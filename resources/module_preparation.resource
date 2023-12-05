@@ -72,6 +72,10 @@ Sélectionner l article
     [Arguments]    ${article}
     Choisir Le Document A Preparer Dans La Liste Des Documents    ${article}
 
+Ouvrir menu déroulant
+    [Arguments]    ${menu}
+    Wait Until Element Is Visible    ${menu}
+    AppiumLibrary.Click Element    ${menu} 
 
 Choisir au menu déroulant
     [Arguments]    ${menu}    ${choix}

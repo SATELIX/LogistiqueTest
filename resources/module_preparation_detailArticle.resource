@@ -20,8 +20,7 @@ ${ZONE_GESTION_QUANTITE}             id=layout_quantite
 ${TEXT_QUANTITE_PREPAREE}            id=tv_qte_preparee
 ${TEXT_QUANTITE_VALIDEE}             id=tv_qte_validee
 
-${CHAMP_QUANTITE}                    id=textinput_placeholder
-
+${CHAMP_QUANTITE}                    //android.widget.EditText[@text="Quantité"]
 ${BOUTON_AJOUTER}                    id=fab_ajouter
 
 ${MESSAGE_ERREUR_QUANTITE}           id=android:id/message
@@ -86,6 +85,7 @@ Afficher Les Preparations Disponibles
 Entrer une quantité et valider
     [Arguments]    ${quantite}
     AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}  5s
+    Click Element    ${CHAMP_QUANTITE}
     Taper Un Nombre Au Clavier   ${quantite}
     Valider La Quantité
 
@@ -94,6 +94,12 @@ Effacer la quantité
     Wait Until Element Is Visible    //android.widget.EditText[@text="${old_quantity}"]
     Click Element    //android.widget.EditText[@text="${old_quantity}"]
     Clear Text    //android.widget.EditText[@text="${old_quantity}"]
+
+Effacer le lot
+    Wait Until Element Is Visible    //android.widget.EditText[@resource-id="fr.satelix.logistique:id/dropdown_list"]
+    Click Text    //android.widget.EditText[@resource-id="fr.satelix.logistique:id/dropdown_list"]
+    Clear Text    //android.widget.EditText[@resource-id="fr.satelix.logistique:id/dropdown_list"]
+
 
 Modifier une quantite
     [Arguments]    ${value}    ${old_value}
@@ -259,3 +265,15 @@ Appuyer sur ok et back
     Wait Until Page Does Not Contain    OK    timeout=30s
     Sleep    2s
     Go Back
+
+
+Cliquer sur continuer
+    Wait Until Page Contains     CONTINUER
+    Click Text    CONTINUER
+
+Modifier nb de numéro de lot à générer
+    [Arguments]    ${nb}    ${gene}
+    Wait Until Page Contains    ${nb}
+    Click Text    ${nb}
+    Wait Until Page Contains    ${gene}
+    Taper Un Nombre Au Clavier   ${gene}

@@ -219,7 +219,7 @@ Modifier la valeur et valider
     Click Element    //android.widget.EditText[@text="9"]
     Input Text Into Current Element    7
     CLick Element    //android.widget.ImageButton[@content-desc="Remplacer la quantité saisie pour l'article"]
-
+#à remplacer
 
 Selectionner Mettre En Attente
     Wait Until Element Is Visible    //android.widget.Button[@resource-id="fr.satelix.logistique:id/bt_quitter_module_mettre_en_attente"]

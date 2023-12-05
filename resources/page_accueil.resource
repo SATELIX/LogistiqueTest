@@ -2,6 +2,8 @@
 Documentation    contient les mots clés gérant les actions sur la page d'accueil/home
 ...              où se touve la liste des modules disponibles.
 
+Resource    ../resources/utils.resource
+
 Library    AppiumLibrary
 
 *** Variables ***
@@ -55,8 +57,16 @@ Choisir au menu déroulant avec scroll
     [Arguments]    ${menu}    ${choix}
     Wait Until Element Is Visible    ${menu}
     AppiumLibrary.Click Element    ${menu}
+    Sleep    5s
     Scroll Vers Element    ${choix}    bas
     AppiumLibrary.Click Element    ${choix}
+
+Sélectionner document origine
+    [Arguments]    ${txt}
+    Wait Until Element Is Visible    //android.widget.EditText[@text="Sélection document origine"]
+    Click Element    //android.widget.EditText[@text="Sélection document origine"]
+    Taper Un Mot Au Clavier    ${txt}
+    Press ENTER
 
 Choisir le module Peparation
 	Choisir le module dans la liste des modules    ${module}
