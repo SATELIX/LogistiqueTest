@@ -29,7 +29,7 @@ ${BAGUES}    //androidx.cardview.widget.CardView[@content-desc="Client Bague's e
 
 
 *** Test Cases ***
-Réception multi empl
+Réception CommandeClient
     Sur le terminal, sélectionner le module                       Commande Client
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${client}         ${BAGUES}
@@ -41,8 +41,8 @@ Réception multi empl
     Entrer une quantité et valider    5
     Scanner le code barre correspondant à l'article    LINGOR18
     Entrer une quantité et valider    5
-    Sélectionner à la main l'article dans la liste     EM040
-    Sélectionner le conditionnement    écrin de 12
+    Saisir l Article a la Main     EM040
+    Sélectionner le conditionnement    ECRIN DE 12
     Entrer une quantité et valider    1
     Scanner le code barre correspondant à l'article    EM050
     Entrer une quantité et valider    2
@@ -52,31 +52,32 @@ Réception multi empl
     Entrer une quantité et valider    3
     Scanner le code barre correspondant à l'article    MODIV01
     Valider La Quantité
+    Appuyer sur OK
     Entrer une quantité et valider    0
+    Appuyer sur OK
     Appuyer sur la flèche retour
     Scanner le code barre correspondant à l'article    EM055
     Appuyer sur OK
-    Vider barre de recherche
-    Sélectionner à la main l'article dans la liste     BAOR01
-    Sélectionner gamme Emeraude
+    Vider barre de recherche    EM055
+    Saisir l Article a la Main     BAOR01
+    Sélection gamme    Emeraude
     Entrer une quantité et valider    20
     Scanner le code barre correspondant à l'article    21731003
     Entrer une quantité et valider    5
     Scanner le code barre correspondant à l'article    21731003
-    Appuyer sur le crayon
-    Entrer une quantité et valider    18
+    Modifier une quantite    18    25
     Appuyer sur la flèche retour
-    Selectionner Mettre En Attente
+    Cliquer sur le bouton de mise en attente
     Sur le terminal, sélectionner le module                       Commande Client
     Cliquer sur Oui
-    Sélectionner à la main l'article dans la liste     CHAAR/VAR
-    Sélectionner gamme 42cm
-    Sélectionner sous-gamme forcat
+    Saisir l Article a la Main     CHAAR/VAR
+    Sélection gamme    42
+    Sélection sous gamme    Forçat
     Entrer une quantité et valider    2
     Scanner le code barre correspondant à l'article    38141025
     Entrer une quantité et valider    10
     Cliquer sur le bouton de finalisation
     Valider
-    
+
 
 

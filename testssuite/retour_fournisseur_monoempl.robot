@@ -183,18 +183,11 @@ Appuyer sur retour
     Click Element    xpath = //android.widget.ImageButton
 
 
-Appuyer sur OK
-    Click Element    xpath = //android.widget.Button[@resource-id="android:id/button1"]
-
 Validation
     Click Element    //android.widget.EditText[@resource-id="fr.satelix.logistique:id/input_text_recherche"]
     Click Element    //android.widget.ImageButton[@content-desc="Valider cet article"]
 
-Vider barre de recherche
-    Wait Until Element Is Visible    //android.widget.EditText[@text="EM150"]
-    Click Element    //android.widget.EditText[@text="EM150"]
-    Wait Until Element Is Visible    //android.widget.ImageButton[@content-desc="Effacer le texte"]
-    Click Element    //android.widget.ImageButton[@content-desc="Effacer le texte"]
+
     
 Sélectionner BAOR01 à la Main
     Wait Until Element Is Visible    //android.widget.EditText[@text="Recherche article"]

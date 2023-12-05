@@ -266,6 +266,10 @@ Appuyer sur ok et back
     Sleep    2s
     Go Back
 
+Appuyer sur ok
+    Wait Until Page Contains    OK
+    Click Text    OK
+    Wait Until Page Does Not Contain    OK    timeout=30s
 
 Cliquer sur continuer
     Wait Until Page Contains     CONTINUER
@@ -277,3 +281,10 @@ Modifier nb de numéro de lot à générer
     Click Text    ${nb}
     Wait Until Page Contains    ${gene}
     Taper Un Nombre Au Clavier   ${gene}
+
+
+Vider barre de recherche
+    [Arguments]    ${element}
+    Wait Until Element Is Visible    //android.widget.EditText[@text="${element}"]
+    Click Element    //android.widget.EditText[@text="${element}"]
+    Clear Text    //android.widget.EditText[@text="${element}"]
