@@ -204,6 +204,11 @@ Cliquer Sur Le Bouton De Transfert
 Cliquer sur Oui
     AppiumLibrary.Wait Until Page Contains    OUI
     AppiumLibrary.Click Text    OUI
+
+Cliquer sur Non
+    AppiumLibrary.Wait Until Page Contains    NON
+    AppiumLibrary.Click Text    NON
+
 Choisir le mode d'expédition
     [Arguments]    ${modeExpedition}
     #  AppiumLibrary.Click Element    ${BUTTON_LISTE_MODE_EXPEDITION}
