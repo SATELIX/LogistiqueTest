@@ -17,6 +17,8 @@ ${DOCUMENTS_AFFCIHES}    id=tv_item_doc_html
 # Ecran de finalisation
 # 
 ${BOUTON_FINALISER}              id=fab_quitter
+${BOUTON_ATTENTE}                id =bt_quitter_module_mettre_en_attente
+
 # id=Validate and complete this entry
 
 ${pastille_colis}                id=fr.satelix.logistique:id/fab_colisage
@@ -28,6 +30,7 @@ ${BUTTON_LISTE_MODE_EXPEDITION}  id=text_input_end_icon
 ${BOUTON_TRANSFERT}              id=fab_quitter
 
 ${POPUP_VALIDATION_PREPA}        id=bt_quitter_module_valider_transfert
+${terminer_saisie}               id=android:id/button1
 ${POPUP_RETOUR_PREPA}            id=bt_quitter_module_annuler
 
 ${BOUTON_TERMINER_SAISIE_INCOMLETE}     id=button1
@@ -60,6 +63,7 @@ Choisir Le Document A Preparer Dans La Liste Des Documents Element
     ...    Le document ${document} n'apparait pas dans la liste des documents à peparer
     AppiumLibrary.Click Element    ${document}
 
+
 Sélectionner le document
     [Arguments]    ${document}
     Choisir Le Document A Preparer Dans La Liste Des Documents    ${document}
@@ -67,6 +71,18 @@ Sélectionner le document
 Sélectionner l article
     [Arguments]    ${article}
     Choisir Le Document A Preparer Dans La Liste Des Documents    ${article}
+
+
+Choisir au menu déroulant
+    [Arguments]    ${menu}    ${choix}
+    Wait Until Element Is Visible    ${menu}
+    AppiumLibrary.Click Element    ${menu}    
+    Wait Until Page Contains Element   ${choix}
+    Click Element    ${choix}  
+
+Sélectionner ok
+    Wait Until Page Contains    OK
+    AppiumLibrary.Click Text    OK
 
 Sélectionner l emplacement
     [Arguments]    ${emplacement}
@@ -97,6 +113,10 @@ Cliquer sur le bouton de finalisation Et Verifier Que La Commande Est Complète
 Cliquer sur le bouton de finalisation
     AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_FINALISER}        
     AppiumLibrary.Click Element    ${BOUTON_FINALISER}
+
+Cliquer sur le bouton de mise en attente
+    AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_ATTENTE}        
+    AppiumLibrary.Click Element    ${BOUTON_ATTENTE}
 
 Confirmer la preparation incomplete
     AppiumLibrary.Wait Until Element Is Visible    id=android:id/button1        
@@ -160,6 +180,10 @@ Appuyer sur la flèche retour et "Finaliser"
     Appuyer sur la flèche retour
     Cliquer sur le bouton de finalisation
 
+Appuyer sur la flèche retour et "Mettre En Attente"
+    Appuyer sur la flèche retour
+    Sleep    2s
+    Cliquer sur le bouton de mise en attente
 
 Choisir le mode d'expédition et Transférer
     [Documentation]    choisi le mode d'expédition donné en argument dans la liste de l'écran 
@@ -173,6 +197,9 @@ Cliquer Sur Le Bouton De Transfert
     AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_TRANSFERT}
     AppiumLibrary.Click Element    ${BOUTON_TRANSFERT}
 
+Cliquer sur Oui
+    AppiumLibrary.Wait Until Page Contains    OUI
+    AppiumLibrary.Click Text    OUI
 Choisir le mode d'expédition
     [Arguments]    ${modeExpedition}
     #  AppiumLibrary.Click Element    ${BUTTON_LISTE_MODE_EXPEDITION}
@@ -189,4 +216,8 @@ Appuyer sur Terminer La Saisie
     ...    le bouton qui porte la mention "Termine la saisie" pour finir la préparation
     AppiumLibrary.Wait Until Element Is Visible    ${POPUP_VALIDATION_PREPA}
     AppiumLibrary.Click Element    ${POPUP_VALIDATION_PREPA}
+
+Appuyer sur Terminer La Saisie bis
+    AppiumLibrary.Wait Until Element Is Visible    ${terminer_saisie}
+    AppiumLibrary.Click Element    ${terminer_saisie}
 

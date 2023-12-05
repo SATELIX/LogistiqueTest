@@ -184,7 +184,7 @@ Choisir L Article A Preparer Avec Le Lecteur CodeBarre
     ...    filtre les articles correspondants. 
     [Arguments]    ${reference}
     Sleep    0.5s
-    AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    15s    Il n'y a pas d'aticle à préparer dans pour cette péparation.
+    #AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    15s    Il n'y a pas d'aticle à préparer dans pour cette péparation.
     utils.Scanner Un Code    ${reference} 
 
 

@@ -32,6 +32,7 @@ Choisir La Préparation
     AppiumLibrary.Wait Until Page Contains    ${preparation}
     AppiumLibrary.Click Text    ${preparation}
 
+
 Aller dans la liste et sélectionner le numéro de lot
     [Arguments]    ${lot}
     module_preparation_detailArticle.Afficher Les Lots Disponibles

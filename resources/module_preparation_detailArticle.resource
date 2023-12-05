@@ -13,7 +13,7 @@ ${TEXTE_LOT}                         ${LAYOUT_HAUT}android.widget.TextView[1]
 ${TEXTE_NOM_ARTICLE}                 ${LAYOUT_HAUT}android.widget.TextView[2]
 ${BUTON_CHOIX_DES_LOTS}              id=ctn_saisie_num_lot_serie
 ${BUTON_LISTE_DES_LOTS_EN_STOCK}     id=text_input_end_icon
-
+${BUTON_LISTE_DES_ARTICLES}           id=text_input_end_icon
 ${TEXT_STOCK_GLOBAL}                 id=tv_qte_stock
 
 ${ZONE_GESTION_QUANTITE}             id=layout_quantite
@@ -76,6 +76,10 @@ Afficher Les Lots Disponibles
     Wait Until Page Contains Element    ${BUTON_LISTE_DES_LOTS_EN_STOCK}
     Click Element    ${BUTON_LISTE_DES_LOTS_EN_STOCK}
 
+Afficher Les Articles Disponibles
+    Wait Until Page Contains Element    ${BUTON_LISTE_DES_ARTICLES}    10
+    Click Element    ${BUTON_LISTE_DES_ARTICLES}
+
 Afficher Les Preparations Disponibles
     Afficher Les Lots Disponibles
 
@@ -83,6 +87,21 @@ Entrer une quantité et valider
     [Arguments]    ${quantite}
     AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}  5s
     Taper Un Nombre Au Clavier   ${quantite}
+    Valider La Quantité
+
+Effacer la quantité
+    [Arguments]    ${old_quantity}
+    Wait Until Element Is Visible    //android.widget.EditText[@text="${old_quantity}"]
+    Click Element    //android.widget.EditText[@text="${old_quantity}"]
+    Clear Text    //android.widget.EditText[@text="${old_quantity}"]
+
+Modifier une quantite
+    [Arguments]    ${value}    ${old_value}
+    Wait Until Element Is Visible    fr.satelix.logistique:id/bt_edit_qte
+    Click Element    fr.satelix.logistique:id/bt_edit_qte
+    Wait Until Element Is Visible    //android.widget.EditText[@text="${old_value}"]
+    Click Element    //android.widget.EditText[@text="${old_value}"]
+    Taper Un Nombre Au Clavier   ${value}
     Valider La Quantité
 
 
