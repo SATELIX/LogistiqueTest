@@ -72,6 +72,10 @@ Sélectionner l article
     [Arguments]    ${article}
     Choisir Le Document A Preparer Dans La Liste Des Documents    ${article}
 
+Sélectionner l article par element
+    [Arguments]    ${article}
+    Choisir Le Document A Preparer Dans La Liste Des Documents Element   ${article}
+
 Ouvrir menu déroulant
     [Arguments]    ${menu}
     Wait Until Element Is Visible    ${menu}
