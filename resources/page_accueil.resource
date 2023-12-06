@@ -61,6 +61,7 @@ Choisir au menu déroulant avec scroll
     Scroll Vers Element    ${choix}    bas
     AppiumLibrary.Click Element    ${choix}
 
+
 Sélectionner document origine
     [Arguments]    ${txt}
     Wait Until Element Is Visible    //android.widget.EditText[@text="Sélection document origine"]

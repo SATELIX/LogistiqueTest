@@ -89,6 +89,14 @@ Entrer une quantité et valider
     Taper Un Nombre Au Clavier   ${quantite}
     Valider La Quantité
 
+Entrer une quantité max et valider
+    AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}  5s
+    ${stock}    Get Text    xpath=//android.widget.TextView[@resource-id="fr.satelix.logistique:id/tv_qte_stock"]
+    Click Element    ${CHAMP_QUANTITE}
+    Taper Un Nombre Au Clavier   ${stock}
+    Valider La Quantité
+
+
 Effacer la quantité
     [Arguments]    ${old_quantity}
     Wait Until Element Is Visible    //android.widget.EditText[@text="${old_quantity}"]
@@ -207,6 +215,35 @@ Sélectionner le conditionnement
     ${y}    Evaluate    ${loc_premieconitionnement}[y]+20
     ${offset_x}    Evaluate    -${loc_premieconitionnement}[width]/2
     Swipe    ${x}    ${y}    ${loc_premieconitionnement}[x]    ${y}
+    # ous les choix devraient affichés après avoir bouger swiper/scroller les boutons.
+    ${choix_conditionnements}        AppiumLibrary.Get Webelements    id=bt_connexion
+    FOR    ${element}    IN    @{choix_conditionnements}
+        ${choix_lu}    AppiumLibrary.Get Text    ${element}
+        Log To Console    ${choix_lu}
+        IF    "${choix_lu}" == "${conditionnement}"
+            AppiumLibrary.Click Element           ${element}
+            RETURN    ${True}
+        END
+    END
+    Fail    Le conditionnement n a pas été trouvé
+
+Sélectionner le conditionnement vers gauche
+    [Documentation]    Le conditionnement passé en paramètre est recherché sur l'écran.
+    ...               \n Seinsible à la casse.
+    [Arguments]    ${conditionnement}
+    # ${choix_conditionnement}    Set Variable    //*[@id=bt_connexion and contains(text(), "${conditionnement}")]
+    # ${choix_conditionnement}    Set Variable    //*[@text="${conditionnement}"]
+    # AppiumLibrary.Wait Until Page Contains Element    ${choix_conditionnement}    6s
+    # AppiumLibrary.Click Element                       ${choix_conditionnement}
+    Wait Until Page Contains Element    id=bt_connexion
+    Hide Keyboard
+    Sleep    0.2s
+    ${choix_conditionnements}        AppiumLibrary.Get Webelements    id=bt_connexion
+    ${loc_premieconitionnement}    AppiumLibrary.Get Element Rect    ${choix_conditionnements}[0]
+    ${x}    Evaluate    ${loc_premieconitionnement}[x]+${loc_premieconitionnement}[width]
+    ${y}    Evaluate    ${loc_premieconitionnement}[y]+20
+    ${offset_x}    Evaluate    -${loc_premieconitionnement}[width]/2
+    Swipe    ${loc_premieconitionnement}[x]    ${y}    ${x}    ${y}
     # ous les choix devraient affichés après avoir bouger swiper/scroller les boutons.
     ${choix_conditionnements}        AppiumLibrary.Get Webelements    id=bt_connexion
     FOR    ${element}    IN    @{choix_conditionnements}

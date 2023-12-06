@@ -50,7 +50,7 @@ Choisir Le Document A Preparer Dans La Liste Des Documents
     [Arguments]    ${document}
     Wait Until Page Contains    ${document}   15s 
     ...    Le document ${document} n'apparait pas dans la liste des documents à peparer
-    AppiumLibrary.Click Text    ${document}
+    AppiumLibrary.Click Text    ${document}    true
 
 Choisir Le Document A Preparer Dans La Liste Des Documents Element
     [Documentation]    Ce mot clé parcour la liste des documents du module
@@ -241,3 +241,11 @@ Appuyer sur Terminer La Saisie bis
     AppiumLibrary.Wait Until Element Is Visible    ${terminer_saisie}
     AppiumLibrary.Click Element    ${terminer_saisie}
 
+Modifier code barre
+    [Arguments]    ${newcb}    ${oldcb}    
+    Wait Until Page Contains    ${oldcb}
+    Click Text    ${oldcb}
+    Clear Text    //android.widget.EditText[@text="${oldcb}"]
+    Taper Un Mot Au Clavier    ${newcb}
+    Press ENTER
+    Hide Keyboard

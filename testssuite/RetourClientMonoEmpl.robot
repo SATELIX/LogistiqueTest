@@ -66,6 +66,5 @@ Retour Client Mono Empl
 
 
 
-#ENtrée et Sorti multi empl
 #Consultation mono et multi empl
 #RetourFournisseur mono et !ulti empl
