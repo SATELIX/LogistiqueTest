@@ -209,6 +209,13 @@ Cliquer sur Non
     AppiumLibrary.Wait Until Page Contains    NON
     AppiumLibrary.Click Text    NON
 
+Changer emplacement
+    [Arguments]    ${Emplacement}
+    AppiumLibrary.Wait Until Element Is Visible    fr.satelix.logistique:id/bt_emplacement
+    AppiumLibrary.Click Element    fr.satelix.logistique:id/bt_emplacement
+    AppiumLibrary.Wait Until Page Contains   ${Emplacement} 
+    AppiumLibrary.Click Text    ${Emplacement}
+
 Choisir le mode d'expédition
     [Arguments]    ${modeExpedition}
     #  AppiumLibrary.Click Element    ${BUTTON_LISTE_MODE_EXPEDITION}
