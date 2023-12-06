@@ -70,6 +70,4 @@ Retour Client Mono Empl
 #ENtrée et Sorti multi empl
 #Transfert mono et multi empl
 #Consultation mono et multi empl
-#Expedition
 #RetourFournisseur mono et !ulti empl
-#Fabrication mono et multi empl

@@ -68,6 +68,13 @@ Sélectionner document origine
     Taper Un Mot Au Clavier    ${txt}
     Press ENTER
 
+Remplir donnée
+    [Arguments]    ${source}    ${data}
+    Wait Until Element Is Visible    ${source}
+    Click Element    ${source}
+    Taper Un Mot Au Clavier    ${data}
+    Hide Keyboard
+
 Choisir le module Peparation
 	Choisir le module dans la liste des modules    ${module}
 

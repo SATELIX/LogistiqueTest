@@ -6,7 +6,7 @@ Library    String
 Library    AppiumLibrary
 Library    OperatingSystem
 
-Resource   ${CURDIR}/../resources/module_preparation.resource
+
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
 Resource    ../resources/shared.resource
@@ -97,7 +97,7 @@ PickingMultiEmpl
     Entrer Le Poids Et Appuyer Sur Cloturer                       15
     Valider Le Mode Expedition Sur                                TAT
     Sélectionner date du lendemain
-    Selectionner le document                                      VALIDER PICKING MULTI EMPL 
+    Sélectionner le document                                      VALIDER PICKING MULTI EMPL 
     Scanner code barre                                            TRA98745001
     Scanner code barre                                            TRA98745001
     Scanner code barre                                            TRA98745002
