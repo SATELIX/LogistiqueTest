@@ -31,84 +31,84 @@ ${BAAR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 
 *** Test Cases ***
 ConsultationMonoEmpl
-    Sur le terminal, sélectionner le module  Consultation Mono Empl
-    Sleep     2s
-    Sélectionner le document    Bijou SA
-    Sleep    1s
+    Sur le terminal, sélectionner le module                  Consultation Mono Empl
+    Sleep                                                    2s
+    Sélectionner le document                                 Bijou SA
+    Sleep                                                    1s
     Afficher Les Articles Disponibles
-    Sélectionner l article    BAAR01
-    Sleep    2s
+    Sélectionner l article                                   BAAR01
+    Sleep                                                    2s
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour
-    Sleep    5s
+    Sleep                                                    5s
     Cliquer sur le bouton de finalisation
-    Sleep    4s
-    Sur le terminal, sélectionner le module                       Consultation Mono Empl
-    Sleep    2s
-    Sélectionner le document    Bijou SA
-    Sleep    5s
-    Saisir l Article a la Main    BA
+    Sleep                                                    4s
+    Sur le terminal, sélectionner le module                  Consultation Mono Empl
+    Sleep                                                    2s
+    Sélectionner le document                                 Bijou SA
+    Sleep                                                    5s
+    Saisir l Article a la Main                               BA
     Cliquer sur Non
-    Sleep    2s
-    Sélectionner l article par element   ${BAAR01}
+    Sleep                                                    2s
+    Sélectionner l article par element                       ${BAAR01}
     Appuyer sur la flèche retour
-    Sélectionner l article par element    ${info}    #à modifier
-    Sélectionner l article par element    ${modif}    #à modifier
-    Modifier code barre     1234567890128    1234567890128
-    Sélectionner l article par element    ${modif}
-    Appuyer sur la flèche retour
-    Appuyer sur la flèche retour
-    Appuyer sur la flèche retour
-    Scanner le code barre correspondant à l'article    1234567890128
+    Sélectionner l article par element                       ${info}
+    Sélectionner l article par element                       ${modif} 
+    Modifier code barre                                      1234567890128
+    Sélectionner l article par element                       ${modif}
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour
-    Saisir l Article a la Main    LINGOR18
     Appuyer sur la flèche retour
-    #Scanner le code barre correspondant au lot    LINGOR18;LOT-TEST2
-    #Scanner le code barre correspondant au lot    LINGOR18:LOT-10           #pas de lot dans base de donnée
-    Saisir l Article a la Main    EM040
+    Scanner le code barre correspondant à l'article          1234567890128
     Appuyer sur la flèche retour
-    Scanner le code barre correspondant à l'article    EM040
+    Appuyer sur la flèche retour
+    Saisir l Article a la Main                               LINGOR18
+    Appuyer sur la flèche retour
+    Scanner le code barre correspondant au lot               LINGOR18;LOT-TEST2
+    Scanner le code barre correspondant au lot               LINGOR18:LOT-10           
+    Saisir l Article a la Main                               EM040
+    Appuyer sur la flèche retour
+    Scanner le code barre correspondant à l'article          EM040
     Appuyer sur la flèche retour   
-    Scanner le code barre correspondant à l'article    EM040/12
+    Scanner le code barre correspondant à l'article          EM040/12
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour
-    Saisir l Article a la Main    EM050
+    Saisir l Article a la Main                               EM050
     Appuyer sur la flèche retour
-    Scanner le code barre correspondant à l'article    EM050
+    Scanner le code barre correspondant à l'article          EM050
     Appuyer sur la flèche retour
-    Scanner le code barre correspondant à l'article    EM050/24
-    Sélectionner le conditionnement vers gauche    ECRIN DE 4
-    Entrer une quantité et valider    60
-    Saisir l Article a la Main    MODIV01
-    Choisir au menu déroulant avec scroll    ${numserie}   ${MF82}
+    Scanner le code barre correspondant à l'article          EM050/24
+    Sélectionner le conditionnement vers gauche              ECRIN DE 4
+    Entrer une quantité et valider                           60
+    Saisir l Article a la Main                               MODIV01
+    Choisir au menu déroulant avec scroll                    ${numserie}   ${MF82}
     Valider
-    Scanner le code barre correspondant à l'article    MODIV01;MF81
+    Scanner le code barre correspondant à l'article          MODIV01;MF81
     Appuyer sur la flèche retour
-    Scanner le code barre correspondant à l'article    MF80
+    Scanner le code barre correspondant à l'article          MF80
     Appuyer sur la flèche retour
-    Scanner le code barre correspondant à l'article    MF90
+    Scanner le code barre correspondant à l'article          MF90
     Appuyer sur la flèche retour
-    Scanner le code barre correspondant à l'article    MODIV01;MF81
-    Appuyer sur la flèche retour
-    Appuyer sur la flèche retour
-    Saisir l Article a la Main    BAOR01
-    Sélection gamme    Emeraude
+    Scanner le code barre correspondant à l'article          MODIV01;MF81
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour
-    Scanner le code barre correspondant à l'article    BAOR01
-    Sélection gamme    Rubis
+    Saisir l Article a la Main                               BAOR01
+    Sélection gamme                                          Emeraude
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour
-    Scanner le code barre correspondant à l'article    21731003
+    Scanner le code barre correspondant à l'article          BAOR01
+    Sélection gamme                                          Rubis
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour
-    Saisir l Article a la Main    CHAAR/VAR
-    Sélection gamme    42
-    Sélection sous gamme    Forçat
+    Scanner le code barre correspondant à l'article          21731003            #scan de l'article avec la gamme associée
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour
-    Scanner le code barre correspondant à l'article    38141025
+    Saisir l Article a la Main                               CHAAR/VAR
+    Sélection gamme                                          42
+    Sélection sous gamme                                     Forçat
+    Appuyer sur la flèche retour
+    Appuyer sur la flèche retour
+    Scanner le code barre correspondant à l'article          38141025            #scan de l'article avec les gammes associées
     Entrer une quantité max et valider
     Cliquer sur le bouton de finalisation
     Valider

@@ -36,7 +36,7 @@ PickingMonoEmpl
     Entrer une quantité et valider                        3
     Appuyer Sur La Pastille Colis Avec Le Petit Carton    # et un "1"
     Appuyer sur "+"
-    Rester appuyé sur l unite logistique                  COLIS\ 2
+    Rester appuyer sur l unite logistique                  COLIS\ 2
     Sélectionner Un type d Unite Logistique Et valider    Palette Europe
     Appuyer sur la flèche retour    
     Scanner le code barre correspondant à l'article       21731003            #BAOR01 avec la gamme Emeraude
@@ -59,7 +59,7 @@ PickingMonoEmpl
     Appuyer sur ok et back
     Appuyer sur la pastille colis avec le petit carton      # et un "2"
     Appuyer sur "+"
-    Rester appuyé sur l unite logistique                 PALETTE EUROPE 3
+    Rester appuyer sur l unite logistique                 PALETTE EUROPE 3
     Sélectionner Un type d Unite Logistique Et valider   Palette Perdue
     Appuyer sur la flèche retour
     Scanner le code barre correspondant à l'article      38141025        # CHAAR/VAR avec les gammes 42 et Forcat

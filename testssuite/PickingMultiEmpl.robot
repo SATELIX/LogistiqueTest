@@ -19,8 +19,7 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 
 *** Variables ***
-&{BARCODES}    BAAR01=A1T2N1P2
-
+${MODIV01}    fr.satelix.logistique:id/tv_item_article_html
 
 
 *** Test Cases ***
@@ -28,7 +27,7 @@ PickingMultiEmpl
     Sur le terminal, sélectionner le module                       Picking Multi Empl
     Sélectionner le document                                      PL00014
     Afficher Les Articles Disponibles
-    Sélectionner l article                BAAR01
+    Sélectionner l article                                        BAAR01
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                2
     Scanner le code barre correspondant à l'article               BAAR01
@@ -44,7 +43,7 @@ PickingMultiEmpl
     Entrer une quantité et valider                                3
     Appuyer sur la pastille du colis                           
     Appuyer sur "+"
-    Rester appuyé sur l unite logistique                          COLIS 2
+    Rester appuyer sur l unite logistique                          COLIS 2
     Sélectionner Un type d Unite Logistique Et valider            Palette Europe
     Appuyer sur la flèche retour
     Scanner le code barre correspondant à l'article               BAOR01
@@ -53,12 +52,12 @@ PickingMultiEmpl
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                8
     Afficher Les Articles Disponibles
-    Sélectionner l article          BAOR01   
+    Sélectionner l article                                        BAOR01   
     Sélectionner l emplacement                                    A1T1N1P2
     Entrer une quantité et valider                                1
     Scanner le code barre correspondant à l'article               EM040
     Sélectionner l emplacement                                    A1T3N1P2
-    Sélectionner le conditionnement vers droite                            PIÈCE
+    Sélectionner le conditionnement vers droite                   PIÈCE
     Entrer une quantité et valider                                3
     Scanner le code barre correspondant à l'article               EM050
     Sélectionner l emplacement                                    A1T1N1P1
@@ -71,18 +70,18 @@ PickingMultiEmpl
     Effacer le numéro de série, ne rien mettre et valider
     Sleep    2s
     Appuyer sur ok et back
-    Supprimer Recherche Article                                   MF88                                    
-    Scroll Vers Element                                           fr.satelix.logistique:id/tv_item_article_html   bas
+    Supprimer Recherche Article                                                                       
+    Scroll Vers Element                                           ${MODIV01}   bas
     Sélectionner l article                                        MODIV01
     Sélectionner l emplacement                                    A2T1N2P2
-    Aller dans la liste et sélectionner le numéro de lot         SERIE-2206001
+    Aller dans la liste et sélectionner le numéro de lot          SERIE-2206001
     Valider
     Appuyer sur la pastille du colis
     Appuyer sur "+"
-    Rester appuyé sur l unite logistique                          PALETTE EUROPE 3
+    Rester appuyer sur l unite logistique                         PALETTE EUROPE 3
     Sélectionner Un type d Unite Logistique Et valider            Palette Perdue
     Appuyer sur la flèche retour
-    Scanner le code barre correspondant à l'article               38141025
+    Scanner le code barre correspondant à l'article               38141025            #article CHAAR/VAR avec gammes 42 et Forçat
     Sélectionner l emplacement                                    A1T2N3P2
     Entrer une quantité et valider                                12
     Sélectionner l article                                        CHAAR/VAR
@@ -100,7 +99,7 @@ PickingMultiEmpl
     Valider Le Mode Expedition Sur                                TAT
     #Sélectionner date du lendemain
     Sélectionner le document                                      VALIDER PICKING MULTI EMPL 
-    Scanner code barre                                            TRA98745001
-    Scanner code barre                                            TRA98745001
-    Scanner code barre                                            TRA98745002
-    Scanner code barre                                            TRA98745003
+    Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 1
+    Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 2, affiche une erreur
+    Scanner code barre                                            TRA98745002                #tracking 2 pour le colis 2
+    Scanner code barre                                            TRA98745003                #tracking 3 pour le colis 3

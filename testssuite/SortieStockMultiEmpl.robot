@@ -30,26 +30,26 @@ ${A1T1N1P1}    //androidx.cardview.widget.CardView[@content-desc="Emplacement Al
 SortieStockMultiEmpl
     Sur le terminal, sélectionner le module                       Sortie Stock multi empl
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
-    Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
-    Sélectionner référence doc    test multi
+    Choisir au menu déroulant                                     ${emplacement}    ${A1T1N1P1}
+    Sélectionner référence doc                                    test multi
     Valider les informations
-    Saisir l Article a la Main    LINGOR18
-    Choisir Le Lot    Lot-10
-    Entrer une quantité et valider    1
-    Scanner le code barre correspondant au lot    LINGOR18;LOT-999
+    Saisir l Article a la Main                                    LINGOR18
+    Choisir Le Lot                                                Lot-10
+    Entrer une quantité et valider                                1
+    Scanner le code barre correspondant au lot                    LINGOR18;LOT-999
     Appuyer sur la flèche retour
-    Saisir l Article a la Main    BAOR01
-    Sélection gamme    Rubis
-    Entrer une quantité et valider    1
-    Scanner le code barre correspondant à l'article    21731003
-    Entrer une quantité et valider    1
-    Saisir l Article a la Main    CHAAR/VAR
-    Sélection gamme    34
-    Sélection sous gamme    Forçat
-    Entrer une quantité et valider    1
+    Saisir l Article a la Main                                    BAOR01
+    Sélection gamme                                               Rubis
+    Entrer une quantité et valider                                1
+    Scanner le code barre correspondant à l'article               21731003        #scan de l'article avec la gamme associée
+    Entrer une quantité et valider                                1
+    Saisir l Article a la Main                                    CHAAR/VAR
+    Sélection gamme                                               34
+    Sélection sous gamme                                          Forçat
+    Entrer une quantité et valider                                1
     Appuyer sur la flèche retour
-    Scanner le code barre correspondant à l'article    38141025
-    Entrer une quantité et valider    2
+    Scanner le code barre correspondant à l'article               38141025        #scan de l'article avec les gammes associées
+    Entrer une quantité et valider                                2
     Cliquer sur le bouton de finalisation
     Valider
 

@@ -40,7 +40,7 @@ Réception mono empl
     Choisir au menu déroulant avec scroll                         ${fournisseur}    ${Joaill}
     Choisir au menu déroulant                                     ${commande}       ${FBC00011}
     Valider les informations
-    Sleep    1s
+    Sleep                                                         1s
     Afficher Les Articles Disponibles
     Scroll Vers Element                                           ${STYPLOR}        bas
     Sélectionner l article                                        STYPLOR
@@ -50,7 +50,7 @@ Réception mono empl
     Sélectionner l article                                        BAAR01  
     Entrer une quantité et valider                                7
     Scanner le code barre correspondant à l'article               BAAR01
-    Modifier une quantite                                         6    7
+    Modifier une quantite                                         6
     Afficher Les Articles Disponibles
     Sélectionner l article                                        Pierres : Emeraude
     Entrer une quantité et valider                                2
@@ -67,7 +67,7 @@ Réception mono empl
     Sélectionner l article                                        Longueur : 42 cm
     Entrer une quantité et valider                                2
     Afficher Les Articles Disponibles
-    Sélectionner l article    LINGOR18                                           
+    Sélectionner l article                                        LINGOR18                                           
     Aller dans la liste et sélectionner le numéro de lot          L159
     Valider les informations
     Appuyer sur la flèche retour et "Mettre En Attente"

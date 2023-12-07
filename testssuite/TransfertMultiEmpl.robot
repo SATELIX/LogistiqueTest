@@ -36,26 +36,26 @@ TransfertMultiEmpl
     Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
     Valider les informations
     Afficher Les Articles Disponibles
-    Sélectionner l article    BAAR01
-    Sélectionner l emplacement    A1T2N1P2
-    Entrer une quantité et valider    2
-    Saisir l Article a la Main     LINGOR18
-    Sélectionner l emplacement    A1T3N1P3
-    Choisir Le Lot    LOT-10                      
-    Entrer une quantité et valider    1
-    Scanner le code barre correspondant au lot    LINGOR18;LOT-ABC
+    Sélectionner l article                                        BAAR01
+    Sélectionner l emplacement                                    A1T2N1P2
+    Entrer une quantité et valider                                2
+    Saisir l Article a la Main                                    LINGOR18
+    Sélectionner l emplacement                                    A1T3N1P3
+    Choisir Le Lot                                                LOT-10                      
+    Entrer une quantité et valider                                1
+    Scanner le code barre correspondant au lot                    LINGOR18;LOT-ABC        #lot associé sans stock
     Appuyer sur la flèche retour
-    Saisir l Article a la Main    BAOR01
-    Sélectionner l emplacement    A1T1N1P1
-    Sélection gamme    Rubis
-    Entrer une quantité et valider    1
-    Saisir l Article a la Main    CHAAR/VAR
-    Sélectionner l emplacement    A1T1N1P1
-    Sélection gamme    34
-    Sélection sous gamme    Classique
-    Entrer une quantité et valider    1
-    Scanner le code barre correspondant à l'article    38141025
-    Sélectionner l emplacement    A1T2N3P2
-    Entrer une quantité et valider    2
+    Saisir l Article a la Main                                    BAOR01
+    Sélectionner l emplacement                                    A1T1N1P1
+    Sélection gamme                                               Rubis
+    Entrer une quantité et valider                                1
+    Saisir l Article a la Main                                    CHAAR/VAR
+    Sélectionner l emplacement                                    A1T1N1P1
+    Sélection gamme                                               34
+    Sélection sous gamme                                          Classique
+    Entrer une quantité et valider                                1
+    Scanner le code barre correspondant à l'article               38141025            #Scan de l'article avec les gammes associées
+    Sélectionner l emplacement                                    A1T2N3P2
+    Entrer une quantité et valider                                2
     Cliquer sur le bouton de finalisation
     Valider

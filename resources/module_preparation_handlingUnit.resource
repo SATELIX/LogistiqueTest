@@ -14,7 +14,7 @@ Ajouter Un Colis
     AppiumLibrary.Wait Until Page Contains Element    ${PASTILLE_PLUS}
     AppiumLibrary.Click Element                       ${PASTILLE_PLUS}
     
-Rester appuyé sur l unite logistique
+Rester appuyer sur l unite logistique
     [Arguments]    ${nomHandlingUnit}
     ${myUL}=    Set Variable    //android.widget.TextView[@text="${nomHandlingUnit}"]
     AppiumLibrary.Text Should Be Visible    ${nomHandlingUnit}

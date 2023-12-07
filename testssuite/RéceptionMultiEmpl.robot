@@ -44,7 +44,7 @@ Réception multi empl
     Scanner le code barre correspondant à l'article               BRAAR10
     Sleep                                                         1s
     Appuyer sur ok
-    Scanner le code barre correspondant à l'article               CB-INCONNU
+    Scanner le code barre correspondant à l'article               CB-INCONNU        #association d'un code barre
     Cliquer sur Oui
     Choisir au menu déroulant avec scroll                         ${liste_article}    ${STYPLOR}
     Valider association
@@ -62,33 +62,33 @@ Réception multi empl
     Sélectionner l article                                        Rubis
     Entrer une quantité et valider                                1
     Afficher Les Articles Disponibles
-    Sélectionner l article                                        34 cm
+    Sélectionner l article                                        34
     Entrer une quantité et valider                                35
     Appuyer sur ok
     Effacer la quantité                                           35
     Entrer une quantité et valider                                25
-    Scanner le code barre correspondant à l'article               38141025
+    Scanner le code barre correspondant à l'article               38141025            #article CHAAR/VAR de longueur 34 Forçat
     Entrer une quantité et valider                                2
     Afficher Les Articles Disponibles
-    Sélectionner l article    LINGOR18
-    Saisir le Numéro de lot    lot_inexistant    
+    Sélectionner l article                                        LINGOR18
+    Saisir le Numéro de lot                                       lot_inexistant    
     Appuyer sur ok
     Effacer le lot
-    Saisir le Numéro de lot    L1234        
-    Entrer une quantité et valider    1
-    Scanner le code barre correspondant au lot    (92)59531012(10)LOT-TEST2    
-    Entrer une quantité et valider    5
+    Saisir le Numéro de lot                                       L1234        
+    Entrer une quantité et valider                                1
+    Scanner le code barre correspondant au lot                    (92)59531012(10)LOT-TEST2    
+    Entrer une quantité et valider                                5
     Afficher Les Articles Disponibles
-    Scroll Vers Element   ${ARTLOT}     haut        
-    Sélectionner l article    ARTLOT
-    Saisir le Numéro de lot    COMPL123        
-    Entrer une quantité et valider    1
+    Scroll Vers Element                                           ${ARTLOT}     haut        
+    Sélectionner l article                                        ARTLOT
+    Saisir le Numéro de lot                                       COMPL123        
+    Entrer une quantité et valider                                1
     Cliquer sur continuer
     Afficher Les Articles Disponibles
     Sélectionner l article                                        ARTLOT
     Press ENTER
     Entrer une quantité et valider                                5
-    Modifier nb de numéro de lot à générer                        1    2
+    Modifier nb de numéro de lot à générer                        2
     Cliquer sur continuer
     Cliquer sur le bouton de finalisation
     Appuyer sur Terminer La Saisie

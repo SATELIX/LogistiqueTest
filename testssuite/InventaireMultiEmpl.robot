@@ -27,58 +27,58 @@ ${A1T2N3P2}    //androidx.cardview.widget.CardView[@content-desc="Emplacement Al
 InventaireMultiEmpl
     #Ouvrir le BO test et choisir l'inventaire "InventaireTestMulti"
     Sur le terminal, sélectionner le module                       Inventaire Multi empl
-    Sélectionner le document    InventaireTestMulti
-    Saisir l Article a la Main     BAAR01
-    Sélectionner l emplacement    A1T2N1P2
-    Entrer une quantité et valider    137
+    Sélectionner le document                                      InventaireTestMulti
+    Saisir l Article a la Main                                    BAAR01
+    Sélectionner l emplacement                                    A1T2N1P2
+    Entrer une quantité et valider                                137
     Cliquer sur le bouton de finalisation
     #Dans le BO retourner sur le tableau de l'inventaire et cliquer sur l'icone "Actualiser"
     #Modifier la quantité inventaire et mettre 140
     Sur le terminal, sélectionner le module                       Inventaire Multi empl
-    Sélectionner le document    InventaireTestMulti
-    Saisir l Article a la Main     BA
-    Sélectionner l article    BAAR01
-    Sélectionner l emplacement    A1T2N1P2
-    Modifier une quantite    140    277
+    Sélectionner le document                                      InventaireTestMulti
+    Saisir l Article a la Main                                    BA
+    Sélectionner l article                                        BAAR01
+    Sélectionner l emplacement                                    A1T2N1P2
+    Modifier une quantite                                         140
     Cliquer sur le bouton de finalisation
     #Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"
     Sur le terminal, sélectionner le module                       Inventaire Multi empl
-    Sélectionner le document    InventaireTestMulti
-    Scanner le code barre correspondant au lot    LINGOR18;LOT-BDF9411123
-    Sélectionner l emplacement    A1T3N1P3
-    Entrer une quantité et valider    5
-    Saisir l Article a la Main     LINGOR18        
-    Sélectionner l emplacement    A1T1N1P1
-    Choisir Le Lot    LOT-999
-    Entrer une quantité et valider    10
+    Sélectionner le document                                      InventaireTestMulti
+    Scanner le code barre correspondant au lot                    LINGOR18;LOT-BDF9411123
+    Sélectionner l emplacement                                    A1T3N1P3
+    Entrer une quantité et valider                                5
+    Saisir l Article a la Main                                    LINGOR18        
+    Sélectionner l emplacement                                    A1T1N1P1
+    Choisir Le Lot                                                LOT-999
+    Entrer une quantité et valider                                10
     Cliquer sur le bouton de finalisation
     #Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"
     #Toujours dans le BO cliquer sur "Quantité inventaire" de la ligne de l'article BAOR01 avec Emeraude en "Gamme premier niveau" et l'emplacement A1T1N1P1
     #Ecrire 20 comme quantité et valider
     Sur le terminal, sélectionner le module                       Inventaire Multi empl
-    Sélectionner le document    InventaireTestMulti
-    Saisir l Article a la Main     BAOR01
-    Scroll Vers Element    ${A1T1N1P1}    haut
-    Sélectionner l emplacement    A1T1N1P1
-    Sélection gamme    Emeraude
-    Entrer une quantité et valider    20
-    Scanner le code barre correspondant à l'article    21731003
-    Sélectionner l emplacement    A1T1N1P1
-    Entrer une quantité et valider    10
+    Sélectionner le document                                      InventaireTestMulti
+    Saisir l Article a la Main                                    BAOR01
+    Scroll Vers Element                                           ${A1T1N1P1}    haut
+    Sélectionner l emplacement                                    A1T1N1P1
+    Sélection gamme                                               Emeraude
+    Entrer une quantité et valider                                20
+    Scanner le code barre correspondant à l'article               21731003
+    Sélectionner l emplacement                                    A1T1N1P1
+    Entrer une quantité et valider                                10
     Cliquer sur le bouton de finalisation
     #Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"
     #Cliquer sur le bouton "Afficher" dans la colonne "Utilisateur(s)"
     Sur le terminal, sélectionner le module                       Inventaire Multi empl
-    Sélectionner le document    InventaireTestMulti
-    Saisir l Article a la Main     CHAAR/VAR
-    Sélectionner l emplacement    A1T2N3P2
-    Sélection gamme    42
-    Sélection sous gamme    Forçat
-    Entrer une quantité et valider    25
-    Scanner le code barre correspondant à l'article    38141025
-    Scroll Vers Element    ${A1T2N3P2}    haut
-    Sélectionner l emplacement    A1T2N3P2
-    Entrer une quantité et valider    10
+    Sélectionner le document                                      InventaireTestMulti
+    Saisir l Article a la Main                                    CHAAR/VAR
+    Sélectionner l emplacement                                    A1T2N3P2
+    Sélection gamme                                               42
+    Sélection sous gamme                                          Forçat
+    Entrer une quantité et valider                                25
+    Scanner le code barre correspondant à l'article               38141025            #article CHAAR/VAR avec les gammes 42 et Forçat
+    Scroll Vers Element                                           ${A1T2N3P2}    haut
+    Sélectionner l emplacement                                    A1T2N3P2
+    Entrer une quantité et valider                                10
     Cliquer sur le bouton de finalisation
     #Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"
 

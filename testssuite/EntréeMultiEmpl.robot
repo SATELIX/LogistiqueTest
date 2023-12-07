@@ -32,25 +32,25 @@ EntréeMultiEmpl
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
     Valider les informations
-    Scanner le code barre correspondant à l'article    BAAR01
-    Entrer une quantité et valider    2
-    Scanner le code barre correspondant au lot    LINGOR18;LOT-TEST2
-    Entrer une quantité et valider    5
-    Saisir l Article a la Main    LINGOR18                                    
-    Scanner le code barre correspondant au lot    LINGOR18;LOT-999
-    Entrer une quantité et valider    2
-    Saisir l Article a la Main    BAOR01
-    Sélection gamme    Emeraude
-    Entrer une quantité et valider    3
-    Scanner le code barre correspondant à l'article    EM040
-    Sélectionner le conditionnement vers droite   ECRIN DE 12
-    Entrer une quantité et valider    2
-    Saisir l Article a la Main    CHAAR/VAR
-    Sélection gamme    34
-    Sélection sous gamme    Classique
-    Entrer une quantité et valider    2
-    Scanner le code barre correspondant à l'article    38141025
-    Entrer une quantité et valider    2
+    Scanner le code barre correspondant à l'article               BAAR01
+    Entrer une quantité et valider                                2
+    Scanner le code barre correspondant au lot                    LINGOR18;LOT-TEST2
+    Entrer une quantité et valider                                5
+    Saisir l Article a la Main                                    LINGOR18                                    
+    Scanner le code barre correspondant au lot                    LINGOR18;LOT-999
+    Entrer une quantité et valider                                2
+    Saisir l Article a la Main                                    BAOR01
+    Sélection gamme                                               Emeraude
+    Entrer une quantité et valider                                3
+    Scanner le code barre correspondant à l'article               EM040
+    Sélectionner le conditionnement vers droite                   ECRIN DE 12
+    Entrer une quantité et valider                                2
+    Saisir l Article a la Main                                    CHAAR/VAR
+    Sélection gamme                                               34
+    Sélection sous gamme                                          Classique
+    Entrer une quantité et valider                                2
+    Scanner le code barre correspondant à l'article               38141025
+    Entrer une quantité et valider                                2
     Cliquer sur le bouton de finalisation
     Valider
 

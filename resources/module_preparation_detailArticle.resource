@@ -98,7 +98,8 @@ Effacer le lot
 
 
 Modifier une quantite
-    [Arguments]    ${value}    ${old_value}
+    [Arguments]    ${value}
+    ${old_value}    Get Text    xpath=?
     Wait Until Element Is Visible    fr.satelix.logistique:id/bt_edit_qte
     Click Element    fr.satelix.logistique:id/bt_edit_qte
     Wait Until Element Is Visible    //android.widget.EditText[@text="${old_value}"]
@@ -301,7 +302,8 @@ Cliquer sur continuer
     Click Text    CONTINUER
 
 Modifier nb de numéro de lot à générer
-    [Arguments]    ${nb}    ${gene}
+    [Arguments]      ${gene}
+    ${nb}    Get Text    xpath=?
     Wait Until Page Contains    ${nb}
     Click Text    ${nb}
     Wait Until Page Contains    ${gene}
@@ -309,7 +311,7 @@ Modifier nb de numéro de lot à générer
 
 
 Vider barre de recherche
-    [Arguments]    ${element}
+    ${element}    Get Text    xpath=?
     Wait Until Element Is Visible    //android.widget.EditText[@text="${element}"]
     Click Element    //android.widget.EditText[@text="${element}"]
     Clear Text    //android.widget.EditText[@text="${element}"]

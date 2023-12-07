@@ -123,10 +123,10 @@ Transferer
     Choisir Le Document A Preparer Dans La Liste Des Documents    TRANSFÉRER
 
 Supprimer Recherche Article
-    [Arguments]    ${article}
+    ${element_text}    Get Text    xpath=?
     Choisir Le Document A Preparer Dans La Liste Des Documents Element    //android.widget.ImageButton[@content-desc="Valider cet article"]
-    Wait Until Element Is Visible    //android.widget.EditText[@text="${article}"]
-    Clear Text    //android.widget.EditText[@text="${article}"]
+    Wait Until Element Is Visible    //android.widget.EditText[@text="${element_text}"]
+    Clear Text    //android.widget.EditText[@text="${element_text}"]
 
 Appuyer sur la pastille du colis
     Choisir Le Document A Preparer Dans La Liste Des Documents Element   ${pastille_colis}
@@ -261,7 +261,8 @@ Appuyer sur Terminer La Saisie
     AppiumLibrary.Click Element    ${terminer_saisie}
 
 Modifier code barre
-    [Arguments]    ${newcb}    ${oldcb}    
+    [Arguments]    ${newcb}
+    ${oldcb}    Get Text    xpath=?
     Wait Until Page Contains    ${oldcb}
     Click Text    ${oldcb}
     Clear Text    //android.widget.EditText[@text="${oldcb}"]
