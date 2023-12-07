@@ -57,7 +57,7 @@ PickingMultiEmpl
     Entrer une quantité et valider                                1
     Scanner le code barre correspondant à l'article               EM040
     Sélectionner l emplacement                                    A1T3N1P2
-    Sélectionner le conditionnement	                              PIÈCE
+    Sélectionner le conditionnement vers droite                            PIÈCE
     Entrer une quantité et valider                                3
     Scanner le code barre correspondant à l'article               EM050
     Sélectionner l emplacement                                    A1T1N1P1

@@ -17,76 +17,12 @@ Sur le terminal, sélectionner le module
     [Arguments]    ${monModule}
     Choisir Le Module Dans La Liste Des Modules    ${monModule}
 
-Scroll Vers Element
-    [Arguments]    ${elementVisible}    ${direction}
-    Log To Console    Scroll vers l'élément ${elementVisible} dans la direction ${direction}
-    FOR    ${counter}    IN RANGE    0    100
-        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${elementVisible}    timeout=1s
-        IF    ${status}    BREAK
-        IF    "${direction}" == "bas"
-            Scroll bas    fr.satelix.logistique:id/rv_liste
-        ELSE
-            Scroll haut    fr.satelix.logistique:id/rv_liste
-        END
-    END
-
-Scroll bas
-    [Arguments]    ${locator}
-    Wait Until Page Contains Element    ${locator}    30
-    ${element_size}=    Get Element Size    id=${locator}
-    ${element_location}=    Get Element Location    id=${locator}
-    ${start_x}=    Evaluate    ${element_location['x']} + (${element_size['width']} * 0.5)
-    ${start_y}=    Evaluate    ${element_location['y']} + (${element_size['height']} * 0.7)
-    ${end_x}=    Evaluate    ${element_location['x']} + (${element_size['width']} * 0.5)
-    ${end_y}=    Evaluate    ${element_location['y']} + (${element_size['height']} * 0.3)
-    Swipe    ${start_x}    ${start_y}    ${end_x}    ${end_y+120}    150
-
-Scroll haut
-    [Arguments]    ${locator}
-    Wait Until Page Contains Element    ${locator}    30
-    ${element_size}=    Get Element Size    id=${locator}
-    ${element_location}=    Get Element Location    id=${locator}
-    ${start_x}=    Evaluate    ${element_location['x']} + (${element_size['width']} * 0.5)
-    ${start_y}=    Evaluate    ${element_location['y']} + (${element_size['height']} * 0.3)
-    ${end_x}=    Evaluate    ${element_location['x']} + (${element_size['width']} * 0.5)
-    ${end_y}=    Evaluate    ${element_location['y']} + (${element_size['height']} * 0.7)
-    Swipe    ${start_x}    ${start_y}    ${end_x}    ${end_y+40}    150
-
-
-Choisir au menu déroulant avec scroll
-    [Arguments]    ${menu}    ${choix}
-    Wait Until Element Is Visible    ${menu}
-    AppiumLibrary.Click Element    ${menu}
-    Sleep    5s
-    Scroll Vers Element    ${choix}    bas
-    AppiumLibrary.Click Element    ${choix}
-
-
-Sélectionner document origine
-    [Arguments]    ${txt}
-    Wait Until Element Is Visible    //android.widget.EditText[@text="Sélection document origine"]
-    Click Element    //android.widget.EditText[@text="Sélection document origine"]
-    Taper Un Mot Au Clavier    ${txt}
-    Press ENTER
-
-Remplir donnée
-    [Arguments]    ${source}    ${data}
-    Wait Until Element Is Visible    ${source}
-    Click Element    ${source}
-    Taper Un Mot Au Clavier    ${data}
-    Hide Keyboard
-
-Choisir le module Peparation
-	Choisir le module dans la liste des modules    ${module}
-
-Choisir le module Expedition
-	Choisir le module dans la liste des modules    ${module}
 
 Choisir Le Module Dans La Liste Des Modules
     [Documentation]  Clique sur le module passé en paramètre
     [Arguments]      ${module_name}
     ${module_present}    Run Keyword And Return Status    AppiumLibrary.Wait Until Page Contains    ${module_name}
-    ...    3s
+    ...    30s
     ...    La liste des modules ne contient pas le module demandé ${module_name}  
     Run Keyword If    ${module_present}
     ...    AppiumLibrary.Click Text    ${module_name}

@@ -11,7 +11,7 @@ Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
 Resource    ../resources/shared.resource
 Resource    ../resources/module_preparation.resource
-Resource    retour_fournisseur_monoempl.robot
+
 
 
 Suite Setup     Set Log Level    TRACE
@@ -32,7 +32,7 @@ ${BAAR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 
 *** Test Cases ***
 ConsultationMonoEmpl
-    Sur le terminal, sélectionner le module                       Consultation Mono Empl
+    Sur le terminal, sélectionner le module  Consultation Mono Empl
     Sleep     2s
     Sélectionner le document    Bijou SA
     Sleep    1s

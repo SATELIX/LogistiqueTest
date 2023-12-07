@@ -144,11 +144,7 @@ Se Connecter Au Dossier
 #     Revenir Au Choix Des Dossiers
 #     Fermer L Application
 
-Sélectionner le dépôt origine Bijou SA
-    Wait Until Page Contains    //android.widget.ImageButton[@content-desc="Afficher la liste"]  
-    Click Element    //android.widget.ImageButton[@content-desc="Afficher la liste"]
-    Wait Until Page Contains    text=Bijou SA
-    Click Text    Bijou SA  True
+
 
 Sélectionner référence doc
     [Arguments]    ${reference}

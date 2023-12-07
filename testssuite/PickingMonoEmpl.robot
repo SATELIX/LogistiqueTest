@@ -46,7 +46,7 @@ PickingMonoEmpl
     Sélectionner à la main l'article dans la liste        BAOR01              # Rubis
     Entrer une quantité et valider                        1
     Scanner le code barre correspondant à l'article       EM040
-    Sélectionner le conditionnement	                      PIÈCE        # Pièce
+    Sélectionner le conditionnement vers droite                      PIÈCE        # Pièce
     Entrer une quantité et valider                        3
     Scanner le code barre correspondant à l'article       EM050
     Entrer une quantité et valider                        26

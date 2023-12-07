@@ -51,9 +51,9 @@ Test De L Application
     Appuyer sur retour
     Attendre
     Scanner code barre  EM150  #Affiche un message d'erreur
-    Appuyer sur OK
+    #Appuyer sur OK
     Validation
-    Vider barre de recherche
+    #Vider barre de recherche
     Sélectionner BAOR01 à la Main
     Sélectionner gamme Emeraude
     Valider Quantite    4

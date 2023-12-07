@@ -41,7 +41,7 @@ Réception CommandeFournisseur
     Scanner le code barre correspondant à l'article    LINGOR18
     Entrer une quantité et valider    5
     Saisir l Article a la Main                                    EM040
-    Sélectionner le conditionnement    ECRIN DE 12
+    Sélectionner le conditionnement vers droite   ECRIN DE 12
     Entrer une quantité et valider    1
     Scanner le code barre correspondant à l'article    EM050
     Entrer une quantité et valider    2

@@ -118,6 +118,9 @@ Modifier une quantite
     Taper Un Nombre Au Clavier   ${value}
     Valider La Quantité
 
+Confirmer régularisation
+    Wait Until Page Contains    VALIDER
+    Click Text    VALIDER
 
 Entrer une quantité supérieure au stock puis valider
     [Arguments]    ${quantite}
@@ -136,10 +139,7 @@ Valider Quantite
     Click Element    fr.satelix.logistique:id/fab_ajouter
     Attendre
 
-Saisir une valeur et valider
-    [Arguments]    ${valeur}
-    Input Text Into Current Element    ${valeur}
-    Press ENTER
+
     
 Entrer Une Quantité Supérieure A Celle Demandee Et Valider
     [Documentation]    Prend un nombre en entrée,
@@ -198,7 +198,7 @@ Lire La Quantite Restante A Preparer Dans Le Detail De L Article
     ${remaning}     utils.Lire La Quantite Restante A Preparer    ${remaning}
     RETURN    ${remaning}
 
-Sélectionner le conditionnement
+Sélectionner le conditionnement vers droite
     [Documentation]    Le conditionnement passé en paramètre est recherché sur l'écran.
     ...               \n Seinsible à la casse.
     [Arguments]    ${conditionnement}

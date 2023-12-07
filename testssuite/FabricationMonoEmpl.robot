@@ -29,7 +29,7 @@ ${LINGOR18}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner 
 ${CHAAR/VAR34classique}    xpath=(//androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Chaîne Argent maille et longueur variables"])[1]/android.view.ViewGroup
 
 *** Test Cases ***
-Réception mono empl
+Fabrication mono empl
     Sur le terminal, sélectionner le module                       Fabrication mono empl
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${doc}          ${OF00004}

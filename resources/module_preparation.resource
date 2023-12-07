@@ -83,8 +83,7 @@ Ouvrir menu déroulant
 
 Choisir au menu déroulant
     [Arguments]    ${menu}    ${choix}
-    Wait Until Element Is Visible    ${menu}
-    AppiumLibrary.Click Element    ${menu}    
+    Ouvrir menu déroulant    ${menu}    
     Wait Until Page Contains Element   ${choix}
     Click Element    ${choix}  
 
@@ -96,10 +95,10 @@ Sélectionner l emplacement
     [Arguments]    ${emplacement}
     Choisir Le Document A Preparer Dans La Liste Des Documents    ${emplacement}
 
-Sélectionner date du lendemain
-    ${today}=    Get Current Date
-    Choisir Le Document A Preparer Dans La Liste Des Documents    ${today}
-    Choisir Le Document A Preparer Dans La Liste Des Documents    5
+#Sélectionner date du lendemain
+    # ${today}=    Get Current Date
+    # Choisir Le Document A Preparer Dans La Liste Des Documents    ${today}
+    # Choisir Le Document A Preparer Dans La Liste Des Documents    5
 
 Transferer
     Choisir Le Document A Preparer Dans La Liste Des Documents    TRANSFÉRER

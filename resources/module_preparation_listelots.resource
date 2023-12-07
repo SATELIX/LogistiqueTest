@@ -25,6 +25,8 @@ ${DATE_LOT_EN_STOCK}    id=item_dates
 Choisir Le Lot    
     [Arguments]    ${lot}
     AppiumLibrary.Wait Until Page Contains Element    ${LOT_EN_STOCK}
+    Click Element    ${LOT_EN_STOCK}
+    Wait Until Page Contains    ${lot}
     AppiumLibrary.Click Text    ${lot}
 
 Choisir La Préparation    
