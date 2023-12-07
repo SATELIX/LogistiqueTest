@@ -159,13 +159,7 @@ Valider association
     Wait Until Page Contains    REMPLACER
     Click Text     REMPLACER
 
-Swipe Down
-    [Arguments]    ${element}
-    FOR    ${counter}    IN RANGE    0    10
-        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}    timeout=1s
-        IF    ${status}    BREAK
-        Swipe    0    495    0    100    150
-    END
+
 
 Scanner code barre
     [Arguments]    ${codeBarre}

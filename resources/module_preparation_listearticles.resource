@@ -21,11 +21,6 @@ ${PASTILLE_COLIS}                   id=fab_colisage
 
 *** Keywords ***
 
-Afficher Liste des articles
-    [Arguments]    ${liste_articles}
-    Wait Until Page Contains    fr.satelix.logistique:id/input_text_recherche  
-    Click Element    ${liste_articles}
-
 
 # Fonction non utilisée
 

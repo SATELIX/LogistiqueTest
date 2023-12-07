@@ -9,7 +9,6 @@ Library    OperatingSystem
 
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
-Resource    ../resources/shared.resource
 Resource    ../resources/module_preparation.resource
 
 Suite Setup     Set Log Level    TRACE
@@ -28,7 +27,7 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 PickingMultiEmpl
     Sur le terminal, sélectionner le module                       Picking Multi Empl
     Sélectionner le document                                      PL00014
-    Afficher 
+    Afficher Les Articles Disponibles
     Sélectionner l article                BAAR01
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                2
@@ -99,7 +98,7 @@ PickingMultiEmpl
     Une Erreur Doit Etre Indiquee Avec Le Message Correspondant
     Entrer Le Poids Et Appuyer Sur Cloturer                       15
     Valider Le Mode Expedition Sur                                TAT
-    Sélectionner date du lendemain
+    #Sélectionner date du lendemain
     Sélectionner le document                                      VALIDER PICKING MULTI EMPL 
     Scanner code barre                                            TRA98745001
     Scanner code barre                                            TRA98745001

@@ -9,7 +9,7 @@ Library    OperatingSystem
 
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
-Resource    ../resources/shared.resource
+
 Resource    ../resources/module_preparation.resource
 
 Suite Setup     Set Log Level    TRACE
@@ -74,7 +74,7 @@ Réception mono empl
     Sur le terminal, sélectionner le module                       Réception mono empl
     Cliquer sur Oui
     Cliquer sur le bouton de finalisation
-    Appuyer sur Terminer La Saisie bis
+    Appuyer sur Terminer La Saisie
     Valider La Préparation
 
 

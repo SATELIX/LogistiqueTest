@@ -7,8 +7,8 @@ Library    Process
 Resource    ../resources/page_accueil.resource
 Resource    ../resources/SatelixLogistique.resource
 Resource    ../resources/module_preparation_listearticles.resource
-Resource    ../resources/shared.resource
 Resource    retour_fournisseur_monoempl.robot
+Resource    ../resources/module_preparation.resource
  
 *** Variables ***
 ${app}                  ${EMPTY}
@@ -23,8 +23,9 @@ Test De L Application
     Sélectionner le dépôt origine Bijou SA
     Sélectionner référence doc    test
     Valider les informations
-    Afficher Liste des articles    ${liste_articles}
-    Choisir l Article dans une Liste    ${CHAOR42}   
+    Afficher Les Articles Disponibles
+    Scroll Vers Element    ${CHAOR42}    bas
+    Sélectionner l article    CHAOR42
     Entrer une quantité et valider    2
     Saisir l Article a la Main    LINGOR18    
     Saisir le Numéro de lot    Lot-10

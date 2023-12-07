@@ -117,18 +117,18 @@ Entrer une quantité supérieure au stock puis valider
     Valider La Quantité Supp  ${quantite}
 
     
-# Fonction non utilisée
 
-# Entrer Une Quantité Supérieure A Celle Demandee Et Valider
-#     [Documentation]    Prend un nombre en entrée,
-#     ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante.
-#     ...    Cela permet de simuler les gestes d'un utilisateur.
-#     [Arguments]    ${quantite}    ${quantiteSupplémentaire}=1
-#     # AppiumLibrary.Scroll Down    ${BOUTON_AJOUTER}
-#     # AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
-#     ${qty}=    Evaluate    ${quantite}+${quantiteSupplémentaire}
-#     Taper Un Nombre Au Clavier   ${qty}
-#     Valider La Quantité
+
+Entrer Une Quantité Supérieure A Celle Demandee Et Valider
+    [Documentation]    Prend un nombre en entrée,
+    ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante.
+    ...    Cela permet de simuler les gestes d'un utilisateur.
+    [Arguments]    ${quantite}    ${quantiteSupplémentaire}=1
+    # AppiumLibrary.Scroll Down    ${BOUTON_AJOUTER}
+    # AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
+    ${qty}=    Evaluate    ${quantite}+${quantiteSupplémentaire}
+    Taper Un Nombre Au Clavier   ${qty}
+    Valider La Quantité
 
 Valider La Quantité
     Click Element    ${BOUTON_AJOUTER}
@@ -159,26 +159,34 @@ Valider La Quantité Supp
 #     Click Element    Add to the quantity entered to the existing quantity
 #     Wait Until Page Contains Element    Items to be picked    5
 
-# La pop up "Larger quantity" s'affiche
-#     Wait Until Page Contains Element    ${MESSAGE_ERREUR_QUANTITE}
-#     Wait Until Element Is Visible       ${MESSAGE_ERREUR_QUANTITE}
-#     Wait Until Element Is Visible       ${BOUTON_OK_MESSAGE_ERREUR}
+ La pop up "Larger quantity" s'affiche
+    Wait Until Page Contains Element    ${MESSAGE_ERREUR_QUANTITE}     
+    Wait Until Element Is Visible       ${MESSAGE_ERREUR_QUANTITE}
+    Wait Until Element Is Visible       ${BOUTON_OK_MESSAGE_ERREUR}
 
-# Valider Le Message D Erreur De La Popup
-#     Wait Until Element Is Visible       ${BOUTON_OK_MESSAGE_ERREUR}
-#     Click Element       ${BOUTON_OK_MESSAGE_ERREUR}
+Valider Le Message D Erreur De La Popup
+    Wait Until Element Is Visible       ${BOUTON_OK_MESSAGE_ERREUR}
+    Click Element       ${BOUTON_OK_MESSAGE_ERREUR}
 
-# Lire La Quantite Restante A Preparer Dans Le Detail De L Article
-#     [Documentation]    Sur l'écran de détail de l'article affiché, 
-#     ...  ce mot clé lit la valeur de la quantité "Remaining" avant le caractère "/"
-#     ...  et envoie cette valeur
-#     ...  
-#      AppiumLibrary.Wait Until Element Is Visible    ${TEXT_QUANTITE_PREPAREE}    
-#      ...    6s   La quantité restante à préparée n'est pas visible dans le détail de l'article
-#     ${remaning}     AppiumLibrary.Get Text    ${TEXT_QUANTITE_PREPAREE}
-#     ${remaning}     utils.Lire La Quantite Restante A Preparer    ${remaning}
-#     RETURN    ${remaning}
+Lire La Quantite Restante A Preparer Dans Le Detail De L Article
+    [Documentation]    Sur l'écran de détail de l'article affiché, 
+    ...  ce mot clé lit la valeur de la quantité "Remaining" avant le caractère "/"
+    ...  et envoie cette valeur
+    ...  
+     AppiumLibrary.Wait Until Element Is Visible    ${TEXT_QUANTITE_PREPAREE}    
+     ...    6s   La quantité restante à préparée n'est pas visible dans le détail de l'article
+    ${remaning}     AppiumLibrary.Get Text    ${TEXT_QUANTITE_PREPAREE}
+    ${remaning}     utils.Lire La Quantite Restante A Preparer    ${remaning}
+    RETURN    ${remaning}
 
+Entrer la quantité complète à préparer et valider
+    [Documentation]    Pprend un nombre en entrée, boucle sur chaque caractère et appuie sur la touche du clavier correspondante. Cela permet de simuler les gestes d'un utilisateur.
+    [Arguments]    ${quantite}
+    # AppiumLibrary.Scroll Down    ${BOUTON_AJOUTER}
+    # AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
+    Taper Un Nombre Au Clavier   ${quantite}
+    Valider La Quantité
+    
 Sélectionner le conditionnement vers droite
     [Documentation]    Le conditionnement passé en paramètre est recherché sur l'écran.
     ...               \n Seinsible à la casse.
@@ -255,10 +263,10 @@ Saisir le Numéro de lot
 
 # Fonction non utilisée
 
-# Sélectionner le Lot avec DLC et FAB
-#     [Documentation]    Cas très spécifique où l'on recherche un lot avec DLC
-#     Wait Until Element Is Visible    //androidx.recyclerview.widget.RecyclerView[@resource-id="fr.satelix.logistique:id/rv_liste"]
-#     Click Text    DLC :
+Sélectionner le Lot avec DLC et FAB
+    [Documentation]    Cas très spécifique où l'on recherche un lot avec DLC
+    Wait Until Element Is Visible    //androidx.recyclerview.widget.RecyclerView[@resource-id="fr.satelix.logistique:id/rv_liste"]
+    Click Text    DLC :
 
 Scanner le code barre correspondant au numéro de série
     [Arguments]    ${numSerie}
