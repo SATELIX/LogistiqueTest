@@ -71,7 +71,7 @@ PickingMultiEmpl
     Effacer le numéro de série, ne rien mettre et valider
     Sleep    2s
     Appuyer sur ok et back
-    Supprimer Recherche Article                                   MF88    #le demande parfois                                        
+    Supprimer Recherche Article                                   MF88                                    
     Scroll Vers Element                                           fr.satelix.logistique:id/tv_item_article_html   bas
     Sélectionner l article                                        MODIV01
     Sélectionner l emplacement                                    A2T1N2P2

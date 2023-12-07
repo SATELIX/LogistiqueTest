@@ -94,9 +94,6 @@ Choisir au menu déroulant
 
 
 
-Sélectionner ok
-    Wait Until Page Contains    OK
-    AppiumLibrary.Click Text    OK
 
 
 #Sélectionner date du lendemain

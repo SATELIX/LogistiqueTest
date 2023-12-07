@@ -9,9 +9,7 @@ Library    OperatingSystem
 
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
-Resource    ../resources/shared.resource
 Resource    ../resources/module_preparation.resource
-Resource    retour_fournisseur_monoempl.robot
 
 
 Suite Setup     Set Log Level    TRACE
@@ -51,11 +49,11 @@ Retour Client Multi Empl
     Saisir l Article a la Main     LINGOR18
     Changer emplacement    A1T3N1P3
     Appuyer sur la flèche retour
-    #Scanner le code barre correspondant au lot    L1234        #pas de lot dans base de donnée
-    #Entrer une quantité et valider    1
-    #Scanner le code barre correspondant au lot    (92)59531012(10)LOT-TEST2
-    #Changer emplacement    A1T3N1P3
-    #Entrer une quantité et valider    1
+    Scanner le code barre correspondant au lot    L1234        
+    Entrer une quantité et valider    1
+    Scanner le code barre correspondant au lot    (92)59531012(10)LOT-TEST2
+    Changer emplacement    A1T3N1P3
+    Entrer une quantité et valider    1
     Saisir l Article a la Main     BAOR01
     Sélection gamme    Emeraude
     Entrer une quantité et valider    8
@@ -68,8 +66,8 @@ Retour Client Multi Empl
     Entrer une quantité et valider    2
     Scanner le code barre correspondant à l'article    38141025
     Entrer une quantité et valider    3
-    #Sélectionner l article    LINGOR18
-    #Choisir Le Lot    L789                                #pas de lot dans base de donnée
-    #Entrer une quantité et valider    2
+    Sélectionner l article    LINGOR18
+    Choisir Le Lot    L789                               
+    Entrer une quantité et valider    2
     Finaliser
     Valider

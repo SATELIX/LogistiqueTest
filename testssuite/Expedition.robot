@@ -9,7 +9,6 @@ Library    OperatingSystem
 
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
-Resource    ../resources/shared.resource
 Resource    ../resources/module_preparation.resource
 
 Suite Setup     Set Log Level    TRACE
@@ -32,7 +31,7 @@ ${nb_palettes_europe}    //android.widget.EditText[@text="Nb palettes Europe"]
 Expedition
     Sur le terminal, sélectionner le module                       Expédition
     Sleep    2s
-    Scanner le code barre correspondant à l'article    PL00008            #pas un article mais un document
+    Scanner le code barre correspondant à l'article    PL00008            
     Choisir au menu déroulant                                     ${expe}          ${Chronoposte}
     Remplir donnée    ${nb_colis}    3
     Remplir donnée    ${nb_palettes_perdues}    1

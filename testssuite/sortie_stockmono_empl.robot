@@ -7,7 +7,6 @@ Library    Process
 Resource    ../resources/page_accueil.resource
 Resource    ../resources/SatelixLogistique.resource
 Resource    ../resources/module_preparation_listearticles.resource
-Resource    retour_fournisseur_monoempl.robot
 Resource    ../resources/module_preparation.resource
  
 *** Variables ***
@@ -15,12 +14,14 @@ ${app}                  ${EMPTY}
 ${liste_articles}       //android.widget.ImageButton[@content-desc="Liste des articles"]
 ${module_sortie_mono_empl}    //android.widget.TextView[@resource-id="fr.satelix.logistique:id/item_nom_module" and @text="Sortie Stock mono empl"]
 ${CHAOR42}               //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Chaînes mailles fines"]/android.view.ViewGroup
- 
+${depot}     xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
+${Bijou SA}   //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
+
 *** Test Cases ***
 Test De L Application
     Demarrer L Application
     Sur le terminal, sélectionner le module    Sortie Stock mono empl
-    Sélectionner le dépôt origine Bijou SA
+    Choisir au menu déroulant    ${depot}    ${Bijou SA}
     Sélectionner référence doc    test
     Valider les informations
     Afficher Les Articles Disponibles

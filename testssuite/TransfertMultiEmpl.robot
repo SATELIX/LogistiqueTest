@@ -9,9 +9,7 @@ Library    OperatingSystem
 
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
-Resource    ../resources/shared.resource
 Resource    ../resources/module_preparation.resource
-Resource    retour_fournisseur_monoempl.robot
 
 
 Suite Setup     Set Log Level    TRACE
@@ -41,12 +39,12 @@ TransfertMultiEmpl
     Sélectionner l article    BAAR01
     Sélectionner l emplacement    A1T2N1P2
     Entrer une quantité et valider    2
-    #Saisir l Article a la Main     LINGOR18
-    #Sélectionner l emplacement    A1T3N1P3
-    #Choisir Le Lot    LOT-10                        #Pas de lot dans base de donnée
-    #Entrer une quantité et valider    1
-    #Scanner le code barre correspondant au lot    LINGOR18;LOT-ABC
-    #Appuyer sur la flèche retour
+    Saisir l Article a la Main     LINGOR18
+    Sélectionner l emplacement    A1T3N1P3
+    Choisir Le Lot    LOT-10                      
+    Entrer une quantité et valider    1
+    Scanner le code barre correspondant au lot    LINGOR18;LOT-ABC
+    Appuyer sur la flèche retour
     Saisir l Article a la Main    BAOR01
     Sélectionner l emplacement    A1T1N1P1
     Sélection gamme    Rubis

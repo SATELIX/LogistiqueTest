@@ -10,7 +10,7 @@ Library    OperatingSystem
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
 Resource    ../resources/module_preparation.resource
-Resource    retour_fournisseur_monoempl.robot
+
 
 
 Suite Setup     Set Log Level    TRACE
@@ -69,22 +69,22 @@ Réception multi empl
     Entrer une quantité et valider                                25
     Scanner le code barre correspondant à l'article               38141025
     Entrer une quantité et valider                                2
-    #Afficher Les Articles Disponibles
-    #Sélectionner l article    LINGOR18
-    #Saisir le Numéro de lot    lot_inexistant    #pas de lot dans base de donnée
-    #Appuyer sur ok
-    #Effacer le lot
-    #Saisir le Numéro de lot    L1234        #pas de lot dans base de donnée
-    #Entrer une quantité et valider    1
-    #Scanner le code barre correspondant au lot    (92)59531012(10)LOT-TEST2    #pas de lot dans base de donnée
-    #Entrer une quantité et valider    5
     Afficher Les Articles Disponibles
-    Scroll Vers Element   ${ARTLOT}     haut        #peut être à modifier lorsque les lots seront ajoutés
-    #Sélectionner l article    ARTLOT
-    #Saisir le Numéro de lot    COMPL123        #pas de lot dans base de donnée
-    #Entrer une quantité et valider    1
-    #Cliquer sur continuer
-    #Afficher Les Articles Disponibles
+    Sélectionner l article    LINGOR18
+    Saisir le Numéro de lot    lot_inexistant    
+    Appuyer sur ok
+    Effacer le lot
+    Saisir le Numéro de lot    L1234        
+    Entrer une quantité et valider    1
+    Scanner le code barre correspondant au lot    (92)59531012(10)LOT-TEST2    
+    Entrer une quantité et valider    5
+    Afficher Les Articles Disponibles
+    Scroll Vers Element   ${ARTLOT}     haut        
+    Sélectionner l article    ARTLOT
+    Saisir le Numéro de lot    COMPL123        
+    Entrer une quantité et valider    1
+    Cliquer sur continuer
+    Afficher Les Articles Disponibles
     Sélectionner l article                                        ARTLOT
     Press ENTER
     Entrer une quantité et valider                                5

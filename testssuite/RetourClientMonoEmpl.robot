@@ -42,10 +42,10 @@ Retour Client Mono Empl
     Vider barre de recherche    BA
     Saisir l Article a la Main     LINGOR18
     Appuyer sur la flèche retour
-    #Scanner le code barre correspondant au lot    LINGOR18;LOT-999
-    #Entrer une quantité et valider    10
-    #Scanner le code barre correspondant au lot    LINGOR18;LOT-TEST2            #PAS DE LOT DANS BASE DE DONNEE
-    #Entrer une quantité et valider    2
+    Scanner le code barre correspondant au lot    LINGOR18;LOT-999
+    Entrer une quantité et valider    10
+    Scanner le code barre correspondant au lot    LINGOR18;LOT-TEST2           
+    Entrer une quantité et valider    2
     Saisir l Article a la Main     BAOR01
     Appuyer sur la flèche retour
     Scanner le code barre correspondant à l'article    21731003
@@ -64,5 +64,3 @@ Retour Client Mono Empl
 
 
 
-#Consultation mono et multi empl
-#RetourFournisseur mono et !ulti empl

@@ -9,9 +9,7 @@ Library    OperatingSystem
 
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
-Resource    ../resources/shared.resource
 Resource    ../resources/module_preparation.resource
-Resource    retour_fournisseur_monoempl.robot
 
 
 Suite Setup     Set Log Level    TRACE
@@ -36,11 +34,11 @@ EntréeMultiEmpl
     Valider les informations
     Scanner le code barre correspondant à l'article    BAAR01
     Entrer une quantité et valider    2
-    #Scanner le code barre correspondant au lot    LINGOR18;LOT-TEST2
-    #Entrer une quantité et valider    5
-    #Saisir l Article a la Main    LINGOR18                                    #pas de lot dans base de donnée
-    #Scanner le code barre correspondant au lot    LINGOR18;LOT-999
-    #Entrer une quantité et valider    2
+    Scanner le code barre correspondant au lot    LINGOR18;LOT-TEST2
+    Entrer une quantité et valider    5
+    Saisir l Article a la Main    LINGOR18                                    
+    Scanner le code barre correspondant au lot    LINGOR18;LOT-999
+    Entrer une quantité et valider    2
     Saisir l Article a la Main    BAOR01
     Sélection gamme    Emeraude
     Entrer une quantité et valider    3

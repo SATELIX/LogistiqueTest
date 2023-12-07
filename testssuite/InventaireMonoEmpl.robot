@@ -9,9 +9,7 @@ Library    OperatingSystem
 
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
-Resource    ../resources/shared.resource
 Resource    ../resources/module_preparation.resource
-Resource    retour_fournisseur_monoempl.robot
 
 
 Suite Setup     Set Log Level    TRACE
@@ -44,17 +42,17 @@ InventaireMonoEmpl
     Cliquer sur le bouton de finalisation
     Sur le terminal, sélectionner le module                       Inventaire mono empl
     Sélectionner le document    InventaireTestMono
-    #Scanner le code barre correspondant à l'article    LINGOR18;LOT-BDF9411123    #pas de lot dans base de donnée
-    #Entrer une quantité et valider    5
-    #Saisir l Article a la Main     LINGOR18
-    #Choisir Le Lot    LOT-999
-    #Entrer une quantité et valider    10
+    Scanner le code barre correspondant à l'article    LINGOR18;LOT-BDF9411123 
+    Entrer une quantité et valider    5
+    Saisir l Article a la Main     LINGOR18
+    Choisir Le Lot    LOT-999
+    Entrer une quantité et valider    10
     #Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"
     #Toujours dans le BO cliquer sur "Quantité inventaire" de la ligne de l'article BAOR01 avec Emeraude en "Gamme premier niveau"
     #Ecrire 20 comme quantité et valider
     #Cliquer sur le bouton de finalisation
-    #Sur le terminal, sélectionner le module                       Inventaire mono empl
-    #Sélectionner le document    InventaireTestMono
+    Sur le terminal, sélectionner le module                       Inventaire mono empl
+    Sélectionner le document    InventaireTestMono
     Saisir l Article a la Main     BAOR01
     Sélection gamme    Emeraude
     Sleep    2s

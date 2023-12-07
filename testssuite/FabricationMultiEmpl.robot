@@ -50,9 +50,9 @@ Réception multi empl
     Scroll Vers Element    ${CHAAR/VAR34classique}    bas
     Sélectionner l article par element    ${CHAAR/VAR34classique}
     Entrer une quantité et valider    2
-    #Afficher Les Articles Disponibles
-    #Sélectionner l article    LINGOR18        #pas de lot dans base de donnée
-    #Choisir Le Lot    0001
-    #Entrer une quantité et valider    2
+    Afficher Les Articles Disponibles
+    Sélectionner l article    LINGOR18      
+    Choisir Le Lot    0001
+    Entrer une quantité et valider    2
     Finaliser
     Appuyer sur Terminer La Saisie

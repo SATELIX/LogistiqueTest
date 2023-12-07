@@ -37,13 +37,13 @@ Fabrication mono empl
     Afficher Les Articles Disponibles
     Sélectionner l article    BAAR01
     Entrer une quantité et valider                                6
-    Sélectionner ok
+    Appuyer sur ok
     Effacer la quantité                                           6
     Entrer une quantité et valider                                3
     Afficher Les Articles Disponibles
     Sélectionner l article    Emeraude
     Entrer une quantité et valider                                13
-    Sélectionner ok
+    Appuyer sur ok
     Effacer la quantité                                           13
     Entrer une quantité et valider                                2
     Afficher Les Articles Disponibles
@@ -56,11 +56,11 @@ Fabrication mono empl
     Scroll Vers Element    ${CHAAR/VAR34classique}    bas
     Sélectionner l article par element    ${CHAAR/VAR34classique}
     Entrer une quantité et valider                                2
-    #Afficher Les Articles Disponibles
-    #Scroll Vers Element    ${LINGOR18}   bas
-    #Sélectionner l article    LINGOR18                #lot absent de base de donnée
-    #Choisir Le Lot    lot0001
-    #Entrer une quantité et valider    2
+    Afficher Les Articles Disponibles
+    Scroll Vers Element    ${LINGOR18}   bas
+    Sélectionner l article    LINGOR18                
+    Choisir Le Lot    lot0001
+    Entrer une quantité et valider    2
     Finaliser
     Appuyer sur Terminer La Saisie
 

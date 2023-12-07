@@ -7,8 +7,6 @@ Library    String
 Library    AppiumLibrary
 Library    OperatingSystem
 
-# Resource   ${CURDIR}/../resources/utils.resource
-# Resource   ${CURDIR}/../resources/page_accueil.resource
 Resource   ${CURDIR}/../resources/module_preparation.resource
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
@@ -77,8 +75,8 @@ PickingMonoEmpl
     Une Erreur Doit Etre Indiquee Avec Le Message Correspondant
     Entrer Le Poids Et Appuyer Sur Cloturer    15          # Mettre 15 et appuyer sur "Clôturer"
     Valider Le Mode Expedition Sur             Colissimo
-    # Appuyer sur Transferer
-    # Valider La Préparation                                # Sélectionner "Valider picking"
+    Appuyer sur Transferer
+    Valider
     # Ouvrir le fichier Sage "Bijou_TEST" fichier commercial dans C:\Satelix
     # Cliquer sur "Traitement" puis "Documents des Ventes"
     # Dans Le Module Préparation De Livraison Le Statut de La péparation doit changer    PL00013    A livrer

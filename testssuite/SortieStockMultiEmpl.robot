@@ -9,9 +9,7 @@ Library    OperatingSystem
 
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
-Resource    ../resources/shared.resource
 Resource    ../resources/module_preparation.resource
-Resource    retour_fournisseur_monoempl.robot
 
 
 Suite Setup     Set Log Level    TRACE
@@ -35,11 +33,11 @@ SortieStockMultiEmpl
     Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
     Sélectionner référence doc    test multi
     Valider les informations
-    #Saisir l Article a la Main    LINGOR18
-    #Choisir Le Lot    Lot-10
-    #Entrer une quantité et valider    1
-    #Scanner le code barre correspondant au lot    LINGOR18;LOT-999
-    #Appuyer sur la flèche retour
+    Saisir l Article a la Main    LINGOR18
+    Choisir Le Lot    Lot-10
+    Entrer une quantité et valider    1
+    Scanner le code barre correspondant au lot    LINGOR18;LOT-999
+    Appuyer sur la flèche retour
     Saisir l Article a la Main    BAOR01
     Sélection gamme    Rubis
     Entrer une quantité et valider    1

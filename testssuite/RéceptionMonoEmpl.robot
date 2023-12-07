@@ -57,7 +57,7 @@ Réception mono empl
     Afficher Les Articles Disponibles
     Sélectionner l article                                        Pierres : Rubis
     Entrer une quantité et valider                                50
-    Sélectionner ok
+    Appuyer sur ok
     Effacer la quantité                                           50
     Entrer une quantité et valider                                22
     Afficher Les Articles Disponibles
@@ -66,10 +66,10 @@ Réception mono empl
     Afficher Les Articles Disponibles
     Sélectionner l article                                        Longueur : 42 cm
     Entrer une quantité et valider                                2
-    #Afficher Les Articles Disponibles
-    #Sélectionner l article    LINGOR18                                            Car pas de lot dans la base de donnée
-    #Aller dans la liste et sélectionner le numéro de lot          L159
-    #Valider les informations
+    Afficher Les Articles Disponibles
+    Sélectionner l article    LINGOR18                                           
+    Aller dans la liste et sélectionner le numéro de lot          L159
+    Valider les informations
     Appuyer sur la flèche retour et "Mettre En Attente"
     Sur le terminal, sélectionner le module                       Réception mono empl
     Cliquer sur Oui

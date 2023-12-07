@@ -9,9 +9,7 @@ Library    OperatingSystem
 
 Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
-Resource    ../resources/shared.resource
 Resource    ../resources/module_preparation.resource
-Resource    retour_fournisseur_monoempl.robot
 
 
 Suite Setup     Set Log Level    TRACE
@@ -46,19 +44,19 @@ InventaireMultiEmpl
     #Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"
     Sur le terminal, sélectionner le module                       Inventaire Multi empl
     Sélectionner le document    InventaireTestMulti
-    #Scanner le code barre correspondant au lot    LINGOR18;LOT-BDF9411123
-    #Sélectionner l emplacement    A1T3N1P3
-    #Entrer une quantité et valider    5
-    #Saisir l Article a la Main     LINGOR18        #pas de lot dans base de donnée
-    #Sélectionner l emplacement    A1T1N1P1
-    #Choisir Le Lot    LOT-999
-    #Entrer une quantité et valider    10
-    #Cliquer sur le bouton de finalisation
+    Scanner le code barre correspondant au lot    LINGOR18;LOT-BDF9411123
+    Sélectionner l emplacement    A1T3N1P3
+    Entrer une quantité et valider    5
+    Saisir l Article a la Main     LINGOR18        
+    Sélectionner l emplacement    A1T1N1P1
+    Choisir Le Lot    LOT-999
+    Entrer une quantité et valider    10
+    Cliquer sur le bouton de finalisation
     #Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"
     #Toujours dans le BO cliquer sur "Quantité inventaire" de la ligne de l'article BAOR01 avec Emeraude en "Gamme premier niveau" et l'emplacement A1T1N1P1
     #Ecrire 20 comme quantité et valider
-    #Sur le terminal, sélectionner le module                       Inventaire Multi empl
-    #Sélectionner le document    InventaireTestMulti
+    Sur le terminal, sélectionner le module                       Inventaire Multi empl
+    Sélectionner le document    InventaireTestMulti
     Saisir l Article a la Main     BAOR01
     Scroll Vers Element    ${A1T1N1P1}    haut
     Sélectionner l emplacement    A1T1N1P1
