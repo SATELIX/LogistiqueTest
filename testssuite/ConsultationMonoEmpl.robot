@@ -37,7 +37,7 @@ ConsultationMonoEmpl
     Sélectionner le document    Bijou SA
     Sleep    1s
     Afficher Les Articles Disponibles
-    Sélectionner à la main l'article dans la liste    BAAR01
+    Sélectionner l article    BAAR01
     Sleep    2s
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour
@@ -83,7 +83,7 @@ ConsultationMonoEmpl
     Entrer une quantité et valider    60
     Saisir l Article a la Main    MODIV01
     Choisir au menu déroulant avec scroll    ${numserie}   ${MF82}
-    Cliquer valider
+    Valider
     Scanner le code barre correspondant à l'article    MODIV01;MF81
     Appuyer sur la flèche retour
     Scanner le code barre correspondant à l'article    MF80

@@ -28,7 +28,8 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 PickingMultiEmpl
     Sur le terminal, sélectionner le module                       Picking Multi Empl
     Sélectionner le document                                      PL00014
-    Sélectionner à la main l'article dans la liste                BAAR01
+    Afficher 
+    Sélectionner l article                BAAR01
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                2
     Scanner le code barre correspondant à l'article               BAAR01
@@ -52,7 +53,8 @@ PickingMultiEmpl
     Scanner le code barre correspondant à l'article               21731003
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                8
-    Aller dans la liste et sélectionner la préparation            BAOR01   #a parfois du mal à passer cette étape, raison?
+    Afficher Les Articles Disponibles
+    Sélectionner l article          BAOR01   
     Sélectionner l emplacement                                    A1T1N1P2
     Entrer une quantité et valider                                1
     Scanner le code barre correspondant à l'article               EM040
@@ -67,14 +69,15 @@ PickingMultiEmpl
     Saisir un Numero De Serie et valider                          SERIE5
     Scanner le code barre correspondant au numéro de série        SERIE4
     Scanner le code barre correspondant au numéro de série        MF88
-    Effacer le numéro de série, ne rien mettre et valider bis
+    Effacer le numéro de série, ne rien mettre et valider
     Sleep    2s
     Appuyer sur ok et back
     Supprimer Recherche Article                                   MF88    #le demande parfois                                        
     Scroll Vers Element                                           fr.satelix.logistique:id/tv_item_article_html   bas
     Sélectionner l article                                        MODIV01
     Sélectionner l emplacement                                    A2T1N2P2
-    Aller dans la liste et sélectionner le numéro de lot valider  SERIE-2206001
+    Aller dans la liste et sélectionner le numéro de lot         SERIE-2206001
+    Valider
     Appuyer sur la pastille du colis
     Appuyer sur "+"
     Rester appuyé sur l unite logistique                          PALETTE EUROPE 3

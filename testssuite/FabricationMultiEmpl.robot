@@ -56,4 +56,4 @@ Réception multi empl
     #Choisir Le Lot    0001
     #Entrer une quantité et valider    2
     Finaliser
-    Appuyer sur Terminer La Saisie bis
+    Appuyer sur Terminer La Saisie

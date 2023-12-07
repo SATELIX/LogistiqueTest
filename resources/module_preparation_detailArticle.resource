@@ -28,48 +28,36 @@ ${BOUTON_OK_MESSAGE_ERREUR}          id=android:id/button1
 ${CHAMP_QUANTITE_INSUFFISANTE}       id=fr.satelix.logistique:id/text_input_error_icon
 
 *** Keywords ***
-Preparer Les Quantités De L Article
-    [Documentation]    Vérifie que les données affichées sont identiques
-    ...    à celles passées en argument.
-    ...    \n vérifie que le stock est supérieur à la quantité demandée
-    ...    \n choisit les lot avec la bonne quantité
-    ...    \n si il n'y a pas de notion de lot sur l'article donné, la quantité est directement saisie.
-    [Arguments]    ${Lot}    ${nomArticle}    ${quantite}
-    Swipe By Percent    10    10    10    80
-    Le Lot Choisi Est Bien Celui Demandé    ${Lot}
-    L Article Choisi Est Bien Celui Demandé    ${nomArticle}
-    # Si il n'y a pas de gestion de lot la quantité est entrée directement
-    ${status}=    Run Keyword And Return Status    Element Should Be Visible  ${BUTON_CHOIX_DES_LOTS}
-    IF    ${status}
-        Afficher Les Lots Disponibles
-        Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité   ${quantite}    
-    END
-    Entrer la quantité complète à préparer et valider    ${quantite}
 
-L Article Choisi Est Bien Celui Demandé
-    [Documentation]    Compare le nom de l'article affiché qui doit être
-    ...                le même que celui selectionné dans le menu 
-    ...                et qui est passé en argument
-    [Arguments]     ${nomArticle}
-    Wait Until Element Is Visible    ${TEXTE_NOM_ARTICLE}
-    ${nomAffiche}=    Get Text    ${TEXTE_NOM_ARTICLE}
-    Should Be Equal As Strings    ${nomArticle}    ${nomAffiche}
-    ...    Le nom d'article affiché n'est pas celui qui a été sectionné dans la liste de la prépration
+
+#fonction non utilisée :
+
+# L Article Choisi Est Bien Celui Demandé
+#     [Documentation]    Compare le nom de l'article affiché qui doit être
+#     ...                le même que celui selectionné dans le menu 
+#     ...                et qui est passé en argument
+#     [Arguments]     ${nomArticle}
+#     Wait Until Element Is Visible    ${TEXTE_NOM_ARTICLE}                            
+#     ${nomAffiche}=    Get Text    ${TEXTE_NOM_ARTICLE}
+#     Should Be Equal As Strings    ${nomArticle}    ${nomAffiche}
+#     ...    Le nom d'article affiché n'est pas celui qui a été sectionné dans la liste de la prépration
 
 Sélectionner la Gamme
     [Arguments]    ${gamme}
     Wait Until Page Contains    ${gamme}
     Click Text    ${gamme}
 
-Le Lot Choisi Est Bien Celui Demandé
-    [Documentation]    Compare le nom de le lot affiché qui doit être
-    ...                le même que celui selectionné dans le menu 
-    ...                et qui est passé en argument
-    [Arguments]     ${lot}
-    Wait Until Element Is Visible    ${TEXTE_LOT}
-    ${lotAffiche}=    Get Text    ${TEXTE_LOT}
-    Should Be Equal As Strings    ${lot}    ${lotAffiche}    
-    ...    Le numero de lot affiché n'est pas celui qui a été sectionné dans la liste de la prépration
+# Fonction non utilisée
+
+# Le Lot Choisi Est Bien Celui Demandé
+#     [Documentation]    Compare le nom de le lot affiché qui doit être
+#     ...                le même que celui selectionné dans le menu 
+#     ...                et qui est passé en argument
+#     [Arguments]     ${lot}
+#     Wait Until Element Is Visible    ${TEXTE_LOT}
+#     ${lotAffiche}=    Get Text    ${TEXTE_LOT}
+#     Should Be Equal As Strings    ${lot}    ${lotAffiche}    
+#     ...    Le numero de lot affiché n'est pas celui qui a été sectionné dans la liste de la prépration
 
 Afficher Les Lots Disponibles
     Wait Until Page Contains Element    ${BUTON_LISTE_DES_LOTS_EN_STOCK}
@@ -128,29 +116,19 @@ Entrer une quantité supérieure au stock puis valider
     Taper Un Nombre Au Clavier   ${quantite}
     Valider La Quantité Supp  ${quantite}
 
-
-Valider Quantite
-    [Documentation]    Saisit la quantité et la valide sur un input déjà sélectionné.
-    ...                L'input est vidé avant d'être rempli.
-    [Arguments]    ${quantite}
-    Input Text Into Current Element    ${EMPTY}
-    Input Text Into Current Element    ${quantite}
-    Sleep    2
-    Click Element    fr.satelix.logistique:id/fab_ajouter
-    Attendre
-
-
     
-Entrer Une Quantité Supérieure A Celle Demandee Et Valider
-    [Documentation]    Prend un nombre en entrée,
-    ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante.
-    ...    Cela permet de simuler les gestes d'un utilisateur.
-    [Arguments]    ${quantite}    ${quantiteSupplémentaire}=1
-    # AppiumLibrary.Scroll Down    ${BOUTON_AJOUTER}
-    # AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
-    ${qty}=    Evaluate    ${quantite}+${quantiteSupplémentaire}
-    Taper Un Nombre Au Clavier   ${qty}
-    Valider La Quantité
+# Fonction non utilisée
+
+# Entrer Une Quantité Supérieure A Celle Demandee Et Valider
+#     [Documentation]    Prend un nombre en entrée,
+#     ...    boucle sur chaque caractère et appuie sur la touche du clavier correspondante.
+#     ...    Cela permet de simuler les gestes d'un utilisateur.
+#     [Arguments]    ${quantite}    ${quantiteSupplémentaire}=1
+#     # AppiumLibrary.Scroll Down    ${BOUTON_AJOUTER}
+#     # AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_AJOUTER}
+#     ${qty}=    Evaluate    ${quantite}+${quantiteSupplémentaire}
+#     Taper Un Nombre Au Clavier   ${qty}
+#     Valider La Quantité
 
 Valider La Quantité
     Click Element    ${BOUTON_AJOUTER}
@@ -161,42 +139,45 @@ Valider La Quantité Supp
     Click Element    //android.widget.EditText[@text="${quantite}"]
     Clear Text       //android.widget.EditText[@text="${quantite}"]
 
-Entrer une quantité automatiquement
-    Click Element    Show dropdown menu
-    Wait Until Page Contains Element    Available batch numbers    5
-    Click Element    //androidx.cardview.widget.CardView[@index='0']        # BATCH NUMBER 0 OU 1
-    Wait Until Page Contains Element    tv_qte_preparee    5
-    ${quantity_totale}    Get Text    tv_qte_preparee
-    ${remaining}=    Split String    ${quantity_totale}    / 
-    Log To Console    la quantité récupérée est : ${remaining}[0]
-    Input Text    textinput_placeholder    ${remaining}[0]        # RECUPERE LA QUANTITE TOTALE A PREPARER (DEVANT LE "/")
+
+# Fonction non utilisée
+
+# Entrer une quantité automatiquement
+#     Click Element    Show dropdown menu
+#     Wait Until Page Contains Element    Available batch numbers    5
+#     Click Element    //androidx.cardview.widget.CardView[@index='0']        # BATCH NUMBER 0 OU 1
+#     Wait Until Page Contains Element    tv_qte_preparee    5
+#     ${quantity_totale}    Get Text    tv_qte_preparee
+#     ${remaining}=    Split String    ${quantity_totale}    / 
+#     Log To Console    la quantité récupérée est : ${remaining}[0]
+#     Input Text    textinput_placeholder    ${remaining}[0]        # RECUPERE LA QUANTITE TOTALE A PREPARER (DEVANT LE "/")
     
-    # ${quantity}    Get Text    tv_qte_preparee
-    # ${first_two_characters}    Set Variable    ${quantity[:2]}        
-    # Input Text    textinput_placeholder    ${first_two_characters}        # RECUPERE LA QUANTITE TOTALE A PREPARER (LES 2 PREMIERS CARACTERES)
+#     # ${quantity}    Get Text    tv_qte_preparee
+#     # ${first_two_characters}    Set Variable    ${quantity[:2]}        
+#     # Input Text    textinput_placeholder    ${first_two_characters}        # RECUPERE LA QUANTITE TOTALE A PREPARER (LES 2 PREMIERS CARACTERES)
     
-    Click Element    Add to the quantity entered to the existing quantity
-    Wait Until Page Contains Element    Items to be picked    5
+#     Click Element    Add to the quantity entered to the existing quantity
+#     Wait Until Page Contains Element    Items to be picked    5
 
-La pop up "Larger quantity" s'affiche
-    Wait Until Page Contains Element    ${MESSAGE_ERREUR_QUANTITE}
-    Wait Until Element Is Visible       ${MESSAGE_ERREUR_QUANTITE}
-    Wait Until Element Is Visible       ${BOUTON_OK_MESSAGE_ERREUR}
+# La pop up "Larger quantity" s'affiche
+#     Wait Until Page Contains Element    ${MESSAGE_ERREUR_QUANTITE}
+#     Wait Until Element Is Visible       ${MESSAGE_ERREUR_QUANTITE}
+#     Wait Until Element Is Visible       ${BOUTON_OK_MESSAGE_ERREUR}
 
-Valider Le Message D Erreur De La Popup
-    Wait Until Element Is Visible       ${BOUTON_OK_MESSAGE_ERREUR}
-    Click Element       ${BOUTON_OK_MESSAGE_ERREUR}
+# Valider Le Message D Erreur De La Popup
+#     Wait Until Element Is Visible       ${BOUTON_OK_MESSAGE_ERREUR}
+#     Click Element       ${BOUTON_OK_MESSAGE_ERREUR}
 
-Lire La Quantite Restante A Preparer Dans Le Detail De L Article
-    [Documentation]    Sur l'écran de détail de l'article affiché, 
-    ...  ce mot clé lit la valeur de la quantité "Remaining" avant le caractère "/"
-    ...  et envoie cette valeur
-    ...  
-     AppiumLibrary.Wait Until Element Is Visible    ${TEXT_QUANTITE_PREPAREE}    
-     ...    6s   La quantité restante à préparée n'est pas visible dans le détail de l'article
-    ${remaning}     AppiumLibrary.Get Text    ${TEXT_QUANTITE_PREPAREE}
-    ${remaning}     utils.Lire La Quantite Restante A Preparer    ${remaning}
-    RETURN    ${remaning}
+# Lire La Quantite Restante A Preparer Dans Le Detail De L Article
+#     [Documentation]    Sur l'écran de détail de l'article affiché, 
+#     ...  ce mot clé lit la valeur de la quantité "Remaining" avant le caractère "/"
+#     ...  et envoie cette valeur
+#     ...  
+#      AppiumLibrary.Wait Until Element Is Visible    ${TEXT_QUANTITE_PREPAREE}    
+#      ...    6s   La quantité restante à préparée n'est pas visible dans le détail de l'article
+#     ${remaning}     AppiumLibrary.Get Text    ${TEXT_QUANTITE_PREPAREE}
+#     ${remaning}     utils.Lire La Quantite Restante A Preparer    ${remaning}
+#     RETURN    ${remaning}
 
 Sélectionner le conditionnement vers droite
     [Documentation]    Le conditionnement passé en paramètre est recherché sur l'écran.
@@ -272,10 +253,12 @@ Saisir le Numéro de lot
     Input Text Into Current Element    ${numero}
     Run Keyword    pressKeyCode    66
 
-Sélectionner le Lot avec DLC et FAB
-    [Documentation]    Cas très spécifique où l'on recherche un lot avec DLC
-    Wait Until Element Is Visible    //androidx.recyclerview.widget.RecyclerView[@resource-id="fr.satelix.logistique:id/rv_liste"]
-    Click Text    DLC :
+# Fonction non utilisée
+
+# Sélectionner le Lot avec DLC et FAB
+#     [Documentation]    Cas très spécifique où l'on recherche un lot avec DLC
+#     Wait Until Element Is Visible    //androidx.recyclerview.widget.RecyclerView[@resource-id="fr.satelix.logistique:id/rv_liste"]
+#     Click Text    DLC :
 
 Scanner le code barre correspondant au numéro de série
     [Arguments]    ${numSerie}
@@ -291,10 +274,7 @@ Scanner le code barre correspondant au numéro de série qui n'existe pas
 
 Effacer le numéro de série, ne rien mettre et valider
     Supprimer Un Nombre Au Clavier
-    Press ENTER
-
-Effacer le numéro de série, ne rien mettre et valider bis
-    Supprimer Un Nombre Au Clavier
+  
 
 Appuyer sur ok et back
     Wait Until Page Contains    OK

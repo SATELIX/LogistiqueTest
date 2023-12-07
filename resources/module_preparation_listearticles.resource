@@ -10,15 +10,12 @@ Resource    utils.resource
 
 *** Variables ***
 ${CHAMP_RECHERCHE}        //*[@id='input_recherche_module']/android.widget.EditText
-# ${CHAMP_RECHERCHE}        //*[@id='fr.satelix.logistique.demo:id/input_recherche_module']/android.widget.EditText
 ${ONGLET_TOBEPICKED}
 ${ONGLET_PICKED}
 ${NOMBREARTICLE_AFFICHE}             id=tv_nb_articles
-# ${ARTICLES_VISIBLES_DE_LA LISTE}    id=fr.satelix.logistique.demo:id/card_item_article
 ${ARTICLES_VISIBLES_DE_LA LISTE}    id=card_item_article
 ${ARTICLES_VISIBLES_DE_LA LISTE}    id=tv_item_article_html
 ${TAB_ITEMS_PICKED}                 //android.widget.LinearLayout[@content-desc="Items picked"]
-# La pastille colis avec le petit carton}    id=tv_item_article_nb_pieces
 ${PASTILLE_COLIS}                   id=fab_colisage
 
 
@@ -29,14 +26,17 @@ Afficher Liste des articles
     Wait Until Page Contains    fr.satelix.logistique:id/input_text_recherche  
     Click Element    ${liste_articles}
 
-La Liste Des Articles De La Commande S Affichent
-    [Documentation]    Vérifie que le nombre d'articles affiché n'est aps à zéro
-    ...                 et qu'au moins un article est affiché. 
-    AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'article n'est pas afiché.
-    ${NombreArticle_lu}=    Lire Le Nombre D Articles Affiché
-    Should Be True    ${NombreArticle_lu}    L'application affiche un nombre d'articles à ZERO
-    ${ListeArticles}=    Lister Les Articles
-    Should Be True    ${ListeArticles}    Aucun article n'est affiché à l'écran.
+
+# Fonction non utilisée
+
+# La Liste Des Articles De La Commande S Affichent
+#     [Documentation]    Vérifie que le nombre d'articles affiché n'est aps à zéro
+#     ...                 et qu'au moins un article est affiché. 
+#     AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'article n'est pas afiché.
+#     ${NombreArticle_lu}=    Lire Le Nombre D Articles Affiché
+#     Should Be True    ${NombreArticle_lu}    L'application affiche un nombre d'articles à ZERO
+#     ${ListeArticles}=    Lister Les Articles
+#     Should Be True    ${ListeArticles}    Aucun article n'est affiché à l'écran.
 
 Preparer Les Articles Du Document
     [Documentation]    TODO : 
@@ -131,14 +131,16 @@ Lire Les Informations De L Article
     
     Return From Keyword    ${reference}    ${nomArticle}    ${emplacement}    ${colis}    ${quantite}    
 
-Choisir L Article A Preparer Par Son Nom
-    [Documentation]    Clique sur le nom de l'article donné en Argument
-    ...    <BR> Si le nom de l'aticle plusieurs fois sur la page, c'est la première occcurence qui est cliqué.
-    ...    <BR> ce mot clé attend 5secondes par défaut.
-    [Arguments]    ${nomArticle}    ${timeout}=5s
-    Wait Until Page Contains    ${nomArticle}     ${timeout}   
-    ...    L'article ${nomArticle} n'apparait pas dans la liste des article à peparer au bout de ${timeout}
-    AppiumLibrary.Click Text    ${nomArticle}
+# Fonction non utilisée
+
+# Choisir L Article A Preparer Par Son Nom
+#     [Documentation]    Clique sur le nom de l'article donné en Argument
+#     ...    <BR> Si le nom de l'aticle plusieurs fois sur la page, c'est la première occcurence qui est cliqué.
+#     ...    <BR> ce mot clé attend 5secondes par défaut.
+#     [Arguments]    ${nomArticle}    ${timeout}=5s
+#     Wait Until Page Contains    ${nomArticle}     ${timeout}   
+#     ...    L'article ${nomArticle} n'apparait pas dans la liste des article à peparer au bout de ${timeout}
+#     AppiumLibrary.Click Text    ${nomArticle}
 
 Choisir l Article dans une Liste    
     [Arguments]    ${article}
@@ -187,14 +189,15 @@ Choisir L Article A Preparer Avec Le Lecteur CodeBarre
     #AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    15s    Il n'y a pas d'aticle à préparer dans pour cette péparation.
     utils.Scanner Un Code    ${reference} 
 
+# Fonction non utilisée
 
-Chercher Un Article Par La Recheche
-    [Documentation]    Utilisation de la recherche en haut de la page <BR>
-    ...                L'article trouvé apparait automatiquement seul dans la liste des articles
-    ...                S'il y a plusieurs articles, la liste est à gérée ou non, par défaut on 
-    ...                considère que le 1er de la liste est pris en compte.
-    [Arguments]    ${texteDeLaRecherche}
-    AppiumLibrary.Input Text    ${CHAMP_RECHERCHE}    ${texteDeLaRecherche}
+# Chercher Un Article Par La Recheche
+#     [Documentation]    Utilisation de la recherche en haut de la page <BR>
+#     ...                L'article trouvé apparait automatiquement seul dans la liste des articles
+#     ...                S'il y a plusieurs articles, la liste est à gérée ou non, par défaut on 
+#     ...                considère que le 1er de la liste est pris en compte.
+#     [Arguments]    ${texteDeLaRecherche}
+#     AppiumLibrary.Input Text    ${CHAMP_RECHERCHE}    ${texteDeLaRecherche}
 
 Afficher Les Articles Prepares
     [Documentation]    clique sur l'onglet des articles préparés
@@ -206,20 +209,18 @@ Appuyer Sur La Pastille Colis Avec Le Petit Carton
     AppiumLibrary.Wait Until Page Contains Element    ${PASTILLE_COLIS}
     AppiumLibrary.Click Element                       ${PASTILLE_COLIS}
 
-Sélectionner à la main l'article dans la liste
-    [Arguments]    ${article}
-    module_preparation_listearticles.Choisir L Article A Preparer Par Son Nom    ${article}
 
-Choisir l'article dans la liste
-    [Documentation]  Clique sur le module passé en paramètre
-    [Arguments]      ${article_name}
-    ${article_present}    Run Keyword And Return Status    AppiumLibrary.Wait Until Page Contains    ${article_name}
-    ...    3s
-    ...    La liste des modules ne contient pas le module demandé ${article_name}  
-    Run Keyword If    ${article_present}
-    ...    AppiumLibrary.Click Text    ${article_name}
-    ...  ELSE
-    ...    Wait Until Keyword Succeeds    4x    0.5s    Faire Defiler Les Modules Pour Trouver Le Bon     ${article_name}
+# Fonction non utilisée
+# Choisir l'article dans la liste
+#     [Documentation]  Clique sur le module passé en paramètre
+#     [Arguments]      ${article_name}
+#     ${article_present}    Run Keyword And Return Status    AppiumLibrary.Wait Until Page Contains    ${article_name}
+#     ...    3s
+#     ...    La liste des modules ne contient pas le module demandé ${article_name}  
+#     Run Keyword If    ${article_present}
+#     ...    AppiumLibrary.Click Text    ${article_name}
+#     ...  ELSE
+#     ...    Wait Until Keyword Succeeds    4x    0.5s    Faire Defiler Les Modules Pour Trouver Le Bon     ${article_name}
 
 Scanner le code barre correspondant à l'article 
     [Arguments]    ${article}
@@ -329,8 +330,9 @@ Remplir donnée
     Taper Un Mot Au Clavier    ${data}
     Hide Keyboard
 
-Choisir le module Peparation
-	Choisir le module dans la liste des modules    ${module}
 
-Choisir le module Expedition
-	Choisir le module dans la liste des modules    ${module}
+Sélection article element
+    [Arguments]    ${element}
+    Log To Console    Sélection de l'article ${element}
+    Wait Until Element Is Visible    ${element}    30
+    Click Element    ${element}

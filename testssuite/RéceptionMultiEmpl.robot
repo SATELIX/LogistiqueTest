@@ -92,5 +92,5 @@ Réception multi empl
     Modifier nb de numéro de lot à générer                        1    2
     Cliquer sur continuer
     Cliquer sur le bouton de finalisation
-    Appuyer sur Terminer La Saisie bis
+    Appuyer sur Terminer La Saisie
 

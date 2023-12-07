@@ -76,6 +76,11 @@ Sélectionner l article par element
     [Arguments]    ${article}
     Choisir Le Document A Preparer Dans La Liste Des Documents Element   ${article}
 
+Sélectionner l emplacement
+    [Arguments]    ${emplacement}
+    Choisir Le Document A Preparer Dans La Liste Des Documents    ${emplacement}
+
+
 Ouvrir menu déroulant
     [Arguments]    ${menu}
     Wait Until Element Is Visible    ${menu}
@@ -87,18 +92,42 @@ Choisir au menu déroulant
     Wait Until Page Contains Element   ${choix}
     Click Element    ${choix}  
 
+
+
 Sélectionner ok
     Wait Until Page Contains    OK
     AppiumLibrary.Click Text    OK
 
-Sélectionner l emplacement
-    [Arguments]    ${emplacement}
-    Choisir Le Document A Preparer Dans La Liste Des Documents    ${emplacement}
 
 #Sélectionner date du lendemain
     # ${today}=    Get Current Date
     # Choisir Le Document A Preparer Dans La Liste Des Documents    ${today}
     # Choisir Le Document A Preparer Dans La Liste Des Documents    5
+
+Affiche Element
+    [Arguments]    ${element}
+    Log To Console    Attente de l'affichage de l'élément ${element}
+    Wait Until Page Contains Element    ${element}    30
+
+Sélection gamme
+    [Arguments]    ${gamme}
+    Log To Console    Sélection de la gamme ${gamme}
+
+    Wait Until Page Contains    ${gamme}    30
+    Click Text    ${gamme}
+
+Sélection sous gamme
+    [Arguments]    ${sousGamme}
+    Log To Console    Sélection de la sous gamme ${sousGamme}
+    Sélection gamme    ${sousGamme}
+
+
+Sélection dépot destination
+    [Arguments]    ${depot}
+    Log To Console    Sélection du dépot destination
+    Wait Until Page Contains    ${depot}    30
+    Click Text    ${depot}    True
+
 
 Transferer
     Choisir Le Document A Preparer Dans La Liste Des Documents    TRANSFÉRER
@@ -112,9 +141,12 @@ Supprimer Recherche Article
 Appuyer sur la pastille du colis
     Choisir Le Document A Preparer Dans La Liste Des Documents Element   ${pastille_colis}
 
-Cliquer sur le bouton de finalisation Et Verifier Que La Commande Est Complète
-    [Documentation]    
-    Cliquer sur le bouton de finalisation
+
+# Fonction non utilisée
+
+# Cliquer sur le bouton de finalisation Et Verifier Que La Commande Est Complète
+#     [Documentation]    
+#     Cliquer sur le bouton de finalisation
 
 
 Cliquer sur le bouton de finalisation
@@ -192,13 +224,17 @@ Appuyer sur la flèche retour et "Mettre En Attente"
     Sleep    2s
     Cliquer sur le bouton de mise en attente
 
-Choisir le mode d'expédition et Transférer
-    [Documentation]    choisi le mode d'expédition donné en argument dans la liste de l'écran 
-    [Arguments]    ${modeExpedition}
-    AppiumLibrary.Wait Until Element Is Visible    ${BUTTON_LISTE_MODE_EXPEDITION}    6s    
-    ...    Le choix de mode de livraison n'est pas disponible au bout de 6secondes
-    Choisir le mode d'expédition    ${modeExpedition}
-    Cliquer Sur Le Bouton De Transfert
+
+
+# Fonction non utilisée
+
+# Choisir le mode d'expédition et Transférer
+#     [Documentation]    choisi le mode d'expédition donné en argument dans la liste de l'écran 
+#     [Arguments]    ${modeExpedition}
+#     AppiumLibrary.Wait Until Element Is Visible    ${BUTTON_LISTE_MODE_EXPEDITION}    6s    
+#     ...    Le choix de mode de livraison n'est pas disponible au bout de 6secondes
+#     Choisir le mode d'expédition    ${modeExpedition}
+#     Cliquer Sur Le Bouton De Transfert
 
 Cliquer Sur Le Bouton De Transfert
     AppiumLibrary.Wait Until Element Is Visible    ${BOUTON_TRANSFERT}
@@ -229,14 +265,8 @@ Valider La Préparation
     AppiumLibrary.Wait Until Element Is Visible    ${POPUP_VALIDATION_PREPA}
     AppiumLibrary.Click Element    ${POPUP_VALIDATION_PREPA}
 
-Appuyer sur Terminer La Saisie
-    [Documentation]    Lorsque la saise d'une préparation est incomplète,
-    ...                un message apparait pour le signaler et il faut appuye sur 
-    ...    le bouton qui porte la mention "Termine la saisie" pour finir la préparation
-    AppiumLibrary.Wait Until Element Is Visible    ${POPUP_VALIDATION_PREPA}
-    AppiumLibrary.Click Element    ${POPUP_VALIDATION_PREPA}
 
-Appuyer sur Terminer La Saisie bis
+Appuyer sur Terminer La Saisie
     AppiumLibrary.Wait Until Element Is Visible    ${terminer_saisie}
     AppiumLibrary.Click Element    ${terminer_saisie}
 

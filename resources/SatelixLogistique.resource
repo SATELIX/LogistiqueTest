@@ -16,8 +16,6 @@ ${platformName}                 Android
 ${app}               D:${/}SATELIX${/}app${/}Logistique-demo-release-1.0.34 141.apk
 ${appPackage}        fr.satelix.logistique
 ${appActivity}       fr.satelix.logistique.activities.MainActivity
-# ${appActivity}       fr.satelix.logistique.activities.dossiers.DossierActivity
-# ${appActivity}       fr.satelix.logistique.activities.identification.IdentificationActivity
 
 ${BOUTON_AJOUTER_DOSSIER}       id=fab_ajout_config
 ${FENETRE_VALIDATION_AJOUT}     content
@@ -30,8 +28,6 @@ ${PASSWORD}
 
 ${listederoulante_logins}       //android.widget.ImageButton[@content-desc="Show drop-down menu"]
 ${INPUT_LOGIN}                  class=android.widget.EditText
-# ${INPUT_LOGIN}    class=android.widget.AutoCompleteTextView
-# ...    fr.satelix.logistique.demo:id/dropdown_identifiant//android.widget.AutoCompleteTextView
 ${INPUT_PASSWORD}               class=android.widget.EditText
 ${BUTTON_LOGIN}                 bt_connexion
 ${button_valider}       fr.satelix.logistique:id/fab_valider
@@ -185,16 +181,22 @@ Scanner code barre
     ...    "${codeBarre}"
     ...    
 
-Dialog Cliquer Ok
-    Wait Until Element Is Visible    android:id/button1
-    Click Element    android:id/button1
+Saisir code article manuellement
+    [Arguments]    ${codeArticle}
+    Log To Console    Saisie du code article ${codeArticle}
+    Wait Until Page Contains    fr.satelix.logistique:id/input_text_recherche    30
+    Input Text    fr.satelix.logistique:id/input_text_recherche    ${codeArticle}
+    Wait Until Element Is Visible    //android.widget.ImageButton[@content-desc="Valider cet article"]
+    Click Element    //android.widget.ImageButton[@content-desc="Valider cet article"]
+
+Pas d'association code barre
+    Log To Console    Pas d'association code barre
+    Wait Until Element Is Visible    //android.widget.Button[@resource-id="android:id/button2"]
+    Click Element    //android.widget.Button[@resource-id="android:id/button2"]
+
 
 Attendre
     Sleep    5s
-
-Back
-    Go Back
-
 
 Fermer L Application 
     Sleep    3s
@@ -207,7 +209,3 @@ Finaliser
 Valider
     Wait Until Page Contains    fr.satelix.logistique:id/bt_quitter_module_valider_transfert
     Click Element    fr.satelix.logistique:id/bt_quitter_module_valider_transfert    
-
-Cliquer valider
-    Wait Until Page Contains    VALIDER
-    Click Text    VALIDER

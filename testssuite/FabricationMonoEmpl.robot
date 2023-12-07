@@ -63,7 +63,7 @@ Fabrication mono empl
     #Choisir Le Lot    lot0001
     #Entrer une quantité et valider    2
     Finaliser
-    Appuyer sur Terminer La Saisie bis
+    Appuyer sur Terminer La Saisie
 
 
 

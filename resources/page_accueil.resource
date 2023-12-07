@@ -8,11 +8,32 @@ Library    AppiumLibrary
 
 *** Variables ***
 ${module}    ${EMPTY}
-# ${module_xpath}    xpath=//androidx.cardview.widget.CardView[contains(text(),"${module}")]
+${automationName}       UIAutomator2
+${platformName}         Android
+${appPackage}           fr.satelix.logistique
+${appActivity}          fr.satelix.logistique.activities.MainActivity
+
 
 ${LISTE_MODULES_A_L_ECRAN}    rv_liste_modules
 
 *** Keywords ***
+
+
+Demarrer Une Application
+    [Documentation]    Démarre l'application
+    [Arguments]    ${appPackage}
+    AppiumLibrary.Open Application
+    ...    http://127.0.0.1:4723/wd/hub
+    ...    automationName=${automationName}
+    ...    platformName=${platformName}
+    ...    appPackage=${appPackage}
+    ...    appActivity=${appActivity}
+    ...    autoGrantPermissions=true
+    ...    noReset=true
+    ...    fullReset=false
+    ...    forceAppLaunch=true    # force l'application à se lancer à chaque fois
+
+
 Sur le terminal, sélectionner le module
     [Arguments]    ${monModule}
     Choisir Le Module Dans La Liste Des Modules    ${monModule}

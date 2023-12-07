@@ -8,6 +8,7 @@ Resource    ../resources/page_accueil.resource
 Resource    ../resources/SatelixLogistique.resource
 Resource    ../resources/module_preparation_listearticles.resource
 Resource    ../resources/shared.resource
+Resource    retour_fournisseur_monoempl.robot
  
 *** Variables ***
 ${app}                  ${EMPTY}
@@ -30,18 +31,18 @@ Test De L Application
     Sélectionner le Lot avec DLC et FAB     
     Entrer une quantité et valider    1      
     Scanner code barre    LINGOR18\;LOT-AAA    #le lot n'existant pas, une erreur de validation doit s'afficher
-    Dialog Cliquer Ok
-    Back   
+    Appuyer sur ok
+    Appuyer sur la flèche retour   
     Saisir l Article a la Main    BAOR01
     Sélectionner la Gamme    Rubis
-    Valider Quantite    1
+    Entrer une quantité et valider    1
     Scanner code barre    21731003
-    Valider Quantite    1
+    Entrer une quantité et valider    1
     Saisir l Article a la Main    CHAAR/VAR    #BUG sur l'apk de manière aléatoire la quantité en stock n'est pas récupérée (APK 1.0.44)
     Sélectionner la Gamme    34 cm
     Sélectionner la Gamme    Forçat
-    Valider Quantite    1
+    Entrer une quantité et valider   1
     Scanner code barre    38141025
-    Valider Quantite    2
+    Entrer une quantité et valider    2
     Finaliser
     Valider

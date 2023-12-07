@@ -24,7 +24,7 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 PickingMonoEmpl
     Sur le terminal, sélectionner le module               Picking Mono Empl
     Sélectionner le document                              ${document}
-    Sélectionner à la main l'article dans la liste        BAAR01
+    Sélectionner l article       BAAR01
     Entrer une quantité et valider                        2
     Scanner le code barre correspondant à l'article       BAAR01
     Entrer une quantité et valider                        13
@@ -43,7 +43,7 @@ PickingMonoEmpl
     Appuyer sur la flèche retour    
     Scanner le code barre correspondant à l'article       21731003            #BAOR01 avec la gamme Emeraude
     Entrer une quantité et valider                        3
-    Sélectionner à la main l'article dans la liste        BAOR01              # Rubis
+    Sélectionner l article       BAOR01              # Rubis
     Entrer une quantité et valider                        1
     Scanner le code barre correspondant à l'article       EM040
     Sélectionner le conditionnement vers droite                      PIÈCE        # Pièce
@@ -57,6 +57,7 @@ PickingMonoEmpl
     Sleep    1s
     Scanner le code barre correspondant au numéro de série qui n'existe pas     MF88     
     Effacer le numéro de série, ne rien mettre et valider
+    Press ENTER
     Appuyer sur ok et back
     Appuyer sur la pastille colis avec le petit carton      # et un "2"
     Appuyer sur "+"

@@ -40,16 +40,12 @@ Aller dans la liste et sélectionner le numéro de lot
     module_preparation_detailArticle.Afficher Les Lots Disponibles
     Choisir Le Lot    ${lot}
 
-Aller dans la liste et sélectionner le numéro de lot valider
-    [Arguments]    ${lot}
-    module_preparation_detailArticle.Afficher Les Lots Disponibles
-    Choisir Le Lot    ${lot}
-    AppiumLibrary.Click Text    VALIDER
+# Fonction non utilisée
 
-Aller dans la liste et sélectionner la préparation
-    [Arguments]    ${preparation}
-    module_preparation_detailArticle.Afficher Les Preparations Disponibles
-    Choisir La Préparation    ${preparation}
+# Aller dans la liste et sélectionner la préparation
+#     [Arguments]    ${preparation}
+#     module_preparation_detailArticle.Afficher Les Preparations Disponibles
+#     Choisir La Préparation    ${preparation}
 
 Choisir un numéro de lot dont le stock est supérieur ou égal à la quantité
     [Documentation]    Ce mot clé parcours la liste des lots affichée 
