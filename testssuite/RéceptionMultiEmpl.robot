@@ -43,7 +43,7 @@ Réception multi empl
     Sleep                                                         1s
     Scanner le code barre correspondant à l'article               BRAAR10
     Sleep                                                         1s
-    Sélectionner ok
+    Appuyer sur ok
     Scanner le code barre correspondant à l'article               CB-INCONNU
     Cliquer sur Oui
     Choisir au menu déroulant avec scroll                         ${liste_article}    ${STYPLOR}
@@ -64,7 +64,7 @@ Réception multi empl
     Afficher Les Articles Disponibles
     Sélectionner l article                                        34 cm
     Entrer une quantité et valider                                35
-    Sélectionner ok
+    Appuyer sur ok
     Effacer la quantité                                           35
     Entrer une quantité et valider                                25
     Scanner le code barre correspondant à l'article               38141025
@@ -72,7 +72,7 @@ Réception multi empl
     #Afficher Les Articles Disponibles
     #Sélectionner l article    LINGOR18
     #Saisir le Numéro de lot    lot_inexistant    #pas de lot dans base de donnée
-    #Sélectionner ok
+    #Appuyer sur ok
     #Effacer le lot
     #Saisir le Numéro de lot    L1234        #pas de lot dans base de donnée
     #Entrer une quantité et valider    1

@@ -156,14 +156,6 @@ Test De L Application
 
 *** Keywords ***
 
-Swipe Down
-    [Arguments]    ${element}
-    FOR    ${counter}    IN RANGE    0    10
-        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}    timeout=3s
-        IF    ${status}    BREAK
-        Swipe    0    1000    0    100    150
-    END
-
 
 Sélectionner Element
     [Arguments]    ${destination}

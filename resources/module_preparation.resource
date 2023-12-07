@@ -122,13 +122,6 @@ Sélection sous gamme
     Sélection gamme    ${sousGamme}
 
 
-Sélection dépot destination
-    [Arguments]    ${depot}
-    Log To Console    Sélection du dépot destination
-    Wait Until Page Contains    ${depot}    30
-    Click Text    ${depot}    True
-
-
 Transferer
     Choisir Le Document A Preparer Dans La Liste Des Documents    TRANSFÉRER
 

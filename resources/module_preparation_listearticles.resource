@@ -137,11 +137,6 @@ Lire Les Informations De L Article
 #     ...    L'article ${nomArticle} n'apparait pas dans la liste des article à peparer au bout de ${timeout}
 #     AppiumLibrary.Click Text    ${nomArticle}
 
-Choisir l Article dans une Liste    
-    [Arguments]    ${article}
-    Swipe Down     ${article}
-    Wait Until Element Is Visible    ${article}
-    Click Element    ${article}    
 
 Lister Les Articles
     [Documentation]    Lit la liste des composants de la page qui montre les articles
