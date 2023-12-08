@@ -28,22 +28,20 @@ ${CHAAR/VAR}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner
 Test De L Application
     Sur le terminal, sélectionner le module                        Entrée mono empl
     Choisir au menu déroulant                                      ${depot}    ${Bijou SA}
-    Afficher Les Articles Disponibles
     Sélectionner l article                                         BAAR01
     Hide Keyboard
     Appuyer sur la flèche retour
     Saisir l Article a la Main                                     BA
     Pas d'association code barre
+    Afficher Les Articles Disponibles
     Sélectionner l article                                         BAAR01
     Entrer une quantité et valider                                 2
     Vider barre de recherche 
-    Afficher Les Articles Disponibles
     Scroll Vers Element                                            ${LINGOR18}    bas
     Sélection article element                                      ${LINGOR18}
     Affiche Element                                                ${ListeLot}
     Scanner code barre                                             LINGOR18\;LOT-TEST2
     Entrer une quantité et valider                                 2
-    Afficher Les Articles Disponibles
     Scroll Vers Element                                            ${BAAR01}  haut
     Sélection article element                                      ${BAAR01}
     Sélection gamme                                                Emeraude
@@ -53,7 +51,6 @@ Test De L Application
     Hide Keyboard
     Affiche Element                                                ${EM040}
     Appuyer sur la flèche retour
-    Afficher Les Articles Disponibles
     Scroll Vers Element                                            ${CHAAR/VAR}    haut
     Sélection article element                                      ${CHAAR/VAR}
     Sélection gamme                                                34

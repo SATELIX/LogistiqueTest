@@ -35,7 +35,7 @@ ConsultationMonoEmpl
     Sleep                                                    2s
     Sélectionner le document                                 Bijou SA
     Sleep                                                    1s
-    Afficher Les Articles Disponibles
+    Afficher Les Articles Disponibles                                                   
     Sélectionner l article                                   BAAR01
     Sleep                                                    2s
     Appuyer sur la flèche retour
@@ -50,11 +50,14 @@ ConsultationMonoEmpl
     Saisir l Article a la Main                               BA
     Cliquer sur Non
     Sleep                                                    2s
+    Afficher Les Articles Disponibles
     Sélectionner l article par element                       ${BAAR01}
     Appuyer sur la flèche retour
+    Afficher Les Articles Disponibles
     Sélectionner l article par element                       ${info}
     Sélectionner l article par element                       ${modif} 
     Modifier code barre                                      1234567890128
+    Afficher Les Articles Disponibles
     Sélectionner l article par element                       ${modif}
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour

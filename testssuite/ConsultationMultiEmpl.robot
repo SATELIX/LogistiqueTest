@@ -42,6 +42,7 @@ ConsultationMultiEmpl
     Appuyer sur la flèche retour
     Afficher Les Lots Disponibles
     Scroll Vers Element                                           ${LINGOR18}    bas
+    Afficher Les Articles Disponibles
     Sélectionner l article                                        LINGOR18
     Sélectionner l emplacement                                    A1T3N1P3
     Scanner le code barre correspondant au lot                    LOT-0000
@@ -78,7 +79,7 @@ ConsultationMultiEmpl
     Scanner le code barre correspondant à l'article               MF81
     Scanner le code barre correspondant à l'article               MF90
     Appuyer sur la flèche retour
-    Afficher Les Lots Disponibles
+    Afficher Les Articles Disponibles
     Sélectionner l article                                        BAOR01
     Scroll Vers Element                                           ${A1T1N1P1}    haut
     Sélectionner l emplacement                                    A1T1N1P1
@@ -89,7 +90,7 @@ ConsultationMultiEmpl
     Sélectionner l emplacement                                    A1T1N1P2
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour
-    Afficher Les Lots Disponibles
+    Afficher Les Articles Disponibles
     Sélectionner l article                                        CHAAR/VAR
     Scroll Vers Element                                           ${A1T2N3P2}    haut
     Sélectionner l emplacement                                    A1T2N3P2

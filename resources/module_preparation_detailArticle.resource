@@ -13,7 +13,6 @@ ${TEXTE_LOT}                         ${LAYOUT_HAUT}android.widget.TextView[1]
 ${TEXTE_NOM_ARTICLE}                 ${LAYOUT_HAUT}android.widget.TextView[2]
 ${BUTON_CHOIX_DES_LOTS}              id=ctn_saisie_num_lot_serie
 ${BUTON_LISTE_DES_LOTS_EN_STOCK}     id=text_input_end_icon
-${BUTON_LISTE_DES_ARTICLES}           id=text_input_end_icon
 ${TEXT_STOCK_GLOBAL}                 id=tv_qte_stock
 
 ${ZONE_GESTION_QUANTITE}             id=layout_quantite
@@ -42,11 +41,6 @@ ${CHAMP_QUANTITE_INSUFFISANTE}       id=fr.satelix.logistique:id/text_input_erro
 #     Should Be Equal As Strings    ${nomArticle}    ${nomAffiche}
 #     ...    Le nom d'article affiché n'est pas celui qui a été sectionné dans la liste de la prépration
 
-Sélectionner la Gamme
-    [Arguments]    ${gamme}
-    Wait Until Page Contains    ${gamme}
-    Click Text    ${gamme}
-
 # Fonction non utilisée
 
 # Le Lot Choisi Est Bien Celui Demandé
@@ -63,9 +57,7 @@ Afficher Les Lots Disponibles
     Wait Until Page Contains Element    ${BUTON_LISTE_DES_LOTS_EN_STOCK}
     Click Element    ${BUTON_LISTE_DES_LOTS_EN_STOCK}
 
-Afficher Les Articles Disponibles
-    Wait Until Page Contains Element    ${BUTON_LISTE_DES_ARTICLES}    10
-    Click Element    ${BUTON_LISTE_DES_ARTICLES}
+
 
 Afficher Les Preparations Disponibles
     Afficher Les Lots Disponibles

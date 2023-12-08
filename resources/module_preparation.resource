@@ -33,11 +33,18 @@ ${POPUP_VALIDATION_PREPA}        id=bt_quitter_module_valider_transfert
 ${terminer_saisie}               id=android:id/button1
 ${POPUP_RETOUR_PREPA}            id=bt_quitter_module_annuler
 
-${BOUTON_TERMINER_SAISIE_INCOMLETE}     id=button1
+${BOUTON_TERMINER_SAISIE_INCOMLETE}   id=button1
 ${text_recherche}                id =input_text_recherche
+${BUTON_LISTE_DES_ARTICLES}      id=text_input_end_icon
 
-# content-desc=Validate and complete this entry
-# id=fr.satelix.logistique.demo:id/fab_quitter
+
+
+
+
+
+
+
+
 
 
 *** Keywords ***
@@ -63,6 +70,10 @@ Choisir Le Document A Preparer Dans La Liste Des Documents Element
     ...    Le document ${document} n'apparait pas dans la liste des documents à peparer
     AppiumLibrary.Click Element    ${document}
 
+
+Afficher Les Articles Disponibles
+    Wait Until Page Contains Element    ${BUTON_LISTE_DES_ARTICLES}    10
+    Click Element    ${BUTON_LISTE_DES_ARTICLES}
 
 Sélectionner le document
     [Arguments]    ${document}

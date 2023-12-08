@@ -15,6 +15,8 @@ Library    squash_tf.TFParamService
 Resource   SatelixLogistique.resource
 
 *** Variables ***
+
+${date}    ?
 # Les Keycode Android pour gérer les entrées comme un utilisateur réel
 &{KEYCODES}    0=7
 ...    1=8
@@ -178,3 +180,16 @@ Choisir LA Valeur Dans La Liste
 
 Appuyer sur la flèche retour
     AppiumLibrary.Go Back
+
+
+Mettre date du jour
+    Wait Until Element Is Visible    ${date}
+    Click Element    ${date}
+    Appuyer sur la flèche retour
+
+
+Mettre date du jour
+    Wait Until Element Is Visible    ${date}
+    Click Element    ${date}
+    #trouver la date du lendemain
+

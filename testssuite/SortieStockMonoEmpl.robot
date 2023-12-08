@@ -34,13 +34,13 @@ Test De L Application
     Appuyer sur ok
     Appuyer sur la flèche retour   
     Saisir l Article a la Main                                     BAOR01
-    Sélectionner la Gamme                                          Rubis
+    Sélection gamme                                                Rubis
     Entrer une quantité et valider                                 1
     Scanner code barre                                             21731003              #scan de l'article avec la gamme associée
     Entrer une quantité et valider                                 1
     Saisir l Article a la Main                                     CHAAR/VAR             #BUG sur l'apk de manière aléatoire la quantité en stock n'est pas récupérée (APK 1.0.44)
-    Sélectionner la Gamme                                          34
-    Sélectionner la Gamme                                          Forçat
+    Sélection gamme                                                34
+    Sélection gamme                                                Forçat
     Entrer une quantité et valider                                 1
     Scanner code barre                                             38141025              #scan de l'article avec la gamme associée
     Entrer une quantité et valider                                 2

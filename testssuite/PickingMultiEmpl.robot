@@ -97,7 +97,7 @@ PickingMultiEmpl
     Une Erreur Doit Etre Indiquee Avec Le Message Correspondant
     Entrer Le Poids Et Appuyer Sur Cloturer                       15
     Valider Le Mode Expedition Sur                                TAT
-    #Sélectionner date du lendemain
+    #Mettre date du lendemain
     Sélectionner le document                                      VALIDER PICKING MULTI EMPL 
     Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 1
     Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 2, affiche une erreur

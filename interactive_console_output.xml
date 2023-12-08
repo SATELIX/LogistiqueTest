@@ -1,13 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231207 11:36:51.381" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231208 08:52:14.007" rpa="false" schemaversion="4">
 <suite id="s1" name="Robot Interactive Console" source="c:\Users\user\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<status status="PASS" starttime="20231207 11:36:51.418" endtime="20231207 11:37:25.850"/>
+<kw name="Sur le terminal, sélectionner le module">
+<arg>Commande Client</arg>
+<msg timestamp="20231208 08:52:15.058" level="FAIL">No keyword with name 'Sur le terminal, sélectionner le module' found.</msg>
+<status status="FAIL" starttime="20231208 08:52:15.058" endtime="20231208 08:52:15.058"/>
 </kw>
-<status status="PASS" starttime="20231207 11:36:51.417" endtime="20231207 11:37:25.850"/>
+<kw name="Choisir au menu déroulant">
+<arg>${depot}</arg>
+<arg>${Bijou SA}</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.061" endtime="20231208 08:52:15.062"/>
+</kw>
+<kw name="Choisir au menu déroulant">
+<arg>${client}</arg>
+<arg>${BAGUES}</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.065" endtime="20231208 08:52:15.065"/>
+</kw>
+<kw name="Valider les informations">
+<status status="NOT RUN" starttime="20231208 08:52:15.068" endtime="20231208 08:52:15.068"/>
+</kw>
+<kw name="Afficher Les Articles Disponibles">
+<status status="NOT RUN" starttime="20231208 08:52:15.070" endtime="20231208 08:52:15.070"/>
+</kw>
+<kw name="Sélectionner l article">
+<arg>BAAR01</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.078" endtime="20231208 08:52:15.078"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>10</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.080" endtime="20231208 08:52:15.080"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article">
+<arg>BAAR01</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.081" endtime="20231208 08:52:15.081"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>5</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.083" endtime="20231208 08:52:15.083"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article">
+<arg>LINGOR18</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.087" endtime="20231208 08:52:15.087"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>5</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.095" endtime="20231208 08:52:15.095"/>
+</kw>
+<kw name="Saisir l Article a la Main">
+<arg>EM040</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.099" endtime="20231208 08:52:15.099"/>
+</kw>
+<kw name="Sélectionner le conditionnement vers droite">
+<arg>ECRIN DE 12</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.102" endtime="20231208 08:52:15.102"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>1</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.109" endtime="20231208 08:52:15.109"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article">
+<arg>EM050</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.112" endtime="20231208 08:52:15.112"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>2</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.115" endtime="20231208 08:52:15.115"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article">
+<arg>EM050/24</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.118" endtime="20231208 08:52:15.118"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>1</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.126" endtime="20231208 08:52:15.126"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article">
+<arg>MODIV01</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.132" endtime="20231208 08:52:15.132"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>3</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.142" endtime="20231208 08:52:15.143"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article">
+<arg>MODIV01</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.150" endtime="20231208 08:52:15.150"/>
+</kw>
+<kw name="Valider La Quantité">
+<status status="NOT RUN" starttime="20231208 08:52:15.160" endtime="20231208 08:52:15.160"/>
+</kw>
+<kw name="Appuyer sur OK">
+<status status="NOT RUN" starttime="20231208 08:52:15.170" endtime="20231208 08:52:15.170"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>0</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.182" endtime="20231208 08:52:15.182"/>
+</kw>
+<kw name="Appuyer sur OK">
+<status status="NOT RUN" starttime="20231208 08:52:15.185" endtime="20231208 08:52:15.185"/>
+</kw>
+<kw name="Appuyer sur la flèche retour">
+<status status="NOT RUN" starttime="20231208 08:52:15.190" endtime="20231208 08:52:15.190"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article">
+<arg>EM055</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.194" endtime="20231208 08:52:15.194"/>
+</kw>
+<kw name="Appuyer sur OK">
+<status status="NOT RUN" starttime="20231208 08:52:15.199" endtime="20231208 08:52:15.199"/>
+</kw>
+<kw name="Vider barre de recherche">
+<status status="NOT RUN" starttime="20231208 08:52:15.202" endtime="20231208 08:52:15.202"/>
+</kw>
+<kw name="Saisir l Article a la Main">
+<arg>BAOR01</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.214" endtime="20231208 08:52:15.214"/>
+</kw>
+<kw name="Sélection gamme">
+<arg>Emeraude</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.217" endtime="20231208 08:52:15.217"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>20</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.220" endtime="20231208 08:52:15.220"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article">
+<arg>21731003</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.234" endtime="20231208 08:52:15.234"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>5</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.249" endtime="20231208 08:52:15.250"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article">
+<arg>21731003</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.252" endtime="20231208 08:52:15.252"/>
+</kw>
+<kw name="Modifier une quantite">
+<arg>18</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.261" endtime="20231208 08:52:15.261"/>
+</kw>
+<kw name="Appuyer sur la flèche retour">
+<status status="NOT RUN" starttime="20231208 08:52:15.264" endtime="20231208 08:52:15.265"/>
+</kw>
+<kw name="Cliquer sur le bouton de mise en attente">
+<status status="NOT RUN" starttime="20231208 08:52:15.266" endtime="20231208 08:52:15.266"/>
+</kw>
+<kw name="Sur le terminal, sélectionner le module">
+<arg>Commande Client</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.267" endtime="20231208 08:52:15.267"/>
+</kw>
+<kw name="Cliquer sur Oui">
+<status status="NOT RUN" starttime="20231208 08:52:15.269" endtime="20231208 08:52:15.269"/>
+</kw>
+<kw name="Saisir l Article a la Main">
+<arg>CHAAR/VAR</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.270" endtime="20231208 08:52:15.270"/>
+</kw>
+<kw name="Sélection gamme">
+<arg>42</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.281" endtime="20231208 08:52:15.281"/>
+</kw>
+<kw name="Sélection sous gamme">
+<arg>Forçat</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.284" endtime="20231208 08:52:15.285"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>2</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.291" endtime="20231208 08:52:15.292"/>
+</kw>
+<kw name="Scanner le code barre correspondant à l'article">
+<arg>38141025</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.295" endtime="20231208 08:52:15.295"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>10</arg>
+<status status="NOT RUN" starttime="20231208 08:52:15.299" endtime="20231208 08:52:15.299"/>
+</kw>
+<kw name="Cliquer sur le bouton de finalisation">
+<status status="NOT RUN" starttime="20231208 08:52:15.302" endtime="20231208 08:52:15.302"/>
+</kw>
+<kw name="Valider">
+<status status="NOT RUN" starttime="20231208 08:52:15.310" endtime="20231208 08:52:15.310"/>
+</kw>
+<status status="PASS" starttime="20231208 08:52:14.096" endtime="20231208 08:52:17.515"/>
+</kw>
+<status status="PASS" starttime="20231208 08:52:14.095" endtime="20231208 08:52:17.515"/>
 </test>
-<status status="PASS" starttime="20231207 11:36:51.385" endtime="20231207 11:37:25.852"/>
+<status status="PASS" starttime="20231208 08:52:14.011" endtime="20231208 08:52:17.517"/>
 </suite>
 <statistics>
 <total>
