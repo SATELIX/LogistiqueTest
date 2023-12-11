@@ -82,6 +82,7 @@ Demarrer L Application
     # ...    app=${app}
     Activate Application    ${appPackage}
 
+
 Ajouter Un Dossier 
     [Documentation]    Ce mot clé tente d'ajouter un dossier à l'application
     ...    en scannant le QR code correpsondant
@@ -116,11 +117,16 @@ Aller Sur LA page De Login Et Se Connecter
     Click Element    ${BOUTON_AUTHENT}
     Se Connecter Au Dossier
 
+Aller Sur LA page De Login Et Se Connecter
+    AppiumLibrary.Click Element    ${BOUTON_AUTHENT}
+    Se Connecter Au Dossier
+
 Se Connecter Au Dossier
     Wait Until Page Contains Element    ${INPUT_LOGIN}    6s
     ...    La page de Login ne s'est pas affichée dans les 6 secondes.
     Input Text       ${INPUT_LOGIN}    ${LOGIN}
     Click Element    ${BUTTON_LOGIN}    
+
 
 # Revenir Au Choix Des Dossiers
 #     [Documentation]    Ce mot clé permet de reveni sur l'écran de choix du dossier. 
@@ -204,4 +210,4 @@ Finaliser
 
 Valider
     Wait Until Page Contains    fr.satelix.logistique:id/bt_quitter_module_valider_transfert
-    Click Element    fr.satelix.logistique:id/bt_quitter_module_valider_transfert    
+    Click Element    fr.satelix.logistique:id/bt_quitter_module_valider_transfert

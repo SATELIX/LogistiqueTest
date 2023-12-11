@@ -160,8 +160,9 @@ Lire La Quantite Restante A Preparer Dans Le Detail De L Article
     RETURN    ${remaning}
 
 Sélectionner le conditionnement
+
     [Documentation]    Le conditionnement passé en paramètre est recherché sur l'écran.
-    ...               \n Seinsible à la casse.
+    ...               \n Sensible à la casse.
     [Arguments]    ${conditionnement}
     # ${choix_conditionnement}    Set Variable    //*[@id=bt_connexion and contains(text(), "${conditionnement}")]
     # ${choix_conditionnement}    Set Variable    //*[@text="${conditionnement}"]

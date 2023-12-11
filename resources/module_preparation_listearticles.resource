@@ -22,6 +22,10 @@ ${TAB_ITEMS_PICKED}                 //android.widget.LinearLayout[@content-desc=
 ${PASTILLE_COLIS}                   id=fab_colisage
 
 
+# La pastille colis avec le petit carton}    id=tv_item_article_nb_pieces
+${PASTILLE_COLIS}                   id=fab_colisage
+
+
 *** Keywords ***
 
 Afficher Liste des articles
@@ -32,7 +36,7 @@ Afficher Liste des articles
 La Liste Des Articles De La Commande S Affichent
     [Documentation]    Vérifie que le nombre d'articles affiché n'est aps à zéro
     ...                 et qu'au moins un article est affiché. 
-    AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'article n'est pas afiché.
+    Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'article n'est pas afiché.
     ${NombreArticle_lu}=    Lire Le Nombre D Articles Affiché
     Should Be True    ${NombreArticle_lu}    L'application affiche un nombre d'articles à ZERO
     ${ListeArticles}=    Lister Les Articles
@@ -42,14 +46,14 @@ Preparer Les Articles Du Document
     [Documentation]    TODO : 
     ...                \n pour le moment le mot clé fonctionne avec les articles affichés à l'écran.
     ...                \n voir dicumentation de "Lister Les Articles" 
-    AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'articles n'est pas affiché.
+    Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'articles n'est pas affiché.
     ${NombreArticle_lu}=    Lire Le Nombre D Articles Affiché
     ${ListeArticles}=    Lister Les Articles
     # Length Should Be    ${ListeArticles}    ${NombreArticle_lu}
 
     FOR    ${index}    IN RANGE    ${NombreArticle_lu}
-        AppiumLibrary.Wait Until Page Contains Element    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
-        AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
+        Wait Until Page Contains Element    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
+        Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
         ${article}=     AppiumLibrary.Get Webelement   ${ARTICLES_VISIBLES_DE_LA LISTE}
         ${reference}    ${nomArticle}    ${emplacement}    ${colis}    ${quantite}    
         ...    Lire Les Informations De L Article    ${article}
@@ -65,16 +69,16 @@ Preparer Les Articles Du Document Avec Le Lecteur CodeBarre
     ...    l'application logsituqe flitre et affiche les articles correspodnant dasn une liste. Dans ce 
     ...    cas, ce mot clé choisi le premier de la liste pour pousuivre la préparation.
 
-    AppiumLibrary.Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'articles n'est pas affiché.
+    Wait Until Element Is Visible    ${NOMBREARTICLE_AFFICHE}    15s    Le texte avec le nombre d'articles n'est pas affiché.
     ${NombreArticle_lu}=    Lire Le Nombre D Articles Affiché
     ${ListeArticles}=    Lister Les Articles
     # Length Should Be    ${ListeArticles}    ${NombreArticle_lu}
 
     FOR    ${index}    IN RANGE    ${NombreArticle_lu}
-        AppiumLibrary.Wait Until Page Contains Element    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
-        AppiumLibrary.Wait Until Element Is Visible       ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
+        Wait Until Page Contains Element    ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
+        Wait Until Element Is Visible       ${ARTICLES_VISIBLES_DE_LA LISTE}    6s
         Get Text    ${ARTICLES_VISIBLES_DE_LA LISTE}
-        ${article}=     AppiumLibrary.Get Webelement      ${ARTICLES_VISIBLES_DE_LA LISTE}
+        ${article}=     Get Webelement      ${ARTICLES_VISIBLES_DE_LA LISTE}
         ${reference}    ${nomArticle}    ${emplacement}    ${colis}    ${quantite}    
         ...    Lire Les Informations De L Article    ${article}
         Choisir L Article A Preparer Avec Le Lecteur CodeBarre   ${reference}
@@ -89,7 +93,7 @@ Lire La Quantite Demandee Pour Le Premier Article
     ...                 récupère la quantité Affichée et renvoie la quantité 
     ...                 avant le caractère "/"   
     [Arguments]    ${article}=${ARTICLES_VISIBLES_DE_LA LISTE}
-   AppiumLibrary.Wait Until Page Contains Element    ${article}
+    Wait Until Page Contains Element    ${article}
     ${content-desc}=    AppiumLibrary.Get Element Attribute    ${article}    content-desc
     ${quantite}=    AppiumLibrary.Get Text
     ...  //*[@content-desc="${content-desc}"]/android.view.ViewGroup/android.widget.TextView[@resource-id="${appPackage}:id/tv_item_article_nb_pieces"]
@@ -111,7 +115,7 @@ Lire Les Informations De L Article
     ...  \n 5 textes sont retournés, si un des texte est vide, cela ne génère pas d'erreur.
     ...           
     [Arguments]    ${article}=${ARTICLES_VISIBLES_DE_LA LISTE}
-#    AppiumLibrary.Wait Until Page Contains Element    ${article}
+#    Wait Until Page Contains Element    ${article}
     ${content-desc}=    AppiumLibrary.Get Element Attribute    ${article}    content-desc
     # nom et lot de l'article
     ${nomArticleEtLot}=    AppiumLibrary.Get Text
@@ -152,13 +156,13 @@ Lister Les Articles
     ...                \n pour le moment le mot clé fonctionne avec les acrticles affichés à l'écrans.
     ...                \n il faut créer un mot clé pour parcourir les artciles de la commande, ce mot doit renvoyer le nombre d'article
     ...                 et la liste des références.
-    ${Articles}=    AppiumLibrary.Get Webelements    ${ARTICLES_VISIBLES_DE_LA LISTE}
+    ${Articles}=    Get Webelements    ${ARTICLES_VISIBLES_DE_LA LISTE}
     Return From Keyword    ${Articles}
 
 Lire Le Nombre D Articles Affiché
     [Documentation]    Lit le composant le texte du haut de l'écran avec le nombre d'articles 
     ...                attendus dans la préparation.
-    ${NombreArticle}=    AppiumLibrary.Get Text   ${NOMBREARTICLE_AFFICHE}
+    ${NombreArticle}=    Get Text   ${NOMBREARTICLE_AFFICHE}
     ${NombreArticle}=    Split String    ${NombreArticle}
     Return From Keyword    ${NombreArticle}[0]
 
@@ -167,16 +171,16 @@ Choisir Le Premier Article De La Liste Des Articles Prepares
 
 Choisir Le Premier Article De La Liste A Preparer
     [Documentation]    Ce mot clé clique sur le premier element CardView de la liste
-    AppiumLibrary.Wait Until Page Contains Element    ${ARTICLES_VISIBLES_DE_LA LISTE}
-    AppiumLibrary.Wait Until Element Is Visible       ${ARTICLES_VISIBLES_DE_LA LISTE}
-    AppiumLibrary.Click Element    ${ARTICLES_VISIBLES_DE_LA LISTE}
+    Wait Until Page Contains Element    ${ARTICLES_VISIBLES_DE_LA LISTE}
+    Wait Until Element Is Visible       ${ARTICLES_VISIBLES_DE_LA LISTE}
+    Click Element    ${ARTICLES_VISIBLES_DE_LA LISTE}
     
 Choisir L Article A Preparer
     [Documentation]    Ce mot clé clique sur l'element CardView de l'article donné en 
     ...               argument
     [Arguments]    ${article}
-    AppiumLibrary.Wait Until Element Is Visible    ${article}    15s    Il n'y a pas d'article à préparer dans pour cette péparation.
-    AppiumLibrary.Click Element    ${article} 
+    Wait Until Element Is Visible    ${article}    15s    Il n'y a pas d'article à préparer dans pour cette péparation.
+    Click Element    ${article} 
 
 Choisir L Article A Preparer Avec Le Lecteur CodeBarre
     [Documentation]    Ce mot clé attend la référence de l'article en entrée au format texte.
@@ -184,7 +188,7 @@ Choisir L Article A Preparer Avec Le Lecteur CodeBarre
     ...    filtre les articles correspondants. 
     [Arguments]    ${reference}
     Sleep    0.5s
-    AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    15s    Il n'y a pas d'aticle à préparer dans pour cette péparation.
+    Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}    15s    Il n'y a pas d'aticle à préparer dans pour cette péparation.
     utils.Scanner Un Code    ${reference} 
 
 
@@ -194,7 +198,7 @@ Chercher Un Article Par La Recheche
     ...                S'il y a plusieurs articles, la liste est à gérée ou non, par défaut on 
     ...                considère que le 1er de la liste est pris en compte.
     [Arguments]    ${texteDeLaRecherche}
-    AppiumLibrary.Input Text    ${CHAMP_RECHERCHE}    ${texteDeLaRecherche}
+    Input Text    ${CHAMP_RECHERCHE}    ${texteDeLaRecherche}
 
 Afficher Les Articles Prepares
     [Documentation]    clique sur l'onglet des articles préparés
@@ -203,8 +207,8 @@ Afficher Les Articles Prepares
     Click Element    ${TAB_ITEMS_PICKED}
 
 Appuyer Sur La Pastille Colis Avec Le Petit Carton
-    AppiumLibrary.Wait Until Page Contains Element    ${PASTILLE_COLIS}
-    AppiumLibrary.Click Element                       ${PASTILLE_COLIS}
+    Wait Until Page Contains Element    ${PASTILLE_COLIS}
+    Click Element                       ${PASTILLE_COLIS}
 
 Sélectionner à la main l'article dans la liste
     [Arguments]    ${article}
@@ -225,31 +229,31 @@ Saisir l Article a la Main
 
 Sélectionner à la main Un Article Avec 2 Criteres
     [Documentation]    Prend en entrée la référence d'un article et sa gamme, 
-    ...                parcours la liste des articles visibles à preparer et choisit celui qui correspond 
+    ...                parcours la liste des articles visibles à preparer et choisit celui qui correspond
     ...                TODO : les articles non visibles à l'écran ne sont pas pris en compte
     [Arguments]    ${reference}    ${gamme}
-    AppiumLibrary.Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}
+    Wait Until Element Is Visible    ${ARTICLES_VISIBLES_DE_LA LISTE}
     # scrolle la liste pou afficher le premier aticle en entier
-    ${myitems}    AppiumLibrary.Get Webelements    ${ARTICLES_VISIBLES_DE_LA LISTE}
-    ${coordonnees}    AppiumLibrary.Get Element Rect    ${myitems}[1]
+    ${myitems}    Get Webelements    ${ARTICLES_VISIBLES_DE_LA LISTE}
+    ${coordonnees}    Get Element Rect    ${myitems}[1]
     ${y_offset}   Evaluate    ${coordonnees}[y]+${coordonnees}[height]
-    AppiumLibrary.Swipe    ${coordonnees}[x]    ${coordonnees}[y]    0    ${y_offset}
+    Swipe    ${coordonnees}[x]    ${coordonnees}[y]    0    ${y_offset}
 
     ${affichage_ref_article}      Set Variable    id=tv_item_article_html
     ${affichage_gamme_article}    Set Variable    id=tv_item_article_gamme_1
     FOR    ${element}    IN    @{myitems}
-        ${ref_aticle}    AppiumLibrary.Get Webelement In Webelement    ${element}    ${affichage_ref_article}
+        ${ref_aticle}    Get Webelement In Webelement    ${element}    ${affichage_ref_article}
         ${ref_article_correcte}    Run Keyword And Return Status    
-        ...    AppiumLibrary.Element Should Contain Text    ${ref_aticle}    ${reference}
+        ...    Element Should Contain Text    ${ref_aticle}    ${reference}
         Continue For Loop If    ${ref_article_correcte} == ${False}
         ${presence_ref_gamme}    Run Keyword And Return Status     
-        ...    AppiumLibrary.Get Webelement In Webelement              ${element}    ${affichage_gamme_article}
+        ...    Get Webelement In Webelement              ${element}    ${affichage_gamme_article}
         Continue For Loop If    ${presence_ref_gamme} == ${False}
-        ${ref_gamme}    AppiumLibrary.Get Webelement In Webelement     ${element}    ${affichage_gamme_article}
+        ${ref_gamme}    Get Webelement In Webelement     ${element}    ${affichage_gamme_article}
         ${ref_article_correcte}    Run Keyword And Return Status    
-        ...    AppiumLibrary.Element Should Contain Text    ${ref_gamme}    ${gamme}
+        ...    Element Should Contain Text    ${ref_gamme}    ${gamme}
         Continue For Loop If    ${ref_article_correcte} == ${False}
-        AppiumLibrary.Click Element    ${element}
+        Click Element    ${element}
         Return From Keyword    ${True}
     END
     Fail    L'article ${reference} avec la gamme ${gamme} demandé n'a pas été trouvé dans la liste 
