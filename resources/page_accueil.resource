@@ -34,10 +34,10 @@ Choisir Le Module Dans La Liste Des Modules
 
 
 Faire Defiler Les Modules Pour Trouver Le Bon 
-    [Documentation]    ce mot clé scroll module pa module pour trouver celui recercher
-    ...  il récupèe les coordonnées du premier et du dernier modules affichés à l'écran
-    ...  et scroll du dernie vers le premier
-    ...  et tente de cliquer sur le module cherché. 
+    [Documentation]    Scroll module par module pour trouver celui recerché.
+    ...  Les coordonnées du premier et du dernier modules affichés à l'écran sont récupérées,
+    ...  Un swipe est effectué entre ces deux coordonnées, du dernier vers le premier,
+    ...  jusqu'à ce que le module recherché soit trouvé et cliqué 
     ...  \n pour info, les données que renvoie Get Element Rec sont 
     ...  \n ${rec} = {'height': 957, 'width': 720, 'x': 0, 'y': 211}
     ...  
