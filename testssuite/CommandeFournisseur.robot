@@ -26,6 +26,7 @@ ${fournisseur}    xpath =(//android.widget.ImageButton[@content-desc="Afficher l
 ${BILLO}    //androidx.cardview.widget.CardView[@content-desc="Fournisseur Billot"]/android.view.ViewGroup
 
 
+#Fonction OK
 *** Test Cases ***
 Réception CommandeFournisseur
     Sur le terminal, sélectionner le module                       Commande Fournisseur

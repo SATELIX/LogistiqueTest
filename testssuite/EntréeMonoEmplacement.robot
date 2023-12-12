@@ -25,7 +25,7 @@ ${EM040}    //android.widget.TextView[@text="EM040"]
 ${CHAAR/VAR}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Chaîne Argent maille et longueur variables"]/android.view.ViewGroup
 
 *** Test Cases ***
-Test De L Application
+EntréeMonoEmpl
     Sur le terminal, sélectionner le module                        Entrée mono empl
     Choisir au menu déroulant                                      ${depot}    ${Bijou SA}
     Sélectionner l article                                         BAAR01

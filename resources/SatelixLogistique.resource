@@ -203,3 +203,7 @@ Finaliser
 Valider
     Wait Until Page Contains    fr.satelix.logistique:id/bt_quitter_module_valider_transfert
     Click Element    fr.satelix.logistique:id/bt_quitter_module_valider_transfert    
+
+Valider series
+    Wait Until Element Is Visible    fr.satelix.logistique:id/fab_valider_lot_serie
+    Click Element    fr.satelix.logistique:id/fab_valider_lot_serie

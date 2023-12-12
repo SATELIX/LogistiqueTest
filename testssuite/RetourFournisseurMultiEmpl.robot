@@ -89,7 +89,7 @@ Retour Fournisseur multi empl
     Sélectionner l emplacement                                    A1T2N3P2
     Entrer une quantité et valider                                8
     Cliquer sur le bouton de finalisation
-    #mettre date du jour
+    #Mettre date du jour
     Appuyer sur Transferer
     Valider
 

@@ -1,11 +1,13 @@
 *** Settings ***
+
 Documentation    contient les mots clés gérant les actions sur la page d'accueil/home
 ...              où se touve la liste des modules disponibles.
+
+
 
 Resource    ../resources/utils.resource
 
 Library    AppiumLibrary
-
 *** Variables ***
 ${module}    ${EMPTY}
 ${automationName}       UIAutomator2

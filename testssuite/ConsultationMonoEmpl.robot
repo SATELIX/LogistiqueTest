@@ -28,12 +28,12 @@ ${MF82}    //android.view.ViewGroup[@content-desc="Sélectionner le numéro de s
 ${BAAR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Bague Argent"]/android.view.ViewGroup
 
 
-
+#fonction ok, modifier modifier code barre, pb bdd lots
 *** Test Cases ***
 ConsultationMonoEmpl
     Sur le terminal, sélectionner le module                  Consultation Mono Empl
     Sleep                                                    2s
-    Sélectionner le document                                 Bijou SA
+    Sélectionner le document nom exact                       Bijou SA
     Sleep                                                    1s
     Afficher Les Articles Disponibles                                                   
     Sélectionner l article                                   BAAR01
@@ -45,20 +45,16 @@ ConsultationMonoEmpl
     Sleep                                                    4s
     Sur le terminal, sélectionner le module                  Consultation Mono Empl
     Sleep                                                    2s
-    Sélectionner le document                                 Bijou SA
+    Sélectionner le document nom exact                       Bijou SA
     Sleep                                                    5s
     Saisir l Article a la Main                               BA
     Cliquer sur Non
     Sleep                                                    2s
-    Afficher Les Articles Disponibles
     Sélectionner l article par element                       ${BAAR01}
     Appuyer sur la flèche retour
-    Afficher Les Articles Disponibles
-    Sélectionner l article par element                       ${info}
-    Sélectionner l article par element                       ${modif} 
+    Sélectionner le document par element                     ${info}
+    Sélectionner le document par element                     ${modif} 
     Modifier code barre                                      1234567890128
-    Afficher Les Articles Disponibles
-    Sélectionner l article par element                       ${modif}
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour
@@ -67,8 +63,8 @@ ConsultationMonoEmpl
     Appuyer sur la flèche retour
     Saisir l Article a la Main                               LINGOR18
     Appuyer sur la flèche retour
-    Scanner le code barre correspondant au lot               LINGOR18;LOT-TEST2
-    Scanner le code barre correspondant au lot               LINGOR18:LOT-10           
+    # Scanner le code barre correspondant au lot               LINGOR18;LOT-TEST2        #Pb lot bdd
+    # Scanner le code barre correspondant au lot               LINGOR18:LOT-10           
     Saisir l Article a la Main                               EM040
     Appuyer sur la flèche retour
     Scanner le code barre correspondant à l'article          EM040
@@ -85,7 +81,7 @@ ConsultationMonoEmpl
     Entrer une quantité et valider                           60
     Saisir l Article a la Main                               MODIV01
     Choisir au menu déroulant avec scroll                    ${numserie}   ${MF82}
-    Valider
+    Valider series
     Scanner le code barre correspondant à l'article          MODIV01;MF81
     Appuyer sur la flèche retour
     Scanner le code barre correspondant à l'article          MF80
@@ -114,7 +110,6 @@ ConsultationMonoEmpl
     Scanner le code barre correspondant à l'article          38141025            #scan de l'article avec les gammes associées
     Entrer une quantité max et valider
     Cliquer sur le bouton de finalisation
-    Valider
 
 
 

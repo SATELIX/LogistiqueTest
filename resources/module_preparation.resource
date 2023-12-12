@@ -4,9 +4,9 @@ Documentation    ce fichier contient les mots clé nécessaires pour accéder au
 ...   Les écrans avec le détails des articles et des lots sont décits dans des dichiers séparés  
 
 Library     AppiumLibrary
-Library    DateTime
 Resource    utils.resource
 Resource    module_preparation_handlingUnit.resource
+Resource    module_preparation_listearticles.resource
 
 *** Variables ***
 
@@ -36,8 +36,7 @@ ${POPUP_RETOUR_PREPA}            id=bt_quitter_module_annuler
 ${BOUTON_TERMINER_SAISIE_INCOMLETE}   id=button1
 ${text_recherche}                id =input_text_recherche
 ${BUTON_LISTE_DES_ARTICLES}      id=text_input_end_icon
-
-
+${dest}                          //android.widget.ImageButton[@content-desc="Afficher la liste"]
 
 
 
@@ -57,8 +56,19 @@ Choisir Le Document A Preparer Dans La Liste Des Documents
     [Arguments]    ${document}
     Wait Until Page Contains    ${document}   15s 
     ...    Le document ${document} n'apparait pas dans la liste des documents à peparer
-    AppiumLibrary.Click Text    ${document}    true
+    AppiumLibrary.Click Text    ${document}
 
+
+Choisir Le Document A Preparer Dans La Liste Des Documents nom exact
+    [Documentation]    Ce mot clé parcour la liste des documents du module
+    ...    Préparation et Click sur le document correspondant à celui passé
+    ...    en Argument <BR>
+    ...    La variable "document" est la référence de la préparation.<BR>
+    ...    TO DO :       
+    [Arguments]    ${document}
+    Wait Until Page Contains    ${document}   15s 
+    ...    Le document ${document} n'apparait pas dans la liste des documents à peparer
+    AppiumLibrary.Click Text    ${document}    true
 Choisir Le Document A Preparer Dans La Liste Des Documents Element
     [Documentation]    Ce mot clé parcour la liste des documents du module
     ...    Préparation et Click sur le document correspondant à celui passé
@@ -74,10 +84,19 @@ Choisir Le Document A Preparer Dans La Liste Des Documents Element
 Afficher Les Articles Disponibles
     Wait Until Page Contains Element    ${BUTON_LISTE_DES_ARTICLES}    10
     Click Element    ${BUTON_LISTE_DES_ARTICLES}
+    Sleep    2s
 
 Sélectionner le document
     [Arguments]    ${document}
     Choisir Le Document A Preparer Dans La Liste Des Documents    ${document}
+
+Sélectionner le document par element
+    [Arguments]    ${article}
+    Choisir Le Document A Preparer Dans La Liste Des Documents Element   ${article}
+
+Sélectionner le document nom exact
+    [Arguments]    ${document}
+    Choisir Le Document A Preparer Dans La Liste Des Documents nom exact   ${document}
 
 Sélectionner l article
     [Arguments]    ${article}
@@ -133,11 +152,6 @@ Sélection sous gamme
 Transferer
     Choisir Le Document A Preparer Dans La Liste Des Documents    TRANSFÉRER
 
-Supprimer Recherche Article
-    ${element_text}    Get Text    xpath=?
-    Choisir Le Document A Preparer Dans La Liste Des Documents Element    //android.widget.ImageButton[@content-desc="Valider cet article"]
-    Wait Until Element Is Visible    //android.widget.EditText[@text="${element_text}"]
-    Clear Text    //android.widget.EditText[@text="${element_text}"]
 
 Appuyer sur la pastille du colis
     Choisir Le Document A Preparer Dans La Liste Des Documents Element   ${pastille_colis}
@@ -209,8 +223,9 @@ Laisser Le Mode D Envoi Par Defaut et Transférer
     AppiumLibrary.Click Element    ${BOUTON_TRANSFERT}
 
 Valider Le Mode Expedition Sur     
-    [Arguments]    ${modeExpedition}
-    Choisir le mode d'expédition    ${modeExpedition}
+    [Arguments]    ${modeExpedition} 
+    Choisir au menu déroulant avec scroll    ${dest}    ${modeExpedition}
+
 
 Appuyer sur Transferer
     Cliquer Sur Le Bouton De Transfert
@@ -256,11 +271,6 @@ Changer emplacement
     AppiumLibrary.Wait Until Page Contains   ${Emplacement} 
     AppiumLibrary.Click Text    ${Emplacement}
 
-Choisir le mode d'expédition
-    [Arguments]    ${modeExpedition}
-    #  AppiumLibrary.Click Element    ${BUTTON_LISTE_MODE_EXPEDITION}
-     AppiumLibrary.Wait Until Element Is Visible    id=dropdown_list
-     Choisir LA Valeur Dans La Liste    id=dropdown_list    ${modeExpedition}
 
 Valider La Préparation
     AppiumLibrary.Wait Until Element Is Visible    ${POPUP_VALIDATION_PREPA}
@@ -273,10 +283,10 @@ Appuyer sur Terminer La Saisie
 
 Modifier code barre
     [Arguments]    ${newcb}
-    ${oldcb}    Get Text    xpath=?
-    Wait Until Page Contains    ${oldcb}
-    Click Text    ${oldcb}
-    Clear Text    //android.widget.EditText[@text="${oldcb}"]
+    Wait Until Element Is Visible    //android.widget.EditText[@text=" NEWBAAR01"]
+    Click Element   //android.widget.EditText[@text=" NEWBAAR01"]
+    Clear Text    //android.widget.EditText[@text=" NEWBAAR01"]
     Taper Un Mot Au Clavier    ${newcb}
     Press ENTER
     Hide Keyboard
+    Click Element    //android.widget.ImageButton[@content-desc="Valider les modifications"]

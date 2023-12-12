@@ -26,8 +26,10 @@ ${client}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la list
 ${BAGUES}    //androidx.cardview.widget.CardView[@content-desc="Client Bague's en or"]/android.view.ViewGroup
 
 
+#Fonction OK
+
 *** Test Cases ***
-Réception CommandeClient
+CommandeClient
     Sur le terminal, sélectionner le module                       Commande Client
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${client}         ${BAGUES}
@@ -70,8 +72,10 @@ Réception CommandeClient
     Cliquer sur Oui
     Saisir l Article a la Main                                   CHAAR/VAR
     Sélection gamme                                              42
+    Sleep                                                        2s
     Sélection sous gamme                                         Forçat
     Entrer une quantité et valider                               2
+    Sleep                                                        2s
     Scanner le code barre correspondant à l'article              38141025            #Scan l'article CHAAR/VAR avec les gammes 42 et Forçat
     Entrer une quantité et valider                               10
     Cliquer sur le bouton de finalisation

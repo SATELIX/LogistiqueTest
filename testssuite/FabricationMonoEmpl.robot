@@ -29,6 +29,7 @@ ${CHAAR/VAR34classique}    xpath=(//androidx.cardview.widget.CardView[@content-d
 ${BAAR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Bague Argent"]/android.view.ViewGroup
 
 
+#Test OK pb lot bdd
 *** Test Cases ***
 Fabrication mono empl
     Sur le terminal, sélectionner le module                       Fabrication mono empl
@@ -53,15 +54,16 @@ Fabrication mono empl
     Entrer une quantité et valider                                1
     Scanner le code barre correspondant à l'article               38141025            #CHAAR/VAR longueur 42 cm Forçat
     Entrer une quantité et valider                                2
-    Scroll Vers Element                                           ${BAAR01}  haut
+    Afficher Les Articles Disponibles
     Scroll Vers Element                                           ${CHAAR/VAR34classique}    bas
     Sélectionner l article par element                            ${CHAAR/VAR34classique}
     Entrer une quantité et valider                                2
-    Afficher Les Articles Disponibles
-    Scroll Vers Element                                           ${LINGOR18}   bas
-    Sélectionner l article                                        LINGOR18                
-    Choisir Le Lot                                                lot0001
-    Entrer une quantité et valider                                2
+    Appuyer sur ok et back
+    # Afficher Les Articles Disponibles
+    # Scroll Vers Element                                           ${LINGOR18}   bas
+    # Sélectionner l article                                        LINGOR18                #pb lot bdd
+    # Choisir Le Lot                                                lot0001
+    # Entrer une quantité et valider                                2
     Finaliser
     Appuyer sur Terminer La Saisie
 

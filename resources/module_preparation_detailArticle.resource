@@ -6,6 +6,7 @@ Library     AppiumLibrary
 Library     String
 Resource    utils.resource
 Resource    module_preparation_listelots.resource
+Resource    module_preparation.resource
 
 *** Variables ***
 ${LAYOUT_HAUT}                       //androidx.appcompat.widget.LinearLayoutCompat/android.webkit.WebView/android.webkit.WebView/
@@ -21,7 +22,7 @@ ${TEXT_QUANTITE_VALIDEE}             id=tv_qte_validee
 
 ${CHAMP_QUANTITE}                    //android.widget.EditText[@text="Quantité"]
 ${BOUTON_AJOUTER}                    id=fab_ajouter
-
+${barre_recherche}                   id=Vider barre de recherche
 ${MESSAGE_ERREUR_QUANTITE}           id=android:id/message
 ${BOUTON_OK_MESSAGE_ERREUR}          id=android:id/button1
 ${CHAMP_QUANTITE_INSUFFISANTE}       id=fr.satelix.logistique:id/text_input_error_icon
@@ -91,11 +92,10 @@ Effacer le lot
 
 Modifier une quantite
     [Arguments]    ${value}
-    ${old_value}    Get Text    xpath=?
     Wait Until Element Is Visible    fr.satelix.logistique:id/bt_edit_qte
     Click Element    fr.satelix.logistique:id/bt_edit_qte
-    Wait Until Element Is Visible    //android.widget.EditText[@text="${old_value}"]
-    Click Element    //android.widget.EditText[@text="${old_value}"]
+    Wait Until Element Is Visible    //android.widget.Button[@content-desc="Édition de la quantité validée"]
+    Click Element    //android.widget.Button[@content-desc="Édition de la quantité validée"]
     Taper Un Nombre Au Clavier   ${value}
     Valider La Quantité
 
@@ -303,7 +303,5 @@ Modifier nb de numéro de lot à générer
 
 
 Vider barre de recherche
-    ${element}    Get Text    xpath=?
-    Wait Until Element Is Visible    //android.widget.EditText[@text="${element}"]
-    Click Element    //android.widget.EditText[@text="${element}"]
-    Clear Text    //android.widget.EditText[@text="${element}"]
+    Wait Until Element Is Visible    id=input_text_recherche
+    Clear Text    id=input_text_recherche

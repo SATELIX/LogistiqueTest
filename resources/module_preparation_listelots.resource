@@ -12,7 +12,7 @@ Resource    module_preparation_detailArticle.resource
 *** Variables ***
 # ${LISTE_CARDVIEW_LOTS}        //*[@id="fr.satelix.logistique.demo:id/rv_liste"]/androidx.cardview.widget.CardView
 ${LISTE_VIEW_LOTS}      id=const_layout_lot_serie
-${LOT_EN_STOCK}         id=tv_intitule_lot_serie
+${LOT_EN_STOCK}         id=fr.satelix.logistique:id/text_input_end_icon
 ${PREPARATION_EN_STOCK}  id=tv_item_article_html
 ${TEXT_QUANTITE_STOCK}  id=tv_qte_restante
 ${DATE_LOT_EN_STOCK}    id=item_dates

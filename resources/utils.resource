@@ -74,6 +74,7 @@ Switch App
 Press ENTER
     AppiumLibrary.Press Keycode    ${KEYCODES}[enter]
     
+
 Taper Un Nombre Au Clavier   
     [Documentation]    Mot clé qui efface ce que contient la zone de texte
     ...    qui boucle sur chaque chiffre (et point) du nombre passé en argument
@@ -188,7 +189,7 @@ Mettre date du jour
     Appuyer sur la flèche retour
 
 
-Mettre date du jour
+Mettre date du lendemain
     Wait Until Element Is Visible    ${date}
     Click Element    ${date}
     #trouver la date du lendemain

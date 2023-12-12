@@ -26,7 +26,7 @@ ${nb_palettes_perdues}    //android.widget.EditText[@text="Nb palettes perdues"]
 ${nb_palettes_europe}    //android.widget.EditText[@text="Nb palettes Europe"]
 
 
-
+#Test OK
 *** Test Cases ***
 Expedition
     Sur le terminal, sélectionner le module                       Expédition
@@ -36,5 +36,5 @@ Expedition
     Remplir donnée                                                ${nb_colis}    3
     Remplir donnée                                                ${nb_palettes_perdues}    1
     Remplir donnée                                                ${nb_palettes_europe}    2
-    Finaliser
+    Appuyer sur Transferer
 
