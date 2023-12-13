@@ -37,4 +37,4 @@ Expedition
     Remplir donnée                                                ${nb_palettes_perdues}    1
     Remplir donnée                                                ${nb_palettes_europe}    2
     Appuyer sur Transferer
-
+    Valider

@@ -52,6 +52,7 @@ Fabrication mono empl
     Afficher Les Articles Disponibles
     Sélectionner l article                                        Rubis
     Entrer une quantité et valider                                1
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               38141025            #CHAAR/VAR longueur 42 cm Forçat
     Entrer une quantité et valider                                2
     Afficher Les Articles Disponibles
@@ -66,6 +67,7 @@ Fabrication mono empl
     # Entrer une quantité et valider                                2
     Finaliser
     Appuyer sur Terminer La Saisie
+    Sleep                                                         2s
 
 
 

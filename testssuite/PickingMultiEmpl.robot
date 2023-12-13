@@ -33,6 +33,7 @@ PickingMultiEmpl
     Sélectionner l article                                        BAAR01
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                2
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               BAAR01
     Sélectionner l emplacement                                    A1T2N1P2
     Entrer une quantité supérieure au stock puis valider          200
@@ -41,6 +42,7 @@ PickingMultiEmpl
     # Sélectionner l emplacement                                    A1T3N1P3            Pb bdd lot
     # Aller dans la liste et sélectionner le numéro de lot          LOT-10
     # Entrer une quantité et valider                                2
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               LINGOR18\\;LOT-10
     Sélectionner l emplacement                                    A1T3N1P3
     Entrer une quantité et valider                                3
@@ -48,23 +50,30 @@ PickingMultiEmpl
     Appuyer sur "+"
     Rester appuyer sur l unite logistique                         COLIS 2
     Sélectionner Un type d Unite Logistique Et valider            Palette Europe
+    Sleep                                                         2s
     Appuyer sur la flèche retour
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               BAOR01
     Appuyer sur la flèche retour
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               21731003
+    Sleep                                                         2s
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                8
     Afficher Les Articles Disponibles
     Sélectionner l article                                        BAOR01   
     Sélectionner l emplacement                                    A1T1N1P2
     Entrer une quantité et valider                                1
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               EM040
     Sélectionner l emplacement                                    A1T3N1P2
     Sélectionner le conditionnement vers droite                   PIÈCE
     Entrer une quantité et valider                                3
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               EM050
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                24
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               MODIV01
     Sélectionner l emplacement                                    A2T1N2P2
     Saisir un Numero De Serie et valider                          SERIE5
@@ -73,6 +82,7 @@ PickingMultiEmpl
     Effacer le numéro de série, ne rien mettre et valider
     Sleep    4s
     Appuyer sur ok et back
+    Sleep                                                         2s
     Appuyer sur la flèche retour                                #parfois nécessaire
     Vider barre de recherche                                                                   
     Afficher Les Articles Disponibles
@@ -87,7 +97,9 @@ PickingMultiEmpl
     Appuyer sur "+"
     Rester appuyer sur l unite logistique                         PALETTE EUROPE 3
     Sélectionner Un type d Unite Logistique Et valider            Palette Perdue
+    Sleep                                                         2s
     Appuyer sur la flèche retour
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               38141025            #article CHAAR/VAR avec gammes 42 et Forçat
     Sélectionner l emplacement                                    A1T2N3P2
     Entrer une quantité et valider                                12
@@ -106,7 +118,12 @@ PickingMultiEmpl
     #Mettre date du lendemain
     Appuyer sur Transferer
     Sélectionner le document                                      VALIDER PICKING MULTI EMPL 
+    Sleep                                                         2s
     Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 1
+    Sleep                                                         2s
     Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 2, affiche une erreur
+    Sleep                                                         2s
     Scanner code barre                                            TRA98745002                #tracking 2 pour le colis 2
+    Sleep                                                         2s
     Scanner code barre                                            TRA98745003                #tracking 3 pour le colis 3
+    Sleep                                                         2s

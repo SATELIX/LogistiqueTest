@@ -40,10 +40,13 @@ Réception multi empl
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               BAAR01
     Entrer une quantité et valider                                3
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               21731003        #Scan article BAAR01/EM
     Entrer une quantité et valider                                2
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               TESTBLBKAD
     Entrer une quantité et valider                                1
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               38141025
     Entrer une quantité et valider                                2
     Afficher Les Articles Disponibles
@@ -57,3 +60,4 @@ Réception multi empl
     # Entrer une quantité et valider                                2
     Finaliser
     Appuyer sur Terminer La Saisie
+    Sleep                                                         2s

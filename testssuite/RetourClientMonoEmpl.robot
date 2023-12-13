@@ -42,24 +42,31 @@ Retour Client Mono Empl
     Vider barre de recherche   
     Saisir l Article a la Main                                    LINGOR18
     Appuyer sur la flèche retour
-    Scanner le code barre correspondant au lot                    LINGOR18;LOT-999
+    Sleep                                                         2s
+    Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-999
+    Sleep                                                         2s
     Entrer une quantité et valider                                10
-    Scanner le code barre correspondant au lot                    LINGOR18;LOT-TEST2           
+    Sleep                                                         2s
+    Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-TEST2           
     Entrer une quantité et valider                                2
     Saisir l Article a la Main                                    BAOR01
     Appuyer sur la flèche retour
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               21731003            #gamme emeraude
     Entrer une quantité et valider                                2
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               TESTBLBKAD          #gamme rubis
     Entrer une quantité et valider                                1
     Saisir l Article a la Main                                    CHAAR/VAR
     Sélection gamme                                               34
     Sélection sous gamme                                          Classique
     Entrer une quantité et valider                                2
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               38141025
     Entrer une quantité et valider                                2
     Finaliser
     Valider
+    Sleep                                                         5s
 
 
 

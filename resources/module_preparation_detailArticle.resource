@@ -99,6 +99,17 @@ Modifier une quantite
     Taper Un Nombre Au Clavier   ${value}
     Valider La Quantité
 
+Modifier un stock
+    [Arguments]    ${value}
+    Wait Until Element Is Visible    fr.satelix.logistique:id/bt_edit_qte_stock
+    Click Element    fr.satelix.logistique:id/bt_edit_qte_stock
+    Wait Until Element Is Visible    //android.widget.EditText[@text="50"]
+    Click Element    //android.widget.EditText[@text="50"]
+    Taper Un Nombre Au Clavier   ${value}
+    Appuyer sur la flèche retour
+    Valider La Quantité
+
+
 Confirmer régularisation
     Wait Until Page Contains    VALIDER
     Click Text    VALIDER

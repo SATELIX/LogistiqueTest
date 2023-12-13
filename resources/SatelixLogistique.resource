@@ -151,7 +151,7 @@ Sélectionner référence doc
 Valider les informations
     Hide Keyboard
     Wait Until Page Contains    VALIDER
-    Click Element    ${button_valider}
+    Click Text    VALIDER
 
 Valider association
     Wait Until Page Contains    VALIDER
