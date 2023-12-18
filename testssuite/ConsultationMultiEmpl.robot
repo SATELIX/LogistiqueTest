@@ -74,6 +74,7 @@ ConsultationMultiEmpl
     # Modifier un stock                                             180
     # Sleep                                                         2s
     # Confirmer régularisation
+    Sleep                                                         2s
     Saisir l Article a la Main                                    EM040
     Sélectionner l emplacement                                    A1T3N1P2
     Sleep                                                         2s
@@ -109,8 +110,6 @@ ConsultationMultiEmpl
     Scanner le code barre correspondant à l'article               MF81
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               MF90
-    Sleep                                                         2s
-    Appuyer sur la flèche retour
     Sleep                                                         2s
     Appuyer sur la flèche retour
     Afficher Les Articles Disponibles
