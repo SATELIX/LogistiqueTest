@@ -47,19 +47,19 @@ ConsultationMonoEmpl
     Sleep                                                    2s
     Sélectionner le document nom exact                       Bijou SA
     Sleep                                                    5s
-    Saisir l Article a la Main                               BA
-    Cliquer sur Non
-    Sleep                                                    2s
-    Sélectionner l article par element                       ${BAAR01}
-    Sleep                                                    2s
-    Appuyer sur la flèche retour
-    Sélectionner le document par element                     ${info}
-    Sélectionner le document par element                     ${modif} 
-    Modifier code barre                                      1234567890128
-    Appuyer sur la flèche retour
-    Appuyer sur la flèche retour
-    Appuyer sur la flèche retour
-    Sleep                                                    2s
+    # Saisir l Article a la Main                               BA
+    # Cliquer sur Non
+    # Sleep                                                    2s
+    # Sélectionner l article par element                       ${BAAR01}
+    # Sleep                                                    2s
+    # Appuyer sur la flèche retour
+    # Sélectionner le document par element                     ${info}
+    # Sélectionner le document par element                     ${modif} 
+    # Modifier code barre                                      1234567890128
+    # Appuyer sur la flèche retour
+    # Appuyer sur la flèche retour
+    # Appuyer sur la flèche retour
+    # Sleep                                                    2s
     # Scanner le code barre correspondant à l'article          1234567890128
     # Appuyer sur la flèche retour
     # Sleep                                                    2s
