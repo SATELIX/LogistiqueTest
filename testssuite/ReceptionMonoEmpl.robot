@@ -34,7 +34,7 @@ ${BAAR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 
 
 *** Test Cases ***
-RéceptionMonoEmpl
+ReceptionMonoEmpl
     Sur le terminal, sélectionner le module                       Réception mono empl
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant avec scroll                         ${fournisseur}    ${Joaill}
