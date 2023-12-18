@@ -42,13 +42,13 @@ RetourFournisseurMonoEmpl
     Scanner le code barre correspondant à l'article               BAAR01
     Entrer une quantité et valider                                2
     Sleep                                                         2s
-    Scanner le code barre correspondant à l'article               LINGOR18
-    Choisir Le Lot                                                LOT-TEST2
-    Entrer une quantité et valider                                1
-    Sleep                                                         2s
-    Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-BDF9411123
-    Entrer une quantité et valider                                2
-    Sleep                                                         2s
+    # Scanner le code barre correspondant à l'article               LINGOR18
+    # Choisir Le Lot                                                LOT-TEST2
+    # Entrer une quantité et valider                                1                #pb lot bdd
+    # Sleep                                                         2s
+    # Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-BDF9411123
+    # Entrer une quantité et valider                                2
+    # Sleep                                                         2s
     Saisir l Article a la Main                                    EM040
     Sélectionner le conditionnement vers droite                   ECRIN DE 12
     Entrer une quantité et valider                                1

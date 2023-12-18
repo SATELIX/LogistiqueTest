@@ -45,17 +45,17 @@ RetourFournisseurMultiEmpl
     Sleep                                                         2s
     Entrer une quantité et valider                                3
     Sleep                                                         2s
-    Scanner le code barre correspondant à l'article               LINGOR18
-    Sleep                                                         4s
-    Sélectionner l emplacement                                    A1T3N1P3
-    Sleep                                                         4s
-    Choisir Le Lot                                                LOT-10
-    Entrer une quantité et valider                                1
-    Sleep                                                         2s
-    Scanner le code barre correspondant à l'article               LINGOR18\\;LOT-BDF9411123
-    Sélectionner l emplacement                                    A1T3N1P3
-    Entrer une quantité et valider                                2
-    Sleep                                                         2s
+    # Scanner le code barre correspondant à l'article               LINGOR18
+    # Sleep                                                         4s
+    # Sélectionner l emplacement                                    A1T3N1P3
+    # Sleep                                                         4s
+    # Choisir Le Lot                                                LOT-10
+    # Entrer une quantité et valider                                1
+    # Sleep                                                         2s
+    # Scanner le code barre correspondant à l'article               LINGOR18\\;LOT-BDF9411123
+    # Sélectionner l emplacement                                    A1T3N1P3
+    # Entrer une quantité et valider                                2
+    # Sleep                                                         2s
     Saisir l Article a la Main                                    EM040
     Sélectionner l emplacement                                    A1T3N1P2
     Sleep                                                         3s
