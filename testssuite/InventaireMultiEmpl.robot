@@ -82,6 +82,7 @@ InventaireMultiEmpl
     Sélection gamme                                               42
     Sélection sous gamme                                          Forçat
     Entrer une quantité et valider                                25
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               38141025            #article CHAAR/VAR avec les gammes 42 et Forçat
     Scroll Vers Element                                           ${A1T2N3P2}    haut
     Sélectionner le document par element                          ${A1T2N3P2}            #séléction emplacement par élément
