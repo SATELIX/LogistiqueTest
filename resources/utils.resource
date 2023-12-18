@@ -11,13 +11,15 @@ Documentation    Ce fichier de ressources contient les mots clé robot
 Library    OperatingSystem
 Library    String
 Library    AppiumLibrary
+Library    DateTime
 Library    squash_tf.TFParamService
 Resource   SatelixLogistique.resource
 Resource    module_preparation.resource
 
 *** Variables ***
 
-${date}    ?
+${date}    //android.widget.ImageButton[@content-desc="Sélectionner une date"]
+${edit}    //android.widget.ImageButton[@content-desc="Passer au mode de saisie Texte"]
 # Les Keycode Android pour gérer les entrées comme un utilisateur réel
 &{KEYCODES}    0=7
 ...    1=8
@@ -57,6 +59,7 @@ ${date}    ?
 ...    Z=54
 ...    .=158
 ...    ,=55
+...    /=76
 ...    clear=28
 ...    del=67
 ...    foward_del=112
@@ -203,5 +206,16 @@ Mettre date du jour
 Mettre date du lendemain
     Wait Until Element Is Visible    ${date}
     Click Element    ${date}
-    #trouver la date du lendemain
-
+    Sleep    1s
+    Wait Until Element Is Visible    ${edit}
+    Click Element    ${edit}
+    Sleep    1s
+    ${current_date}    Get Current Date
+    ${tomorrow_date}    Add Time To Date    ${current_date}    1 days
+    ${formatted_date}    Convert Date   ${tomorrow_date}    result_format=%d/%m/%Y
+    Taper Un Mot Au Clavier    ${formatted_date}
+    Sleep    1s
+    Press ENTER
+    Sleep    1s
+    Appuyer sur ok
+    

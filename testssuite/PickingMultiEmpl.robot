@@ -118,9 +118,10 @@ PickingMultiEmpl
     Entrer Le Poids Et Appuyer Sur Cloturer                       0
     Press ENTER
     Une Erreur Doit Etre Indiquee Avec Le Message Correspondant
-    Entrer Le Poids Et Appuyer Sur Cloturer                       15           
+    Entrer Le Poids Et Appuyer Sur Cloturer                       15   
+    Sleep                                                         2s        
     Valider Le Mode Expedition Sur                                ${TAT}
-    #Mettre date du lendemain
+    Mettre date du lendemain
     Appuyer sur Transferer
     Sélectionner le document                                      VALIDER PICKING MULTI EMPL 
     Sleep                                                         5s
