@@ -40,7 +40,7 @@ Réception mono empl
     Choisir au menu déroulant avec scroll                         ${fournisseur}    ${Joaill}
     Choisir au menu déroulant                                     ${commande}       ${FBC00011}
     Valider les informations
-    Sleep                                                         1s
+    Sleep                                                         2s
     Afficher Les Articles Disponibles
     Scroll Vers Element                                           ${STYPLOR}        bas
     Sélectionner l article                                        STYPLOR
@@ -49,6 +49,7 @@ Réception mono empl
     Scroll Vers Element                                           ${BAAR01}    haut
     Sélectionner l article                                        BAAR01  
     Entrer une quantité et valider                                7
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               BAAR01
     Modifier une quantite                                         6
     Afficher Les Articles Disponibles
@@ -70,6 +71,7 @@ Réception mono empl
     # Sélectionner l article                                        LINGOR18                                           
     # Aller dans la liste et sélectionner le numéro de lot          L159
     # Valider les informations
+    Sleep                                                         2s
     Appuyer sur la flèche retour et "Mettre En Attente"
     Sur le terminal, sélectionner le module                       Réception mono empl
     Cliquer sur Oui

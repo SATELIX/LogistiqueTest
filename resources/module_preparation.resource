@@ -126,11 +126,6 @@ Choisir au menu déroulant
 
 
 
-#Sélectionner date du lendemain
-    # ${today}=    Get Current Date
-    # Choisir Le Document A Preparer Dans La Liste Des Documents    ${today}
-    # Choisir Le Document A Preparer Dans La Liste Des Documents    5
-
 Affiche Element
     [Arguments]    ${element}
     Log To Console    Attente de l'affichage de l'élément ${element}

@@ -41,12 +41,15 @@ Fabrication mono empl
     Sélectionner l article                                        BAAR01
     Entrer une quantité et valider                                6
     Appuyer sur ok
+    Sleep                                                         2s
     Effacer la quantité                                           6
     Entrer une quantité et valider                                3
     Afficher Les Articles Disponibles
     Sélectionner l article                                        Emeraude
     Entrer une quantité et valider                                13
+    Sleep                                                         2s
     Appuyer sur ok
+    Sleep                                                         2s
     Effacer la quantité                                           13
     Entrer une quantité et valider                                2
     Afficher Les Articles Disponibles
