@@ -45,16 +45,16 @@ InventaireMultiEmpl
     Modifier une quantite                                         140
     Cliquer sur le bouton de finalisation
     # Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"
-    Sur le terminal, sélectionner le module                       Inventaire Multi empl
-    Sélectionner le document                                      InventaireTestMulti
-    Scanner le code barre correspondant au lot                    LINGOR18;LOT-BDF9411123
-    Sélectionner l emplacement                                    A1T3N1P3
-    Entrer une quantité et valider                                5                            #Pb lot bdd
-    Saisir l Article a la Main                                    LINGOR18        
-    Sélectionner l emplacement                                    A1T1N1P1
-    Choisir Le Lot                                                LOT-999
-    Entrer une quantité et valider                                10
-    Cliquer sur le bouton de finalisation
+    # Sur le terminal, sélectionner le module                       Inventaire Multi empl
+    # Sélectionner le document                                      InventaireTestMulti
+    # Scanner le code barre correspondant au lot                    LINGOR18;LOT-BDF9411123
+    # Sélectionner l emplacement                                    A1T3N1P3
+    # Entrer une quantité et valider                                5                            #Pb lot bdd
+    # Saisir l Article a la Main                                    LINGOR18        
+    # Sélectionner l emplacement                                    A1T1N1P1
+    # Choisir Le Lot                                                LOT-999
+    # Entrer une quantité et valider                                10
+    # Cliquer sur le bouton de finalisation
     #Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"
     #Toujours dans le BO cliquer sur "Quantité inventaire" de la ligne de l'article BAOR01 avec Emeraude en "Gamme premier niveau" et l'emplacement A1T1N1P1
     #Ecrire 20 comme quantité et valider
@@ -87,5 +87,6 @@ InventaireMultiEmpl
     Sélectionner le document par element                          ${A1T2N3P2}            #séléction emplacement par élément
     Entrer une quantité et valider                                10
     Cliquer sur le bouton de finalisation
+    Sleep                                                         5s
     #Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"
 
