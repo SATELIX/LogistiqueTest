@@ -7,7 +7,6 @@ Library    AppiumLibrary
 Library    OperatingSystem
 
 
-Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
 Resource    ../resources/module_preparation.resource
 
@@ -72,4 +71,5 @@ InventaireMonoEmpl
     Sleep                                                         2s
     Entrer une quantité et valider                                10
     Cliquer sur le bouton de finalisation
+    Sleep                                                         2s
     #Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"

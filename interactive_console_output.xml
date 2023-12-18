@@ -1,13 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231213 16:26:53.742" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231215 14:48:30.340" rpa="false" schemaversion="4">
 <suite id="s1" name="Robot Interactive Console" source="c:\Users\user\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<status status="PASS" starttime="20231213 16:26:53.781" endtime="20231213 16:26:55.815"/>
+<kw name="Sur le terminal, sélectionner le module">
+<arg>Entrée mono empl</arg>
+<msg timestamp="20231215 14:48:35.560" level="FAIL">No keyword with name 'Sur le terminal, sélectionner le module' found.</msg>
+<status status="FAIL" starttime="20231215 14:48:35.560" endtime="20231215 14:48:35.560"/>
 </kw>
-<status status="PASS" starttime="20231213 16:26:53.780" endtime="20231213 16:26:55.815"/>
+<kw name="Choisir au menu déroulant">
+<arg>${depot}</arg>
+<arg>${Bijou SA}</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.560" endtime="20231215 14:48:35.560"/>
+</kw>
+<kw name="Sélectionner l article">
+<arg>BAAR01</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.578" endtime="20231215 14:48:35.578"/>
+</kw>
+<kw name="Hide Keyboard">
+<status status="NOT RUN" starttime="20231215 14:48:35.581" endtime="20231215 14:48:35.581"/>
+</kw>
+<kw name="Appuyer sur la flèche retour">
+<status status="NOT RUN" starttime="20231215 14:48:35.584" endtime="20231215 14:48:35.584"/>
+</kw>
+<kw name="Saisir l Article a la Main">
+<arg>BA</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.588" endtime="20231215 14:48:35.588"/>
+</kw>
+<kw name="Pas d'association code barre">
+<status status="NOT RUN" starttime="20231215 14:48:35.590" endtime="20231215 14:48:35.590"/>
+</kw>
+<kw name="Afficher Les Articles Disponibles">
+<status status="NOT RUN" starttime="20231215 14:48:35.592" endtime="20231215 14:48:35.592"/>
+</kw>
+<kw name="Sélectionner l article">
+<arg>BAAR01</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.595" endtime="20231215 14:48:35.595"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>2</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.598" endtime="20231215 14:48:35.598"/>
+</kw>
+<kw name="Vider barre de recherche">
+<status status="NOT RUN" starttime="20231215 14:48:35.601" endtime="20231215 14:48:35.601"/>
+</kw>
+<kw name="Scroll Vers Element">
+<arg>${LINGOR18}</arg>
+<arg>bas</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.601" endtime="20231215 14:48:35.601"/>
+</kw>
+<kw name="Sélection article element">
+<arg>${LINGOR18}</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.601" endtime="20231215 14:48:35.601"/>
+</kw>
+<kw name="Affiche Element">
+<arg>${ListeLot}</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.606" endtime="20231215 14:48:35.606"/>
+</kw>
+<kw name="Scanner code barre">
+<arg>LINGOR18\;LOT-TEST2</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.609" endtime="20231215 14:48:35.609"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>2</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.612" endtime="20231215 14:48:35.612"/>
+</kw>
+<kw name="Scroll Vers Element">
+<arg>${BAAR01}</arg>
+<arg>haut</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.615" endtime="20231215 14:48:35.615"/>
+</kw>
+<kw name="Sélection article element">
+<arg>${BAAR01}</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.618" endtime="20231215 14:48:35.618"/>
+</kw>
+<kw name="Sélection gamme">
+<arg>Emeraude</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.618" endtime="20231215 14:48:35.618"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>2</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.625" endtime="20231215 14:48:35.625"/>
+</kw>
+<kw name="Attendre">
+<status status="NOT RUN" starttime="20231215 14:48:35.628" endtime="20231215 14:48:35.628"/>
+</kw>
+<kw name="Scanner code barre">
+<arg>EM040</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.631" endtime="20231215 14:48:35.631"/>
+</kw>
+<kw name="Hide Keyboard">
+<status status="NOT RUN" starttime="20231215 14:48:35.635" endtime="20231215 14:48:35.635"/>
+</kw>
+<kw name="Affiche Element">
+<arg>${EM040}</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.635" endtime="20231215 14:48:35.635"/>
+</kw>
+<kw name="Appuyer sur la flèche retour">
+<status status="NOT RUN" starttime="20231215 14:48:35.641" endtime="20231215 14:48:35.642"/>
+</kw>
+<kw name="Scroll Vers Element">
+<arg>${CHAAR/VAR}</arg>
+<arg>haut</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.645" endtime="20231215 14:48:35.645"/>
+</kw>
+<kw name="Sélection article element">
+<arg>${CHAAR/VAR}</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.648" endtime="20231215 14:48:35.648"/>
+</kw>
+<kw name="Sélection gamme">
+<arg>34</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.651" endtime="20231215 14:48:35.651"/>
+</kw>
+<kw name="Sélection sous gamme">
+<arg>Classique</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.654" endtime="20231215 14:48:35.654"/>
+</kw>
+<kw name="Hide Keyboard">
+<status status="NOT RUN" starttime="20231215 14:48:35.657" endtime="20231215 14:48:35.657"/>
+</kw>
+<kw name="Appuyer sur la flèche retour">
+<status status="NOT RUN" starttime="20231215 14:48:35.660" endtime="20231215 14:48:35.660"/>
+</kw>
+<kw name="Attendre">
+<status status="NOT RUN" starttime="20231215 14:48:35.663" endtime="20231215 14:48:35.663"/>
+</kw>
+<kw name="Scanner code barre">
+<arg>38141025</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.666" endtime="20231215 14:48:35.666"/>
+</kw>
+<kw name="Entrer une quantité et valider">
+<arg>2</arg>
+<status status="NOT RUN" starttime="20231215 14:48:35.669" endtime="20231215 14:48:35.669"/>
+</kw>
+<kw name="Finaliser">
+<status status="NOT RUN" starttime="20231215 14:48:35.672" endtime="20231215 14:48:35.672"/>
+</kw>
+<kw name="Valider">
+<status status="NOT RUN" starttime="20231215 14:48:35.674" endtime="20231215 14:48:35.674"/>
+</kw>
+<status status="PASS" starttime="20231215 14:48:30.454" endtime="20231215 14:48:36.829"/>
+</kw>
+<status status="PASS" starttime="20231215 14:48:30.454" endtime="20231215 14:48:36.829"/>
 </test>
-<status status="PASS" starttime="20231213 16:26:53.746" endtime="20231213 16:26:55.816"/>
+<status status="PASS" starttime="20231215 14:48:30.346" endtime="20231215 14:48:36.830"/>
 </suite>
 <statistics>
 <total>

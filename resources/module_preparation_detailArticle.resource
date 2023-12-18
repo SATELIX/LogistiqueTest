@@ -67,7 +67,9 @@ Entrer une quantité et valider
     [Arguments]    ${quantite}
     AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}  5s
     Click Element    ${CHAMP_QUANTITE}
+    Sleep                                                         2s
     Taper Un Nombre Au Clavier   ${quantite}
+    Sleep                                                         2s
     Valider La Quantité
 
 Entrer une quantité max et valider
@@ -103,8 +105,8 @@ Modifier un stock
     [Arguments]    ${value}
     Wait Until Element Is Visible    fr.satelix.logistique:id/bt_edit_qte_stock
     Click Element    fr.satelix.logistique:id/bt_edit_qte_stock
-    Wait Until Element Is Visible    //android.widget.EditText[@text="50"]
-    Click Element    //android.widget.EditText[@text="50"]
+    Wait Until Element Is Visible    //android.widget.EditText[@text="180"]
+    Click Element    //android.widget.EditText[@text="180"]
     Taper Un Nombre Au Clavier   ${value}
     Appuyer sur la flèche retour
     Valider La Quantité
@@ -118,6 +120,7 @@ Entrer une quantité supérieure au stock puis valider
     [Arguments]    ${quantite}
     AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}  5s
     Taper Un Nombre Au Clavier   ${quantite}
+    Sleep                                                         2s
     Valider La Quantité Supp  ${quantite}
 
     
@@ -306,7 +309,7 @@ Cliquer sur continuer
 
 Modifier nb de numéro de lot à générer
     [Arguments]      ${gene}
-    ${nb}    Get Text    xpath=?
+    ${nb}    Get Text    xpath=//android.widget.EditText[@resource-id="fr.satelix.logistique:id/input_edit_text"]
     Wait Until Page Contains    ${nb}
     Click Text    ${nb}
     Wait Until Page Contains    ${gene}

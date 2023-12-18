@@ -236,6 +236,7 @@ Appuyer sur la flèche retour et "Finaliser"
     Cliquer sur le bouton de finalisation
 
 Appuyer sur la flèche retour et "Mettre En Attente"
+    Sleep    2s
     Appuyer sur la flèche retour
     Sleep    2s
     Cliquer sur le bouton de mise en attente

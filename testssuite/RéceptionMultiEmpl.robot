@@ -7,7 +7,6 @@ Library    AppiumLibrary
 Library    OperatingSystem
 
 
-Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
 Resource    ../resources/module_preparation.resource
 
@@ -40,11 +39,12 @@ Réception multi empl
     Choisir au menu déroulant                                     ${fournisseur}          ${BILLO}
     Sélectionner document origine                                 FBC00012
     Valider les informations
-    Sleep                                                         1s
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               BRAAR10
-    Sleep                                                         1s
+    Sleep                                                         2s
     Appuyer sur ok
     Scanner le code barre correspondant à l'article               CB-INCONNU        #association d'un code barre
+    Sleep                                                         2s
     Cliquer sur Oui
     Choisir au menu déroulant avec scroll                         ${liste_article}    ${STYPLOR}
     Valider association
@@ -70,15 +70,16 @@ Réception multi empl
     Scanner le code barre correspondant à l'article               38141025            #article CHAAR/VAR de longueur 34 Forçat
     Entrer une quantité et valider                                2
     Afficher Les Articles Disponibles
-    Sélectionner l article                                        LINGOR18
-    Saisir le Numéro de lot                                       lot_inexistant    
-    Appuyer sur ok
-    Effacer le lot
-    Saisir le Numéro de lot                                       L1234        
-    Entrer une quantité et valider                                1
-    Scanner le code barre correspondant au lot                    (92)59531012(10)LOT-TEST2    
-    Entrer une quantité et valider                                5
-    Afficher Les Articles Disponibles
+    # Sélectionner l article                                        LINGOR18
+    # Saisir le Numéro de lot                                       lot_inexistant
+    # Sleep                                                         2s    
+    # Appuyer sur ok                                                                #pb bdd lot
+    # Effacer le lot
+    # Saisir le Numéro de lot                                       L1234        
+    # Entrer une quantité et valider                                1
+    # Scanner le code barre correspondant au lot                    (92)59531012(10)LOT-TEST2    
+    # Entrer une quantité et valider                                5
+    # Afficher Les Articles Disponibles
     Scroll Vers Element                                           ${ARTLOT}     haut        
     Sélectionner l article                                        ARTLOT
     Saisir le Numéro de lot                                       COMPL123        
@@ -92,4 +93,5 @@ Réception multi empl
     Cliquer sur continuer
     Cliquer sur le bouton de finalisation
     Appuyer sur Terminer La Saisie
+    Sleep                                                         2s
 

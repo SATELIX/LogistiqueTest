@@ -7,7 +7,7 @@ Library    AppiumLibrary
 Library    OperatingSystem
 
 
-Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
+
 Resource    ../resources/module_prepaationLivrason.resource
 Resource    ../resources/module_preparation.resource
 
@@ -26,11 +26,11 @@ ${destination}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la
 ${Annexe Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Annexe Bijou SA"]/android.view.ViewGroup
 ${emplacement}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[4]
 ${A1T1N1P1}    //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A1 Trav T1 Niv N1 Pos P1"]/android.view.ViewGroup
-
+${tme}        //androidx.cardview.widget.CardView[@content-desc="Sélectionner le module Transfert multi empl."]/android.view.ViewGroup
 
 *** Test Cases ***
 TransfertMultiEmpl
-    Sur le terminal, sélectionner le module                       Transfert multi empl
+    Sur le terminal, sélectionner le module bis                   Transfert multi empl        
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${destination}          ${Annexe Bijou SA}
     Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
@@ -43,7 +43,9 @@ TransfertMultiEmpl
     Sélectionner l emplacement                                    A1T3N1P3
     Choisir Le Lot                                                LOT-10                      
     Entrer une quantité et valider                                1
-    Scanner le code barre correspondant au lot                    LINGOR18;LOT-ABC        #lot associé sans stock
+    Sleep                                                         2s
+    Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-ABC        #lot associé sans stock
+    Sleep                                                         2s
     Appuyer sur la flèche retour
     Saisir l Article a la Main                                    BAOR01
     Sélectionner l emplacement                                    A1T1N1P1
@@ -54,8 +56,10 @@ TransfertMultiEmpl
     Sélection gamme                                               34
     Sélection sous gamme                                          Classique
     Entrer une quantité et valider                                1
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               38141025            #Scan de l'article avec les gammes associées
     Sélectionner l emplacement                                    A1T2N3P2
     Entrer une quantité et valider                                2
     Cliquer sur le bouton de finalisation
     Valider
+    Sleep                                                         2s

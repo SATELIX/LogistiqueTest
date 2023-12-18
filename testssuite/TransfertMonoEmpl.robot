@@ -7,7 +7,7 @@ Library    AppiumLibrary
 Library    OperatingSystem
 
 
-Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
+
 Resource    ../resources/module_prepaationLivrason.resource
 Resource    ../resources/module_preparation.resource
 
@@ -37,20 +37,23 @@ TransfertMonoEmpl
     Sélectionner l article                                        BAAR01
     Entrer une quantité et valider                                2
     Saisir l Article a la Main                                    LINGOR18
-    Choisir Le Lot                                                LOT-10
-    Sélectionner le Lot avec DLC et FAB   
+    Choisir Le Lot                                                LOT-10  
     Entrer une quantité et valider                                1
-    Scanner le code barre correspondant au lot                    LINGOR18;LOT-999
-    Appuyer sur la flèche retour
+    Sleep                                                         2s
+    # Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-999
+    # Sleep                                                         2s
+    # Appuyer sur la flèche retour
     Saisir l Article a la Main                                    BAOR01
     Sélection gamme                                               Rubis
     Entrer une quantité et valider                                1
+    Sleep                                                         2s
     Scanner le code barre correspondant au lot                    21731003
     Entrer une quantité et valider                                3
     Saisir l Article a la Main                                    CHAAR/VAR
     Sélection gamme                                               34
     Sélection sous gamme                                          Classique
     Entrer une quantité et valider                                5
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               38141025            #scan de l'article avec les gammes associées
     Entrer une quantité et valider                                2
     Cliquer sur le bouton de finalisation

@@ -7,7 +7,7 @@ Library    AppiumLibrary
 Library    OperatingSystem
 
 
-Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
+
 Resource    ../resources/module_prepaationLivrason.resource
 Resource    ../resources/module_preparation.resource
 
@@ -32,6 +32,7 @@ EntréeMultiEmpl
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
     Valider les informations
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               BAAR01
     Entrer une quantité et valider                                2
     # Scanner le code barre correspondant au lot                    LINGOR18;LOT-TEST2        #Pb scan lot
@@ -42,6 +43,7 @@ EntréeMultiEmpl
     Saisir l Article a la Main                                    BAOR01
     Sélection gamme                                               Emeraude
     Entrer une quantité et valider                                3
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               EM040
     Sélectionner le conditionnement vers droite                   ECRIN DE 12
     Entrer une quantité et valider                                2
@@ -49,10 +51,14 @@ EntréeMultiEmpl
     Sélection gamme                                               34
     Sélection sous gamme                                          Classique
     Entrer une quantité et valider                                2
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               38141025
+    Sleep                                                         2s
+    
     Entrer une quantité et valider                                2
     Cliquer sur le bouton de finalisation
     Valider
+    Sleep                                                         2s
 
 
 

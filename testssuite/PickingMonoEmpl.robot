@@ -7,8 +7,8 @@ Library    String
 Library    AppiumLibrary
 Library    OperatingSystem
 
-Resource   ${CURDIR}/../resources/module_preparation.resource
-Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
+
+
 Resource    ../resources/module_prepaationLivrason.resource
 
 Suite Setup     Set Log Level    TRACE

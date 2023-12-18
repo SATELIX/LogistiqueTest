@@ -7,7 +7,6 @@ Library    AppiumLibrary
 Library    OperatingSystem
 
 
-Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_prepaationLivrason.resource
 Resource    ../resources/module_preparation.resource
 
@@ -29,6 +28,7 @@ ${TAT}           //androidx.cardview.widget.CardView[@content-desc="Mode d'expé
 *** Test Cases ***
 PickingMultiEmpl
     Sur le terminal, sélectionner le module                       Picking Multi Empl
+    Sleep                                                         2s
     Sélectionner le document                                      PL00014
     Sélectionner l article                                        BAAR01
     Sélectionner l emplacement                                    A1T1N1P1
@@ -36,6 +36,7 @@ PickingMultiEmpl
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               BAAR01
     Sélectionner l emplacement                                    A1T2N1P2
+    Sleep                                                         2s
     Entrer une quantité supérieure au stock puis valider          200
     Entrer une quantité et valider                                3
     # Scanner le code barre correspondant à l'article               LINGOR18
@@ -49,6 +50,7 @@ PickingMultiEmpl
     Appuyer sur la pastille du colis                           
     Appuyer sur "+"
     Rester appuyer sur l unite logistique                         COLIS 2
+    Sleep                                                         2s
     Sélectionner Un type d Unite Logistique Et valider            Palette Europe
     Sleep                                                         2s
     Appuyer sur la flèche retour
@@ -60,9 +62,11 @@ PickingMultiEmpl
     Sleep                                                         2s
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                8
-    Afficher Les Articles Disponibles
+    Sleep                                                         2s
+    Demander si retour nécessaire                                 //android.widget.EditText[@text="Recherche article"]
     Sélectionner l article                                        BAOR01   
     Sélectionner l emplacement                                    A1T1N1P2
+    Sleep                                                         2s
     Entrer une quantité et valider                                1
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               EM040
@@ -74,18 +78,18 @@ PickingMultiEmpl
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                24
     Sleep                                                         2s
-    Scanner le code barre correspondant à l'article               MODIV01
-    Sélectionner l emplacement                                    A2T1N2P2
-    Saisir un Numero De Serie et valider                          SERIE5
-    Scanner le code barre correspondant au numéro de série        SERIE4
-    Scanner le code barre correspondant au numéro de série        MF88
-    Effacer le numéro de série, ne rien mettre et valider
-    Sleep    4s
-    Appuyer sur ok et back
-    Sleep                                                         2s
-    Appuyer sur la flèche retour                                #parfois nécessaire
-    Vider barre de recherche                                                                   
-    Afficher Les Articles Disponibles
+    # Scanner le code barre correspondant à l'article               MODIV01
+    # Sélectionner l emplacement                                    A2T1N2P2
+    # Saisir un Numero De Serie et valider                          SERIE5
+    # Scanner le code barre correspondant au numéro de série        SERIE4
+    # Scanner le code barre correspondant au numéro de série        MF88
+    # Sleep                                                         2s            #bug de l'app
+    # Effacer le numéro de série, ne rien mettre et valider
+    # Sleep                                                         4s
+    # Appuyer sur ok et back
+    # Sleep                                                         2s
+    # Vider barre de recherche                                                                   
+    # Afficher Les Articles Disponibles
     Scroll Vers Element                                           ${MODIV01}   bas
     Sleep                                                         2s    
     Sélectionner le document par element                          ${MODIV01}
@@ -106,6 +110,7 @@ PickingMultiEmpl
     Sélectionner l article                                        CHAAR/VAR
     Sélectionner l emplacement                                    A1T2N3P3
     Entrer une quantité et valider                                1
+    Sleep                                                         2s
     Appuyer sur la flèche retour et "Finaliser"
     Confirmer la preparation incomplete
     Entrer Le Poids Et Appuyer Sur Cloturer                       1
@@ -118,7 +123,7 @@ PickingMultiEmpl
     #Mettre date du lendemain
     Appuyer sur Transferer
     Sélectionner le document                                      VALIDER PICKING MULTI EMPL 
-    Sleep                                                         2s
+    Sleep                                                         5s
     Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 1
     Sleep                                                         2s
     Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 2, affiche une erreur

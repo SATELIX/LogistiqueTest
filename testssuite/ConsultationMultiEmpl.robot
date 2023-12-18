@@ -7,7 +7,7 @@ Library    AppiumLibrary
 Library    OperatingSystem
 
 
-Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
+
 Resource    ../resources/module_prepaationLivrason.resource
 Resource    ../resources/module_preparation.resource
 
@@ -38,13 +38,16 @@ ConsultationMultiEmpl
     Afficher Les Articles Disponibles
     Sélectionner l article                                        BAAR01
     Sélectionner l emplacement                                    A1T2N1P2
+    Sleep                                                         2s
     Appuyer sur la flèche retour
+    Sleep                                                         2s
     Appuyer sur la flèche retour
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               BAAR01
     Sélectionner l emplacement                                    A1T2N1P2
     Sleep                                                         1s
     Valider La Quantité
+    Sleep                                                         2s
     Appuyer sur la flèche retour
     Afficher Les Lots Disponibles
     Sleep                                                         2s
@@ -55,7 +58,9 @@ ConsultationMultiEmpl
     Scanner le code barre correspondant au lot                    LOT-0000
     Appuyer sur ok
     Choisir Le Lot                                                LOT-10
+    Sleep                                                         2s
     Appuyer sur la flèche retour
+    Sleep                                                         2s
     Appuyer sur la flèche retour
     Sleep                                                         1s
     Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-10
@@ -71,7 +76,9 @@ ConsultationMultiEmpl
     Confirmer régularisation
     Saisir l Article a la Main                                    EM040
     Sélectionner l emplacement                                    A1T3N1P2
+    Sleep                                                         2s
     Appuyer sur la flèche retour
+    Sleep                                                         2s
     Appuyer sur la flèche retour
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               EM040/12
@@ -114,13 +121,17 @@ ConsultationMultiEmpl
     Scroll Vers Element                                           ${A1T1N1P1}    haut
     Sélectionner l emplacement                                    A1T1N1P1
     Sélection gamme                                               Emeraude
+    Sleep                                                         2s
     Appuyer sur la flèche retour
+    Sleep                                                         2s
     Appuyer sur la flèche retour
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               21731003            #scan de l'article avec la gamme associée
     Scroll Vers Element                                           ${A1T1N1P2}    haut            
     Sélectionner le document par element                          ${A1T1N1P2}        #sélectioner emplacement via l'element
+    Sleep                                                         2s
     Appuyer sur la flèche retour
+    Sleep                                                         2s
     Appuyer sur la flèche retour
     # Afficher Les Articles Disponibles
     # Sleep    2s
@@ -135,7 +146,9 @@ ConsultationMultiEmpl
     Scanner le code barre correspondant à l'article               38141025            #scan de l'article avec les gammes associées
     Scroll Vers Element                                           ${A1T2N3P2}   haut
     Sélectionner l emplacement                                    A1T2N3P2
+    Sleep                                                         2s
     Appuyer sur la flèche retour
+    Sleep                                                         2s
     Appuyer sur la flèche retour
     Sleep                                                         5s
 

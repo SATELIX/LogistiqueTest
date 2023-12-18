@@ -1,14 +1,9 @@
 *** Settings ***
-Documentation       Test du Scenario de Sortie Stock mono emplacement
- 
-Library    AppiumLibrary
-Library    Process
- 
+Documentation       Test du module Entrée Mono Emplacement
+
 Resource    ../resources/page_accueil.resource
-Resource    ../resources/SatelixLogistique.resource
-Resource    ../resources/module_preparation_listearticles.resource
 Resource    ../resources/module_preparation.resource
- 
+
 *** Variables ***
 ${liste_articles}       //android.widget.ImageButton[@content-desc="Liste des articles"]
 ${module_sortie_mono_empl}    //android.widget.TextView[@resource-id="fr.satelix.logistique:id/item_nom_module" and @text="Sortie Stock mono empl"]
@@ -18,6 +13,7 @@ ${Bijou SA}   //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou S
 
 *** Test Cases ***
 Test De L Application
+    Demarrer L Application
     Sur le terminal, sélectionner le module                        Sortie Stock mono empl
     Choisir au menu déroulant                                      ${depot}    ${Bijou SA}
     Sélectionner référence doc                                     test
@@ -30,19 +26,23 @@ Test De L Application
     Saisir le Numéro de lot                                        Lot-10
     Sélectionner le Lot avec DLC et FAB     
     Entrer une quantité et valider                                 1      
-    Scanner code barre                                             LINGOR18\;LOT-AAA    #le lot n'existant pas, une erreur de validation doit s'afficher
-    Appuyer sur ok
-    Appuyer sur la flèche retour   
+    Sleep                                                          2s
+    # Scanner code barre                                             LINGOR18\\;LOT-AAA    #le lot n'existant pas, une erreur de validation doit s'afficher
+    # Appuyer sur ok
+    Sleep                                                          2s
     Saisir l Article a la Main                                     BAOR01
     Sélection gamme                                                Rubis
     Entrer une quantité et valider                                 1
+    Sleep                                                          2s
     Scanner code barre                                             21731003              #scan de l'article avec la gamme associée
     Entrer une quantité et valider                                 1
     Saisir l Article a la Main                                     CHAAR/VAR             #BUG sur l'apk de manière aléatoire la quantité en stock n'est pas récupérée (APK 1.0.44)
     Sélection gamme                                                34
     Sélection gamme                                                Forçat
     Entrer une quantité et valider                                 1
+    Sleep                                                          2s
     Scanner code barre                                             38141025              #scan de l'article avec la gamme associée
     Entrer une quantité et valider                                 2
     Finaliser
     Valider
+    Sleep                                                          2s

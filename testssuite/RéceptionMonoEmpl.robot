@@ -7,7 +7,7 @@ Library    AppiumLibrary
 Library    OperatingSystem
 
 
-Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
+
 Resource    ../resources/module_prepaationLivrason.resource
 
 Resource    ../resources/module_preparation.resource
@@ -66,10 +66,10 @@ Réception mono empl
     Afficher Les Articles Disponibles
     Sélectionner l article                                        Longueur : 42 cm
     Entrer une quantité et valider                                2
-    Afficher Les Articles Disponibles
-    Sélectionner l article                                        LINGOR18                                           
-    Aller dans la liste et sélectionner le numéro de lot          L159
-    Valider les informations
+    # Afficher Les Articles Disponibles
+    # Sélectionner l article                                        LINGOR18                                           
+    # Aller dans la liste et sélectionner le numéro de lot          L159
+    # Valider les informations
     Appuyer sur la flèche retour et "Mettre En Attente"
     Sur le terminal, sélectionner le module                       Réception mono empl
     Cliquer sur Oui

@@ -13,6 +13,7 @@ Library    String
 Library    AppiumLibrary
 Library    squash_tf.TFParamService
 Resource   SatelixLogistique.resource
+Resource    module_preparation.resource
 
 *** Variables ***
 
@@ -181,6 +182,16 @@ Choisir LA Valeur Dans La Liste
 
 Appuyer sur la flèche retour
     AppiumLibrary.Go Back
+
+Demander si retour nécessaire
+    [Arguments]      ${module_name}
+    ${module_present}    Run Keyword And Return Status    AppiumLibrary.Wait Until Element Is Visible    ${module_name}
+    ...    30s
+    ...    La liste des modules ne contient pas le module demandé ${module_name}  
+    IF    ${module_present}
+        Appuyer sur la flèche retour
+    END
+        Afficher Les Articles Disponibles
 
 
 Mettre date du jour

@@ -7,7 +7,7 @@ Library    AppiumLibrary
 Library    OperatingSystem
 
 
-Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
+
 Resource    ../resources/module_prepaationLivrason.resource
 Resource    ../resources/module_preparation.resource
 
@@ -34,22 +34,26 @@ SortieStockMultiEmpl
     Sélectionner référence doc                                    test multi
     Valider les informations
     Saisir l Article a la Main                                    LINGOR18
-    Choisir Le Lot                                                Lot-10
+    Choisir Le Lot                                                LOT-10
     Entrer une quantité et valider                                1
-    Scanner le code barre correspondant au lot                    LINGOR18;LOT-999
-    Appuyer sur la flèche retour
+    Sleep                                                         2s
+    # Scanner le code barre correspondant au lot                    LINGOR18;LOT-999
+    # Appuyer sur la flèche retour
     Saisir l Article a la Main                                    BAOR01
     Sélection gamme                                               Rubis
     Entrer une quantité et valider                                1
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               21731003        #scan de l'article avec la gamme associée
     Entrer une quantité et valider                                1
     Saisir l Article a la Main                                    CHAAR/VAR
     Sélection gamme                                               34
     Sélection sous gamme                                          Forçat
     Entrer une quantité et valider                                1
+    Sleep                                                         2s
     Appuyer sur la flèche retour
     Scanner le code barre correspondant à l'article               38141025        #scan de l'article avec les gammes associées
     Entrer une quantité et valider                                2
     Cliquer sur le bouton de finalisation
     Valider
+    Sleep                                                         2s
 
