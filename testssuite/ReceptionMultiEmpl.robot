@@ -96,5 +96,5 @@ ReceptionMultiEmpl
     Cliquer sur continuer
     Cliquer sur le bouton de finalisation
     Appuyer sur Terminer La Saisie
-    Sleep                                                         2s
+    Sleep                                                         5s
 

@@ -47,7 +47,7 @@ ReceptionMonoEmpl
     Entrer une quantité et valider                                3
     Afficher Les Articles Disponibles
     Scroll Vers Element                                           ${BAAR01}    haut
-    Sélectionner l article                                        BAAR01  
+    Sélectionner l article par element                            ${BAAR01}  
     Entrer une quantité et valider                                7
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               BAAR01
@@ -78,6 +78,7 @@ ReceptionMonoEmpl
     Cliquer sur le bouton de finalisation
     Appuyer sur Terminer La Saisie
     Valider La Préparation
+    Sleep                                                         5s
 
 
 

@@ -30,6 +30,7 @@ InventaireMonoEmpl
     Saisir l Article a la Main                                    BAAR01
     Entrer une quantité et valider                                150
     Cliquer sur le bouton de finalisation
+    Sleep                                                         2s
     #Dans le BO, retourner sur le tableau de l'inventaire et cliquer sur l'icone "Actualiser"
     #Modifier la quantité inventaire et mettre 145
     Sur le terminal, sélectionner le module                       Inventaire mono empl
@@ -37,6 +38,7 @@ InventaireMonoEmpl
     Saisir l Article a la Main                                    BA
     Sélectionner l article                                        BAAR01
     Modifier une quantite                                         145
+    Sleep                                                         2s
     #Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"
     # Cliquer sur le bouton de finalisation
     # Sur le terminal, sélectionner le module                       Inventaire mono empl
@@ -56,11 +58,13 @@ InventaireMonoEmpl
     Sélection gamme                                               Emeraude
     Sleep                                                         2s
     Entrer une quantité et valider                                20
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               21731003                #article BAOR01 avec la gamme Emeraude
     Entrer une quantité et valider                                12
     Cliquer sur le bouton de finalisation
     #Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"
     #Cliquer sur le bouton "Afficher" dans la colonne "Utilisateur(s)"
+    Sleep                                                         2s
     Sur le terminal, sélectionner le module                       Inventaire mono empl
     Sélectionner le document                                      InventaireTestMono
     Saisir l Article a la Main                                    CHAAR/VAR
@@ -70,6 +74,7 @@ InventaireMonoEmpl
     Sélection sous gamme                                          Forçat                                            
     Sleep                                                         2s
     Entrer une quantité et valider                                10
-    Cliquer sur le bouton de finalisation
     Sleep                                                         2s
+    Cliquer sur le bouton de finalisation
+    Sleep                                                         5s
     #Retourner sur le tableau de l'inventaire du BO et cliquer sur l'icone "Actualiser"
