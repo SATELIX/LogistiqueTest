@@ -27,8 +27,8 @@ SortieStockMonoEmpl
     Sélectionner le Lot avec DLC et FAB     
     Entrer une quantité et valider                                 1      
     Sleep                                                          2s
-    # Scanner code barre                                             LINGOR18\\;LOT-AAA    #le lot n'existant pas, une erreur de validation doit s'afficher
-    # Appuyer sur ok
+    Scanner code barre                                             LINGOR18\\;LOT-AAA    #le lot n'existant pas, une erreur de validation doit s'afficher
+    Appuyer sur ok
     Sleep                                                          2s
     Saisir l Article a la Main                                     BAOR01
     Sélection gamme                                                Rubis
@@ -36,7 +36,7 @@ SortieStockMonoEmpl
     Sleep                                                          2s
     Scanner code barre                                             21731003              #scan de l'article avec la gamme associée
     Entrer une quantité et valider                                 1
-    Saisir l Article a la Main                                     CHAAR/VAR             #BUG sur l'apk de manière aléatoire la quantité en stock n'est pas récupérée (APK 1.0.44)
+    Saisir l Article a la Main                                     CHAAR/VAR             
     Sélection gamme                                                34
     Sélection gamme                                                Forçat
     Entrer une quantité et valider                                 1

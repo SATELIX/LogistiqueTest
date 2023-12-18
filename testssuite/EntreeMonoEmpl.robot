@@ -34,7 +34,7 @@ EntreeMonoEmpl
     Afficher Les Articles Disponibles 
     # Scroll Vers Element                                            ${LINGOR18}    bas
     # Sélection article element                                      ${LINGOR18}
-    # Affiche Element                                                ${ListeLot}
+    # Affiche Element                                                ${ListeLot}                #pb bdd dans certains modules
     # Scanner code barre                                             LINGOR18\;LOT-TEST2
     # Entrer une quantité et valider                                 2
     Scroll Vers Element                                            ${BAAR01}  haut

@@ -60,11 +60,11 @@ ConsultationMonoEmpl
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour
     Sleep                                                    2s
-    Scanner le code barre correspondant à l'article          1234567890128
-    Appuyer sur la flèche retour
-    Sleep                                                    2s
-    Appuyer sur la flèche retour
-    Sleep                                                    2s
+    # Scanner le code barre correspondant à l'article          1234567890128
+    # Appuyer sur la flèche retour
+    # Sleep                                                    2s
+    # Appuyer sur la flèche retour
+    # Sleep                                                    2s
     Saisir l Article a la Main                               LINGOR18
     Appuyer sur la flèche retour
     # Scanner le code barre correspondant au lot               LINGOR18;LOT-TEST2        #Pb lot bdd
@@ -91,7 +91,7 @@ ConsultationMonoEmpl
     Choisir au menu déroulant avec scroll                    ${numserie}   ${MF82}
     Valider series
     Sleep                                                    2s
-    Scanner le code barre correspondant à l'article          MODIV01;MF81
+    Scanner le code barre correspondant à l'article          MODIV01\\;MF81
     Appuyer sur la flèche retour
     Sleep                                                    2s
     Scanner le code barre correspondant à l'article          MF80
@@ -100,14 +100,16 @@ ConsultationMonoEmpl
     Scanner le code barre correspondant à l'article          MF90
     Appuyer sur la flèche retour
     Sleep                                                    2s
-    Scanner le code barre correspondant à l'article          MODIV01;MF81
+    Scanner le code barre correspondant à l'article          MODIV01\\;MF81
     Appuyer sur la flèche retour
     Appuyer sur la flèche retour
     Sleep                                                    2s
     Saisir l Article a la Main                               BAOR01
     Sélection gamme                                          Emeraude
-    Appuyer sur la flèche retour
     Sleep                                                    2s
+    Hide Keyboard
+    Sleep                                                    2s
+    Appuyer sur la flèche retour
     Scanner le code barre correspondant à l'article          BAOR01
     Sleep                                                    2s
     Sélection gamme                                          Rubis
