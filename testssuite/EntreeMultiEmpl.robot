@@ -60,7 +60,7 @@ EntreeMultiEmpl
     Entrer une quantité et valider                                2
     Cliquer sur le bouton de finalisation
     Valider
-    Sleep                                                         2s
+    Sleep                                                         5s
 
 
 

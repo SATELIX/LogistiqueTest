@@ -114,6 +114,6 @@ RetourFournisseurMultiEmpl
     #Mettre date du jour
     Transferer
     Valider
-    Sleep                                                         2s
+    Sleep                                                         5s
 
 

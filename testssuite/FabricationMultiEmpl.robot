@@ -60,4 +60,4 @@ FabricationMultiEmpl
     # Entrer une quantité et valider                                2
     Finaliser
     Appuyer sur Terminer La Saisie
-    Sleep                                                         2s
+    Sleep                                                         5s

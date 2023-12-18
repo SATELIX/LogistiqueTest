@@ -148,7 +148,7 @@ ConsultationMultiEmpl
     Sleep                                                         2s
     Appuyer sur la flèche retour
     Sleep                                                         2s
-    Appuyer sur la flèche retour
+    Cliquer sur le bouton de finalisation
     Sleep                                                         5s
 
 

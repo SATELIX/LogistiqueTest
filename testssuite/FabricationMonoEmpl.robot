@@ -60,7 +60,7 @@ FabricationMonoEmpl
     Entrer une quantité et valider                                2
     Afficher Les Articles Disponibles
     Scroll Vers Element                                           ${CHAAR/VAR34classique}    bas
-    Sélectionner l article par element                            ${CHAAR/VAR34classique}
+    Sélectionner à la main Un Article Avec 2 Criteres             34    classique
     Entrer une quantité et valider                                2
     Appuyer sur ok et back
     # Afficher Les Articles Disponibles
@@ -70,7 +70,7 @@ FabricationMonoEmpl
     # Entrer une quantité et valider                                2
     Finaliser
     Appuyer sur Terminer La Saisie
-    Sleep                                                         2s
+    Sleep                                                         5s
 
 
 

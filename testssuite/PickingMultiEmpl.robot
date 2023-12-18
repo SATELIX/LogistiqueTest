@@ -132,4 +132,7 @@ PickingMultiEmpl
     Scanner code barre                                            TRA98745002                #tracking 2 pour le colis 2
     Sleep                                                         2s
     Scanner code barre                                            TRA98745003                #tracking 3 pour le colis 3
-    Sleep                                                         2s
+    Sleep                                                         5s
+    Appuyer sur Transferer
+    Valider
+    Sleep                                                 5s

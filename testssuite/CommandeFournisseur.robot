@@ -88,4 +88,4 @@ CommandeFournisseur
     Cliquer sur le bouton de finalisation
     Sleep                                                         2s
     Valider
-    Sleep                                                         2s
+    Sleep                                                         5s

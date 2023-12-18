@@ -59,4 +59,4 @@ EntreeMonoEmpl
     Entrer une quantité et valider                                 2
     Finaliser
     Valider
-    Sleep                                                          2s
+    Sleep                                                          5s

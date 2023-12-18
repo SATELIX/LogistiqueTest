@@ -93,7 +93,7 @@ PickingMonoEmpl
     Valider Le Mode Expedition Sur                        ${Colissimo}
     Appuyer sur Transferer
     Valider
-    Sleep                                                 2s
+    Sleep                                                 5s
     # Ouvrir le fichier Sage "Bijou_TEST" fichier commercial dans C:\Satelix
     # Cliquer sur "Traitement" puis "Documents des Ventes"
     # Dans Le Module Préparation De Livraison Le Statut de La péparation doit changer    PL00013    A livrer

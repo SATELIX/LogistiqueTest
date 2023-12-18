@@ -38,4 +38,4 @@ Expedition
     Remplir donnée                                                ${nb_palettes_europe}    2
     Appuyer sur Transferer
     Valider
-    Sleep                                                         2s
+    Sleep                                                         5s

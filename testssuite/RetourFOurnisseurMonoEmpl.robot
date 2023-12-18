@@ -99,4 +99,4 @@ RetourFournisseurMonoEmpl
     Entrer une quantité et valider                                8
     Cliquer sur le bouton de finalisation
     Valider
-    Sleep                                                         2s
+    Sleep                                                         5s
