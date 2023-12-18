@@ -91,7 +91,7 @@ ConsultationMonoEmpl
     Choisir au menu déroulant avec scroll                    ${numserie}   ${MF82}
     Valider series
     Sleep                                                    2s
-    Scanner le code barre correspondant à l'article          MODIV01\\;MF81
+    Scanner le code barre correspondant à l'article          MODIV01\\;MF81        #ne comprend pas la série
     Appuyer sur la flèche retour
     Sleep                                                    2s
     Scanner le code barre correspondant à l'article          MF80
@@ -131,6 +131,7 @@ ConsultationMonoEmpl
     Scanner le code barre correspondant à l'article          38141025            #scan de l'article avec les gammes associées
     Entrer une quantité max et valider
     Cliquer sur le bouton de finalisation
+    Sleep                                                    2s
 
 
 

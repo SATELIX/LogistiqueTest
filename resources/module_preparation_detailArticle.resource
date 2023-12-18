@@ -105,8 +105,8 @@ Modifier un stock
     [Arguments]    ${value}
     Wait Until Element Is Visible    fr.satelix.logistique:id/bt_edit_qte_stock
     Click Element    fr.satelix.logistique:id/bt_edit_qte_stock
-    Wait Until Element Is Visible    //android.widget.EditText[@text="180"]
-    Click Element    //android.widget.EditText[@text="180"]
+    Wait Until Element Is Visible    //android.widget.EditText[@text="48"]
+    Click Element    //android.widget.EditText[@text="48"]
     Taper Un Nombre Au Clavier   ${value}
     Appuyer sur la flèche retour
     Valider La Quantité
