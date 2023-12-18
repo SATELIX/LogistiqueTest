@@ -35,45 +35,45 @@ ${BAOR01}        //androidx.cardview.widget.CardView[@content-desc="Sélectionne
 ConsultationMultiEmpl
     Sur le terminal, sélectionner le module                       Consultation Multi Empl
     Sélectionner le document nom exact                            Bijou SA
-    # Afficher Les Articles Disponibles
-    # Sélectionner l article                                        BAAR01
-    # Sélectionner l emplacement                                    A1T2N1P2
-    # Sleep                                                         2s
-    # Appuyer sur la flèche retour
-    # Sleep                                                         2s
-    # Appuyer sur la flèche retour
-    # Sleep                                                         2s
-    # Scanner le code barre correspondant à l'article               BAAR01
-    # Sélectionner l emplacement                                    A1T2N1P2
-    # Sleep                                                         1s
-    # Valider La Quantité
-    # Sleep                                                         2s
-    # Appuyer sur la flèche retour
-    # Afficher Les Lots Disponibles
-    # Sleep                                                         2s
-    # Scroll Vers Element                                           ${LINGOR18}    bas
-    # Sélectionner l article                                        LINGOR18
-    # Sélectionner l emplacement                                    A1T3N1P3
-    # Sleep                                                         2s
-    # Scanner le code barre correspondant au lot                    LOT-0000
-    # Appuyer sur ok
-    # Choisir Le Lot                                                LOT-10
-    # Sleep                                                         2s
-    # Appuyer sur la flèche retour
-    # Sleep                                                         2s
-    # Appuyer sur la flèche retour
-    # Sleep                                                         1s
-    # Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-10
-    # Sleep                                                         2s
-    # Scroll Vers Element                                           ${A1T1N1P1}    haut
-    # Sleep                                                         2s          
-    # Scanner le code barre correspondant à l'article               A1T1N1P1
-    # Sleep                                                         2s
-    # Appuyer sur la flèche retour
-    # Sleep                                                         2s 
-    # Modifier un stock                                             180
-    # Sleep                                                         2s
-    # Confirmer régularisation
+    Afficher Les Articles Disponibles
+    Sélectionner l article                                        BAAR01
+    Sélectionner l emplacement                                    A1T2N1P2
+    Sleep                                                         2s
+    Appuyer sur la flèche retour
+    Sleep                                                         2s
+    Appuyer sur la flèche retour
+    Sleep                                                         2s
+    Scanner le code barre correspondant à l'article               BAAR01
+    Sélectionner l emplacement                                    A1T2N1P2
+    Sleep                                                         1s
+    Valider La Quantité
+    Sleep                                                         2s
+    Appuyer sur la flèche retour
+    Afficher Les Lots Disponibles
+    Sleep                                                         2s
+    Scroll Vers Element                                           ${LINGOR18}    bas
+    Sélectionner l article                                        LINGOR18
+    Sélectionner l emplacement                                    A1T3N1P3
+    Sleep                                                         2s
+    Scanner le code barre correspondant au lot                    LOT-0000
+    Appuyer sur ok
+    Choisir Le Lot                                                LOT-10
+    Sleep                                                         2s
+    Appuyer sur la flèche retour
+    Sleep                                                         2s
+    Appuyer sur la flèche retour
+    Sleep                                                         1s
+    Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-10
+    Sleep                                                         2s
+    Scroll Vers Element                                           ${A1T1N1P1}    haut
+    Sleep                                                         2s          
+    Scanner le code barre correspondant à l'article               A1T1N1P1
+    Sleep                                                         2s
+    Appuyer sur la flèche retour
+    Sleep                                                         2s 
+    Modifier un stock                                             180
+    Sleep                                                         2s
+    Confirmer régularisation
     Sleep                                                         2s
     Saisir l Article a la Main                                    EM040
     Sélectionner l emplacement                                    A1T3N1P2
