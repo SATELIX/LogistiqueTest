@@ -31,7 +31,7 @@ ${BAAR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 
 #Test OK pb lot bdd
 *** Test Cases ***
-Fabrication mono empl
+FabricationMonoEmpl
     Sur le terminal, sélectionner le module                       Fabrication mono empl
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${doc}          ${OF00004}

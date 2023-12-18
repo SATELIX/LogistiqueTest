@@ -31,7 +31,7 @@ ${LINGOR18}        //androidx.cardview.widget.CardView[@content-desc="Sélection
 
 #Test OK, pb lot bdd
 *** Test Cases ***
-Réception multi empl
+FabricationMultiEmpl
     Sur le terminal, sélectionner le module                       Fabrication multi empl
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}

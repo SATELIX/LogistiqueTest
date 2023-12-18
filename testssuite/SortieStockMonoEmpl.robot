@@ -12,7 +12,7 @@ ${depot}     xpath=(//android.widget.ImageButton[@content-desc="Afficher la list
 ${Bijou SA}   //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
 
 *** Test Cases ***
-Test De L Application
+SortieStockMonoEmpl
     Demarrer L Application
     Sur le terminal, sélectionner le module                        Sortie Stock mono empl
     Choisir au menu déroulant                                      ${depot}    ${Bijou SA}

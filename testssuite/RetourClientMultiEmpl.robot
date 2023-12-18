@@ -29,7 +29,7 @@ ${bagues}    //androidx.cardview.widget.CardView[@content-desc="Client Bague's e
 ${LINGOR18}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Lingot Or 18 cts"]/android.view.ViewGroup
 
 *** Test Cases ***
-Retour Client Multi Empl
+RetourClientMultiEmpl
     Sur le terminal, sélectionner le module                       Retour client multi empl
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${destination}          ${A1T1N1P1}

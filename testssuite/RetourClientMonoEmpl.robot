@@ -27,7 +27,7 @@ ${BAGUES}    //androidx.cardview.widget.CardView[@content-desc="Client Bague's e
 
 
 *** Test Cases ***
-Retour Client Mono Empl
+RetourClientMonoEmpl
     Sur le terminal, sélectionner le module                       Retour Client Mono Empl
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${client}         ${BAGUES}
