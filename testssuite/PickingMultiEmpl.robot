@@ -63,7 +63,6 @@ PickingMultiEmpl
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                8
     Sleep                                                         2s
-    Demander si retour nécessaire                                 //android.widget.EditText[@text="Recherche article"]
     Sélectionner l article                                        BAOR01   
     Sélectionner l emplacement                                    A1T1N1P2
     Sleep                                                         2s
