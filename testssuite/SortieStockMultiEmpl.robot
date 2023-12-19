@@ -37,8 +37,9 @@ SortieStockMultiEmpl
     Choisir Le Lot                                                LOT-10
     Entrer une quantité et valider                                1
     Sleep                                                         2s
-    # Scanner le code barre correspondant au lot                    LINGOR18;LOT-999
-    # Appuyer sur la flèche retour
+    Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-999
+    Sleep                                                         2s
+    Appuyer sur la flèche retour
     Saisir l Article a la Main                                    BAOR01
     Sélection gamme                                               Rubis
     Entrer une quantité et valider                                1

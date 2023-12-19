@@ -10,7 +10,7 @@ ${depot}     xpath=(//android.widget.ImageButton[@content-desc="Afficher la list
 ${Bijou SA}   //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
 ${LINGOR18}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Lingot Or 18 cts"]/android.view.ViewGroup
 ${ListeLot}    //android.widget.EditText[@resource-id="fr.satelix.logistique:id/dropdown_list" and @text="Numéro de lot"]
-${BAAR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Bague Or et pierres"]/android.view.ViewGroup
+${BAOR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Bague Or et pierres"]/android.view.ViewGroup
 ${EM040}    //android.widget.TextView[@text="EM040"]
 ${CHAAR/VAR}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Chaîne Argent maille et longueur variables"]/android.view.ViewGroup
 
@@ -37,8 +37,8 @@ EntreeMonoEmpl
     # Affiche Element                                                ${ListeLot}                #pb bdd dans certains modules
     # Scanner code barre                                             LINGOR18\;LOT-TEST2
     # Entrer une quantité et valider                                 2
-    Scroll Vers Element                                            ${BAAR01}  haut
-    Sélection article element                                      ${BAAR01}
+    Scroll Vers Element                                            ${BAOR01}  haut
+    Sélection article element                                      ${BAOR01}
     Sélection gamme                                                Emeraude
     Entrer une quantité et valider                                 2
     Attendre

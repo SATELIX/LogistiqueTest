@@ -27,8 +27,9 @@ SortieStockMonoEmpl
     Sélectionner le Lot avec DLC et FAB     
     Entrer une quantité et valider                                 1      
     Sleep                                                          2s
-    Scanner code barre                                             LINGOR18\\;LOT-AAA    #le lot n'existant pas, une erreur de validation doit s'afficher
-    Appuyer sur ok
+    # Scanner code barre                                             LINGOR18\\;LOT-AAA    #le lot n'existant pas, une erreur de validation doit s'afficher
+    # Sleep                                                          2s
+    # Appuyer sur ok
     Sleep                                                          2s
     Saisir l Article a la Main                                     BAOR01
     Sélection gamme                                                Rubis

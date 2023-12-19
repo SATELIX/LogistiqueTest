@@ -96,5 +96,6 @@ ReceptionMultiEmpl
     Cliquer sur continuer
     Cliquer sur le bouton de finalisation
     Appuyer sur Terminer La Saisie
+    Valider
     Sleep                                                         5s
 
