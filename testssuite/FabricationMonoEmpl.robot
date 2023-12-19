@@ -63,7 +63,7 @@ FabricationMonoEmpl
     Scroll Vers Element                                           ${CHAAR/VAR34classique}    bas
     Sélectionner l article                                        34
     Entrer une quantité et valider                                2
-    Appuyer sur ok et back
+    Sleep                                                         2s
     # Afficher Les Articles Disponibles
     # Scroll Vers Element                                           ${LINGOR18}   bas
     # Sélectionner l article                                        LINGOR18                #pb lot bdd
