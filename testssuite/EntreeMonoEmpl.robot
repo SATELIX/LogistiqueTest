@@ -4,6 +4,9 @@ Documentation       Test du module Entrée Mono Emplacement
 Resource    ../resources/page_accueil.resource
 Resource    ../resources/module_preparation.resource
 
+Suite Setup     Set Log Level    TRACE
+# Test Setup      Lire Les Variables Du Tests Et Demarrer L Application
+# Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Application    ${appPackage}
 
 *** Variables ***
 ${depot}     xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
@@ -16,7 +19,6 @@ ${CHAAR/VAR}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner
 
 *** Test Cases ***
 EntreeMonoEmpl
-    Demarrer L Application
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                        Entrée mono empl
     Sélectionner le document nom exact                             Bijou SA

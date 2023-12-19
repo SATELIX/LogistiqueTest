@@ -4,6 +4,10 @@ Documentation       Test du module Entrée Mono Emplacement
 Resource    ../resources/page_accueil.resource
 Resource    ../resources/module_preparation.resource
 
+Suite Setup     Set Log Level    TRACE
+# Test Setup      Lire Les Variables Du Tests Et Demarrer L Application
+# Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Application    ${appPackage}
+
 *** Variables ***
 ${liste_articles}       //android.widget.ImageButton[@content-desc="Liste des articles"]
 ${module_sortie_mono_empl}    //android.widget.TextView[@resource-id="fr.satelix.logistique:id/item_nom_module" and @text="Sortie Stock mono empl"]
