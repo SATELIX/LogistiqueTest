@@ -28,6 +28,7 @@ ${A1T2N3P2}    //androidx.cardview.widget.CardView[@content-desc="Emplacement Al
 #Test OK pb lot bdd
 *** Test Cases ***
 InventaireMultiEmpl
+    LeDernierTestEstIlTermine
     #Ouvrir le BO test et choisir l'inventaire "InventaireTestMulti"
     Sur le terminal, sélectionner le module                       Inventaire Multi empl
     Sélectionner le document                                      InventaireTestMulti

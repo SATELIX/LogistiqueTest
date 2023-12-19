@@ -18,8 +18,14 @@ Resource    module_preparation.resource
 
 *** Variables ***
 
+${DEVICE_NAME}    Your_Device_Name
+${PLATFORM_NAME}  Android
+${APP_ACTIVITY}   com.google.android.apps.docs.home.HomeActivity
+
+
 ${date}    //android.widget.ImageButton[@content-desc="Sélectionner une date"]
 ${edit}    //android.widget.ImageButton[@content-desc="Passer au mode de saisie Texte"]
+${automationName}               UIAutomator2
 # Les Keycode Android pour gérer les entrées comme un utilisateur réel
 &{KEYCODES}    0=7
 ...    1=8
@@ -186,16 +192,6 @@ Choisir LA Valeur Dans La Liste
 Appuyer sur la flèche retour
     AppiumLibrary.Go Back
 
-Demander si retour nécessaire
-    [Arguments]      ${module_name}
-    ${module_present}    Run Keyword And Return Status    AppiumLibrary.Wait Until Element Is Visible    ${module_name}
-    ...    30s
-    ...    La liste des modules ne contient pas le module demandé ${module_name}  
-    IF    ${module_present}
-        Appuyer sur la flèche retour
-    END
-        Afficher Les Articles Disponibles
-
 
 Mettre date du jour
     Wait Until Element Is Visible    ${date}
@@ -219,3 +215,38 @@ Mettre date du lendemain
     Sleep    1s
     Appuyer sur ok
     
+LeDernierTestEstIlTermine
+    [Documentation]     Cette fonction sert à supprimer les actions effectués lors du test du dernier module s'il n'a pas réussi à aller jusqu'au bout
+    ${ispresent}=    Run Keyword And Return Status    Wait Until Page Contains    OUI    timeout=5
+    IF    ${ispresent}    
+        ispresent
+    END
+
+
+EstASupprimer
+    [Documentation]    Supprime les actions faites au dernier module
+    ${ispresent}=     Run Keyword And Return Status    Wait Until Page Contains    SUPPRIMER    timeout=5
+    IF    ${ispresent}
+        Click Text    SUPPRIMER
+        Wait Until Page Contains    CONFIRMER
+        Click Text    CONFIRMER
+    END
+ispresent
+    Click Text    OUI
+    Sleep    3s
+    Go Back
+    EstASupprimer
+
+
+
+Ouvrir GoogleDrive
+  [Documentation]    Démarre l'application Google Drive
+  [Arguments]    ${appPackage}
+    AppiumLibrary.Open Application    http://127.0.0.1:4723/wd/hub
+    ...    automationName=${automationName}
+    ...    platformName=${DEVICE_NAME}
+    ...    appPackage=${appPackage}
+    ...    appActivity=${APP_ACTIVITY}
+    ...    autoGrantPermissions=true
+    ...    noReset=true
+    ...    fullReset=false

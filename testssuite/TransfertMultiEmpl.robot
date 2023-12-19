@@ -30,6 +30,7 @@ ${tme}        //androidx.cardview.widget.CardView[@content-desc="Sélectionner l
 
 *** Test Cases ***
 TransfertMultiEmpl
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module bis                   Transfert multi empl        
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${destination}          ${Annexe Bijou SA}

@@ -29,6 +29,7 @@ ${BILLO}    //androidx.cardview.widget.CardView[@content-desc="Fournisseur Billo
 #Fonction OK
 *** Test Cases ***
 CommandeFournisseur
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Commande Fournisseur
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${fournisseur}    ${BILLO}

@@ -17,6 +17,7 @@ ${CHAAR/VAR}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner
 *** Test Cases ***
 EntreeMonoEmpl
     Demarrer L Application
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                        Entrée mono empl
     Sélectionner le document nom exact                             Bijou SA
     Afficher Les Articles Disponibles

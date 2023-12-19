@@ -28,6 +28,8 @@ ${A1T1N1P1}    //androidx.cardview.widget.CardView[@content-desc="Emplacement Al
 
 *** Test Cases ***
 SortieStockMultiEmpl
+    LeDernierTestEstIlTermine
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Sortie Stock multi empl
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${emplacement}    ${A1T1N1P1}

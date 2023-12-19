@@ -30,6 +30,7 @@ ${MF80}     //android.view.ViewGroup[@content-desc="Sélectionner le numéro de 
 
 *** Test Cases ***
 RetourFournisseurMultiEmpl
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Retour fournisseur Multi Empl
     Choisir au menu déroulant                                     ${depot}    ${Bijou SA}
     Choisir au menu déroulant                                     ${fournisseur}    ${DUBOI}

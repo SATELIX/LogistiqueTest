@@ -14,6 +14,7 @@ ${Bijou SA}   //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou S
 *** Test Cases ***
 SortieStockMonoEmpl
     Demarrer L Application
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                        Sortie Stock mono empl
     Choisir au menu déroulant                                      ${depot}    ${Bijou SA}
     Sélectionner référence doc                                     test

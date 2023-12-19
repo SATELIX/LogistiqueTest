@@ -33,6 +33,7 @@ ${BAOR01}        //androidx.cardview.widget.CardView[@content-desc="Sélectionne
 #fonction ok, pb de scan pour un lot, pb de bdd
 *** Test Cases ***
 ConsultationMultiEmpl
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Consultation Multi Empl
     Sélectionner le document nom exact                            Bijou SA
     Afficher Les Articles Disponibles

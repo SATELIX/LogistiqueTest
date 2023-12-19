@@ -31,6 +31,7 @@ ${SERIE2}    //android.view.ViewGroup[@content-desc="Sélectionner le numéro de
 
 *** Test Cases ***
 RetourFournisseurMonoEmpl
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Retour fournisseur mono empl
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${fournisseur}          ${BRELO}

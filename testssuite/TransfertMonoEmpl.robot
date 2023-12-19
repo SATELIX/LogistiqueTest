@@ -29,6 +29,7 @@ ${Annexe Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt
 
 *** Test Cases ***
 TransfertMonoEmpl
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Transfert mono empl
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${destination}    ${Annexe Bijou SA}

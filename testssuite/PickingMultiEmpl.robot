@@ -27,6 +27,7 @@ ${TAT}           //androidx.cardview.widget.CardView[@content-desc="Mode d'expé
 #Test OK pb de bdd lot, faire fonction date du lendemain
 *** Test Cases ***
 PickingMultiEmpl
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Picking Multi Empl
     Sleep                                                         2s
     Sélectionner le document                                      PL00014

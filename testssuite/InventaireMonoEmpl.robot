@@ -24,6 +24,7 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 #Test OK, pb lot bdd
 *** Test Cases ***
 InventaireMonoEmpl
+    LeDernierTestEstIlTermine
     #Ouvrir le BO test et choisir l'inventaire "InventaireTestMono"
     Sur le terminal, sélectionner le module                       Inventaire mono empl
     Sélectionner le document                                      InventaireTestMono

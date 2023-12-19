@@ -30,6 +30,7 @@ ${BAGUES}    //androidx.cardview.widget.CardView[@content-desc="Client Bague's e
 
 *** Test Cases ***
 CommandeClient
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Commande Client
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${client}         ${BAGUES}

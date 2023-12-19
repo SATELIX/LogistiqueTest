@@ -22,6 +22,7 @@ ${Colissimo}    //androidx.cardview.widget.CardView[@content-desc="Mode d'expéd
 #Test OK pb bdd lot
 *** Test Cases ***
 PickingMonoEmpl
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module               Picking Mono Empl
     Sélectionner le document                              ${document}
     Sélectionner l article                                BAAR01

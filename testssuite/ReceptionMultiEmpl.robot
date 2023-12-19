@@ -33,6 +33,7 @@ ${ARTLOT}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 
 *** Test Cases ***
 ReceptionMultiEmpl
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Réception multi empl
     Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
     Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
