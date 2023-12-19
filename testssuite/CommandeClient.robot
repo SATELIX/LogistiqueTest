@@ -10,6 +10,7 @@ Library    OperatingSystem
 
 Resource    ../resources/module_prepaationLivrason.resource
 Resource    ../resources/module_preparation.resource
+Resource    ../resources/prerequis.resource
 
 
 Suite Setup     Set Log Level    TRACE
