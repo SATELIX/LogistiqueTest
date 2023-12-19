@@ -60,3 +60,9 @@ FaireSynchroComplete
     Wait Until Element Is Visible    ${accueil}
     Click Element    ${accueil}
     Sleep    2s
+
+
+SAuthentifier
+    Wait Until Page Contains    CONNEXION
+    Click Text    CONNEXION
+    Sleep    5s

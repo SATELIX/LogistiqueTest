@@ -86,12 +86,7 @@ Afficher Les Articles Disponibles
     Click Element    ${BUTON_LISTE_DES_ARTICLES}
     Sleep    2s
 
-Demander si afficher liste article
-    IF    
-        Call Keyword
-    ELSE
-        
-    END
+
 
 Sélectionner le document
     [Arguments]    ${document}

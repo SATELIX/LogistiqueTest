@@ -233,20 +233,9 @@ EstASupprimer
     END
 ispresent
     Click Text    OUI
-    Sleep    3s
+    Sleep    1s
     Go Back
     EstASupprimer
 
 
 
-Ouvrir GoogleDrive
-  [Documentation]    Démarre l'application Google Drive
-  [Arguments]    ${appPackage}
-    AppiumLibrary.Open Application    http://127.0.0.1:4723/wd/hub
-    ...    automationName=${automationName}
-    ...    platformName=${DEVICE_NAME}
-    ...    appPackage=${appPackage}
-    ...    appActivity=${APP_ACTIVITY}
-    ...    autoGrantPermissions=true
-    ...    noReset=true
-    ...    fullReset=false
