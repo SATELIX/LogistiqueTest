@@ -12,8 +12,8 @@ Library    OperatingSystem
 Resource    ../resources/module_prepaationLivrason.resource
 
 Suite Setup     Set Log Level    TRACE
-# Test Setup      Lire Les Variables Du Tests Et Demarrer L Application
-# Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Application    ${appPackage}
+Test Setup      Lire Les Variables Du Tests Et Demarrer L Application
+Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Application    ${appPackage}
 
 *** Variables ***
 &{BARCODES}    BAAR01=A1T2N1P2

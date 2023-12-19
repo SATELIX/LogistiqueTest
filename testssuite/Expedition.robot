@@ -12,8 +12,8 @@ Resource    ../resources/module_prepaationLivrason.resource
 Resource    ../resources/module_preparation.resource
 
 Suite Setup     Set Log Level    TRACE
-# Test Setup      Lire Les Variables Du Tests Et Demarrer L Application
-# Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Application    ${appPackage}
+Test Setup      Lire Les Variables Du Tests Et Demarrer L Application
+Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Application    ${appPackage}
 
 
 
@@ -26,7 +26,7 @@ ${nb_palettes_perdues}    //android.widget.EditText[@text="Nb palettes perdues"]
 ${nb_palettes_europe}    //android.widget.EditText[@text="Nb palettes Europe"]
 
 
-#Test OK
+
 *** Test Cases ***
 Expedition
     LeDernierTestEstIlTermine

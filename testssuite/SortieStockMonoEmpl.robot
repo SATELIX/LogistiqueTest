@@ -5,8 +5,8 @@ Resource    ../resources/page_accueil.resource
 Resource    ../resources/module_preparation.resource
 
 Suite Setup     Set Log Level    TRACE
-# Test Setup      Lire Les Variables Du Tests Et Demarrer L Application
-# Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Application    ${appPackage}
+Test Setup      Lire Les Variables Du Tests Et Demarrer L Application
+Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Application    ${appPackage}
 
 *** Variables ***
 ${liste_articles}       //android.widget.ImageButton[@content-desc="Liste des articles"]

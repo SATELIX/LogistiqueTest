@@ -22,6 +22,7 @@ ${menu}    //android.widget.FrameLayout[@content-desc="Menu"]
 ${accueil}    //android.widget.FrameLayout[@content-desc="Accueil"]
 *** Keywords ***
 
+
 DemarrerLaNouvelleVersion
     Open Application    ${remoteURL}
     ...    automationName=${automationName}

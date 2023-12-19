@@ -21,7 +21,8 @@ Resource    module_preparation.resource
 ${DEVICE_NAME}    Your_Device_Name
 ${PLATFORM_NAME}  Android
 ${APP_ACTIVITY}   com.google.android.apps.docs.home.HomeActivity
-
+${NEW_APP_PATH}    /chemin/vers/new/app.apk
+${OLD_APP_PATH}    /chemin/vers/old/app.apk
 
 ${date}    //android.widget.ImageButton[@content-desc="Sélectionner une date"]
 ${edit}    //android.widget.ImageButton[@content-desc="Passer au mode de saisie Texte"]

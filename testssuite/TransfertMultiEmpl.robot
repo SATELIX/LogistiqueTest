@@ -13,7 +13,7 @@ Resource    ../resources/module_preparation.resource
 
 
 Suite Setup     Set Log Level    TRACE
-# Test Setup      Lire Les Variables Du Tests Et Demarrer L Application
+Test Setup      Lire Les Variables Du Tests Et Demarrer L Application
 Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Application    ${appPackage}
 
 
