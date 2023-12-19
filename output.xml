@@ -1,127 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231218 17:26:46.073" rpa="false" schemaversion="4">
-<suite id="s1" name="RetourFournisseurMultiEmpl" source="c:\Dev\Logistique\Test\testssuite\RetourFournisseurMultiEmpl.robot">
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231219 08:54:46.949" rpa="false" schemaversion="4">
+<suite id="s1" name="PickingMultiEmpl" source="c:\Dev\Logistique\Test\testssuite\PickingMultiEmpl.robot">
 <kw name="Set Log Level" library="BuiltIn" type="SETUP">
 <arg>TRACE</arg>
 <doc>Sets the log threshold to the specified level and returns the old level.</doc>
-<msg timestamp="20231218 17:26:46.911" level="INFO">Log level changed from INFO to TRACE.</msg>
-<msg timestamp="20231218 17:26:46.918" level="TRACE">Return: 'INFO'</msg>
-<status status="PASS" starttime="20231218 17:26:46.910" endtime="20231218 17:26:46.920"/>
+<msg timestamp="20231219 08:54:48.163" level="INFO">Log level changed from INFO to TRACE.</msg>
+<msg timestamp="20231219 08:54:48.184" level="TRACE">Return: 'INFO'</msg>
+<status status="PASS" starttime="20231219 08:54:48.160" endtime="20231219 08:54:48.185"/>
 </kw>
-<test id="s1-t1" name="RetourFournisseurMultiEmpl" line="32">
+<test id="s1-t1" name="PickingMultiEmpl" line="29">
 <kw name="Lire Les Variables Du Tests Et Demarrer L Application" library="utils" type="SETUP">
-<msg timestamp="20231218 17:26:46.922" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20231219 08:54:48.196" level="TRACE">Arguments: [  ]</msg>
 <kw name="Lire Les Variables De Tests" library="utils">
 <doc>Lit et met en place les variables</doc>
-<msg timestamp="20231218 17:26:46.923" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20231219 08:54:48.197" level="TRACE">Arguments: [  ]</msg>
 <kw name="Lire Les Variables D Environnement" library="utils">
 <doc>Lecture des variables d'environnement et écrasmeent des
 variables pa défaut.</doc>
-<msg timestamp="20231218 17:26:46.925" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20231219 08:54:48.201" level="TRACE">Arguments: [  ]</msg>
 <kw name="Get Environment Variable" library="OperatingSystem">
 <var>${platformVersion}</var>
 <arg>ANDROIDVERSION</arg>
 <arg>9.0</arg>
 <doc>Returns the value of an environment variable with the given name.</doc>
-<msg timestamp="20231218 17:26:46.926" level="TRACE">Arguments: [ 'ANDROIDVERSION' | '9.0' ]</msg>
-<msg timestamp="20231218 17:26:46.926" level="TRACE">Return: '9.0'</msg>
-<msg timestamp="20231218 17:26:46.927" level="INFO">${platformVersion} = 9.0</msg>
-<status status="PASS" starttime="20231218 17:26:46.926" endtime="20231218 17:26:46.927"/>
+<msg timestamp="20231219 08:54:48.202" level="TRACE">Arguments: [ 'ANDROIDVERSION' | '9.0' ]</msg>
+<msg timestamp="20231219 08:54:48.202" level="TRACE">Return: '9.0'</msg>
+<msg timestamp="20231219 08:54:48.203" level="INFO">${platformVersion} = 9.0</msg>
+<status status="PASS" starttime="20231219 08:54:48.201" endtime="20231219 08:54:48.203"/>
 </kw>
 <kw name="Get Environment Variable" library="OperatingSystem">
 <var>${app}</var>
 <arg>APP</arg>
 <arg>D:${/}SATELIX${/}app${/}Logistique-demo-release-1.0.34 141.apk</arg>
 <doc>Returns the value of an environment variable with the given name.</doc>
-<msg timestamp="20231218 17:26:46.928" level="TRACE">Arguments: [ 'APP' | 'D:\\SATELIX\\app\\Logistique-demo-release-1.0.34 141.apk' ]</msg>
-<msg timestamp="20231218 17:26:46.929" level="TRACE">Return: 'D:\\SATELIX\\app\\Logistique-demo-release-1.0.34 141.apk'</msg>
-<msg timestamp="20231218 17:26:46.929" level="INFO">${app} = D:\SATELIX\app\Logistique-demo-release-1.0.34 141.apk</msg>
-<status status="PASS" starttime="20231218 17:26:46.927" endtime="20231218 17:26:46.930"/>
+<msg timestamp="20231219 08:54:48.204" level="TRACE">Arguments: [ 'APP' | 'D:\\SATELIX\\app\\Logistique-demo-release-1.0.34 141.apk' ]</msg>
+<msg timestamp="20231219 08:54:48.205" level="TRACE">Return: 'D:\\SATELIX\\app\\Logistique-demo-release-1.0.34 141.apk'</msg>
+<msg timestamp="20231219 08:54:48.205" level="INFO">${app} = D:\SATELIX\app\Logistique-demo-release-1.0.34 141.apk</msg>
+<status status="PASS" starttime="20231219 08:54:48.204" endtime="20231219 08:54:48.206"/>
 </kw>
 <kw name="Get Environment Variable" library="OperatingSystem">
 <var>${appPackage}</var>
 <arg>APPPACKAGE</arg>
 <arg>fr.satelix.logistique</arg>
 <doc>Returns the value of an environment variable with the given name.</doc>
-<msg timestamp="20231218 17:26:46.931" level="TRACE">Arguments: [ 'APPPACKAGE' | 'fr.satelix.logistique' ]</msg>
-<msg timestamp="20231218 17:26:46.934" level="TRACE">Return: 'fr.satelix.logistique'</msg>
-<msg timestamp="20231218 17:26:46.934" level="INFO">${appPackage} = fr.satelix.logistique</msg>
-<status status="PASS" starttime="20231218 17:26:46.930" endtime="20231218 17:26:46.935"/>
+<msg timestamp="20231219 08:54:48.207" level="TRACE">Arguments: [ 'APPPACKAGE' | 'fr.satelix.logistique' ]</msg>
+<msg timestamp="20231219 08:54:48.207" level="TRACE">Return: 'fr.satelix.logistique'</msg>
+<msg timestamp="20231219 08:54:48.207" level="INFO">${appPackage} = fr.satelix.logistique</msg>
+<status status="PASS" starttime="20231219 08:54:48.206" endtime="20231219 08:54:48.208"/>
 </kw>
 <kw name="Get Environment Variable" library="OperatingSystem">
 <var>${appActivity}</var>
 <arg>APPACTIVTY</arg>
 <arg>fr.satelix.logistique.activities.MainActivity</arg>
 <doc>Returns the value of an environment variable with the given name.</doc>
-<msg timestamp="20231218 17:26:46.936" level="TRACE">Arguments: [ 'APPACTIVTY' | 'fr.satelix.logistique.activities.MainActivity' ]</msg>
-<msg timestamp="20231218 17:26:46.937" level="TRACE">Return: 'fr.satelix.logistique.activities.MainActivity'</msg>
-<msg timestamp="20231218 17:26:46.937" level="INFO">${appActivity} = fr.satelix.logistique.activities.MainActivity</msg>
-<status status="PASS" starttime="20231218 17:26:46.936" endtime="20231218 17:26:46.938"/>
+<msg timestamp="20231219 08:54:48.209" level="TRACE">Arguments: [ 'APPACTIVTY' | 'fr.satelix.logistique.activities.MainActivity' ]</msg>
+<msg timestamp="20231219 08:54:48.209" level="TRACE">Return: 'fr.satelix.logistique.activities.MainActivity'</msg>
+<msg timestamp="20231219 08:54:48.209" level="INFO">${appActivity} = fr.satelix.logistique.activities.MainActivity</msg>
+<status status="PASS" starttime="20231219 08:54:48.208" endtime="20231219 08:54:48.210"/>
 </kw>
 <kw name="Get Environment Variable" library="OperatingSystem">
 <var>${deviceUdid}</var>
 <arg>UDID</arg>
 <arg>42005819e4569431</arg>
 <doc>Returns the value of an environment variable with the given name.</doc>
-<msg timestamp="20231218 17:26:46.939" level="TRACE">Arguments: [ 'UDID' | '42005819e4569431' ]</msg>
-<msg timestamp="20231218 17:26:46.939" level="TRACE">Return: '42005819e4569431'</msg>
-<msg timestamp="20231218 17:26:46.940" level="INFO">${deviceUdid} = 42005819e4569431</msg>
-<status status="PASS" starttime="20231218 17:26:46.938" endtime="20231218 17:26:46.940"/>
+<msg timestamp="20231219 08:54:48.211" level="TRACE">Arguments: [ 'UDID' | '42005819e4569431' ]</msg>
+<msg timestamp="20231219 08:54:48.211" level="TRACE">Return: '42005819e4569431'</msg>
+<msg timestamp="20231219 08:54:48.211" level="INFO">${deviceUdid} = 42005819e4569431</msg>
+<status status="PASS" starttime="20231219 08:54:48.210" endtime="20231219 08:54:48.212"/>
 </kw>
 <kw name="Get Environment Variable" library="OperatingSystem">
 <var>${dossier}</var>
 <arg>DOSSIER</arg>
 <arg>LogistiqueV2Test</arg>
 <doc>Returns the value of an environment variable with the given name.</doc>
-<msg timestamp="20231218 17:26:46.942" level="TRACE">Arguments: [ 'DOSSIER' | 'LogistiqueV2Test' ]</msg>
-<msg timestamp="20231218 17:26:46.942" level="TRACE">Return: 'LogistiqueV2Test'</msg>
-<msg timestamp="20231218 17:26:46.942" level="INFO">${dossier} = LogistiqueV2Test</msg>
-<status status="PASS" starttime="20231218 17:26:46.941" endtime="20231218 17:26:46.942"/>
+<msg timestamp="20231219 08:54:48.212" level="TRACE">Arguments: [ 'DOSSIER' | 'LogistiqueV2Test' ]</msg>
+<msg timestamp="20231219 08:54:48.213" level="TRACE">Return: 'LogistiqueV2Test'</msg>
+<msg timestamp="20231219 08:54:48.213" level="INFO">${dossier} = LogistiqueV2Test</msg>
+<status status="PASS" starttime="20231219 08:54:48.212" endtime="20231219 08:54:48.213"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${platformVersion}</arg>
 <arg>${platformVersion}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20231218 17:26:46.943" level="TRACE">Arguments: [ '${platformVersion}' | '${platformVersion}' ]</msg>
-<msg timestamp="20231218 17:26:46.944" level="INFO">${platformVersion} = 9.0</msg>
-<msg timestamp="20231218 17:26:46.944" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20231218 17:26:46.943" endtime="20231218 17:26:46.945"/>
+<msg timestamp="20231219 08:54:48.216" level="TRACE">Arguments: [ '${platformVersion}' | '${platformVersion}' ]</msg>
+<msg timestamp="20231219 08:54:48.216" level="INFO">${platformVersion} = 9.0</msg>
+<msg timestamp="20231219 08:54:48.216" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 08:54:48.214" endtime="20231219 08:54:48.216"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${app}</arg>
 <arg>${app}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20231218 17:26:46.946" level="TRACE">Arguments: [ '${app}' | '${app}' ]</msg>
-<msg timestamp="20231218 17:26:46.946" level="INFO">${app} = D:\SATELIX\app\Logistique-demo-release-1.0.34 141.apk</msg>
-<msg timestamp="20231218 17:26:46.947" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20231218 17:26:46.945" endtime="20231218 17:26:46.947"/>
+<msg timestamp="20231219 08:54:48.216" level="TRACE">Arguments: [ '${app}' | '${app}' ]</msg>
+<msg timestamp="20231219 08:54:48.216" level="INFO">${app} = D:\SATELIX\app\Logistique-demo-release-1.0.34 141.apk</msg>
+<msg timestamp="20231219 08:54:48.216" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 08:54:48.216" endtime="20231219 08:54:48.216"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${appPackage}</arg>
 <arg>${appPackage}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20231218 17:26:46.947" level="TRACE">Arguments: [ '${appPackage}' | '${appPackage}' ]</msg>
-<msg timestamp="20231218 17:26:46.948" level="INFO">${appPackage} = fr.satelix.logistique</msg>
-<msg timestamp="20231218 17:26:46.948" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20231218 17:26:46.947" endtime="20231218 17:26:46.949"/>
+<msg timestamp="20231219 08:54:48.216" level="TRACE">Arguments: [ '${appPackage}' | '${appPackage}' ]</msg>
+<msg timestamp="20231219 08:54:48.216" level="INFO">${appPackage} = fr.satelix.logistique</msg>
+<msg timestamp="20231219 08:54:48.216" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 08:54:48.216" endtime="20231219 08:54:48.216"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${appActivity}</arg>
 <arg>${appActivity}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20231218 17:26:46.950" level="TRACE">Arguments: [ '${appActivity}' | '${appActivity}' ]</msg>
-<msg timestamp="20231218 17:26:46.950" level="INFO">${appActivity} = fr.satelix.logistique.activities.MainActivity</msg>
-<msg timestamp="20231218 17:26:46.950" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20231218 17:26:46.949" endtime="20231218 17:26:46.951"/>
+<msg timestamp="20231219 08:54:48.216" level="TRACE">Arguments: [ '${appActivity}' | '${appActivity}' ]</msg>
+<msg timestamp="20231219 08:54:48.226" level="INFO">${appActivity} = fr.satelix.logistique.activities.MainActivity</msg>
+<msg timestamp="20231219 08:54:48.228" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 08:54:48.216" endtime="20231219 08:54:48.228"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${deviceUdid}</arg>
 <arg>${deviceUdid}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20231218 17:26:46.951" level="TRACE">Arguments: [ '${deviceUdid}' | '${deviceUdid}' ]</msg>
-<msg timestamp="20231218 17:26:46.952" level="INFO">${deviceUdid} = 42005819e4569431</msg>
-<msg timestamp="20231218 17:26:46.953" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20231218 17:26:46.951" endtime="20231218 17:26:46.954"/>
+<msg timestamp="20231219 08:54:48.228" level="TRACE">Arguments: [ '${deviceUdid}' | '${deviceUdid}' ]</msg>
+<msg timestamp="20231219 08:54:48.228" level="INFO">${deviceUdid} = 42005819e4569431</msg>
+<msg timestamp="20231219 08:54:48.228" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20231219 08:54:48.228" endtime="20231219 08:54:48.228"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${dossier}</arg>

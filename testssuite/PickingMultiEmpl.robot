@@ -63,6 +63,7 @@ PickingMultiEmpl
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                8
     Sleep                                                         2s
+    Afficher Les Articles Disponibles
     Sélectionner l article                                        BAOR01   
     Sélectionner l emplacement                                    A1T1N1P2
     Sleep                                                         2s
@@ -127,6 +128,8 @@ PickingMultiEmpl
     Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 1
     Sleep                                                         2s
     Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 2, affiche une erreur
+    Sleep                                                         2s
+    Appuyer sur ok
     Sleep                                                         2s
     Scanner code barre                                            TRA98745002                #tracking 2 pour le colis 2
     Sleep                                                         2s
