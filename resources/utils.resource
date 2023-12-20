@@ -235,7 +235,7 @@ EstASupprimer
     END
 ispresent
     Click Text    OUI
-    Sleep    1s
+    Sleep    2s
     Go Back
     EstASupprimer
     Scroll Vers Element    ${modulehaut}    haut
