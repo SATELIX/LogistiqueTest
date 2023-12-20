@@ -27,6 +27,7 @@ ${OLD_APP_PATH}    /chemin/vers/old/app.apk
 ${date}    //android.widget.ImageButton[@content-desc="Sélectionner une date"]
 ${edit}    //android.widget.ImageButton[@content-desc="Passer au mode de saisie Texte"]
 ${automationName}               UIAutomator2
+${modulehaut}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner le module Consultation Mono Empl."]/android.view.ViewGroup
 # Les Keycode Android pour gérer les entrées comme un utilisateur réel
 &{KEYCODES}    0=7
 ...    1=8
@@ -237,6 +238,7 @@ ispresent
     Sleep    1s
     Go Back
     EstASupprimer
+    Scroll Vers Element    ${modulehaut}    haut
 
 
 

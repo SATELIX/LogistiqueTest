@@ -24,7 +24,7 @@ ${menu}        //android.widget.ImageButton[@content-desc="Afficher le menu dér
 ${TAT}           //androidx.cardview.widget.CardView[@content-desc="Mode d'expédition TAT"]/android.view.ViewGroup 
 
 
-#Test OK pb de bdd lot, faire fonction date du lendemain
+
 *** Test Cases ***
 PickingMultiEmpl
     LeDernierTestEstIlTermine
