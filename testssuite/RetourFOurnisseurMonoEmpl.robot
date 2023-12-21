@@ -20,9 +20,7 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 
 *** Variables ***
-${depot}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
-${Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
-${fournisseur}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
+${fournisseur}   //android.widget.ImageButton[@content-desc="Afficher la liste"]
 ${BRELO}    //androidx.cardview.widget.CardView[@content-desc="Fournisseur Breloque S.a.r.l"]/android.view.ViewGroup
 ${série}    //android.widget.ImageButton[@content-desc="Afficher le menu déroulant"]
 ${SERIE2}    //android.view.ViewGroup[@content-desc="Sélectionner le numéro de série SERIE2"]
@@ -33,7 +31,7 @@ ${SERIE2}    //android.view.ViewGroup[@content-desc="Sélectionner le numéro de
 RetourFournisseurMonoEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Retour fournisseur mono empl
-    Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
+    Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Choisir au menu déroulant                                     ${fournisseur}          ${BRELO}
     Valider les informations
     Afficher Les Articles Disponibles

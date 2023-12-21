@@ -20,9 +20,7 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 
 *** Variables ***
-${depot}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
-${Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
-${client}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
+${client}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
 ${BAGUES}    //androidx.cardview.widget.CardView[@content-desc="Client Bague's en or"]/android.view.ViewGroup
 
 
@@ -30,7 +28,7 @@ ${BAGUES}    //androidx.cardview.widget.CardView[@content-desc="Client Bague's e
 RetourClientMonoEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Retour Client Mono Empl
-    Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
+    Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Choisir au menu déroulant                                     ${client}         ${BAGUES}
     Valider les informations
     Saisir l Article a la Main                                    BAAR01
@@ -45,7 +43,7 @@ RetourClientMonoEmpl
     Appuyer sur la flèche retour
     Sleep                                                         2s
     Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-999
-    Sleep                                                         2s
+    Sleep                                                         3s
     Entrer une quantité et valider                                10
     Sleep                                                         2s
     Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-TEST2           

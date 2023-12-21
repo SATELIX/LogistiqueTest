@@ -20,11 +20,10 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 
 *** Variables ***
-${depot}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
-${Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
-${emplacement}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
+
+${emplacement}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
 ${A1T1N1P1}    //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A1 Trav T1 Niv N1 Pos P1"]/android.view.ViewGroup
-${fournisseur}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[3]
+${fournisseur}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
 ${BILLO}    //androidx.cardview.widget.CardView[@content-desc="Fournisseur Billot"]/android.view.ViewGroup
 ${liste_article}    //android.widget.ImageButton[@content-desc="Liste des articles"]
 ${STYPLOR}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Stylo plume dorée Sill Vany"]/android.view.ViewGroup
@@ -35,7 +34,7 @@ ${ARTLOT}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 ReceptionMultiEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Réception multi empl
-    Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
+    Choisir LA Valeur Dans La Liste                               id=dropdown_list        Bijou SA
     Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
     Choisir au menu déroulant                                     ${fournisseur}          ${BILLO}
     Sélectionner document origine                                 FBC00012

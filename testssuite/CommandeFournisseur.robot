@@ -20,9 +20,8 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 
 *** Variables ***
-${depot}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
-${Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
-${fournisseur}    xpath =(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
+
+${fournisseur}    //android.widget.ImageButton[@content-desc="Afficher la liste"]
 ${BILLO}    //androidx.cardview.widget.CardView[@content-desc="Fournisseur Billot"]/android.view.ViewGroup
 
 
@@ -31,7 +30,7 @@ ${BILLO}    //androidx.cardview.widget.CardView[@content-desc="Fournisseur Billo
 CommandeFournisseur
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Commande Fournisseur
-    Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
+    Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Choisir au menu déroulant                                     ${fournisseur}    ${BILLO}
     Valider les informations
     Saisir l Article a la Main                                    EM040

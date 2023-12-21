@@ -21,7 +21,7 @@ Resource    module_preparation.resource
 ${DEVICE_NAME}    Your_Device_Name
 ${PLATFORM_NAME}  Android
 ${APP_ACTIVITY}   com.google.android.apps.docs.home.HomeActivity
-${NEW_APP_PATH}    /chemin/vers/new/app.apk
+${NEW_APP_PATH}    C:/Users/user/Documents/TestsVersions/Logistique-release-1.0.46_216.apk
 ${OLD_APP_PATH}    /chemin/vers/old/app.apk
 
 ${date}    //android.widget.ImageButton[@content-desc="Sélectionner une date"]
@@ -219,7 +219,7 @@ Mettre date du lendemain
     
 LeDernierTestEstIlTermine
     [Documentation]     Cette fonction sert à supprimer les actions effectués lors du test du dernier module s'il n'a pas réussi à aller jusqu'au bout
-    ${ispresent}=    Run Keyword And Return Status    Wait Until Page Contains    OUI    timeout=5
+    ${ispresent}=    Run Keyword And Return Status    Wait Until Page Contains    OUI    timeout=15
     IF    ${ispresent}    
         ispresent
     END

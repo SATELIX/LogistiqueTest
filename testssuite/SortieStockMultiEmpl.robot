@@ -20,18 +20,15 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 
 *** Variables ***
-${depot}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
-${Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
-${emplacement}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
+${emplacement}    //android.widget.ImageButton[@content-desc="Afficher la liste"]
 ${A1T1N1P1}    //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A1 Trav T1 Niv N1 Pos P1"]/android.view.ViewGroup
 
 
 *** Test Cases ***
 SortieStockMultiEmpl
     LeDernierTestEstIlTermine
-    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Sortie Stock multi empl
-    Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
+    Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Choisir au menu déroulant                                     ${emplacement}    ${A1T1N1P1}
     Sélectionner référence doc                                    test multi
     Valider les informations
@@ -40,6 +37,8 @@ SortieStockMultiEmpl
     Entrer une quantité et valider                                1
     Sleep                                                         2s
     Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-999
+    Sleep                                                         2s
+    Hide Keyboard
     Sleep                                                         2s
     Appuyer sur la flèche retour
     Saisir l Article a la Main                                    BAOR01

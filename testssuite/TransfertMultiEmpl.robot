@@ -20,11 +20,9 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 
 *** Variables ***
-${depot}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
-${Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
-${destination}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[3]
+${destination}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
 ${Annexe Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Annexe Bijou SA"]/android.view.ViewGroup
-${emplacement}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[4]
+${emplacement}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[3]
 ${A1T1N1P1}    //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A1 Trav T1 Niv N1 Pos P1"]/android.view.ViewGroup
 ${tme}        //androidx.cardview.widget.CardView[@content-desc="Sélectionner le module Transfert multi empl."]/android.view.ViewGroup
 
@@ -32,7 +30,7 @@ ${tme}        //androidx.cardview.widget.CardView[@content-desc="Sélectionner l
 TransfertMultiEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module bis                   Transfert multi empl        
-    Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
+    Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Choisir au menu déroulant                                     ${destination}          ${Annexe Bijou SA}
     Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
     Valider les informations

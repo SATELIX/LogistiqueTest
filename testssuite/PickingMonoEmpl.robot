@@ -91,7 +91,7 @@ PickingMonoEmpl
     Une Erreur Doit Etre Indiquee Avec Le Message Correspondant  
     Entrer Le Poids Et Appuyer Sur Cloturer               15          # Mettre 15 et appuyer sur "Clôturer"
     Sleep                                                 2s
-    Valider Le Mode Expedition Sur                        ${Colissimo}
+    Choisir LA Valeur Dans La Liste                       id=dropdown_list    Colissimo
     Appuyer sur Transferer
     Valider
     Sleep                                                 5s

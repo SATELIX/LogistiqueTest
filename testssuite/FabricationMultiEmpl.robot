@@ -20,11 +20,9 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 *** Variables ***
 
-${depot}     xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
-${Bijou SA}   //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
-${emplacement}     xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
+${emplacement}     xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
 ${A1T1N1P1}    //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A1 Trav T1 Niv N1 Pos P1"]/android.view.ViewGroup
-${doc}     xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[3]
+${doc}     xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
 ${OF00005}    //androidx.cardview.widget.CardView[@content-desc="Document OF00005 du tiers 1"]/android.view.ViewGroup
 ${CHAAR/VAR34classique}    xpath=(//androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Chaîne Argent maille et longueur variables"])[1]/android.view.ViewGroup
 ${LINGOR18}        //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Lingot Or 18 cts"]/android.view.ViewGroup
@@ -34,7 +32,7 @@ ${LINGOR18}        //androidx.cardview.widget.CardView[@content-desc="Sélection
 FabricationMultiEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Fabrication multi empl
-    Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
+    Choisir LA Valeur Dans La Liste                               id=dropdown_list   Bijou SA
     Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
     Choisir au menu déroulant                                     ${doc}          ${OF00005}
     Valider les informations

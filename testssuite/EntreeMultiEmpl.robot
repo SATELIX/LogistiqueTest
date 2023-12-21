@@ -20,8 +20,7 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 
 *** Variables ***
-${depot}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
-${Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
+
 ${emplacement}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
 ${A1T1N1P1}    //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A1 Trav T1 Niv N1 Pos P1"]/android.view.ViewGroup
 
@@ -30,7 +29,7 @@ ${A1T1N1P1}    //androidx.cardview.widget.CardView[@content-desc="Emplacement Al
 EntreeMultiEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Entrée multi empl
-    Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
+    Choisir LA Valeur Dans La Liste                               id=dropdown_list     Bijou SA
     Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
     Valider les informations
     Sleep                                                         2s

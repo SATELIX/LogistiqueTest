@@ -21,11 +21,10 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 *** Variables ***
 
-${depot}     xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
-${Bijou SA}   //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
-${fournisseur}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
+
+${fournisseur}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
 ${Joaill}        //androidx.cardview.widget.CardView[@content-desc="Fournisseur Joaillier Frères"]/android.view.ViewGroup
-${commande}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[3]
+${commande}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
 ${FBC00011}    //androidx.cardview.widget.CardView[@content-desc="Document FBC00011 du tiers JOAILL"]/android.view.ViewGroup
 
 
@@ -37,7 +36,7 @@ ${BAAR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 ReceptionMonoEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Réception mono empl
-    Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
+    Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Choisir au menu déroulant avec scroll                         ${fournisseur}    ${Joaill}
     Choisir au menu déroulant                                     ${commande}       ${FBC00011}
     Valider les informations

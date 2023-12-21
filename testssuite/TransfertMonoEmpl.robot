@@ -20,9 +20,7 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 
 *** Variables ***
-${depot}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
-${Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
-${destination}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
+${destination}   //android.widget.ImageButton[@content-desc="Afficher la liste"]
 ${Annexe Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Annexe Bijou SA"]/android.view.ViewGroup
 
 
@@ -31,7 +29,7 @@ ${Annexe Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt
 TransfertMonoEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Transfert mono empl
-    Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
+    Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Choisir au menu déroulant                                     ${destination}    ${Annexe Bijou SA}
     Valider les informations
     Afficher Les Articles Disponibles

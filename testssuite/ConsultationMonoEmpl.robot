@@ -33,7 +33,7 @@ ${BAAR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 ConsultationMonoEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                  Consultation Mono Empl
-    Sleep                                                    2s
+    Sleep                                                    3s
     Sélectionner le document nom exact                       Bijou SA
     Sleep                                                    1s
     Afficher Les Articles Disponibles                                                   
@@ -57,11 +57,15 @@ ConsultationMonoEmpl
     Sélectionner le document par element                     ${info}
     Sélectionner le document par element                     ${modif} 
     Modifier code barre                                      1234567890128
+    Sleep                                                    2s
     Appuyer sur la flèche retour
-    Appuyer sur la flèche retour
+    Sleep                                                    2s
+    Hide Keyboard
+    Sleep                                                    2s
     Appuyer sur la flèche retour
     Sleep                                                    2s
     Scanner le code barre correspondant à l'article          1234567890128
+    Sleep                                                    2s
     Appuyer sur la flèche retour
     Sleep                                                    2s
     Appuyer sur la flèche retour
@@ -77,8 +81,11 @@ ConsultationMonoEmpl
     Appuyer sur la flèche retour   
     Sleep                                                    2s
     Scanner le code barre correspondant à l'article          EM040/12
+    Sleep                                                    3s
+    Hide Keyboard
+    Sleep                                                    2s
     Appuyer sur la flèche retour
-    Appuyer sur la flèche retour
+    Sleep                                                    2s
     Saisir l Article a la Main                               EM050
     Appuyer sur la flèche retour
     Sleep                                                    2s
@@ -118,10 +125,11 @@ ConsultationMonoEmpl
     Appuyer sur la flèche retour
     Sleep                                                    2s
     Scanner le code barre correspondant à l'article          21731003            #scan de l'article avec la gamme associée
+    Sleep                                                    3s
+    Hide Keyboard
     Sleep                                                    2s
     Appuyer sur la flèche retour
     Sleep                                                    2s
-    Appuyer sur la flèche retour
     Saisir l Article a la Main                               CHAAR/VAR
     Sélection gamme                                          42
     Sélection sous gamme                                     Forçat

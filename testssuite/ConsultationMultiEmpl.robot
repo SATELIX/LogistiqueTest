@@ -21,7 +21,6 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 *** Variables ***
 ${série}            //android.widget.ImageButton[@content-desc="Afficher le menu déroulant"]
-${MF80}
 ${LINGOR18}        //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Lingot Or 18 cts"]/android.view.ViewGroup
 ${A1T2N3P2}        //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A1 Trav T2 Niv N3 Pos P2"]/android.view.ViewGroup
 ${A1T1N1P1}        //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A1 Trav T1 Niv N1 Pos P1"]/android.view.ViewGroup
@@ -30,12 +29,12 @@ ${A1T1N1P2}        //androidx.cardview.widget.CardView[@content-desc="Emplacemen
 ${BAOR01}        //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Article suivi en lot avec conditionnement virtuel"]/android.view.ViewGroup
 
 
-#fonction ok, pb de scan pour un lot, pb de bdd
+
 *** Test Cases ***
 ConsultationMultiEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Consultation Multi Empl
-    Sélectionner le document nom exact                            Bijou SA
+    Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Afficher Les Articles Disponibles
     Sélectionner l article                                        BAAR01
     Sélectionner l emplacement                                    A1T2N1P2
@@ -111,6 +110,8 @@ ConsultationMultiEmpl
     Scanner le code barre correspondant à l'article               MF81
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               MF90
+    Sleep                                                         2s
+    Appuyer sur la flèche retour
     Sleep                                                         2s
     Appuyer sur la flèche retour
     Afficher Les Articles Disponibles

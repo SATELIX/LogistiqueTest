@@ -21,9 +21,8 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 
 *** Variables ***
-${depot}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
-${Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
-${client}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
+
+${client}    //android.widget.ImageButton[@content-desc="Afficher la liste"]
 ${BAGUES}    //androidx.cardview.widget.CardView[@content-desc="Client Bague's en or"]/android.view.ViewGroup
 
 
@@ -33,7 +32,7 @@ ${BAGUES}    //androidx.cardview.widget.CardView[@content-desc="Client Bague's e
 CommandeClient
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Commande Client
-    Choisir au menu déroulant                                     ${depot}          ${Bijou SA}
+    Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Choisir au menu déroulant                                     ${client}         ${BAGUES}
     Valider les informations
     Afficher Les Articles Disponibles

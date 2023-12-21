@@ -121,7 +121,7 @@ PickingMultiEmpl
     Une Erreur Doit Etre Indiquee Avec Le Message Correspondant
     Entrer Le Poids Et Appuyer Sur Cloturer                       15   
     Sleep                                                         2s        
-    Valider Le Mode Expedition Sur                                ${TAT}
+    Choisir LA Valeur Dans La Liste                               id=dropdown_list    TAT
     Mettre date du lendemain
     Appuyer sur Transferer
     Sélectionner le document                                      VALIDER PICKING MULTI EMPL 
