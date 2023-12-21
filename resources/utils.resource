@@ -224,6 +224,13 @@ LeDernierTestEstIlTermine
         ispresent
     END
 
+AnotherBack
+    ${isneeded}=    Run Keyword And Return Status    Wait Until Element Is Visible     //android.widget.ImageButton[@content-desc="Liste des articles"]    timeout=5
+    IF     ${isneeded}
+        Sleep    2s
+        Go Back
+        Sleep    2s
+    END
 
 EstASupprimer
     [Documentation]    Supprime les actions faites au dernier module
@@ -235,9 +242,13 @@ EstASupprimer
     END
 ispresent
     Click Text    OUI
-    Sleep    2s
+    Sleep    4s
     Go Back
+    Sleep    4s
+    AnotherBack
+    Sleep    4s
     EstASupprimer
+    Sleep    4s
     Scroll Vers Element    ${modulehaut}    haut
 
 

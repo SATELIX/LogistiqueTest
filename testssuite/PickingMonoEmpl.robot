@@ -16,8 +16,7 @@ Test Setup      Lire Les Variables Du Tests Et Demarrer L Application
 Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Application    ${appPackage}
 
 *** Variables ***
-&{BARCODES}    BAAR01=A1T2N1P2
-${Colissimo}    //androidx.cardview.widget.CardView[@content-desc="Mode d'expédition Colissimo"]/android.view.ViewGroup
+
 
 #Test OK pb bdd lot
 *** Test Cases ***

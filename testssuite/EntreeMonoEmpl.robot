@@ -19,7 +19,7 @@ ${CHAAR/VAR}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner
 EntreeMonoEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                        Entrée mono empl
-    Choisir LA Valeur Dans La Liste                                id=dropdown_list   Bijou SA
+    Choisir LA Valeur Dans La Liste                                id=text_input_end_icon   Bijou SA
     Afficher Les Articles Disponibles
     Sélectionner l article                                         BAAR01
     Hide Keyboard

@@ -22,7 +22,7 @@ ${MODIV01}          xpath = (//androidx.cardview.widget.CardView[@resource-id="f
 ${SERIE_2206001}       //android.view.ViewGroup[@content-desc="Sélectionner le numéro de série SERIE-2206001"] 
 ${menu}        //android.widget.ImageButton[@content-desc="Afficher le menu déroulant"]
 ${TAT}           //androidx.cardview.widget.CardView[@content-desc="Mode d'expédition TAT"]/android.view.ViewGroup 
-
+${A1T1N1P1}        //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A1 Trav T1 Niv N1 Pos P1"]/android.view.ViewGroup
 
 
 *** Test Cases ***
@@ -32,6 +32,7 @@ PickingMultiEmpl
     Sleep                                                         2s
     Sélectionner le document                                      PL00014
     Sélectionner l article                                        BAAR01
+    Scroll Vers Element                                           ${A1T1N1P1}    haut
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                2
     Sleep                                                         2s
@@ -76,6 +77,7 @@ PickingMultiEmpl
     Entrer une quantité et valider                                3
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               EM050
+    Scroll Vers Element                                           ${A1T1N1P1}    haut    
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                24
     Sleep                                                         2s
