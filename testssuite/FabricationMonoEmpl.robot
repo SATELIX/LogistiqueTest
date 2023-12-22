@@ -34,6 +34,7 @@ ${BAAR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 FabricationMonoEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Fabrication mono empl
+    Sleep                                                         5s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Choisir au menu déroulant                                     ${doc}          ${OF00004}
     Valider les informations

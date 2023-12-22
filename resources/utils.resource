@@ -180,8 +180,8 @@ Scanner Un Code
 Choisir LA Valeur Dans La Liste
     [Arguments]    ${identifiantListe}    ${valeurAchoisir}
     FOR    ${counter}    IN RANGE    1    10
-        Log    ${counter}
         ${valeurLue}    AppiumLibrary.Get Text    ${identifiantListe}
+        Log To Console  ${valeurLue}
         Return From Keyword If    "${valeurLue}" == "${valeurAchoisir}"    ${True}
         AppiumLibrary.Click Element    ${identifiantListe}
         AppiumLibrary.Press Keycode    ${KEYCODES}[down]    ${KEYCODES}[alt]   #KEYCODE_DPAD_DOWN    META_ALT_MASK
