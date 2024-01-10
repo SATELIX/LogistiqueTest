@@ -122,11 +122,7 @@ Choisir au menu déroulant
     [Arguments]    ${menu}    ${choix}
     Ouvrir menu déroulant    ${menu}    
     Wait Until Page Contains Element   ${choix}
-    Click Element    ${choix}  
-
-
-
-
+    Click Element    ${choix}
 
 Affiche Element
     [Arguments]    ${element}

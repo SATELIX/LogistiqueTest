@@ -34,7 +34,8 @@ ConsultationMonoEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                  Consultation Mono Empl
     Sleep                                                    3s
-    Sélectionner le document nom exact                       Bijou SA
+    Choisir LA Valeur Dans La Liste                          id=dropdown_list    Bijou SA
+    Valider les informations
     Sleep                                                    1s
     Afficher Les Articles Disponibles                                                   
     Sélectionner l article                                   BAAR01
@@ -46,7 +47,8 @@ ConsultationMonoEmpl
     Sleep                                                    4s
     Sur le terminal, sélectionner le module                  Consultation Mono Empl
     Sleep                                                    2s
-    Sélectionner le document nom exact                       Bijou SA
+    Choisir LA Valeur Dans La Liste                          id=dropdown_list    Bijou SA
+    Valider les informations
     Sleep                                                    5s
     Saisir l Article a la Main                               BA
     Cliquer sur Non

@@ -9,14 +9,14 @@ Documentation
 
 Library    Dialogs
 Library    AppiumLibrary
-# Resource   ${CURDIR}/../resources/page_accueil.resource
-Resource   ${CURDIR}/../resources/module_preparation.resource
-Resource   ${CURDIR}/../resources/module_preparation_listearticles.resource
+
 
 Suite Setup    Set Log Level    TRACE
 Test Setup     Lire Les Variables Du Tests Et Demarrer L Application
 
 Suite Teardown    AppiumLibrary.Close Application
+Resource    ../resources/page_accueil.resource
+Resource    ../resources/module_preparation.resource
 
 *** Variables ***
 

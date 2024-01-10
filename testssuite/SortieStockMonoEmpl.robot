@@ -18,6 +18,7 @@ ${CHAOR42}               //androidx.cardview.widget.CardView[@content-desc="Sél
 SortieStockMonoEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                        Sortie Stock mono empl
+    Sleep                                                          5s
     Choisir LA Valeur Dans La Liste                                id=dropdown_list    Bijou SA
     Sélectionner référence doc                                     test
     Valider les informations
@@ -30,10 +31,10 @@ SortieStockMonoEmpl
     Sélectionner le Lot avec DLC et FAB     
     Entrer une quantité et valider                                 1      
     Sleep                                                          2s
-    # Scanner code barre                                             LINGOR18\\;LOT-AAA    #le lot n'existant pas, une erreur de validation doit s'afficher
-    # Sleep                                                          2s
-    # Appuyer sur ok
+    Scanner code barre                                             LINGOR18;LOT-AAA    #le lot n'existant pas, une erreur de validation doit s'afficher
+    Appuyer sur ok
     Sleep                                                          2s
+    Go Back
     Saisir l Article a la Main                                     BAOR01
     Sélection gamme                                                Rubis
     Entrer une quantité et valider                                 1

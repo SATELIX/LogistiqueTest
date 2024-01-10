@@ -27,6 +27,8 @@ ${A1T1N1P1}        //androidx.cardview.widget.CardView[@content-desc="Emplacemen
 ${A2T1N2P2}        //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A2 Trav T1 Niv N2 Pos P2"]/android.view.ViewGroup
 ${A1T1N1P2}        //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A1 Trav T1 Niv N1 Pos P2"]/android.view.ViewGroup
 ${BAOR01}        //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Article suivi en lot avec conditionnement virtuel"]/android.view.ViewGroup
+${MF80}           //android.view.ViewGroup[@content-desc="Sélectionner le numéro de série MF82"]
+
 
 
 
@@ -35,6 +37,7 @@ ConsultationMultiEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Consultation Multi Empl
     Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
+    Valider les informations
     Afficher Les Articles Disponibles
     Sélectionner l article                                        BAAR01
     Sélectionner l emplacement                                    A1T2N1P2
@@ -49,7 +52,7 @@ ConsultationMultiEmpl
     Valider La Quantité
     Sleep                                                         2s
     Appuyer sur la flèche retour
-    Afficher Les Lots Disponibles
+    Afficher Les Articles Disponibles
     Sleep                                                         2s
     Scroll Vers Element                                           ${LINGOR18}    bas
     Sélectionner l article                                        LINGOR18
@@ -63,13 +66,14 @@ ConsultationMultiEmpl
     Sleep                                                         2s
     Appuyer sur la flèche retour
     Sleep                                                         1s
-    Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-10
+    Scanner le code barre correspondant au lot                    LINGOR18;LOT-10
+    Sleep                                                         2s        
+    Scanner Un Code                                               A1T1N1P1
     Sleep                                                         2s
-    Scroll Vers Element                                           ${A1T1N1P1}    haut
-    Sleep                                                         2s          
-    Scanner le code barre correspondant à l'article               A1T1N1P1
-    Sleep                                                         2s
+    Click Element                                                 fr.satelix.logistique:id/text_input_end_icon     #supprimer le lot
     Appuyer sur la flèche retour
+    Scanner le code barre correspondant à l'article               21731003    #BAOR01 avec gamme émeraude
+    Sélectionner l emplacement                                    A1T1N1P1                                                                    
     Sleep                                                         2s 
     Modifier un stock                                             180
     Sleep                                                         2s
@@ -82,25 +86,28 @@ ConsultationMultiEmpl
     Sleep                                                         2s
     Appuyer sur la flèche retour
     Sleep                                                         2s
+    Scanner le code barre correspondant à l'article               EM040
+    Sélectionner l emplacement                                    A1T3N1P2
+    Appuyer sur la flèche retour
+    Sleep                                                         2s
     Scanner le code barre correspondant à l'article               EM040/12
     Appuyer sur la flèche retour
+    Saisir l Article a la Main                                    EM050
+    Sélectionner l emplacement                                    A1T3N1P2
     Sleep                                                         2s
+    Appuyer sur la flèche retour
     Scanner le code barre correspondant à l'article               EM050
     Sélectionner l emplacement                                    A1T3N1P3
+    Scanner le code barre correspondant à l'article               EM050/24
+    Sélectionner l emplacement                                    A1T3N1P3
+    Sélectionner le conditionnement vers gauche                   ECRIN DE 4
+    Entrer une quantité et valider                                50
     Sleep                                                         2s
+    Saisir l Article a la Main                                    MODIV01
+    Sélectionner l emplacement                                    A2T1N2P2        
+    Choisir au menu déroulant                                     ${série}    ${MF80}
+    Valider series
     Appuyer sur la flèche retour
-    Sleep                                                         2s
-    Appuyer sur la flèche retour
-
-    # Scanner le code barre correspondant à l'article               EM050/24
-    # Sélectionner l emplacement                                    A1T3N1P3
-    # Sélectionner le conditionnement vers gauche                   ECRIN DE 4                #Pb bdd num séries
-    # Entrer une quantité et valider                                50
-    # Sleep                                                         2s
-    # Saisir l Article a la Main                                    MODIV01
-    # Sélectionner l emplacement                                    A2T1N2P2
-    # Choisir au menu déroulant                                     ${série}    ${MF80}
-    # Valider series
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               MODIV01
     Sleep                                                         2s
@@ -134,15 +141,15 @@ ConsultationMultiEmpl
     Appuyer sur la flèche retour
     Sleep                                                         2s
     Appuyer sur la flèche retour
-    # Afficher Les Articles Disponibles
-    # Sleep    2s
-    # Sélectionner l article                                        CHAAR/VAR
-    # Scroll Vers Element                                           ${A1T2N3P2}    haut        #pb bdd gammes
-    # Sélectionner l emplacement                                    A1T2N3P2
-    # Sélection gamme                                               42
-    # Sélection sous gamme                                          Forçat
-    # Appuyer sur la flèche retour
-    # Appuyer sur la flèche retour
+    Afficher Les Articles Disponibles
+    Sleep    2s
+    Sélectionner l article                                        CHAAR/VAR
+    Scroll Vers Element                                           ${A1T2N3P2}    haut        #pb bdd gammes
+    Sélectionner l emplacement                                    A1T2N3P2
+    Sélection gamme                                               42
+    Sélection sous gamme                                          Forçat
+    Appuyer sur la flèche retour
+    Appuyer sur la flèche retour
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               38141025            #scan de l'article avec les gammes associées
     Scroll Vers Element                                           ${A1T2N3P2}   haut

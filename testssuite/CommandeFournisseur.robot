@@ -30,6 +30,7 @@ ${BILLO}    //androidx.cardview.widget.CardView[@content-desc="Fournisseur Billo
 CommandeFournisseur
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Commande Fournisseur
+    Sleep                                                         2s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Choisir au menu déroulant                                     ${fournisseur}    ${BILLO}
     Valider les informations
