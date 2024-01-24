@@ -254,6 +254,10 @@ Cliquer sur Oui
     AppiumLibrary.Wait Until Page Contains    OUI
     AppiumLibrary.Click Text    OUI
 
+Cliquer sur OK
+    Wait Until Page Contains Element    //android.widget.Button[@resource-id="android:id/button1"]
+    Click Text    //android.widget.Button[@resource-id="android:id/button1"]
+
 Cliquer sur Non
     AppiumLibrary.Wait Until Page Contains    NON
     AppiumLibrary.Click Text    NON

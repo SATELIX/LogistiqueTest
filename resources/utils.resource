@@ -251,5 +251,11 @@ ispresent
     Sleep    4s
     Scroll Vers Element    ${modulehaut}    haut
 
+Choisir L Emplacement
+    [Documentation]    Choisit l'emplacement (element) dans la liste DEJA ouverte
+    [Arguments]    ${emplacement}
+    Wait Until Page Contains Element    ${emplacement}
+    Click Element    ${emplacement}   
+
 
 
