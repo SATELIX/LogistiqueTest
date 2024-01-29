@@ -40,11 +40,13 @@ PickingMultiEmpl
     Sélectionner l emplacement                                    A1T2N1P2
     Sleep                                                         2s
     Entrer une quantité supérieure au stock puis valider          200
+    Sleep                                                         2s
+    Effacer la quantité                                           200
     Entrer une quantité et valider                                3
-    # Scanner le code barre correspondant à l'article               LINGOR18
-    # Sélectionner l emplacement                                    A1T3N1P3            Pb bdd lot
-    # Aller dans la liste et sélectionner le numéro de lot          LOT-10
-    # Entrer une quantité et valider                                2
+    Scanner le code barre correspondant à l'article               LINGOR18
+    Sélectionner l emplacement                                    A1T3N1P3
+    Aller dans la liste et sélectionner le numéro de lot          LOT-10
+    Entrer une quantité et valider                                2
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               LINGOR18\\;LOT-10
     Sélectionner l emplacement                                    A1T3N1P3
@@ -81,18 +83,18 @@ PickingMultiEmpl
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                24
     Sleep                                                         2s
-    # Scanner le code barre correspondant à l'article               MODIV01
-    # Sélectionner l emplacement                                    A2T1N2P2
-    # Saisir un Numero De Serie et valider                          SERIE5
-    # Scanner le code barre correspondant au numéro de série        SERIE4
-    # Scanner le code barre correspondant au numéro de série        MF88
-    # Sleep                                                         2s            #bug de l'app
-    # Effacer le numéro de série, ne rien mettre et valider
-    # Sleep                                                         4s
-    # Appuyer sur ok et back
-    # Sleep                                                         2s
-    # Vider barre de recherche                                                                   
-    # Afficher Les Articles Disponibles
+    Scanner le code barre correspondant à l'article               MODIV01
+    Sélectionner l emplacement                                    A2T1N2P2
+    Saisir un Numero De Serie et valider                          SERIE5
+    Scanner le code barre correspondant au numéro de série        SERIE4
+    Scanner le code barre correspondant au numéro de série        MF88
+    Sleep                                                         2s            
+    Effacer le numéro de série, ne rien mettre et valider
+    Sleep                                                         4s
+    Appuyer sur ok et back
+    Sleep                                                         2s
+    Vider barre de recherche                                                                   
+    Afficher Les Articles Disponibles
     Scroll Vers Element                                           ${MODIV01}   bas
     Sleep                                                         2s    
     Sélectionner le document par element                          ${MODIV01}

@@ -16,14 +16,14 @@ Test Setup      Lire Les Variables Du Tests Et Demarrer L Application
 Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Application    ${appPackage}
 
 *** Variables ***
-
+${LOT-10}    //android.widget.TextView[@resource-id="fr.satelix.logistique:id/tv_intitule_lot_serie" and @text="LOT-10"]
 
 #Test OK pb bdd lot
 *** Test Cases ***
 PickingMonoEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module               Picking Mono Empl
-    Sélectionner le document                              ${document}
+    Sélectionner le document                              PL00013
     Sélectionner l article                                BAAR01
     Entrer une quantité et valider                        2
     Sleep                                                 2s
@@ -33,11 +33,11 @@ PickingMonoEmpl
     Scanner le code barre correspondant à l'article       BAAR01
     Entrer une quantité et valider                        8
     Appuyer sur ok et back
-    # Scanner le code barre correspondant à l'article       LINGOR18
-    # Aller dans la liste et sélectionner le numéro de lot  LOT-10            #Pb lot bdd
-    # Entrer une quantité et valider                        2
+    Scanner le code barre correspondant à l'article       LINGOR18
+    Aller dans la liste et sélectionner le numéro de lot    LOT-10
+    Entrer une quantité et valider                        2
     Sleep                                                 2s
-    Scanner le code barre correspondant à l'article       LINGOR18\\;AAA       # LINGOR18 avec un lot associé
+    Scanner le code barre correspondant à l'article       LINGOR18\\;LOT-BDF9412083       # LINGOR18 avec un lot associé
     Entrer une quantité et valider                        3
     Appuyer Sur La Pastille Colis Avec Le Petit Carton    # et un "1"
     Appuyer sur "+"
@@ -47,9 +47,9 @@ PickingMonoEmpl
     Appuyer sur la flèche retour    
     Sleep                                                 2s
     Scanner le code barre correspondant à l'article       21731003            #BAOR01 avec la gamme Emeraude
-    Entrer une quantité et valider                        3
+    Entrer une quantité et valider                        18
     Sleep                                                 2s
-    Sélectionner l article                                BAOR01              # Rubis
+    Sélectionner l article                                Pierres : Rubis              # BAOR01 avec la gamme Rubis
     Entrer une quantité et valider                        1
     Sleep                                                 2s
     Scanner le code barre correspondant à l'article       EM040
