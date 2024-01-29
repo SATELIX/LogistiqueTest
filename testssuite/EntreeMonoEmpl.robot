@@ -35,11 +35,12 @@ EntreeMonoEmpl
     Entrer une quantité et valider                                 2
     Vider barre de recherche
     Afficher Les Articles Disponibles 
-    # Scroll Vers Element                                            ${LINGOR18}    bas
-    # Sélection article element                                      ${LINGOR18}
-    # Affiche Element                                                ${ListeLot}                #pb bdd dans certains modules
-    # Scanner code barre                                             LINGOR18\;LOT-TEST2
-    # Entrer une quantité et valider                                 2
+    Scroll Vers Element                                            ${LINGOR18}    bas    # start était commenté
+    Sélection article element                                      ${LINGOR18}
+    Affiche Element                                                ${ListeLot}                #pb bdd dans certains modules
+    Scanner code barre                                             LINGOR18\;LOT-TEST2
+    Entrer une quantité et valider                                 2                    # end était commenté
+    Afficher Les Articles Disponibles
     Scroll Vers Element                                            ${BAOR01}  haut
     Sélection article element                                      ${BAOR01}
     Sélection gamme                                                Emeraude

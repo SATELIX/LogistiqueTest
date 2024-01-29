@@ -257,5 +257,9 @@ Choisir L Emplacement
     Wait Until Page Contains Element    ${emplacement}
     Click Element    ${emplacement}   
 
+Valider le Module
+    Wait Until Page Contains Element    fr.satelix.logistique:id/tv_quitter_module_titre
+    Click Element                       fr.satelix.logistique:id/bt_quitter_module_valider_transfert
+
 
 

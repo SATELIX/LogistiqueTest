@@ -22,7 +22,7 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 ${depot}     xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[1]
 ${Bijou SA}   //androidx.cardview.widget.CardView[@content-desc="Dépôt Bijou SA"]/android.view.ViewGroup
-${doc}     xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
+${doc}     //android.widget.ImageButton[@content-desc="Afficher la liste"]
 ${OF00004}    //androidx.cardview.widget.CardView[@content-desc="Document OF00004 du tiers 1"]/android.view.ViewGroup
 ${LINGOR18}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Lingot Or 18 cts"]/android.view.ViewGroup
 ${CHAAR/VAR34classique}    xpath=(//androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Chaîne Argent maille et longueur variables"])[1]/android.view.ViewGroup
@@ -66,14 +66,12 @@ FabricationMonoEmpl
     Sélectionner l article                                        34
     Entrer une quantité et valider                                2
     Sleep                                                         2s
-    # Afficher Les Articles Disponibles
-    # Scroll Vers Element                                           ${LINGOR18}   bas
-    # Sélectionner l article                                        LINGOR18                #pb lot bdd
-    # Choisir Le Lot                                                lot0001
-    # Entrer une quantité et valider                                2
+    Afficher Les Articles Disponibles
+    Scroll Vers Element                                           ${LINGOR18}   bas
+    Sélectionner l article                                        LINGOR18                
+    Saisir le Numéro de lot                                       lot0001
+    Entrer une quantité et valider                                2
     Finaliser
     Appuyer sur Terminer La Saisie
-    Sleep                                                         5s
-
-
-
+    Valider le Module
+    Sleep                                                         2s    
