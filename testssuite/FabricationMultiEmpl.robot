@@ -43,20 +43,20 @@ FabricationMultiEmpl
     Scanner le code barre correspondant à l'article               21731003        #Scan article BAAR01/EM
     Entrer une quantité et valider                                2
     Sleep                                                         2s
-    Scanner le code barre correspondant à l'article               TESTBLBKAD
+    Scanner le code barre correspondant à l'article               TESTBLBKAD    #Scan Article BAAR01/Rubis
     Entrer une quantité et valider                                1
     Sleep                                                         2s
-    Scanner le code barre correspondant à l'article               38141025
+    Scanner le code barre correspondant à l'article               38141025    #CHAAR/VAR longueur 42 cm Forçat
     Entrer une quantité et valider                                2
     Afficher Les Articles Disponibles
     Scroll Vers Element                                           ${CHAAR/VAR34classique}    bas
     Sélectionner l article par element                            ${CHAAR/VAR34classique}
     Entrer une quantité et valider                                2
-    # Afficher Les Articles Disponibles
-    # Scroll Vers Element                                           ${LINGOR18}    bas
-    # Sélectionner l article                                        LINGOR18                  #Pb lot bdd
-    # Choisir Le Lot                                                0001
-    # Entrer une quantité et valider                                2
+    Afficher Les Articles Disponibles
+    Scroll Vers Element                                           ${LINGOR18}    bas
+    Sélectionner l article                                        LINGOR18
+    Saisir le Numéro de lot                                       0001
+    Entrer une quantité et valider                                2
     Finaliser
     Appuyer sur Terminer La Saisie
     Valider

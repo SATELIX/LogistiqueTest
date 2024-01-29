@@ -61,7 +61,7 @@ FabricationMonoEmpl
     Scanner le code barre correspondant à l'article               38141025            #CHAAR/VAR longueur 42 cm Forçat
     Entrer une quantité et valider                                2
     Afficher Les Articles Disponibles
-    Scroll Vers Element                                           ${BAAR01}    haut                    #car sinon on ne scroll pas jusqu'au bon élément
+    Scroll Vers Element                                           ${BAAR01}    haut                   
     Scroll Vers Element                                           ${CHAAR/VAR34classique}    bas
     Sélectionner l article                                        34
     Entrer une quantité et valider                                2
