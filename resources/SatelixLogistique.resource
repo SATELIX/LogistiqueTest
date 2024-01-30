@@ -207,3 +207,11 @@ Valider
 Valider series
     Wait Until Element Is Visible    fr.satelix.logistique:id/fab_valider_lot_serie
     Click Element    fr.satelix.logistique:id/fab_valider_lot_serie
+
+Sélectionner Une DLC
+    [Arguments]    ${date}
+    Wait Until Page Contains    Sélectionner une date    
+    Click Text    DLC
+    #Wait Until Page Contains Element    Sélection actuelle : Date sélectionnée
+    Click Text    ${date}
+    Appuyer sur ok

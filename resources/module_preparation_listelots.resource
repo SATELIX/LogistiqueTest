@@ -24,7 +24,7 @@ ${DATE_LOT_EN_STOCK}    id=item_dates
 *** Keywords ***
 Choisir Le Lot    
     [Arguments]    ${lot}
-    Wait Until Page Contains    ${lot}
+    Wait Until Page Contains    ${lot}     20s
     AppiumLibrary.Click Text    ${lot}
 
 Choisir La Préparation    

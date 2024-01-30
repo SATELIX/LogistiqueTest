@@ -82,7 +82,7 @@ Choisir Le Document A Preparer Dans La Liste Des Documents Element
 
 
 Afficher Les Articles Disponibles
-    Wait Until Page Contains Element    ${BUTON_LISTE_DES_ARTICLES}    10
+    Wait Until Page Contains Element    ${BUTON_LISTE_DES_ARTICLES}    20
     Click Element    ${BUTON_LISTE_DES_ARTICLES}
     Sleep    2s
 
@@ -288,3 +288,7 @@ Modifier code barre
     Press ENTER
     Hide Keyboard
     Click Element    //android.widget.ImageButton[@content-desc="Valider les modifications"]
+
+Ajouter la Saisie
+    Wait Until Element Is Visible    fr.satelix.logistique:id/fab_ajouter
+    Click Element    fr.satelix.logistique:id/fab_ajouter 

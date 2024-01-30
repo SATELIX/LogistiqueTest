@@ -41,7 +41,7 @@ PickingMultiEmpl
     Sleep                                                         2s
     Entrer une quantité supérieure au stock puis valider          200
     Sleep                                                         2s
-    Effacer la quantité                                           200
+    #Effacer la quantité                                           200
     Entrer une quantité et valider                                3
     Scanner le code barre correspondant à l'article               LINGOR18
     Sélectionner l emplacement                                    A1T3N1P3
@@ -68,7 +68,7 @@ PickingMultiEmpl
     Entrer une quantité et valider                                8
     Sleep                                                         2s
     Afficher Les Articles Disponibles
-    Sélectionner l article                                        BAOR01   
+    Sélectionner à la main Un Article Avec 2 Criteres             BAOR01    Rubis   #modif essai sélection avec 2 critères
     Sélectionner l emplacement                                    A1T1N1P2
     Sleep                                                         2s
     Entrer une quantité et valider                                1
@@ -89,13 +89,16 @@ PickingMultiEmpl
     Scanner le code barre correspondant au numéro de série        SERIE4
     Scanner le code barre correspondant au numéro de série        MF88
     Sleep                                                         2s            
+    Appuyer sur ok
+    Sleep                                                         1s
     Effacer le numéro de série, ne rien mettre et valider
     Sleep                                                         4s
-    Appuyer sur ok et back
-    Sleep                                                         2s
-    Vider barre de recherche                                                                   
+    #Appuyer sur ok et back                                                       #dernier crash
+    #Sleep                                                         2s    
+    Go Back  
+    Vider barre de recherche                                                                 
     Afficher Les Articles Disponibles
-    Scroll Vers Element                                           ${MODIV01}   bas
+    Scroll Vers Element                                           ${MODIV01}   bas    # arrivé à ce point il n'y a plus d'article modiv01 à préparer dnas les test auto
     Sleep                                                         2s    
     Sélectionner le document par element                          ${MODIV01}
     Sleep                                                         2s

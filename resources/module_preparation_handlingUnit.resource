@@ -25,7 +25,7 @@ Rester appuyer sur l unite logistique
 
 Sélectionner Un type d Unite Logistique Et valider
     [Arguments]    ${typeUL}
-    AppiumLibrary.Wait Until Page Contains    ${typeUL}
+    AppiumLibrary.Wait Until Page Contains    ${typeUL}    10
     AppiumLibrary.Click Text                  ${typeUL}
     AppiumLibrary.Click Element               id=android:id/button1
     ${UL_affichee}    Convert To Upper Case    ${typeUL}

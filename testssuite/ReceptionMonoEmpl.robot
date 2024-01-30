@@ -36,6 +36,7 @@ ${BAAR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 ReceptionMonoEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Réception mono empl
+    Sleep                                                         2s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Choisir au menu déroulant avec scroll                         ${fournisseur}    ${Joaill}
     Choisir au menu déroulant                                     ${commande}       ${FBC00011}
@@ -67,18 +68,17 @@ ReceptionMonoEmpl
     Afficher Les Articles Disponibles
     Sélectionner l article                                        Longueur : 42 cm
     Entrer une quantité et valider                                2
-    # Afficher Les Articles Disponibles
-    # Sélectionner l article                                        LINGOR18                                           
-    # Aller dans la liste et sélectionner le numéro de lot          L159
-    # Valider les informations
+    Afficher Les Articles Disponibles
+    Sélectionner l article                                        LINGOR18                                           
+    Saisir le Numéro de lot                                       L159
+    Go Back
     Sleep                                                         2s
-    Appuyer sur la flèche retour et "Mettre En Attente"
-    Sur le terminal, sélectionner le module                       Réception mono empl
-    Cliquer sur Oui
-    Cliquer sur le bouton de finalisation
+    Entrer une quantité et valider                                2
+    Sélectionner Une DLC                                          15
+    Ajouter la Saisie          #le scénario de test se déroule normalement différemment, mais ce test n'est pas réalisable depuis le mobile car il faut mettre en pause et controller dans sage
+    Finaliser
     Appuyer sur Terminer La Saisie
-    Valider La Préparation
-    Sleep                                                         5s
+    Sleep                                                         2s
 
 
 
