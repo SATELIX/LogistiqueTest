@@ -25,12 +25,14 @@ ${fournisseur}    //android.widget.ImageButton[@content-desc="Afficher la liste"
 ${DUBOI}    //androidx.cardview.widget.CardView[@content-desc="Fournisseur Duboi expert comptable"]/android.view.ViewGroup
 ${série}    //android.widget.ImageButton[@content-desc="Afficher le menu déroulant"]
 ${MF80}     //android.view.ViewGroup[@content-desc="Sélectionner le numéro de série MF80"]
-
+${menu}    fr.satelix.logistique:id/text_input_end_icon
+${LOT-10}    //android.view.ViewGroup[@content-desc="Sélectionner le numéro de lot LOT-10"]
 
 *** Test Cases ***
 RetourFournisseurMultiEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Retour fournisseur Multi Empl
+    Sleep                                                         2s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Choisir au menu déroulant                                     ${fournisseur}    ${DUBOI}
     Valider les informations
@@ -45,17 +47,16 @@ RetourFournisseurMultiEmpl
     Sleep                                                         2s
     Entrer une quantité et valider                                3
     Sleep                                                         2s
-    # Scanner le code barre correspondant à l'article               LINGOR18
-    # Sleep                                                         4s
-    # Sélectionner l emplacement                                    A1T3N1P3
-    # Sleep                                                         4s
-    # Choisir Le Lot                                                LOT-10
-    # Entrer une quantité et valider                                1
-    # Sleep                                                         2s
-    # Scanner le code barre correspondant à l'article               LINGOR18\\;LOT-BDF9411123
-    # Sélectionner l emplacement                                    A1T3N1P3
-    # Entrer une quantité et valider                                2
-    # Sleep                                                         2s
+    Scanner le code barre correspondant à l'article               LINGOR18
+    Sleep                                                         4s
+    Sélectionner l emplacement                                    A1T3N1P3                                                       
+    Choisir au menu déroulant avec scroll                         ${menu}     ${LOT-10}
+    Entrer une quantité et valider                                1
+    Sleep                                                         2s
+    Scanner le code barre correspondant à l'article               LINGOR18\\;LOT-BDF9411123
+    Sélectionner l emplacement                                    A1T3N1P3
+    Entrer une quantité et valider                                2
+    Sleep                                                         2s
     Saisir l Article a la Main                                    EM040
     Sélectionner l emplacement                                    A1T3N1P2
     Sleep                                                         3s
