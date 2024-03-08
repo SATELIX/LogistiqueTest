@@ -44,7 +44,7 @@ ReceptionMultiEmpl
     Sleep                                                         2s
     Appuyer sur ok
     Sleep                                                         2s
-    Scanner le code barre correspondant à l'article               CB-INCONNU        #association d'un code barre
+    Scanner le code barre correspondant à l'article               CB-INCONNU        #association d'un code barre déjà faite
     Sleep                                                         2s
     Cliquer sur Oui
     Choisir au menu déroulant avec scroll                         ${liste_article}    ${STYPLOR}
@@ -73,16 +73,18 @@ ReceptionMultiEmpl
     Scanner le code barre correspondant à l'article               38141025            #article CHAAR/VAR de longueur 34 Forçat
     Entrer une quantité et valider                                2
     Afficher Les Articles Disponibles
-    # Sélectionner l article                                        LINGOR18
-    # Saisir le Numéro de lot                                       lot_inexistant
-    # Sleep                                                         2s    
-    # Appuyer sur ok                                                                #pb bdd lot
-    # Effacer le lot
-    # Saisir le Numéro de lot                                       L1234        
-    # Entrer une quantité et valider                                1
-    # Scanner le code barre correspondant au lot                    (92)59531012(10)LOT-TEST2    
-    # Entrer une quantité et valider                                5
-    # Afficher Les Articles Disponibles
+    Sélectionner l article                                        LINGOR18
+    saisir le Numéro de lot                                       lot inexistant
+    Sleep                                                         2s    
+    Appuyer sur ok                                                                #Text 'OK' did not appear in 5 seconds
+    Effacer le lot
+    Saisir le Numéro de lot                                       L1234        
+    Entrer une quantité et valider                                1
+    Sleep                                                         2s
+    Scanner le code barre correspondant au lot                    925953101210LOT-TEST2    #test codebarre sans les parenthèses, les balises sont reconnues ?
+    Sleep                                                         2s    
+    Entrer une quantité et valider                                5
+    Afficher Les Articles Disponibles
     Scroll Vers Element                                           ${ARTLOT}     haut        
     Sélectionner l article                                        ARTLOT
     Saisir le Numéro de lot                                       COMPL123        

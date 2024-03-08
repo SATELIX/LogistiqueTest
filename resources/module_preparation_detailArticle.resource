@@ -65,7 +65,7 @@ Afficher Les Preparations Disponibles
 
 Entrer une quantité et valider
     [Arguments]    ${quantite}
-    AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}  5s
+    AppiumLibrary.Wait Until Element Is Visible    ${CHAMP_QUANTITE}  20s
     Click Element    ${CHAMP_QUANTITE}
     Sleep                                                         2s
     Taper Un Nombre Au Clavier   ${quantite}
@@ -88,7 +88,7 @@ Effacer la quantité
 
 Effacer le lot
     Wait Until Element Is Visible    //android.widget.EditText[@resource-id="fr.satelix.logistique:id/dropdown_list"]
-    Click Text    //android.widget.EditText[@resource-id="fr.satelix.logistique:id/dropdown_list"]
+    Click Element    //android.widget.EditText[@resource-id="fr.satelix.logistique:id/dropdown_list"]
     Clear Text    //android.widget.EditText[@resource-id="fr.satelix.logistique:id/dropdown_list"]
 
 

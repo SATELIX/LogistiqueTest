@@ -251,7 +251,7 @@ Cliquer Sur Le Bouton De Transfert
     AppiumLibrary.Click Element    ${BOUTON_TRANSFERT}
 
 Cliquer sur Oui
-    AppiumLibrary.Wait Until Page Contains    OUI
+    AppiumLibrary.Wait Until Page Contains    OUI     20s
     AppiumLibrary.Click Text    OUI
 
 Cliquer sur OK

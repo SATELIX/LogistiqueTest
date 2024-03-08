@@ -23,7 +23,7 @@ ${BOUTON_VALIDATION_AJOUT}      button1
 
 ${BOUTON_AUTHENT}    id=bt_authentification
 
-${LOGIN}                      QUENTIN 
+${LOGIN}                      DORIAN 
 ${PASSWORD}
 
 ${listederoulante_logins}       //android.widget.ImageButton[@content-desc="Show drop-down menu"]
