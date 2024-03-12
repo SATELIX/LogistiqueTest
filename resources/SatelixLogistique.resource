@@ -52,13 +52,14 @@ Demarrer L Application Et Se Connecter Au Dossier
     Run Keyword If    "${fenetre}" == "dossier"
     ...    Choisir Le Dossier Et Se Connecter    ${Dossier}
     ...  ELSE IF    "${fenetre}" == "login"
-    ...    Se Connecter Au Dossier
+    ...    Wait Until Keyword Succeeds    3 x    2 s    Se Connecter Au Dossier
     ...  ELSE IF    "${fenetre}" == "authent"
-    ...    Aller Sur LA page De Login Et Se Connecter
+    ...    Aller Sur La page De Login Et Se Connecter
     ...  ELSE IF    "${fenetre}" == "accueil"
     ...    Log    La page d'acueil est ouverte avec la liste des modules.
 
 Verifier La Fenete D Ouverture
+    
     ${status}    Run Keyword And Return Status    AppiumLibrary.Page Should Contain Element    ${BOUTON_AJOUTER_DOSSIER}
     Return From Keyword If    ${status}    dossier
     ${status}    Run Keyword And Return Status    AppiumLibrary.Page Should Contain Element    ${BUTTON_LOGIN}
@@ -100,7 +101,7 @@ Valider L Ajout D Un Dossier
 Choisir Le Dossier Et Se Connecter
     [Arguments]    ${Dossier}
     Choisir Le Dossier    ${Dossier}
-    Se Connecter Au Dossier
+    Wait Until Keyword Succeeds    3 x    2 s    Se Connecter Au Dossier
 
 Choisir Le Dossier    
     [Documentation]    Au démarage de l'application, l'utilisateur doit choisir le dossier 
@@ -113,19 +114,20 @@ Choisir Le Dossier
     IF    ${dossier_trouve} == ${False}    Ajouter Un Dossier
     Click Text    ${Dossier}
 
-Aller Sur LA page De Login Et Se Connecter
-    Click Element    ${BOUTON_AUTHENT}
-    Se Connecter Au Dossier
+Aller Sur La page De Login Et Se Connecter
+    Wait Until Keyword Succeeds    3 x    2 s    Aller Sur LA page De Login
+    Wait Until Keyword Succeeds    3 x    2 s    Se Connecter Au Dossier
 
-Aller Sur LA page De Login Et Se Connecter
+Aller Sur LA page De Login
     AppiumLibrary.Click Element    ${BOUTON_AUTHENT}
-    Se Connecter Au Dossier
+    Wait Until Page Does Not Contain Element    ${BOUTON_AUTHENT}    5s
 
 Se Connecter Au Dossier
     Wait Until Page Contains Element    ${INPUT_LOGIN}    6s
     ...    La page de Login ne s'est pas affichée dans les 6 secondes.
     Input Text       ${INPUT_LOGIN}    ${LOGIN}
     Click Element    ${BUTTON_LOGIN}    
+    Wait Until Page Does Not Contain Element    ${BUTTON_LOGIN}    5s
 
 
 # Revenir Au Choix Des Dossiers

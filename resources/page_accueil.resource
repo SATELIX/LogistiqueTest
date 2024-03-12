@@ -28,7 +28,7 @@ Choisir Le Module Dans La Liste Des Modules
     ...    3s
     ...    La liste des modules ne contient pas le module demandé ${module_name}  
     Run Keyword If    ${module_present}
-    ...    AppiumLibrary.Click Text    ${module_name}
+    ...    AppiumLibrary.Click Text    ${module_name}    True
     ...  ELSE
     ...    Wait Until Keyword Succeeds    4x    0.5s    Faire Defiler Les Modules Pour Trouver Le Bon     ${module_name}
 
