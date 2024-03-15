@@ -190,6 +190,22 @@ Choisir LA Valeur Dans La Liste
     END
     Fail    La valeur cherchée n'a pas été trouvée dans la liste
 
+Choisir LA Valeur Dans Une Des Listes
+    [Documentation]    Choisit la valeur dans la liste lorsque la liste est présente plusieurs fois sur l'écran
+    [Arguments]    ${identifiantListe}    ${valeurAchoisir}    ${index}=1
+    ${elements}    Get WebElements    ${identifiantListe}
+    ${element}    Set Variable    ${elements[${index}]}
+    FOR    ${counter}    IN RANGE    1    10
+        ${valeurLue}    Get Text    ${element}
+        Log To Console    ${valeurLue}
+        Run Keyword If    "${valeurLue}" == "${valeurAchoisir}"    Return From Keyword    ${True}
+        Click Element    ${element}
+        Press Keycode    ${KEYCODES}[down]    ${KEYCODES}[alt]    #KEYCODE_DPAD_DOWN    META_ALT_MASK
+        Repeat Keyword    ${counter}    Press Keycode    ${KEYCODES}[down]    #KEYCODE_DPAD_DOWN
+        Press ENTER
+    END
+    Fail    La valeur cherchée n'a pas été trouvée dans la liste
+
 
 Appuyer sur la flèche retour
     AppiumLibrary.Go Back

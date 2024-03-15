@@ -274,6 +274,19 @@ Scroll Vers Element
         END
     END
 
+ Scroll Vers Texte
+    [Arguments]    ${texte}    ${direction}
+    Log To Console    Scroll vers le texte ${texte} dans la direction ${direction}
+    FOR    ${counter}    IN RANGE    0    100
+        ${status}=    Run Keyword And Return Status    Wait Until Page Contains    ${texte}    timeout=1s
+        IF    ${status}    BREAK
+        IF    "${direction}" == "bas"
+            Scroll bas    fr.satelix.logistique:id/rv_liste
+        ELSE
+            Scroll haut    fr.satelix.logistique:id/rv_liste
+        END
+    END   
+
 Scroll bas
     [Arguments]    ${locator}
     Wait Until Page Contains Element    ${locator}    30
@@ -304,6 +317,14 @@ Choisir au menu déroulant avec scroll
     Sleep    5s
     Scroll Vers Element    ${choix}    bas
     AppiumLibrary.Click Element    ${choix}
+
+Choisir du Texte au menu déroulant avec Scroll
+    [Arguments]    ${menu}    ${choix}
+    Wait Until Element Is Visible    ${menu}
+    AppiumLibrary.Click Element    ${menu}
+    Sleep    5s
+    Scroll Vers Texte    ${choix}    bas
+    AppiumLibrary.Click Text    ${choix}
 
 
 Sélectionner document origine

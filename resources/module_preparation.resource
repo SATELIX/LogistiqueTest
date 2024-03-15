@@ -132,7 +132,6 @@ Affiche Element
 Sélection gamme
     [Arguments]    ${gamme}
     Log To Console    Sélection de la gamme ${gamme}
-
     Wait Until Page Contains    ${gamme}    30
     Click Text    ${gamme}
 

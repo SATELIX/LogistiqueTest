@@ -20,23 +20,30 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 
 *** Variables ***
-${destination}   //android.widget.ImageButton[@content-desc="Afficher la liste"]
-${Annexe Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Annexe Bijou SA"]/android.view.ViewGroup
-
-
+#${Annexe Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Annexe Bijou SA"]/android.view.ViewGroup
+#${destination}   //android.widget.Spinner[@resource-id="fr.satelix.logistique:id/dropdown_list" and @text="Sélection dépôt destination"]
+${origine}       //android.widget.Spinner[@resource-id="fr.satelix.logistique:id/dropdown_list" and @text="Sélection dépôt origine"]
+${destination}   //android.widget.Spinner[@resource-id="fr.satelix.logistique:id/dropdown_list" and @text="Sélection dépôt destination"]
+${menu}            //android.widget.ImageButton[@content-desc="Afficher le menu déroulant"]
+${Lot-10 avec DLC}          DLC : 24
 
 *** Test Cases ***
 TransfertMonoEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Transfert mono empl
+    Sleep                                                         2s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
-    Choisir au menu déroulant                                     ${destination}    ${Annexe Bijou SA}
+    Sleep                                                         2s
+    #keyword permettant de choisir le dropdown_list suivant s'il en existe plusieurs
+    Choisir LA Valeur Dans Une Des Listes                         id=dropdown_list    Annexe Bijou SA    1
+    Sleep                                                         2s
     Valider les informations
     Afficher Les Articles Disponibles
     Sélectionner l article                                        BAAR01
     Entrer une quantité et valider                                2
     Saisir l Article a la Main                                    LINGOR18
-    Choisir Le Lot                                                LOT-10  
+    Sleep                                                         2s                
+    Choisir du Texte au menu déroulant avec Scroll                ${menu}    ${Lot-10 avec DLC} 
     Entrer une quantité et valider                                1
     Sleep                                                         2s
     Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-999
