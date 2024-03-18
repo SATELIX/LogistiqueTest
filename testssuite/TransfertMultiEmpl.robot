@@ -22,6 +22,8 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 *** Variables ***
 ${emplacement}    fr.satelix.logistique:id/text_input_end_icon
 ${A1T1N1P1}       //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A1 Trav T1 Niv N1 Pos P1"]/android.view.ViewGroup
+${menu}            //android.widget.ImageButton[@content-desc="Afficher le menu déroulant"]
+${Lot-10}          //android.widget.TextView[@resource-id="fr.satelix.logistique:id/tv_intitule_lot_serie" and @text="LOT-10"]
 
 *** Test Cases ***
 TransfertMultiEmpl
@@ -40,7 +42,7 @@ TransfertMultiEmpl
     Entrer une quantité et valider                                2
     Saisir l Article a la Main                                    LINGOR18
     Sélectionner l emplacement                                    A1T3N1P3
-    Choisir Le Lot                                                LOT-10                      
+    Choisir au menu déroulant avec scroll                         ${menu}    ${Lot-10}                    
     Entrer une quantité et valider                                1
     Sleep                                                         2s
     Scanner le code barre correspondant au lot                    LINGOR18\\;LOT-ABC        #lot associé sans stock
@@ -52,7 +54,9 @@ TransfertMultiEmpl
     Entrer une quantité et valider                                1
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               21731003        #Scan de l'article avec gamme associée
-    Scanner code barre                                            A1T1N1P1  
+    Sleep                                                         2s
+    Scanner code barre                                            A1T1N1P1 
+    Sleep                                                         2s 
     Entrer une quantité et valider                                1
     Sleep                                                         2s         
     Saisir l Article a la Main                                    CHAAR/VAR    
