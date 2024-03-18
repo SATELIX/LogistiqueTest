@@ -21,7 +21,6 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 
 *** Variables ***
-${info}    fr.satelix.logistique:id/bt_fiche_article
 ${modif}    fr.satelix.logistique:id/fab_edition_fiche
 ${numserie}    //android.widget.ImageButton[@content-desc="Afficher le menu déroulant"]
 ${MF82}    //android.view.ViewGroup[@content-desc="Sélectionner le numéro de série MF82"]
@@ -56,8 +55,8 @@ ConsultationMonoEmpl
     Sélectionner l article par element                       ${BAAR01}
     Sleep                                                    2s
     Appuyer sur la flèche retour
-    Sélectionner le document par element                     ${info}
-    Sélectionner le document par element                     ${modif} 
+    Cliquer Sur Le bouton d Information  
+    Cliquer Sur Le Bouton Editer
     Modifier code barre                                      1234567890128
     Sleep                                                    2s
     Appuyer sur la flèche retour
@@ -75,7 +74,8 @@ ConsultationMonoEmpl
     Saisir l Article a la Main                               LINGOR18
     Appuyer sur la flèche retour
     # Scanner le code barre correspondant au lot               LINGOR18\\;LOT-TEST2        #Pb lot bdd
-    # Scanner le code barre correspondant au lot               LINGOR18\\:LOT-10           
+    # Scanner le code barre correspondant au lot               LINGOR18\\:LOT-10   
+    Sleep                                                    2s        
     Saisir l Article a la Main                               EM040
     Appuyer sur la flèche retour
     Sleep                                                    2s
@@ -95,6 +95,7 @@ ConsultationMonoEmpl
     Appuyer sur la flèche retour
     Sleep                                                    2s
     Scanner le code barre correspondant à l'article          EM050/24
+    Sleep                                                    2s
     Sélectionner le conditionnement vers gauche              ECRIN DE 4
     Entrer une quantité et valider                           60
     Saisir l Article a la Main                               MODIV01
@@ -131,14 +132,14 @@ ConsultationMonoEmpl
     Hide Keyboard
     Sleep                                                    2s
     Appuyer sur la flèche retour
-    Sleep                                                    2s
+    Sleep                                                    3s
     Saisir l Article a la Main                               CHAAR/VAR
     Sélection gamme                                          42
     Sélection sous gamme                                     Forçat
     Appuyer sur la flèche retour
     Sleep                                                    5s
-    Appuyer sur la flèche retour
-    Sleep                                                    5s
+    #Appuyer sur la flèche retour
+    #Sleep                                                    5s
     Scanner le code barre correspondant à l'article          38141025            #scan de l'article avec les gammes associées
     Entrer une quantité max et valider
     Cliquer sur le bouton de finalisation

@@ -78,6 +78,8 @@ ${modulehaut}    //androidx.cardview.widget.CardView[@content-desc="Sélectionne
 ...    app_switch=187
 ...    down=20
 
+${boutonInfo}    fr.satelix.logistique:id/bt_fiche_article
+
 
 *** Keywords ***
 Switch App
@@ -276,6 +278,14 @@ Choisir L Emplacement
 Valider le Module
     Wait Until Page Contains Element    fr.satelix.logistique:id/tv_quitter_module_titre
     Click Element                       fr.satelix.logistique:id/bt_quitter_module_valider_transfert
+
+Cliquer Sur Le bouton d Information
+    Wait Until Page Contains Element    ${boutonInfo}
+    Click Element    ${boutonInfo}
+
+Cliquer Sur Le Bouton Editer
+    Wait Until Page Contains Element    fr.satelix.logistique:id/fab_edition_fiche
+    Click Element    fr.satelix.logistique:id/fab_edition_fiche
 
 
 

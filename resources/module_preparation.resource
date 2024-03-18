@@ -288,9 +288,9 @@ Appuyer sur Terminer La Saisie
 
 Modifier code barre
     [Arguments]    ${newcb}
-    Wait Until Element Is Visible    //android.widget.EditText[@text=" NEWBAAR01"]
-    Click Element   //android.widget.EditText[@text=" NEWBAAR01"]
-    Clear Text    //android.widget.EditText[@text=" NEWBAAR01"]
+    Wait Until Element Is Visible    fr.satelix.logistique:id/input_text
+    Click Element   fr.satelix.logistique:id/input_text
+    Clear Text    fr.satelix.logistique:id/input_text
     Taper Un Mot Au Clavier    ${newcb}
     Press ENTER
     Hide Keyboard
