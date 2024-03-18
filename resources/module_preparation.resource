@@ -124,6 +124,14 @@ Choisir au menu déroulant
     Wait Until Page Contains Element   ${choix}
     Click Element    ${choix}
 
+Choisir dans un des Menus Déroulants
+    [Arguments]    ${menu}    ${choix}    ${index}=0
+    ${elements}    Get WebElements    ${menu}
+    ${element}    Set Variable    ${elements[${index}]}
+    Ouvrir menu déroulant    ${element}    
+    Wait Until Page Contains Element   ${choix}
+    Click Element    ${choix}
+
 Affiche Element
     [Arguments]    ${element}
     Log To Console    Attente de l'affichage de l'élément ${element}

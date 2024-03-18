@@ -20,19 +20,19 @@ Test Teardown   Run Keyword And Ignore Error    AppiumLibrary.Terminate Applicat
 
 
 *** Variables ***
-${destination}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[2]
-${Annexe Bijou SA}    //androidx.cardview.widget.CardView[@content-desc="Dépôt Annexe Bijou SA"]/android.view.ViewGroup
-${emplacement}    xpath=(//android.widget.ImageButton[@content-desc="Afficher la liste"])[3]
-${A1T1N1P1}    //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A1 Trav T1 Niv N1 Pos P1"]/android.view.ViewGroup
-${tme}        //androidx.cardview.widget.CardView[@content-desc="Sélectionner le module Transfert multi empl."]/android.view.ViewGroup
+${emplacement}    fr.satelix.logistique:id/text_input_end_icon
+${A1T1N1P1}       //androidx.cardview.widget.CardView[@content-desc="Emplacement Allée A1 Trav T1 Niv N1 Pos P1"]/android.view.ViewGroup
 
 *** Test Cases ***
 TransfertMultiEmpl
     LeDernierTestEstIlTermine
-    Sur le terminal, sélectionner le module bis                   Transfert multi empl        
+    Sur le terminal, sélectionner le module bis                   Transfert multi empl  
+    Sleep                                                         2s         
     Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
-    Choisir au menu déroulant                                     ${destination}          ${Annexe Bijou SA}
-    Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
+    Sleep                                                         2s
+    Choisir LA Valeur Dans Une Des Listes                         id=dropdown_list    Annexe Bijou SA    1
+    Sleep                                                         2s
+    Choisir dans un des Menus Déroulants                          ${emplacement}     ${A1T1N1P1}    3
     Valider les informations
     Afficher Les Articles Disponibles
     Sélectionner l article                                        BAAR01
@@ -50,7 +50,12 @@ TransfertMultiEmpl
     Sélectionner l emplacement                                    A1T1N1P1
     Sélection gamme                                               Rubis
     Entrer une quantité et valider                                1
-    Saisir l Article a la Main                                    CHAAR/VAR
+    Sleep                                                         2s
+    Scanner le code barre correspondant à l'article               21731003        #Scan de l'article avec gamme associée
+    Scanner code barre                                            A1T1N1P1  
+    Entrer une quantité et valider                                1
+    Sleep                                                         2s         
+    Saisir l Article a la Main                                    CHAAR/VAR    
     Sélectionner l emplacement                                    A1T1N1P1
     Sélection gamme                                               34
     Sélection sous gamme                                          Classique
