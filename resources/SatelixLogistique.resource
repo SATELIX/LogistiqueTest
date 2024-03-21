@@ -215,3 +215,7 @@ Sélectionner Une DLC
     #Wait Until Page Contains Element    Sélection actuelle : Date sélectionnée
     Click Text    ${date}
     Appuyer sur ok
+
+Fermer Dialog Avertissement
+    Wait Until Page Contains    FERMER
+    Click Text    FERMER

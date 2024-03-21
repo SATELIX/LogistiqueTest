@@ -65,15 +65,14 @@ ConsultationMonoEmpl
     Sleep                                                    2s
     Appuyer sur la flèche retour
     Sleep                                                    2s
+    Vider barre de recherche
     Scanner le code barre correspondant à l'article          1234567890128
-    Sleep                                                    2s
-    Appuyer sur la flèche retour
     Sleep                                                    2s
     Appuyer sur la flèche retour
     Sleep                                                    2s
     Saisir l Article a la Main                               LINGOR18
     Appuyer sur la flèche retour
-    # Scanner le code barre correspondant au lot               LINGOR18\\;LOT-TEST2        #Pb lot bdd
+    # Scanner le code barre correspondant au lot               LINGOR18\\;LOT-TEST2
     # Scanner le code barre correspondant au lot               LINGOR18\\:LOT-10   
     Sleep                                                    2s        
     Saisir l Article a la Main                               EM040

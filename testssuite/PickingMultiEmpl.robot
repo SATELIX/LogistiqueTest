@@ -41,7 +41,6 @@ PickingMultiEmpl
     Sleep                                                         2s
     Entrer une quantité supérieure au stock puis valider          200
     Sleep                                                         2s
-    #Effacer la quantité                                           200
     Entrer une quantité et valider                                3
     Scanner le code barre correspondant à l'article               LINGOR18
     Sélectionner l emplacement                                    A1T3N1P3
@@ -67,6 +66,7 @@ PickingMultiEmpl
     Sélectionner l emplacement                                    A1T1N1P1
     Entrer une quantité et valider                                8
     Sleep                                                         2s
+    Appuyer sur la flèche retour
     Afficher Les Articles Disponibles
     Sélectionner à la main Un Article Avec 2 Criteres             BAOR01    Rubis   #modif essai sélection avec 2 critères
     Sélectionner l emplacement                                    A1T1N1P2
@@ -87,20 +87,16 @@ PickingMultiEmpl
     Sélectionner l emplacement                                    A2T1N2P2
     Saisir un Numero De Serie et valider                          SERIE5
     Scanner le code barre correspondant au numéro de série        SERIE4
+    Sleep                                                         2s
+    Sélectionner l emplacement                                    A2T1N2P2
+    Sleep                                                         2s 
+    Appuyer sur la flèche retour
+    Sleep                                                         2s               
     Scanner le code barre correspondant au numéro de série        MF88
     Sleep                                                         2s            
     Appuyer sur ok
-    Sleep                                                         1s
-    Effacer le numéro de série, ne rien mettre et valider
-    Sleep                                                         4s
-    #Appuyer sur ok et back                                                       #dernier crash
-    #Sleep                                                         2s    
-    Go Back  
-    Vider barre de recherche                                                                 
-    Afficher Les Articles Disponibles
-    Scroll Vers Element                                           ${MODIV01}   bas    # arrivé à ce point il n'y a plus d'article modiv01 à préparer dnas les test auto
     Sleep                                                         2s    
-    Sélectionner le document par element                          ${MODIV01}
+    Sélectionner l article                                        MODIV01    
     Sleep                                                         2s
     Sélectionner l emplacement                                    A2T1N2P2
     Choisir au menu déroulant avec scroll                         ${menu}    ${SERIE_2206001}
@@ -130,19 +126,16 @@ PickingMultiEmpl
     Sleep                                                         2s        
     Choisir LA Valeur Dans La Liste                               id=dropdown_list    TAT
     Mettre date du lendemain
-    Appuyer sur Transferer
-    Sélectionner le document                                      VALIDER PICKING MULTI EMPL 
-    Sleep                                                         5s
-    Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 1
-    Sleep                                                         5s
-    Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 2, affiche une erreur
-    Sleep                                                         5s
-    Appuyer sur ok
-    Sleep                                                         5s
-    Scanner code barre                                            TRA98745002                #tracking 2 pour le colis 2
-    Sleep                                                         5s
-    Scanner code barre                                            TRA98745003                #tracking 3 pour le colis 3
-    Sleep                                                         5s
-    Appuyer sur Transferer
+    Finaliser
     Valider
     Sleep                                                         5s
+    Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 1
+    Sleep                                                         2s
+    Scanner code barre                                            TRA98745001                #tracking 1 pour le colis 2, affiche une erreur
+    Sleep                                                         2s
+    Fermer Dialog Avertissement
+    Sleep                                                         2s
+    Scanner code barre                                            TRA98745002                #tracking 2 pour le colis 2
+    Sleep                                                         2s
+    Scanner code barre                                            TRA98745003                #tracking 3 pour le colis 3
+    Sleep                                                         2s
