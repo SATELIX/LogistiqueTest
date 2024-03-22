@@ -34,6 +34,7 @@ ${ARTLOT}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 ReceptionMultiEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Réception multi empl
+    Sleep                                                         2s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list        Bijou SA
     Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
     Choisir au menu déroulant                                     ${fournisseur}          ${BILLO}
@@ -44,7 +45,7 @@ ReceptionMultiEmpl
     Sleep                                                         2s
     Appuyer sur ok
     Sleep                                                         2s
-    Scanner le code barre correspondant à l'article               CB-INCONNU        #association d'un code barre déjà faite
+    Scanner le code barre correspondant à l'article               CB-INCONNU
     Sleep                                                         2s
     Cliquer sur Oui
     Choisir au menu déroulant avec scroll                         ${liste_article}    ${STYPLOR}
@@ -64,13 +65,13 @@ ReceptionMultiEmpl
     Sélectionner l article                                        Rubis
     Entrer une quantité et valider                                1
     Afficher Les Articles Disponibles
-    Sélectionner l article                                        34
+    Sélectionner l article                                        34    #CHAAR/VAR 34 cm
     Entrer une quantité et valider                                35
     Appuyer sur ok
     Effacer la quantité                                           35
     Entrer une quantité et valider                                25
     Sleep                                                         2s
-    Scanner le code barre correspondant à l'article               38141025            #article CHAAR/VAR de longueur 34 Forçat
+    Scanner le code barre correspondant à l'article               38141025            #article CHAAR/VAR de longueur 42 Forçat
     Entrer une quantité et valider                                2
     Afficher Les Articles Disponibles
     Sélectionner l article                                        LINGOR18
@@ -81,11 +82,13 @@ ReceptionMultiEmpl
     Saisir le Numéro de lot                                       L1234        
     Entrer une quantité et valider                                1
     Sleep                                                         2s
-    Scanner le code barre correspondant au lot                    925953101210LOT-TEST2    #test codebarre sans les parenthèses, les balises sont reconnues ?
+    Scanner le code barre correspondant au lot                    9259531012\u001D10LOT-TEST2    # \u001D est le caractère unicode équivalent au caractère ASCII 29 qui correspond à FNC1
     Sleep                                                         2s    
     Entrer une quantité et valider                                5
     Afficher Les Articles Disponibles
-    Scroll Vers Element                                           ${ARTLOT}     haut        
+    Sleep                                                         2s
+    Scroll Vers Element                                           ${ARTLOT}     haut  
+    Sleep                                                         2s      
     Sélectionner l article                                        ARTLOT
     Saisir le Numéro de lot                                       COMPL123        
     Entrer une quantité et valider                                1

@@ -217,6 +217,11 @@ Scanner le code barre correspondant à l'article
     Choisir L Article A Preparer Avec Le Lecteur CodeBarre    ${article}
 
 Scanner le code barre correspondant au lot 
+    [Documentation]    Scanne le code barre correspondant au lot de l'article. Dnas le cas d'un EAN 128,
+    ...                le code barre peut posséder des balises de séparation entourées de parenthèses.
+    ...                Ce mot clé prend en compte les balises et renvoie le code barre sans les balises SI
+    ...                ces balises sont correctement échappées avec le caractère unicode \u001D 
+    ...                équivalent au caractère ASCII 29 qui correspond à FNC1
     [Arguments]    ${lot}
     Choisir L Article A Preparer Avec Le Lecteur CodeBarre    ${lot}
 
