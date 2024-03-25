@@ -27,23 +27,27 @@ ${OF00005}    //androidx.cardview.widget.CardView[@content-desc="Document OF0000
 ${CHAAR/VAR34classique}    xpath=(//androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Chaîne Argent maille et longueur variables"])[1]/android.view.ViewGroup
 ${LINGOR18}        //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'article Lingot Or 18 cts"]/android.view.ViewGroup
 
-#Test OK, pb lot bdd
 *** Test Cases ***
 FabricationMultiEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Fabrication multi empl
+    Sleep                                                         2s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list   Bijou SA
     Choisir au menu déroulant                                     ${emplacement}          ${A1T1N1P1}
+    Sleep                                                         1s
     Choisir au menu déroulant                                     ${doc}          ${OF00005}
     Valider les informations
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               BAAR01
+    Sleep                                                         2s
     Entrer une quantité et valider                                3
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               21731003        #Scan article BAAR01/EM
+    Sleep                                                         2s
     Entrer une quantité et valider                                2
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               TESTBLBKAD    #Scan Article BAAR01/Rubis
+    Sleep                                                         2s
     Entrer une quantité et valider                                1
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               38141025    #CHAAR/VAR longueur 42 cm Forçat
