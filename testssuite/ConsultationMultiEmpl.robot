@@ -37,7 +37,6 @@ ${Lot-10}          //android.widget.TextView[@resource-id="fr.satelix.logistique
 
 *** Test Cases ***
 ConsultationMultiEmpl
-    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Consultation Multi Empl
     Sleep                                                         2s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
@@ -82,6 +81,7 @@ ConsultationMultiEmpl
     Appuyer sur la flèche retour
     Sleep                                                         1s
     Scanner le code barre correspondant à l'article               21731003    #BAOR01 avec gamme émeraude 
+    Sleep                                                         2s
     Sélectionner l emplacement                                    A1T1N1P1                                                                  
     Sleep                                                         2s 
     Modifier un stock                                             180
@@ -103,7 +103,7 @@ ConsultationMultiEmpl
     Appuyer sur la flèche retour
     Saisir l Article a la Main                                    EM050
     Sleep                                                         2s
-    Scroll Vers Element                                           ${A1T3N1P2}    haut   #dernier -2 test était en bas
+    Scroll Vers Element                                           ${A1T3N1P2}    haut   #CORRIGER AVEC BAS ?
     Sélectionner l emplacement                                    A1T3N1P2
     Sleep                                                         2s
     Appuyer sur la flèche retour
@@ -125,7 +125,7 @@ ConsultationMultiEmpl
     Scanner le code barre correspondant à l'article               MODIV01
     Sleep                                                         2s
     #Scroll Vers Element                                           ${A2T1N2P2}    bas        
-    Sélectionner l emplacement                                    A2T1N2P2    #dernier test casse ici
+    Sélectionner l emplacement                                    A2T1N2P2
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               MF81
     Sleep                                                         2s
@@ -157,7 +157,7 @@ ConsultationMultiEmpl
     Afficher Les Articles Disponibles
     Sleep    2s
     Sélectionner l article                                        CHAAR/VAR
-    Scroll Vers Element                                           ${A1T2N3P2}    haut        #pb bdd gammes
+    Scroll Vers Element                                           ${A1T2N3P2}    haut        #
     Sélectionner l emplacement                                    A1T2N3P2
     Sélection gamme                                               42
     Sélection sous gamme                                          Forçat
