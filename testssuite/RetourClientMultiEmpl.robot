@@ -30,6 +30,7 @@ ${LINGOR18}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner 
 RetourClientMultiEmpl
     LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module bis                   Retour client multi empl
+    Sleep                                                         2s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
     Choisir au menu déroulant                                     ${destination}          ${A1T1N1P1}
     Choisir au menu déroulant                                     ${client}          ${bagues}
@@ -55,9 +56,11 @@ RetourClientMultiEmpl
     Scanner le code barre correspondant au lot                    L1234        
     Entrer une quantité et valider                                1
     Sleep                                                         2s
-    # Scanner le code barre correspondant au lot                    (92)59531012(10)LOT-TEST2        #code barre article de type 128
-    # Changer emplacement                                           A1T3N1P3                    #code barre ne fonctionne pas
-    # Entrer une quantité et valider                                1
+    Scanner le code barre correspondant au lot                    9259531012\u001D10LOT-TEST2 
+    Sleep                                                         2s
+    Hide Keyboard       
+    Changer emplacement                                           A1T3N1P3
+    Entrer une quantité et valider                                1
     Saisir l Article a la Main                                    BAOR01
     Sélection gamme                                               Emeraude
     Entrer une quantité et valider                                8
@@ -74,11 +77,14 @@ RetourClientMultiEmpl
     Sleep                                                         2s
     Scanner le code barre correspondant à l'article               38141025                        #scan article avec les gammes associées
     Entrer une quantité et valider                                3
-    # Afficher Les Articles Disponibles
-    # Scroll Vers Element                                           ${LINGOR18}     bas
-    # Sélectionner l article                                        LINGOR18
-    # Choisir Le Lot                                                L789                     #lot inexistant dans bdd              
-    # Entrer une quantité et valider                                2
+    Afficher Les Articles Disponibles
+    Scroll Vers Element                                           ${LINGOR18}     bas
+    Sleep                                                         2s
+    Sélectionner l article                                        LINGOR18
+    Sleep                                                         2
+    Saisir le Numéro de lot                                       L789
+    Sleep                                                         2                              
+    Entrer une quantité et valider                                2
     Finaliser
     Valider
     Sleep                                                         5s
