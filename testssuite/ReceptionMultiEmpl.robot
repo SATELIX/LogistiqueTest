@@ -32,7 +32,6 @@ ${ARTLOT}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 
 *** Test Cases ***
 ReceptionMultiEmpl
-    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Réception multi empl
     Sleep                                                         2s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list        Bijou SA
@@ -77,7 +76,7 @@ ReceptionMultiEmpl
     Sélectionner l article                                        LINGOR18
     saisir le Numéro de lot                                       lot inexistant
     Sleep                                                         2s    
-    Appuyer sur ok                                                                #Text 'OK' did not appear in 5 seconds
+    Appuyer sur ok                                                               
     Effacer le lot
     Saisir le Numéro de lot                                       L1234        
     Entrer une quantité et valider                                1
