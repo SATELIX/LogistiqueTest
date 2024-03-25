@@ -210,6 +210,7 @@ Choisir LA Valeur Dans Une Des Listes
 
 
 Appuyer sur la flèche retour
+    Sleep    1s
     AppiumLibrary.Go Back
 
 

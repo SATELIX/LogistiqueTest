@@ -30,7 +30,6 @@ ${BAAR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 #fonction ok, modifier modifier code barre, pb bdd lots
 *** Test Cases ***
 ConsultationMonoEmpl
-    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                  Consultation Mono Empl
     Sleep                                                    3s
     Choisir LA Valeur Dans La Liste                          id=dropdown_list    Bijou SA
@@ -71,10 +70,16 @@ ConsultationMonoEmpl
     Appuyer sur la flèche retour
     Sleep                                                    2s
     Saisir l Article a la Main                               LINGOR18
+    Sleep                                                    2s
     Appuyer sur la flèche retour
-    # Scanner le code barre correspondant au lot               LINGOR18\\;LOT-TEST2
-    # Scanner le code barre correspondant au lot               LINGOR18\\:LOT-10   
-    Sleep                                                    2s        
+    Scanner le code barre correspondant au lot               LINGOR18\\;LOT-TEST2
+    Sleep                                                    2s
+    Appuyer sur la flèche retour 
+    Sleep                                                    2s  
+    Scanner le code barre correspondant au lot               LINGOR18\\:LOT-10   
+    Sleep                                                    1s 
+    Appuyer sur ok et back
+    Sleep                                                    2s
     Saisir l Article a la Main                               EM040
     Appuyer sur la flèche retour
     Sleep                                                    2s
