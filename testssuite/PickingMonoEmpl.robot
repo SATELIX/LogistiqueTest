@@ -68,7 +68,7 @@ PickingMonoEmpl
     Effacer le numéro de série, ne rien mettre et valider
     Press ENTER
     Sleep                                                2s
-    Appuyer sur ok et back
+    #Appuyer sur ok et back
     Appuyer sur la pastille colis avec le petit carton      # et un "2"
     Appuyer sur "+"
     Rester appuyer sur l unite logistique                 PALETTE EUROPE 3
