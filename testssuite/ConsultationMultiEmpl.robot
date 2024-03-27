@@ -37,6 +37,7 @@ ${Lot-10}          //android.widget.TextView[@resource-id="fr.satelix.logistique
 
 *** Test Cases ***
 ConsultationMultiEmpl
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Consultation Multi Empl
     Sleep                                                         2s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA

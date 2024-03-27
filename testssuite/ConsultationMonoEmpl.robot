@@ -30,6 +30,7 @@ ${BAAR01}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 #fonction ok, modifier modifier code barre, pb bdd lots
 *** Test Cases ***
 ConsultationMonoEmpl
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                  Consultation Mono Empl
     Sleep                                                    3s
     Choisir LA Valeur Dans La Liste                          id=dropdown_list    Bijou SA

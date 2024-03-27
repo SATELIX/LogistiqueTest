@@ -26,6 +26,7 @@ ${BAGUES}    //androidx.cardview.widget.CardView[@content-desc="Client Bague's e
 
 *** Test Cases ***
 RetourClientMonoEmpl
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Retour Client Mono Empl
     Sleep                                                         2s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA

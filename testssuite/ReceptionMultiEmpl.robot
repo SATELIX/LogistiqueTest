@@ -32,6 +32,7 @@ ${ARTLOT}    //androidx.cardview.widget.CardView[@content-desc="Sélectionner l'
 
 *** Test Cases ***
 ReceptionMultiEmpl
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Réception multi empl
     Sleep                                                         2s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list        Bijou SA

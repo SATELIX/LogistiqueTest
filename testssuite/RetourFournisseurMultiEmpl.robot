@@ -30,6 +30,7 @@ ${LOT-10}    //android.view.ViewGroup[@content-desc="Sélectionner le numéro de
 
 *** Test Cases ***
 RetourFournisseurMultiEmpl
+    LeDernierTestEstIlTermine
     Sur le terminal, sélectionner le module                       Retour fournisseur Multi Empl
     Sleep                                                         2s
     Choisir LA Valeur Dans La Liste                               id=dropdown_list    Bijou SA
