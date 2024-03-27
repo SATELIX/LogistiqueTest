@@ -145,7 +145,8 @@ ConsultationMonoEmpl
     Sleep                                                    5s
     #Appuyer sur la flèche retour
     #Sleep                                                    5s
-    Scanner le code barre correspondant à l'article          38141025            #scan de l'article avec les gammes associées
+    Scanner le code barre correspondant à l'article          38141025
+    Sleep                                                    2s            
     Entrer une quantité max et valider
     Cliquer sur le bouton de finalisation
     Sleep                                                    5s
